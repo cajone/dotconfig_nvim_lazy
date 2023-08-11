@@ -15,15 +15,6 @@ require("lazy").setup({
     end,
 	},
 
-  -- NvimTree
-  { "kyazdani42/nvim-web-devicons", },   -- filesystem icons,
-  {
-    "kyazdani42/nvim-tree.lua",
-    config = function()
-      require("nvim-tree").setup()
-    end,
-  },
-
   -- Git Signs
   { "nvim-lua/plenary.nvim", },
   {
@@ -33,12 +24,23 @@ require("lazy").setup({
     end,
   },
 
-  { "tpope/vim-fugitive", },          -- Fugitive ( Git)
+  -- NvimTree
+  { "kyazdani42/nvim-web-devicons", },   -- filesystem icons,
+  {
+    "kyazdani42/nvim-tree.lua",
+    config = function()
+      require("nvim-tree").setup()
+    end,
+  },
+
+  { "akinsho/toggleterm.nvim", version = "*", config = true },      -- Toggle Terminal window
+  { "tpope/vim-fugitive", },                                        -- Fugitive ( Git)
 
   -- Status Bar
-  { "nvim-lualine/lualine.nvim", 
+  { 
+    "nvim-lualine/lualine.nvim", 
     config = function()
-      require("plugins.lualine").setup()
+      require('lualine').setup()
     end,
   },
 

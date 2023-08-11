@@ -1,3 +1,3 @@
 -- Init the plugins
 
-require("plugins.lualine")
+-- require("plugins.lualine")
