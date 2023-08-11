@@ -4,7 +4,7 @@ local opt = vim.opt
 local cmd = vim.cmd
 
 --[[ LEADER ]]
-vim.g.mapleader = "\\"
+-- vim.g.mapleader = "\\"
 vim.g.localleader = "\\"
 
 -- [[ Context ]]
@@ -22,7 +22,7 @@ opt.fileencoding = "utf8" -- str:  File encoding to use
 -- [[ Theme ]]
 opt.syntax = "ON"        -- str:  Allow syntax highlighting
 opt.termguicolors = true -- bool: If term supports ui color then enable
-cmd("colorscheme jellybeans")
+-- cmd("colorscheme jellybeans")
 cmd("highlight LineNr guifg=lightblue")
 cmd("highlight SignColumn guibg=black")
 

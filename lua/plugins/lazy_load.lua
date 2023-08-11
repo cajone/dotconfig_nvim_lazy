@@ -15,22 +15,35 @@ require("lazy").setup({
     end,
 	},
 
-  -- Fugitive ( Git)
+  -- NvimTree
+  { "kyazdani42/nvim-web-devicons", },   -- filesystem icons,
   {
-    "tpope/vim-fugitive",
+    "kyazdani42/nvim-tree.lua",
+    config = function()
+      require("nvim-tree").setup()
+    end,
+  },
+
+  -- Git Signs
+  { "nvim-lua/plenary.nvim", },
+  {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require("gitsigns").setup()
+    end,
+  },
+
+  { "tpope/vim-fugitive", },          -- Fugitive ( Git)
+
+  -- Status Bar
+  { "nvim-lualine/lualine.nvim", 
+    config = function()
+      require("plugins.lualine").setup()
+    end,
   },
 
   -- Vimwiki
   {
     "vimwiki/vimwiki",
-    config = function()
-      vim.g.vimwiki_list = {
-        {
-          path = "~/vimwiki/", -- Change this to the path where you want to keep your wiki files
-          syntax = "markdown",
-          ext = ".md",
-        },
-      }
-    end,
   },
 })
