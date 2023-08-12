@@ -40,7 +40,8 @@ map("n", "<Leader>NL", ":lua vim.lsp.buf.lint()<CR>", { noremap = true })
 map("n", "<F8>", ":lua ToggleVimwikiConceallevel()<CR>", { noremap = true })
 
 -- resize current focused vertical panel by 5 chars
-map("n", "<F12>", ":vertical resize +5<CR>", { noremap = true })
+map("n", "<F3>", ":vertical resize -5<CR>", { noremap = true })
+map("n", "<F4>", ":vertical resize +5<CR>", { noremap = true })
 
 
 -- Set LCD
