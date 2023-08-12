@@ -22,9 +22,9 @@ opt.fileencoding = "utf8" -- str:  File encoding to use
 -- [[ Theme ]]
 opt.syntax = "ON"        -- str:  Allow syntax highlighting
 opt.termguicolors = true -- bool: If term supports ui color then enable
--- cmd("colorscheme jellybeans")
-cmd("highlight LineNr guifg=lightblue")
-cmd("highlight SignColumn guibg=black")
+cmd("highlight LineNr guifg=#48558f")
+cmd("highlight LineNr guibg=#1e2132")
+cmd("highlight SignColumn guibg=#1e2132")
 
 -- [[ Search ]]
 opt.ignorecase = true -- bool: Ignore case in search patterns

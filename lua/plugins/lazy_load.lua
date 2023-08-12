@@ -52,7 +52,20 @@ require("lazy").setup({
     },
   },  
 
-  { "tree-sitter/tree-sitter", },                               -- Language parser syntax highlighting
+  -- Language parser syntax highlighting
+  { 
+    "nvim-treesitter/nvim-treesitter", 
+    run = ":TSUpdate",
+    config = {
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = true,
+      },
+      indent = { enable = true, },
+    },
+  },
+
+
   { "tpope/vim-fugitive", },                                    -- Fugitive ( Git)
 
   -- Status Bar
@@ -63,11 +76,11 @@ require("lazy").setup({
     end,
   },
 
-  -- Vimwiki
   {
-    "vimwiki/vimwiki",
+    "vimwiki/vimwiki",                                          -- Vimwiki
   },
-})
+}) -- End of Lazy Plugin install section 
+
 
   function set_terminal_keymaps()
     local opts = {noremap = true}
