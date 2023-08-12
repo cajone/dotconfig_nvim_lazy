@@ -20,15 +20,6 @@ vim.opt.rtp:prepend(lazypath)
 require("plugins.lazy_load")
 
 
--- Setup for vimwiki, if I dont put this here it does not load the markdown, must find a way to fix this
-vim.g.vimwiki_list = {
-  {
-    path = "~/vimwiki/", -- Change this to the path where you want to keep your wiki files
-    syntax = "markdown",
-    ext = ".md",
-  },
-}
-
 
 -- Custom Setup
 require("custom.opts")      -- Load opts

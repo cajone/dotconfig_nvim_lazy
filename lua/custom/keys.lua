@@ -12,7 +12,12 @@ map("n", "<C-l>", "<C-w>l", { noremap = true })
 
 -- Git
 map("n", "<Leader>Gb", ":Git blame<CR>", { noremap = true, silent = true })
-map("n", "<Leader>Gp", ":Git push<CR>", { noremap = true, silent = true })
+
+vim.cmd([[
+command! -nargs=0 FugitiveInside execute "lcd %:h" | :G
+]])
+
+map('n', '<Leader>gf', ':FugitiveInside<CR>', { noremap = true })
 
 -- Toggle Line Numbers
 map("n", "<Leader>nn", ":lua ToggleLineNumbers()<CR>", { noremap = true })
@@ -23,8 +28,8 @@ map("n", "<Leader>z", ":nohlsearch<CR>", { noremap = true })
 -- Resource the nvim configuration after modification
 map("n", "<Leader>sf", ":source %<CR>", { noremap = true })
 
--- Toggle nvim-tree, load the DirectoryTree
-map("n", "<Leader>dt", ":NvimTreeToggle()<CR>", { noremap = true })
+-- Toggle nvim-tree, load the DirectoryFiles
+map("n", "<Leader>df", ":NvimTreeToggle()<CR>", { noremap = true })
 
 -- Format buffer
 map("n", "<Leader>NF", ":lua vim.lsp.buf.format()<CR>", { noremap = true })
