@@ -33,6 +33,4 @@ function ChangeWorkingDirectoryToGitRoot()
     end
 end
 
--- Example usage
-vim.api.nvim_set_keymap('n', '<Leader>lcd', [[<Cmd>lua ChangeWorkingDirectoryToGitRoot()<CR>]], { noremap = true, silent = true })
 

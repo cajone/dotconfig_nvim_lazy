@@ -41,3 +41,7 @@ map("n", "<F8>", ":lua ToggleVimwikiConceallevel()<CR>", { noremap = true })
 
 -- resize current focused vertical panel by 5 chars
 map("n", "<F12>", ":vertical resize +5<CR>", { noremap = true })
+
+
+-- Set LCD
+map('n', '<Leader>lcd', [[<Cmd>lua ChangeWorkingDirectoryToGitRoot()<CR>]], { noremap = true, silent = true })

@@ -18,6 +18,7 @@ vim.opt.rtp:prepend(lazypath)
 -- NOTE although not explicitly stated all the below paths are actually in the lua subtree ie ./lua/plugins/lazy_load
 -- Load Plugins
 require("plugins.lazy_load")
+require("plugins.lualine")
 
 
 
