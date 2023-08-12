@@ -33,8 +33,9 @@ require("lazy").setup({
     end,
   },
 
-  { "akinsho/toggleterm.nvim", version = "*", config = true },      -- Toggle Terminal window
-  { "tpope/vim-fugitive", },                                        -- Fugitive ( Git)
+  { "akinsho/toggleterm.nvim", version = "*", config = true },  -- Toggle Terminal window
+  { "tree-sitter/tree-sitter", },                               -- Language parser syntax highlighting
+  { "tpope/vim-fugitive", },                                    -- Fugitive ( Git)
 
   -- Status Bar
   { 

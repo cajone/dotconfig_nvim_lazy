@@ -1,6 +1,8 @@
 require("lualine").setup({
   options = {
-    icon_enabled = true,
+    icon_enabled = false,
+    component_seperators = { left = '|', right = '|' },
+    section_seperators = { left = '|', right = '|' },
     theme = "jellybeans",
   },
   sections = {

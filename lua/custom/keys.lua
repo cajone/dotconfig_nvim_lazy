@@ -23,8 +23,8 @@ map("n", "<Leader>z", ":nohlsearch<CR>", { noremap = true })
 -- Resource the nvim configuration after modification
 map("n", "<Leader>sf", ":source %<CR>", { noremap = true })
 
--- Toggle nvim-tree
-map("n", "<Leader>fd", ":NvimTreeToggle()<CR>", { noremap = true })
+-- Toggle nvim-tree, load the DirectoryTree
+map("n", "<Leader>dt", ":NvimTreeToggle()<CR>", { noremap = true })
 
 -- Format buffer
 map("n", "<Leader>NF", ":lua vim.lsp.buf.format()<CR>", { noremap = true })
