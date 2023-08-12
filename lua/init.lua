@@ -21,6 +21,7 @@ require("plugins.lazy_load")
 
 
 
+-- NOTE although not explicitly stated all the below paths are actually in the lua subtree ie ./lua/custom directory
 -- Custom Setup
 require("custom.opts")      -- Load opts
 require("custom.keys")      -- Load Keymaps
