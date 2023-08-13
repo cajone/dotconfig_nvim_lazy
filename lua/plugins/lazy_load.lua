@@ -53,7 +53,15 @@ require("lazy").setup({
     config = function()
       local lspconfig = require('lspconfig')
       lspconfig.rubocop.setup{}                   -- Will parse / process Ruby files
-      lspconfig.lua_ls.setup{}                    -- Will parse lua files
+      lspconfig.lua_ls.setup{                     -- Will parse lua files
+        settings = {
+          Lua = {
+            diagnostics = {
+              globals = ('vim'),
+            },
+          },
+        },
+      }
     end,
   },
 
