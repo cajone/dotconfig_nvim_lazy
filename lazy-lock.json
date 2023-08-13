@@ -9,6 +9,7 @@
   "nvim-treesitter": { "branch": "master", "commit": "800b2f388b0f880be8a2fcd29494f7459af30a21" },
   "nvim-web-devicons": { "branch": "master", "commit": "ab899311f8ae00a47eae8e0879506cead8eb1561" },
   "plenary.nvim": { "branch": "master", "commit": "267282a9ce242bbb0c5dc31445b6d353bed978bb" },
+  "telescope.nvim": { "branch": "master", "commit": "776b509f80dd49d8205b9b0d94485568236d1192" },
   "toggleterm.nvim": { "branch": "main", "commit": "b90a1381e9b5b8596f49070ee86c71db267ac868" },
   "vim-fugitive": { "branch": "master", "commit": "b3b838d690f315a503ec4af8c634bdff3b200aaf" },
   "vimwiki": { "branch": "dev", "commit": "f0fe154ede6b11e3db9b058b930005a056a3d1c6" },

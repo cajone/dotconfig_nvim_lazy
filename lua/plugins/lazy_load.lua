@@ -55,14 +55,18 @@ require("lazy").setup({
   -- Language parser syntax highlighting
   { 
     "nvim-treesitter/nvim-treesitter", 
-    run = ":TSUpdate",
-    config = {
+    opts= {
       highlight = {
         enable = true,
         additional_vim_regex_highlighting = true,
       },
       indent = { enable = true, },
     },
+  },
+
+  {
+    'nvim-telescope/telescope.nvim', tag = '0.1.2',
+      dependencies = { 'nvim-lua/plenary.nvim' },
   },
 
 

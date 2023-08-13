@@ -10,6 +10,13 @@ map("n", "<C-j>", "<C-w>j", { noremap = true })
 map("n", "<C-k>", "<C-w>k", { noremap = true })
 map("n", "<C-l>", "<C-w>l", { noremap = true })
 
+-- Telescope Keys
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+
 -- Git
 map("n", "<Leader>Gb", ":Git blame<CR>", { noremap = true, silent = true })
 
