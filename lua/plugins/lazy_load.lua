@@ -57,7 +57,7 @@ require("lazy").setup({
         settings = {
           Lua = {
             diagnostics = {
-              globals = ('vim'),
+              globals = {'vim'},
             },
           },
         },
