@@ -32,5 +32,3 @@ function ChangeWorkingDirectoryToGitRoot()
         print("Not in a Git repository")
     end
 end
-
-

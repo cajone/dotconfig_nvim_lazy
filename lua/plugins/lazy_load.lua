@@ -33,6 +33,14 @@ require("lazy").setup({
     end,
   },
 
+  -- Mason install and manage LSP servers, DAP servers, linters, and formatters.
+  {
+    "williamboman/mason.nvim",
+    config = function()
+      require("mason").setup()
+    end,
+  },
+
   -- Toggle Terminal window
   { 
     "akinsho/toggleterm.nvim", 
@@ -55,6 +63,7 @@ require("lazy").setup({
   -- Language parser syntax highlighting
   { 
     "nvim-treesitter/nvim-treesitter", 
+    ensure_installed = { "markdown", "c", "lua", "vim", "query", "bash", "yaml", "python", "groovy", "ruby" },
     opts= {
       highlight = {
         enable = true,
@@ -64,6 +73,9 @@ require("lazy").setup({
     },
   },
 
+--  { "nvim-treesitter.parsers" },
+    
+  -- Fuzzy file finder and many other things
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.2',
       dependencies = { 'nvim-lua/plenary.nvim' },
