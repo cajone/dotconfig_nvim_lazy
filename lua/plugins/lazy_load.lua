@@ -62,15 +62,22 @@ require("lazy").setup({
 
   -- Language parser syntax highlighting
   { 
+    'prettier/vim-prettier', -- Will only parse { Angular, CSS, Flow, GraphQL, HTML, JSON, JSX, JavaScript, LESS, Markdown, SCSS, TypeScript, Vue, YAML } 
+    run = 'npm install',
+    ft = { 'markdown', 'yaml' },
+    cmd = { 'Prettier', 'PrettierAsync' },
+  },
+
+  { 
     "nvim-treesitter/nvim-treesitter", 
-    ensure_installed = { "markdown", "c", "lua", "vim", "query", "bash", "yaml", "python", "groovy", "ruby" },
-    opts= {
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = true,
+      opts= {
+        highlight = {
+          enable = true,
+          additional_vim_regex_highlighting = true,
+        },
+        indent = { enable = true, },
+        query_linter = true,
       },
-      indent = { enable = true, },
-    },
   },
 
 --  { "nvim-treesitter.parsers" },
