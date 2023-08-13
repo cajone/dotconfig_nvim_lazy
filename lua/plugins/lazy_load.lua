@@ -6,8 +6,8 @@ require("lazy").setup({
   "folke/neodev.nvim",
 
   -- ColorScheme
-  { 
-    "rafi/awesome-vim-colorschemes", 
+  {
+    "rafi/awesome-vim-colorschemes",
     lazy = false,
     priority = 1000,
     config = function()
@@ -41,10 +41,39 @@ require("lazy").setup({
     end,
   },
 
+  -- Language parser syntax highlighting
+  {
+    'prettier/vim-prettier', -- Will only parse { Angular, CSS, Flow, GraphQL, HTML, JSON, JSX, JavaScript, LESS, Markdown, SCSS, TypeScript, Vue, YAML } 
+    run = 'npm install',
+    ft = { 'markdown', 'yaml' },
+    cmd = { 'Prettier', 'PrettierAsync' },
+  },
+
+  {  "neovim/nvim-lspconfig",
+    config = function()
+      local lspconfig = require('lspconfig')
+      lspconfig.rubocop.setup{}                   -- Will parse / process Ruby files
+      lspconfig.lua_ls.setup{}                    -- Will parse lua files
+    end,
+  },
+
+  {
+    "nvim-treesitter/nvim-treesitter",
+      opts= {
+        highlight = {
+          enable = true,
+          additional_vim_regex_highlighting = true,
+        },
+        indent = { enable = true, },
+        query_linter = true,
+      },
+  },
+
+
   -- Toggle Terminal window
-  { 
-    "akinsho/toggleterm.nvim", 
-    version = "*", 
+  {
+    "akinsho/toggleterm.nvim",
+    version = "*",
     opts = {
       open_mapping = [[<c-\>]],
       size = 20,
@@ -58,30 +87,9 @@ require("lazy").setup({
       close_on_exit = true,
       shell = vim.o.shell,
     },
-  },  
-
-  -- Language parser syntax highlighting
-  { 
-    'prettier/vim-prettier', -- Will only parse { Angular, CSS, Flow, GraphQL, HTML, JSON, JSX, JavaScript, LESS, Markdown, SCSS, TypeScript, Vue, YAML } 
-    run = 'npm install',
-    ft = { 'markdown', 'yaml' },
-    cmd = { 'Prettier', 'PrettierAsync' },
   },
 
-  { 
-    "nvim-treesitter/nvim-treesitter", 
-      opts= {
-        highlight = {
-          enable = true,
-          additional_vim_regex_highlighting = true,
-        },
-        indent = { enable = true, },
-        query_linter = true,
-      },
-  },
 
---  { "nvim-treesitter.parsers" },
-    
   -- Fuzzy file finder and many other things
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.2',
@@ -92,8 +100,8 @@ require("lazy").setup({
   { "tpope/vim-fugitive", },                                    -- Fugitive ( Git)
 
   -- Status Bar
-  { 
-    "nvim-lualine/lualine.nvim", 
+  {
+    "nvim-lualine/lualine.nvim",
     config = function()
       require('lualine').setup()
     end,

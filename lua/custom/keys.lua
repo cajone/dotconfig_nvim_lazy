@@ -53,3 +53,8 @@ map("n", "<F4>", ":vertical resize +5<CR>", { noremap = true })
 
 -- Set LCD
 map('n', '<Leader>lcd', [[<Cmd>lua ChangeWorkingDirectoryToGitRoot()<CR>]], { noremap = true, silent = true })
+
+
+vim.api.nvim_exec([[
+  autocmd BufWritePost *.rb :silent !rubocop --auto-correct %
+]], false)
