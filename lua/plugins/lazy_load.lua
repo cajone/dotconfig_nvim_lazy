@@ -41,15 +41,12 @@ require("lazy").setup({
     end,
   },
 
-  -- Language parser syntax highlighting
-  {
+  -- LSP & Language parser syntax highlighting
+  { "neovim/nvim-lspconfig",
     'prettier/vim-prettier', -- Will only parse { Angular, CSS, Flow, GraphQL, HTML, JSON, JSX, JavaScript, LESS, Markdown, SCSS, TypeScript, Vue, YAML } 
     run = 'npm install',
     ft = { 'markdown', 'yaml' },
-    cmd = { 'Prettier', 'PrettierAsync' },
-  },
-
-  {  "neovim/nvim-lspconfig",
+    cmd = { 'PrettierAsync --no-jsx-bracket-same-line --no-loglevel=error' },
     config = function()
       local lspconfig = require('lspconfig')
       lspconfig.rubocop.setup{}                   -- Will parse / process Ruby files
@@ -106,18 +103,9 @@ require("lazy").setup({
 
 
   { "tpope/vim-fugitive", },                                    -- Fugitive ( Git)
+  { "nvim-lualine/lualine.nvim", },                             -- Status Bar
+  { "vimwiki/vimwiki", },                                       -- Vimwiki
 
-  -- Status Bar
-  {
-    "nvim-lualine/lualine.nvim",
-    config = function()
-      require('lualine').setup()
-    end,
-  },
-
-  {
-    "vimwiki/vimwiki",                                          -- Vimwiki
-  },
 }) -- End of Lazy Plugin install section 
 
 
@@ -136,4 +124,6 @@ require("lazy").setup({
   local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
 
 
-
+vim.api.nvim_exec([[
+  autocmd BufRead *.js,*.jsx,*.json,*.md,*.yaml,*.yml :PrettierAsync
+]], false)
