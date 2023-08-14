@@ -45,11 +45,12 @@ require("lazy").setup({
   { "neovim/nvim-lspconfig",
     'prettier/vim-prettier', -- Will only parse { Angular, CSS, Flow, GraphQL, HTML, JSON, JSX, JavaScript, LESS, Markdown, SCSS, TypeScript, Vue, YAML } 
     run = 'npm install',
-    ft = { 'markdown', 'yaml' },
+    ft = { 'markdown', 'yaml', 'typescript', 'groovy' },
     cmd = { 'PrettierAsync --no-jsx-bracket-same-line --no-loglevel=error' },
     config = function()
       local lspconfig = require('lspconfig')
       lspconfig.rubocop.setup{}                   -- Will parse / process Ruby files
+      lspconfig.bash.setup{}                    -- Will parse shell scripts
       lspconfig.lua_ls.setup{                     -- Will parse lua files
         settings = {
           Lua = {
@@ -62,6 +63,7 @@ require("lazy").setup({
     end,
   },
 
+  -- TreeSitter  Language Parsers
   {
     "nvim-treesitter/nvim-treesitter",
       opts= {
