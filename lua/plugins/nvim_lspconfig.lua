@@ -2,6 +2,10 @@ local M = {
 "neovim/nvim-lspconfig",
  config = function()
     local lspconfig = require('lspconfig')
+    local luaformatter = {
+      formatcommand = "lua-format -i" ,
+      formatStdin = true,
+    }
     lspconfig.rubocop.setup{}                   -- Will parse / process Ruby files
 --     lspconfig.bash.setup{                       -- Will parse shell scripts
 --       ft = { 'sh', 'bash' },
@@ -14,6 +18,9 @@ local M = {
             enable = true,
             globals = {'vim'},
           },
+        },
+        languages = {
+          lua = { luaformatter },
         },
       },
     }

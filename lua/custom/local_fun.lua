@@ -20,7 +20,7 @@ end
 
 -- Change the LCD to the current git buffer root
 function ChangeWorkingDirectoryToGitRoot()
-    local bufnr = vim.fn.bufnr('%')
+--    local bufnr = vim.fn.bufnr('%')
     local buffer_directory = vim.fn.expand('%:p:h')
 
     -- Run git rev-parse to find the root of the repository
