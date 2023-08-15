@@ -7,9 +7,11 @@ local M = {
 --       ft = { 'sh', 'bash' },
 --     }
     lspconfig.lua_ls.setup{                     -- Will parse lua files
+      cmd = {"lua-language-server"},
       settings = {
         Lua = {
           diagnostics = {
+            enable = true,
             globals = {'vim'},
           },
         },
