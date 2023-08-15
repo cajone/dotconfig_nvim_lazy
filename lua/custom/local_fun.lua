@@ -32,3 +32,8 @@ function ChangeWorkingDirectoryToGitRoot()
         print("Not in a Git repository")
     end
 end
+
+
+vim.api.nvim_exec([[
+  autocmd BufRead *.js,*.jsx,*.json,*.md,*.yaml,*.yml :PrettierAsync
+]], false)

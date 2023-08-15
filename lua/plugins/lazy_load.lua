@@ -6,105 +6,31 @@ require("lazy").setup({
   "folke/neodev.nvim",
 
   -- ColorScheme
-  {
-    "rafi/awesome-vim-colorschemes",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.cmd([[colorscheme jellybeans]])
-    end,
-	},
+  { require("plugins.colorscheme") },
 
   -- Git Signs
-  { "nvim-lua/plenary.nvim", },
-  {
-    "lewis6991/gitsigns.nvim",
-    config = function()
-      require("gitsigns").setup()
-    end,
-  },
+  { require("plugins.gitsigns") },
 
   -- NvimTree
-  { "kyazdani42/nvim-web-devicons", },   -- filesystem icons,
-  {
-    "kyazdani42/nvim-tree.lua",
-    config = function()
-      require("nvim-tree").setup()
-    end,
-  },
+  { require("plugins.nvimtree") },
 
   -- Mason install and manage LSP servers, DAP servers, linters, and formatters.
-  {
-    "williamboman/mason.nvim",
-    config = function()
-      require("mason").setup()
-    end,
-  },
+  { require("plugins.mason") },
+
+  -- Prettier format 
+--  { require("plugins.prettier") },
 
   -- LSP & Language parser syntax highlighting
-  { "neovim/nvim-lspconfig",
-    'prettier/vim-prettier', -- Will only parse { Angular, CSS, Flow, GraphQL, HTML, JSON, JSX, JavaScript, LESS, Markdown, SCSS, TypeScript, Vue, YAML } 
-    run = 'npm install',
-    ft = { 'markdown', 'yaml', 'typescript', 'groovy' },
-    cmd = { 'PrettierAsync --no-jsx-bracket-same-line --no-loglevel=error' },
-    config = function()
-      local lspconfig = require('lspconfig')
-      lspconfig.rubocop.setup{}                   -- Will parse / process Ruby files
-      lspconfig.bash.setup{                       -- Will parse shell scripts
-        ft = { 'sh', 'bash' },
-      }                    
-      lspconfig.lua_ls.setup{                     -- Will parse lua files
-        settings = {
-          Lua = {
-            diagnostics = {
-              globals = {'vim'},
-            },
-          },
-        },
-      }
-    end,
-  },
+  { require("plugins.nvim_lspconfig") },
 
   -- TreeSitter  Language Parsers
-  {
-    "nvim-treesitter/nvim-treesitter",
-      opts= {
-        highlight = {
-          enable = true,
-          additional_vim_regex_highlighting = true,
-        },
-        indent = { enable = true, },
-        query_linter = true,
-      },
-  },
-
+  { require("plugins.treesitter") },
 
   -- Toggle Terminal window
-  {
-    "akinsho/toggleterm.nvim",
-    version = "*",
-    opts = {
-      open_mapping = [[<c-\>]],
-      size = 20,
-      direction = "horizontal",
-      hide_numbers = true,
-      shading_factor = 2,
-      shade_filetypes = {},
-      start_in_insert = true,
-      insert_mapping = true,
-      persistent_size = true,
-      close_on_exit = true,
-      shell = vim.o.shell,
-    },
-  },
-
+  { require("plugins.terminal") },
 
   -- Fuzzy file finder and many other things
-  {
-    'nvim-telescope/telescope.nvim', tag = '0.1.2',
-      dependencies = { 'nvim-lua/plenary.nvim' },
-  },
-
+  { require("plugins.telescope") },
 
   { "tpope/vim-fugitive", },                                    -- Fugitive ( Git)
   { "nvim-lualine/lualine.nvim", },                             -- Status Bar
@@ -127,7 +53,3 @@ require("lazy").setup({
   local Terminal = require("toggleterm.terminal").Terminal
   local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
 
-
-vim.api.nvim_exec([[
-  autocmd BufRead *.js,*.jsx,*.json,*.md,*.yaml,*.yml :PrettierAsync
-]], false)
