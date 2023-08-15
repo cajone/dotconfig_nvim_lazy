@@ -34,6 +34,6 @@ function ChangeWorkingDirectoryToGitRoot()
 end
 
 
-vim.api.nvim_exec([[
-  autocmd BufRead *.js,*.jsx,*.json,*.md,*.yaml,*.yml :PrettierAsync
-]], false)
+-- vim.api.nvim_exec([[
+--   autocmd BufRead *.js,*.jsx,*.json,*.md,*.yaml,*.yml :Prettier
+-- ]], false)

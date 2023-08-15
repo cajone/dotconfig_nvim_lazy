@@ -50,6 +50,6 @@ require("lazy").setup({
   end
 
   vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
-  local Terminal = require("toggleterm.terminal").Terminal
-  local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
+--  local Terminal = require("toggleterm.terminal").Terminal
+--  local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
 
