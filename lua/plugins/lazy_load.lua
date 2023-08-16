@@ -35,6 +35,7 @@ require("lazy").setup({
   { "tpope/vim-fugitive", },                                    -- Fugitive ( Git)
   { "nvim-lualine/lualine.nvim", },                             -- Status Bar
   { "vimwiki/vimwiki", },                                       -- Vimwiki
+  { "cohama/agit.vim", },                                   -- Git history Tree
 
 }) -- End of Lazy Plugin install section 
 
