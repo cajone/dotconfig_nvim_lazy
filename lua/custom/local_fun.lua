@@ -34,6 +34,28 @@ function ChangeWorkingDirectoryToGitRoot()
 end
 
 
+local masonCommands = {
+  ":MasonInstall lua-language-server",
+  ":MasonInstall bash-language-server",
+  ":MasonInstall groovy-language-server",
+  ":MasonInstall tree-sitter-cli",
+  ":MasonInstall rubocop",
+  ":MasonInstall luacheck",
+  ":MasonInstall shellcheck",
+  ":MasonInstall prettier",
+  ":MasonInstall luaformatter",
+  ":MasonInstall beautysh",
+}
+
+
+-- Run this sparingly as it will re-install everyting i the masonCommands above
+function InstallMasonConfig()
+  for _, command in ipairs(masonCommands) do
+    vim.cmd(command)
+  end
+end
+
+
 -- vim.api.nvim_exec([[
 --   autocmd BufRead *.js,*.jsx,*.json,*.md,*.yaml,*.yml :Prettier
 -- ]], false)
