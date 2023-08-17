@@ -18,7 +18,7 @@ require("lazy").setup({
   { require("plugins.mason") },
 
   -- Prettier format 
---  { require("plugins.prettier") },
+  { require("plugins.prettier") },
 
   -- LSP & Language parser syntax highlighting
   { require("plugins.nvim_lspconfig") },
@@ -35,7 +35,8 @@ require("lazy").setup({
   { "tpope/vim-fugitive", },                                    -- Fugitive ( Git)
   { "nvim-lualine/lualine.nvim", },                             -- Status Bar
   { "vimwiki/vimwiki", },                                       -- Vimwiki
-  { "cohama/agit.vim", },                                   -- Git history Tree
+  { "cohama/agit.vim", },                                       -- Git history Tree
+--   { "preservim/vim-dotoo", },                                   -- TOC for md files
 
 }) -- End of Lazy Plugin install section 
 

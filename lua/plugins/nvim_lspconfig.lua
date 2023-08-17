@@ -24,5 +24,8 @@ local M = {
         },
       },
     }
+    lspconfig.groovyls.setup{
+      cmd = { vim.fn.expand('~/.local/share/nvim/mason/packages/groovy-language-server/groovy-language-server')},
+    }
   end,
 } return M

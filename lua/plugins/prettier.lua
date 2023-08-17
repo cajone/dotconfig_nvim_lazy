@@ -4,7 +4,7 @@ local M = {
     local lspconfig = require('lspconfig')
     lspconfig.prettier.setup{
       ft = { 'markdown', 'yaml', 'typescript', 'groovy' },
-      cmd = { 'prettier --no-jsx-bracket-same-line --no-loglevel=error' },
+      cmd = { 'prettierd --no-jsx-bracket-same-line --no-loglevel=error' },
     }
   end,
 } return M

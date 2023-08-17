@@ -40,7 +40,7 @@ map("n", "<Leader>df", ":NvimTreeToggle()<CR>", { noremap = true })
 
 -- Format buffer
 map("n", "<Leader>NF", ":lua vim.lsp.buf.format()<CR>", { noremap = true })
-map("n", "<Leader>NL", ":lua vim.lsp.buf.lint()<CR>", { noremap = true })
+map("n", "<Leader>NL", ":lua vim.lsp.buf.linting()<CR>", { noremap = true })
 
 -- <F> Keys
 -- Toggle Vimwiki URL's
