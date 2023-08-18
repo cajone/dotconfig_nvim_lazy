@@ -32,6 +32,11 @@ require("lazy").setup({
   -- Fuzzy file finder and many other things
   { require("plugins.telescope") },
 
+--   {                                                          -- Requires you setup API keys with jenkins server
+--     "ckipp01/nvim-jenkinsfile-linter",
+--     requires = { "nvim-lua/plenary.nvim" },
+--   },
+
   { "tpope/vim-fugitive", },                                    -- Fugitive ( Git)
   { "nvim-lualine/lualine.nvim", },                             -- Status Bar
   { "vimwiki/vimwiki", },                                       -- Vimwiki
