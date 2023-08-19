@@ -55,6 +55,23 @@ function InstallMasonConfig()
   end
 end
 
+function AddFrozenStringLiteral()
+    -- Move to the first line
+    normal! gg
+
+    -- Check if the line is empty or already contains the frozen string literal
+    let line = getline('.')
+    if empty(line) || line =~# '\v^\s*#\s*frozen_string_literal:\s*true\s*$'
+        return
+    endif
+
+    -- Insert the frozen string literal line
+    call append(0, '# frozen_string_literal: true')
+
+    -- Save the file
+    write
+endfunction
+
 
 -- vim.api.nvim_exec([[
 --   autocmd BufRead *.js,*.jsx,*.json,*.md,*.yaml,*.yml :Prettier
