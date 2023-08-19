@@ -57,21 +57,20 @@ end
 
 function AddFrozenStringLiteral()
     -- Move to the first line
-    normal! gg
+    vim.cmd('normal! gg')
 
     -- Check if the line is empty or already contains the frozen string literal
-    let line = getline('.')
-    if empty(line) || line =~# '\v^\s*#\s*frozen_string_literal:\s*true\s*$'
+    local line = vim.fn.getline('.')
+    if vim.fn.empty(line) == 1 or line:match('^%s*#%s*frozen_string_literal:%s*true%s*$') then
         return
-    endif
+    end
 
     -- Insert the frozen string literal line
-    call append(0, '# frozen_string_literal: true')
+    vim.fn.append(0, '# frozen_string_literal: true')
 
     -- Save the file
-    write
-endfunction
-
+    vim.cmd('write')
+end
 
 -- vim.api.nvim_exec([[
 --   autocmd BufRead *.js,*.jsx,*.json,*.md,*.yaml,*.yml :Prettier
