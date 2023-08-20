@@ -18,7 +18,7 @@ local M = {
           cmd = { "luacheck" },
           diagnostics = {
             enable = true,
-            globals = { 'vim' },
+            globals = {'vim'},
           },
         },
         languages = {
