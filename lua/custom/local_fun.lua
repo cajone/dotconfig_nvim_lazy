@@ -4,6 +4,7 @@
 function ToggleLineNumbers()
   vim.wo.number = not vim.wo.number
   vim.wo.relativenumber = not vim.wo.relativenumber
+  vim.wo.gitsigns_enabled = not vim.wo.gitsigns_enabled
 end
 
 -- Toggle the ability to see url links in VimWiki
