@@ -46,7 +46,7 @@ opt.splitbelow = true -- bool: Place new window below the current one
 -- [[ Maintain undo history between sessions :echo g:undodir ]]
 opt.undofile = true                    -- Allow undo history to be kept
 vim.g.undodir = "~/.config/nvim/undo/" -- Where to keep the undo history
-opt.viminfo:append({'n'})              -- Remember cursor position between sessions
+opt.viminfo:append({ 'n' })            -- Remember cursor position between sessions
 
 -- [[ Ctrl-n menu options ]]
 opt.wildmenu = true                -- Show list instead of just completing
@@ -55,4 +55,3 @@ opt.whichwrap = "b,s,h,l,<,>,[,]"  -- Backspace and cursor keys wrap too
 
 -- [[ Change the default shell out to /usr/bin/zsh ]]
 opt.shell = "/usr/bin/zsh" -- Change the :! shell to use zsh
-

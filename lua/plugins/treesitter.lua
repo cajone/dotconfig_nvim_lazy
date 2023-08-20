@@ -1,6 +1,6 @@
 local M = {
   "nvim-treesitter/nvim-treesitter",
-  opts= {
+  opts = {
     highlight = {
       enable = true,
       additional_vim_regex_highlighting = true,
@@ -8,4 +8,5 @@ local M = {
     indent = { enable = true, },
     query_linter = true,
   },
-} return M
+}
+return M

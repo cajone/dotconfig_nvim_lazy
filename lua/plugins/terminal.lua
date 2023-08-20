@@ -14,4 +14,5 @@ local M = {
     close_on_exit = true,
     shell = vim.o.shell,
   },
-} return M
+}
+return M

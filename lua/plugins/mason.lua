@@ -5,4 +5,5 @@ local M = {
       require("mason").setup()
     end,
   },
-} return M
+}
+return M

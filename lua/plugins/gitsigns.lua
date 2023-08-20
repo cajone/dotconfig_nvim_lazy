@@ -6,4 +6,5 @@ local M = {
       require("gitsigns").setup()
     end,
   },
-} return M
+}
+return M

@@ -17,22 +17,20 @@ function ToggleVimwikiConceallevel()
   end
 end
 
-
 -- Change the LCD to the current git buffer root
 function ChangeWorkingDirectoryToGitRoot()
---    local bufnr = vim.fn.bufnr('%')
-    local buffer_directory = vim.fn.expand('%:p:h')
+  --    local bufnr = vim.fn.bufnr('%')
+  local buffer_directory = vim.fn.expand('%:p:h')
 
-    -- Run git rev-parse to find the root of the repository
-    local git_root = vim.fn.systemlist('git -C ' .. buffer_directory .. ' rev-parse --show-toplevel')[1]
+  -- Run git rev-parse to find the root of the repository
+  local git_root = vim.fn.systemlist('git -C ' .. buffer_directory .. ' rev-parse --show-toplevel')[1]
 
-    if git_root then
-        vim.fn.execute("lcd " .. git_root)
-    else
-        print("Not in a Git repository")
-    end
+  if git_root then
+    vim.fn.execute("lcd " .. git_root)
+  else
+    print("Not in a Git repository")
+  end
 end
-
 
 local masonCommands = {
   ":MasonInstall lua-language-server",
@@ -56,20 +54,20 @@ function InstallMasonConfig()
 end
 
 function AddFrozenStringLiteral()
-    -- Move to the first line
-    vim.cmd('normal! gg')
+  -- Move to the first line
+  vim.cmd('normal! gg')
 
-    -- Check if the line is empty or already contains the frozen string literal
-    local line = vim.fn.getline('.')
-    if vim.fn.empty(line) == 1 or line:match('^%s*#%s*frozen_string_literal:%s*true%s*$') then
-        return
-    end
+  -- Check if the line is empty or already contains the frozen string literal
+  local line = vim.fn.getline('.')
+  if vim.fn.empty(line) == 1 or line:match('^%s*#%s*frozen_string_literal:%s*true%s*$') then
+    return
+  end
 
-    -- Insert the frozen string literal line
-    vim.fn.append(0, '# frozen_string_literal: true')
+  -- Insert the frozen string literal line
+  vim.fn.append(0, '# frozen_string_literal: true')
 
-    -- Save the file
-    vim.cmd('write')
+  -- Save the file
+  vim.cmd('write')
 end
 
 -- vim.api.nvim_exec([[
