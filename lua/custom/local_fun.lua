@@ -1,3 +1,4 @@
+
 -- [[ local_fun.lua ]]
 
 -- Define the function to toggle line numbers and relative numbers

@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 -- [[ keys.lua ]]
 
 -- For info the <Leader> key is mapped to '\'
