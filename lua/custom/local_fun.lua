@@ -40,7 +40,7 @@ local masonCommands = {
   ":MasonInstall rubocop",
   ":MasonInstall luacheck",
   ":MasonInstall shellcheck",
-  ":MasonInstall prettier",
+--  ":MasonInstall prettier",
   ":MasonInstall luaformatter",
   ":MasonInstall beautysh",
 }
@@ -70,6 +70,22 @@ function AddFrozenStringLiteral()
   vim.cmd('write')
 end
 
--- vim.api.nvim_exec([[
---   autocmd BufRead *.js,*.jsx,*.json,*.md,*.yaml,*.yml :Prettier
--- ]], false)
+-- Define a function to open Vimwiki and set LCD
+function OpenVimwiki()
+    -- Open Vimwiki
+    vim.cmd("VimwikiIndex")
+
+    -- Set the LCD to ~/vimwiki
+    vim.cmd("lcd ~/vimwiki")
+end
+
+-- Map a key combination to open Vimwiki and set LCD
+vim.api.nvim_set_keymap('n', '<Leader>ww', ':lua OpenVimwiki()<CR>', { noremap = true, silent = true })
+
+-- function SetVimwikiLCD()
+--     vim.cmd("lcd ~/vimwiki")
+-- end
+-- 
+-- -- Map a key combination to set the LCD to ~/vimwiki
+-- vim.api.nvim_set_keymap('n', '<Leader>wl', ':lua SetVimwikiLCD()<CR>', { noremap = true, silent = true })
+

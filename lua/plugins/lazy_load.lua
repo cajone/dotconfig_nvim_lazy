@@ -17,7 +17,7 @@ require("lazy").setup({
   { require("plugins.mason") },
 
   -- Prettier format
-  { require("plugins.prettier") },
+  -- { require("plugins.prettier") },
 
   -- LSP & Language parser syntax highlighting
   { require("plugins.nvim_lspconfig") },
