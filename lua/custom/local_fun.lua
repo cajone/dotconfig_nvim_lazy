@@ -82,10 +82,4 @@ end
 -- Map a key combination to open Vimwiki and set LCD
 vim.api.nvim_set_keymap('n', '<Leader>ww', ':lua OpenVimwiki()<CR>', { noremap = true, silent = true })
 
--- function SetVimwikiLCD()
---     vim.cmd("lcd ~/vimwiki")
--- end
--- 
--- -- Map a key combination to set the LCD to ~/vimwiki
--- vim.api.nvim_set_keymap('n', '<Leader>wl', ':lua SetVimwikiLCD()<CR>', { noremap = true, silent = true })
 
