@@ -8,3 +8,4 @@ vim.api.nvim_exec([[
   autocmd BufWritePost *.rb :silent !rubocop --auto-correct %
 ]], false)
 
+
