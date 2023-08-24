@@ -58,6 +58,4 @@ map('n', '<Leader>lcd', [[<Cmd>lua ChangeWorkingDirectoryToGitRoot()<CR>]], { no
 -- Add Frozen string literal to ruby files
 map('n', '<Leader>asl', ':lua AddFrozenStringLiteral()<CR>', { noremap = true, silent = true })
 
-vim.api.nvim_exec([[
-  autocmd BufWritePost *.rb :silent !rubocop --auto-correct %
-]], false)
+
