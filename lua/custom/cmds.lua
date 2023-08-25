@@ -1,6 +1,6 @@
 -- Set syntax highlighting for Jenkins files with no extension
 vim.api.nvim_exec([[
-  autocmd BufNewFile,BufRead JenkinsFile,*/Jenkinsfile set filetype=groovy
+  autocmd BufNewFile,BufRead JenkinsFile,*/Jenkinsfile,Jenkinfile* set filetype=groovy
 ]], false)
 
 -- Auto run rubocop vore ruby files
