@@ -46,6 +46,9 @@ map("n", "<Leader>NL", ":lua vim.lsp.buf.linting()<CR>", { noremap = true })
 -- Toggle Vimwiki URL's
 map("n", "<F8>", ":lua ToggleVimwikiConceallevel()<CR>", { noremap = true })
 
+-- Map a key combination to open Vimwiki and set LCD
+vim.api.nvim_set_keymap('n', '<Leader>ww', ':lua OpenVimwiki()<CR>', { noremap = true, silent = true })
+
 -- resize current focused vertical panel by 5 chars
 map("n", "<F3>", ":vertical resize -5<CR>", { noremap = true })
 map("n", "<F4>", ":vertical resize +5<CR>", { noremap = true })

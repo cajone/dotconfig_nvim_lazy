@@ -39,6 +39,7 @@ require("lazy").setup({
   { "tpope/vim-fugitive", },        -- Fugitive ( Git)
   { "nvim-lualine/lualine.nvim", }, -- Status Bar
   { "vimwiki/vimwiki", },           -- Vimwiki
+  { "instant-markdown/vim-instant-markdown", },  -- Instant Markdown
   { "cohama/agit.vim", },           -- Git history Tree
   --   { "preservim/vim-dotoo", },                                   -- TOC for md files
 

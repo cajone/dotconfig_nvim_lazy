@@ -9,10 +9,11 @@ vim.g.vimwiki_list = {
     path = "~/vimwiki/", -- Change this to the path where you want to keep your wiki files
     syntax = "markdown",
     ext = ".md",
+    link_format = "fg=blue"
   },
 }
 
-vim.cmd([[autocmd BufEnter *.wiki lcd ~/vimwiki]])
+
 
 
 -- Start loading the contents of lua/inut.lua
