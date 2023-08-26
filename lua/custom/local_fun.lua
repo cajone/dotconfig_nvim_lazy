@@ -101,7 +101,7 @@ function OpenPluginHelp()
     local quoted_content = line:match('"([^"]+)"')
 
     if quoted_content then
-        local plugin_name_with_extension = quoted_content:gsub('%.lua$', '')
+        local plugin_name_with_extension = quoted_content:gsub('%.lua$', ''):gsub('%.nvim$', '')
         local plugin_name = plugin_name_with_extension:match('([^/]+)$')
         vim.cmd('help ' .. plugin_name)
     else
