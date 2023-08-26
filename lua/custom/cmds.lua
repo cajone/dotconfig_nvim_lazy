@@ -10,3 +10,6 @@ vim.api.nvim_exec([[
 
 -- Change the LCD path for Vimwiki
 vim.cmd([[autocmd BufEnter *.wiki lcd ~/vimwiki]])
+
+-- Open Terminal
+vim.cmd('autocmd! TermOpen term://* lua Set_terminal_keymaps()')

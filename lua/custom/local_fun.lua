@@ -33,9 +33,10 @@ function ChangeWorkingDirectoryToGitRoot()
   end
 end
 
+-- List of packages that can be installed if :InstallMasonConfig() is called
 local masonCommands = {
   ":MasonInstall lua-language-server",
-  ":MasonInstall bash-language-server",
+--  ":MasonInstall bash-language-server",
   ":MasonInstall groovy-language-server",
   ":MasonInstall tree-sitter-cli",
   ":MasonInstall rubocop",
@@ -54,6 +55,9 @@ function InstallMasonConfig()
   end
 end
 
+-- When using Rubocop it will complain about frozen string literals
+-- This function is a keybinding to put the string literal in place
+-- Keybinding '\asl' (Add String Literal )
 function AddFrozenStringLiteral()
   -- Move to the first line
   vim.cmd('normal! gg')
@@ -71,7 +75,7 @@ function AddFrozenStringLiteral()
   vim.cmd('write')
 end
 
--- Define a function to open Vimwiki and set LCD
+-- Open Vimwiki and set LCD
 function OpenVimwiki()
     -- Open Vimwiki
     vim.cmd("VimwikiIndex")
@@ -79,4 +83,16 @@ function OpenVimwiki()
     -- Set the LCD to ~/vimwiki
     vim.cmd("lcd ~/vimwiki")
 end
+
+-- Termainal Key Mapings
+function Set_terminal_keymaps()
+  local opts = { noremap = true }
+  vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', 'jk', [[<C-\><C-n>]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '<C-h>', [[<C-\><C-n><C-W>h]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '<C-j>', [[<C-\><C-n><C-W>j]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '<C-k>', [[<C-\><C-n><C-W>k]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '<C-l>', [[<C-\><C-n><C-W>l]], opts)
+end
+
 
