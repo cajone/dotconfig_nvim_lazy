@@ -62,3 +62,5 @@ map('n', '<Leader>lcd', [[<Cmd>lua ChangeWorkingDirectoryToGitRoot()<CR>]], { no
 map('n', '<Leader>asl', ':lua AddFrozenStringLiteral()<CR>', { noremap = true, silent = true })
 
 
+-- Add a mapping to open plugin help
+vim.api.nvim_set_keymap('n', '<Leader>ph', [[:lua OpenPluginHelp()<CR>]], { silent = true })

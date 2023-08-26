@@ -95,4 +95,16 @@ function Set_terminal_keymaps()
   vim.api.nvim_buf_set_keymap(0, 't', '<C-l>', [[<C-\><C-n><C-W>l]], opts)
 end
 
+-- Open plugin help if the cursor is on the line that the plugin is refeerenced
+function OpenPluginHelp()
+    local line = vim.fn.getline('.')
+    local quoted_content = line:match('"([^"]+)"')
 
+    if quoted_content then
+        local plugin_name_with_extension = quoted_content:gsub('%.lua$', '')
+        local plugin_name = plugin_name_with_extension:match('([^/]+)$')
+        vim.cmd('help ' .. plugin_name)
+    else
+        print('No double-quoted substring found in the line under the cursor: ' .. line)
+    end
+end
