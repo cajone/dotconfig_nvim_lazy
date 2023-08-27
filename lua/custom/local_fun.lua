@@ -19,8 +19,6 @@ function ToggleVimwikiConceallevel()
 end
 
 -- Change the LCD to the current git buffer root
-
-
 function ChangeWorkingDirectoryToGitRoot()
   local git_root_path = nil
   local buffer_directory = vim.fn.expand('%:p:h')
@@ -45,28 +43,6 @@ function ChangeWorkingDirectoryToGitRoot()
   end
 end
 
-
-
-
--- function ChangeWorkingDirectoryToGitRoot()
---   --    local bufnr = vim.fn.bufnr('%')
--- 
---   if vim.bo.filetype == 'fugitive' then
---       return
---   end
--- 
---   local buffer_directory = vim.fn.expand('%:p:h')
--- 
---   -- Run git rev-parse to find the root of the repository
---   local git_root = vim.fn.systemlist('git -C ' .. buffer_directory .. ' rev-parse --show-toplevel')[1]
--- 
---   if git_root then
---     vim.fn.execute("lcd " .. git_root)
---     require'nvim-tree'.change_dir(git_root) -- Change nvim-tree working
---   else
---     print("Not in a Git repository")
---   end
--- end
 
 -- List of packages that can be installed if :InstallMasonConfig() is called
 local masonCommands = {
