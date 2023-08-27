@@ -19,19 +19,54 @@ function ToggleVimwikiConceallevel()
 end
 
 -- Change the LCD to the current git buffer root
+
+local git_root_path = nil
+
 function ChangeWorkingDirectoryToGitRoot()
-  --    local bufnr = vim.fn.bufnr('%')
-  local buffer_directory = vim.fn.expand('%:p:h')
+    local buffer_directory = vim.fn.expand('%:p:h')
 
-  -- Run git rev-parse to find the root of the repository
-  local git_root = vim.fn.systemlist('git -C ' .. buffer_directory .. ' rev-parse --show-toplevel')[1]
+    -- Check if the buffer's file type is 'fugitive'
+    if vim.bo.filetype == 'fugitive' then
+        local is_git_repo = vim.fn.system('git -C ' .. buffer_directory .. ' rev-parse --is-inside-work-tree') == 'true\n'
+        if is_git_repo then
+            git_root_path = vim.fn.system('git -C ' .. buffer_directory .. ' rev-parse --show-toplevel')
+            require'nvim-tree'.change_dir(git_root_path)
+            return
+        end
+    end
 
-  if git_root then
-    vim.fn.execute("lcd " .. git_root)
-  else
-    print("Not in a Git repository")
-  end
+    -- Run git rev-parse to find the root of the repository
+    git_root_path = vim.fn.systemlist('git -C ' .. buffer_directory .. ' rev-parse --show-toplevel')[1]
+
+    if git_root_path then
+        require'nvim-tree'.change_dir(git_root_path)
+    else
+        print("Not in a Git repository")
+    end
 end
+
+
+
+
+-- function ChangeWorkingDirectoryToGitRoot()
+--   --    local bufnr = vim.fn.bufnr('%')
+-- 
+--   if vim.bo.filetype == 'fugitive' then
+--       return
+--   end
+-- 
+--   local buffer_directory = vim.fn.expand('%:p:h')
+-- 
+--   -- Run git rev-parse to find the root of the repository
+--   local git_root = vim.fn.systemlist('git -C ' .. buffer_directory .. ' rev-parse --show-toplevel')[1]
+-- 
+--   if git_root then
+--     vim.fn.execute("lcd " .. git_root)
+--     require'nvim-tree'.change_dir(git_root) -- Change nvim-tree working
+--   else
+--     print("Not in a Git repository")
+--   end
+-- end
 
 -- List of packages that can be installed if :InstallMasonConfig() is called
 local masonCommands = {

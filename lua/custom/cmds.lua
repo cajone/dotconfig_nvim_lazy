@@ -13,3 +13,21 @@ vim.cmd([[autocmd BufEnter *.wiki lcd ~/vimwiki]])
 
 -- Open Terminal
 vim.cmd('autocmd! TermOpen term://* lua Set_terminal_keymaps()')
+
+-- Set autocmds to trigger the function when opening a new file or changing focus
+
+vim.api.nvim_exec([[
+augroup AutoChangeDir
+  autocmd!
+  autocmd BufEnter * lua ChangeWorkingDirectoryToGitRoot()
+  autocmd FocusGained * lua ChangeWorkingDirectoryToGitRoot()
+augroup END
+]], false)
+
+-- vim.api.nvim_exec([[
+-- augroup AutoChangeDir
+--   autocmd!
+--   autocmd BufEnter * lua ChangeWorkingDirectoryToGitRoot()
+--   autocmd FocusGained * lua ChangeWorkingDirectoryToGitRoot()
+-- augroup END
+-- ]], false)
