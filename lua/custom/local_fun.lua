@@ -20,29 +20,29 @@ end
 
 -- Change the LCD to the current git buffer root
 
-local git_root_path = nil
 
 function ChangeWorkingDirectoryToGitRoot()
-    local buffer_directory = vim.fn.expand('%:p:h')
+  local git_root_path = nil
+  local buffer_directory = vim.fn.expand('%:p:h')
 
-    -- Check if the buffer's file type is 'fugitive'
-    if vim.bo.filetype == 'fugitive' then
-        local is_git_repo = vim.fn.system('git -C ' .. buffer_directory .. ' rev-parse --is-inside-work-tree') == 'true\n'
-        if is_git_repo then
-            git_root_path = vim.fn.system('git -C ' .. buffer_directory .. ' rev-parse --show-toplevel')
-            require'nvim-tree'.change_dir(git_root_path)
-            return
-        end
-    end
+  -- Check if the buffer's file type is 'fugitive'
+  if vim.bo.filetype == 'fugitive' then
+      local is_git_repo = vim.fn.system('git -C ' .. buffer_directory .. ' rev-parse --is-inside-work-tree') == 'true\n'
+      if is_git_repo then
+          git_root_path = vim.fn.system('git -C ' .. buffer_directory .. ' rev-parse --show-toplevel')
+          require'nvim-tree'.change_dir(git_root_path)
+          return
+      end
+  end
 
-    -- Run git rev-parse to find the root of the repository
-    git_root_path = vim.fn.systemlist('git -C ' .. buffer_directory .. ' rev-parse --show-toplevel')[1]
+  -- Run git rev-parse to find the root of the repository
+  git_root_path = vim.fn.systemlist('git -C ' .. buffer_directory .. ' rev-parse --show-toplevel')[1]
 
-    if git_root_path then
-        require'nvim-tree'.change_dir(git_root_path)
-    else
-        print("Not in a Git repository")
-    end
+  if git_root_path then
+      require'nvim-tree'.change_dir(git_root_path)
+  else
+      print("Not in a Git repository")
+  end
 end
 
 
