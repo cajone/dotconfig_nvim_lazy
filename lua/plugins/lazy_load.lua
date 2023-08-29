@@ -43,7 +43,7 @@ require("lazy").setup({
   { "nvim-lualine/lualine.nvim", }, -- Status Bar
   { "vimwiki/vimwiki", },           -- Vimwiki
   { "instant-markdown/vim-instant-markdown", },  -- Instant Markdown
-  { "ajorgensen/vim-markdown-toc", },     -- Markdown TOC
+  { "mzlogin/vim-markdown-toc", },      -- Markdown TOC
   { "cohama/agit.vim", },           -- Git history Tree
   --   { "preservim/vim-dotoo", },                                   -- TOC for md files
 
