@@ -1,7 +1,7 @@
 -- Using this Plugin manager start loading plugins using setup()
 require("lazy").setup({
   "folke/which-key.nvim",
-  { "folke/neoconf.nvim",             cmd = "Neoconf" },
+  { "folke/neoconf.nvim", cmd = "Neoconf" },
   "folke/neodev.nvim",
 
   -- ColorScheme
@@ -39,13 +39,12 @@ require("lazy").setup({
   --     requires = { "nvim-lua/plenary.nvim" },
   --   },
 
-  { "tpope/vim-fugitive", },        -- Fugitive ( Git)
-  { "nvim-lualine/lualine.nvim", }, -- Status Bar
-  { "vimwiki/vimwiki", },           -- Vimwiki
-  { "instant-markdown/vim-instant-markdown", },  -- Instant Markdown
-  { "mzlogin/vim-markdown-toc", },      -- Markdown TOC
-  { "cohama/agit.vim", },           -- Git history Tree
-  --   { "preservim/vim-dotoo", },                                   -- TOC for md files
+  { "tpope/vim-fugitive", },                          -- Fugitive ( Git)
+  { "nvim-lualine/lualine.nvim", },                   -- Status Bar
+  { "vimwiki/vimwiki", },                             -- Vimwiki
+  { "instant-markdown/vim-instant-markdown", },       -- Instant Markdown
+  { "mzlogin/vim-markdown-toc", },                    -- Markdown TOC
+  { "cohama/agit.vim", },                             -- Git history Tree
 
 }) -- End of Lazy Plugin install section
 
