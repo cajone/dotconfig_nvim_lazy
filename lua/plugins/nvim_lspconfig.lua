@@ -7,7 +7,7 @@ local M = {
       formatcommand = "lua-format -i",
       formatStdin = true,
     }
-    lspconfig.rubocop.setup {} -- Will parse / process Ruby files
+    -- lspconfig.rubocop.setup {} -- Will parse / process Ruby files
     --     lspconfig.bash.setup{                       -- Will parse shell scripts
     --       ft = { 'sh', 'bash' },
     --     }
@@ -26,9 +26,9 @@ local M = {
         },
       },
     }
-    lspconfig.groovyls.setup {
-      cmd = { vim.fn.expand('~/.local/share/nvim/mason/packages/groovy-language-server/groovy-language-server') },
-    }
+    -- lspconfig.groovyls.setup {
+    --   cmd = { vim.fn.expand('~/.local/share/nvim/mason/packages/groovy-language-server/groovy-language-server') },
+    -- }
   end,
 }
 return M
