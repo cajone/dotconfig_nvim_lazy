@@ -1,4 +1,3 @@
-
 -- [[ local_fun.lua ]]
 
 -- Define the function to toggle line numbers and relative numbers
@@ -24,36 +23,35 @@ function ChangeWorkingDirectoryToGitRoot()
   local git_root_path = nil
 
   -- Check if the buffer's file type is 'fugitive'
---   if vim.bo.filetype == 'fugitive' then
---       local is_git_repo = vim.fn.system('git -C ' .. buffer_directory .. ' rev-parse --is-inside-work-tree') == 'true\n'
---       if is_git_repo then
---           git_root_path = vim.fn.system('git -C ' .. buffer_directory .. ' rev-parse --show-toplevel')
---           require'nvim-tree'.change_dir(git_root_path)
---           return
---       end
---   end
+  --   if vim.bo.filetype == 'fugitive' then
+  --       local is_git_repo = vim.fn.system('git -C ' .. buffer_directory .. ' rev-parse --is-inside-work-tree') == 'true\n'
+  --       if is_git_repo then
+  --           git_root_path = vim.fn.system('git -C ' .. buffer_directory .. ' rev-parse --show-toplevel')
+  --           require'nvim-tree'.change_dir(git_root_path)
+  --           return
+  --       end
+  --   end
 
   -- Run git rev-parse to find the root of the repository
   git_root_path = vim.fn.systemlist('git -C ' .. buffer_directory .. ' rev-parse --show-toplevel')[1]
 
   if git_root_path then
-      require'nvim-tree'.change_dir(git_root_path)
+    require 'nvim-tree'.change_dir(git_root_path)
   else
-      print("Not in a Git repository")
+    print("Not in a Git repository")
   end
 end
-
 
 -- List of packages that can be installed if :InstallMasonConfig() is called
 local masonCommands = {
   ":MasonInstall lua-language-server",
---  ":MasonInstall bash-language-server",
+  --  ":MasonInstall bash-language-server",
   ":MasonInstall groovy-language-server",
   ":MasonInstall tree-sitter-cli",
   ":MasonInstall rubocop",
   ":MasonInstall luacheck",
   ":MasonInstall shellcheck",
---  ":MasonInstall prettier",
+  --  ":MasonInstall prettier",
   ":MasonInstall luaformatter",
   ":MasonInstall beautysh",
 }
@@ -88,11 +86,11 @@ end
 
 -- Open Vimwiki and set LCD
 function OpenVimwiki()
-    -- Open Vimwiki
-    vim.cmd("VimwikiIndex")
+  -- Open Vimwiki
+  vim.cmd("VimwikiIndex")
 
-    -- Set the LCD to ~/vimwiki
-    vim.cmd("lcd ~/vimwiki")
+  -- Set the LCD to ~/vimwiki
+  vim.cmd("lcd ~/vimwiki")
 end
 
 -- Termainal Key Mapings
@@ -108,14 +106,14 @@ end
 
 -- Open plugin help if the cursor is on the line that the plugin is refeerenced
 function OpenPluginHelp()
-    local line = vim.fn.getline('.')
-    local quoted_content = line:match('"([^"]+)"')
+  local line = vim.fn.getline('.')
+  local quoted_content = line:match('"([^"]+)"')
 
-    if quoted_content then
-        local plugin_name_with_extension = quoted_content:gsub('%.lua$', ''):gsub('%.nvim$', '')
-        local plugin_name = plugin_name_with_extension:match('([^/]+)$')
-        vim.cmd('help ' .. plugin_name)
-    else
-        print('No double-quoted substring found in the line under the cursor: ' .. line)
-    end
+  if quoted_content then
+    local plugin_name_with_extension = quoted_content:gsub('%.lua$', ''):gsub('%.nvim$', '')
+    local plugin_name = plugin_name_with_extension:match('([^/]+)$')
+    vim.cmd('help ' .. plugin_name)
+  else
+    print('No double-quoted substring found in the line under the cursor: ' .. line)
+  end
 end
