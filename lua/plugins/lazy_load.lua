@@ -14,7 +14,7 @@ require("lazy").setup({
   { require("plugins.nvimtree") },
 
   -- Mason install and manage LSP servers, DAP servers, linters, and formatters.
-  { require("plugins.mason") },
+  -- { require("plugins.mason") },
 
   -- Prettier format
   -- { require("plugins.prettier") },
