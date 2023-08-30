@@ -39,6 +39,7 @@ require("lazy").setup({
   --     requires = { "nvim-lua/plenary.nvim" },
   --   },
 
+  { "dense-analysis/ale", },                          -- Linter plugin
   { "tpope/vim-fugitive", },                          -- Fugitive ( Git)
   { "nvim-lualine/lualine.nvim", },                   -- Status Bar
   { "vimwiki/vimwiki", },                             -- Vimwiki
@@ -48,7 +49,9 @@ require("lazy").setup({
 
 }) -- End of Lazy Plugin install section
 
-
+vim.g.ale_linters = {
+  ruby = { 'cookstyle -a' },
+}
 -- vim.cmd('autocmd! TermOpen term://* lua Set_terminal_keymaps()')
 --  local Terminal = require("toggleterm.terminal").Terminal
 --  local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })

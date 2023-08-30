@@ -49,6 +49,9 @@
     map("n", "<F4>", ":vertical resize +5<CR>", { noremap = true })
 
 
+-- Mapping for cookstyle
+  map("n", "<leader>cs", ":!cookstyle -a %<CR>", { noremap = true })
+
 -- Map a key combination to open Vimwiki and set LCD
   vim.api.nvim_set_keymap('n', '<Leader>ww', ':lua OpenVimwiki()<CR>', { noremap = true, silent = true })
 
