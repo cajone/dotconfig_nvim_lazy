@@ -70,3 +70,4 @@
   map('n', '<Leader>tc', ':GenTocGFM<CR>', { noremap = true, silent = true })
   map('n', '<Leader>tcu', ':UpdateToc<CR>', { noremap = true, silent = true })
   map('n', '<Leader>tcr', ':RemoveToc<CR>', { noremap = true, silent = true })
+
