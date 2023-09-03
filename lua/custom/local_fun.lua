@@ -104,7 +104,7 @@ function Set_terminal_keymaps()
   vim.api.nvim_buf_set_keymap(0, 't', '<C-l>', [[<C-\><C-n><C-W>l]], opts)
 end
 
--- Open plugin help if the cursor is on the line that the plugin is refeerenced
+-- Open plugin help if the cursor is on the line that the plugin is referenced
 function OpenPluginHelp()
   local line = vim.fn.getline('.')
   local quoted_content = line:match('"([^"]+)"')
