@@ -13,18 +13,19 @@ require("lazy").setup({
     { import = "plugins.terminal" },        -- Toggle Terminal window
     { import = "plugins.telescope" },       -- Fuzzy file finder and many other things
 
-    --   {                                  -- Requires you setup API keys with jenkins server
-    --     "ckipp01/nvim-jenkinsfile-linter",
-    --     requires = { "nvim-lua/plenary.nvim" },
-    --   },
-
-  --  { "dense-analysis/ale", },                          -- Linter plugin
     { "tpope/vim-fugitive", },                          -- Fugitive ( Git)
     { "nvim-lualine/lualine.nvim", },                   -- Status Bar
     { "vimwiki/vimwiki", },                             -- Vimwiki
     { "instant-markdown/vim-instant-markdown", },       -- Instant Markdown
     { "mzlogin/vim-markdown-toc", },                    -- Markdown TOC
     { "cohama/agit.vim", },                             -- Git history Tree
+
+    --   {  -- Requires you setup API keys with jenkins server
+    --     "ckipp01/nvim-jenkinsfile-linter",
+    --     requires = { "nvim-lua/plenary.nvim" },
+    --   },
+
+    --  { "dense-analysis/ale", },                          -- Linter plugin
 
     -- Mason install and manage LSP servers, DAP servers, linters, and formatters.
     -- { import = "plugins.mason" },

@@ -24,13 +24,20 @@ require("lualine").setup({
         symbols = { error = "E", warn = "W", info = "I", hint = "H" },
       },
     },
+--     lualine_w = {
+--       {
+--         lazy_status.updates,
+--         cond = lazy_status.has_updates,
+--         color = { fg = "#ff9e64" },
+--       },
+--     },
     lualine_x = {
       "filetype",
     },
     lualine_y = {
       "progress",
     },
-    lualine_z = {     -- This is the new section for the LCD
+    lualine_z = {     -- Show LCD
       function()
         return vim.fn.getcwd()
       end,
