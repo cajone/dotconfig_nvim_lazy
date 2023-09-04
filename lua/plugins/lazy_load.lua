@@ -1,51 +1,40 @@
 -- Using this Plugin manager start loading plugins using setup()
 require("lazy").setup({
-  "folke/which-key.nvim",
-  { "folke/neoconf.nvim", cmd = "Neoconf" },
-  "folke/neodev.nvim",
+  {
+    "folke/which-key.nvim",
+    { "folke/neoconf.nvim", cmd = "Neoconf" },
+    "folke/neodev.nvim",
 
-  -- ColorScheme
-  { require("plugins.colorscheme") },
+    { import = "plugins.colorscheme" },     -- ColorScheme
+    { import = "plugins.gitsigns" },        -- Git Signs
+    { import = "plugins.nvimtree" },        -- NvimTree
+    { import = "plugins.nvim_lspconfig" },  -- LSP & Language parser syntax highlighting
+    { import = "plugins.treesitter" },      -- TreeSitter  Language Parsers
+    { import = "plugins.terminal" },        -- Toggle Terminal window
+    { import = "plugins.telescope" },       -- Fuzzy file finder and many other things
 
-  -- Git Signs
-  { require("plugins.gitsigns") },
+    --   {                                  -- Requires you setup API keys with jenkins server
+    --     "ckipp01/nvim-jenkinsfile-linter",
+    --     requires = { "nvim-lua/plenary.nvim" },
+    --   },
 
-  -- NvimTree
-  { require("plugins.nvimtree") },
+  --  { "dense-analysis/ale", },                          -- Linter plugin
+    { "tpope/vim-fugitive", },                          -- Fugitive ( Git)
+    { "nvim-lualine/lualine.nvim", },                   -- Status Bar
+    { "vimwiki/vimwiki", },                             -- Vimwiki
+    { "instant-markdown/vim-instant-markdown", },       -- Instant Markdown
+    { "mzlogin/vim-markdown-toc", },                    -- Markdown TOC
+    { "cohama/agit.vim", },                             -- Git history Tree
 
-  -- Mason install and manage LSP servers, DAP servers, linters, and formatters.
-  -- { require("plugins.mason") },
+    -- Mason install and manage LSP servers, DAP servers, linters, and formatters.
+    -- { import = "plugins.mason" },
 
-  -- Prettier format
-  -- { require("plugins.prettier") },
+    -- Prettier format
+    -- { import = "plugins.prettier" },
 
-  -- LSP & Language parser syntax highlighting
-  { require("plugins.nvim_lspconfig") },
-
-  -- TreeSitter  Language Parsers
-  { require("plugins.treesitter") },
-
-  -- Linter
---  { require("dense-analysis/ale") },
-
-  -- Toggle Terminal window
-  { require("plugins.terminal") },
-
-  -- Fuzzy file finder and many other things
-  { require("plugins.telescope") },
-
-  --   {                                                          -- Requires you setup API keys with jenkins server
-  --     "ckipp01/nvim-jenkinsfile-linter",
-  --     requires = { "nvim-lua/plenary.nvim" },
-  --   },
-
---  { "dense-analysis/ale", },                          -- Linter plugin
-  { "tpope/vim-fugitive", },                          -- Fugitive ( Git)
-  { "nvim-lualine/lualine.nvim", },                   -- Status Bar
-  { "vimwiki/vimwiki", },                             -- Vimwiki
-  { "instant-markdown/vim-instant-markdown", },       -- Instant Markdown
-  { "mzlogin/vim-markdown-toc", },                    -- Markdown TOC
-  { "cohama/agit.vim", },                             -- Git history Tree
+    -- Linter
+    --  { import = "dense-analysis/ale" },
+  },
 
 }) -- End of Lazy Plugin install section
 
