@@ -11,7 +11,9 @@ require("lazy").setup({
     { import = "plugins.nvim_lspconfig" },  -- LSP & Language parser syntax highlighting
     { import = "plugins.treesitter" },      -- TreeSitter  Language Parsers
     { import = "plugins.terminal" },        -- Toggle Terminal window
+    { import = "plugins.nvim-cmp" },        -- Auto Completion
     { import = "plugins.telescope" },       -- Fuzzy file finder and many other things
+    { import = "plugins.dressing" },        -- Allows prompts and selections
 
     { "tpope/vim-fugitive", },                          -- Fugitive ( Git)
     { "nvim-lualine/lualine.nvim", },                   -- Status Bar
