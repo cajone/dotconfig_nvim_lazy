@@ -1,4 +1,21 @@
 -- Using this Plugin manager start loading plugins using setup()
+
+-- OK first setup the plugin manager "Lazy"
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+
+
 require("lazy").setup({
   {
     "folke/which-key.nvim",
@@ -14,6 +31,8 @@ require("lazy").setup({
     { import = "plugins.nvim-cmp" },        -- Auto Completion
     { import = "plugins.telescope" },       -- Fuzzy file finder and many other things
     { import = "plugins.dressing" },        -- Allows prompts and selections
+    { import = "plugins.lualine" },
+
 
     { "tpope/vim-fugitive", },                          -- Fugitive ( Git)
     { "nvim-lualine/lualine.nvim", },                   -- Status Bar

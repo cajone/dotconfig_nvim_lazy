@@ -49,7 +49,7 @@ vim.g.undodir = "~/.config/nvim/undo/" -- Where to keep the undo history
 opt.viminfo:append({ 'n' })            -- Remember cursor position between sessions
 
 -- [[ Ctrl-n menu options ]]
--- opt.wildmenu = true                -- Show list instead of just completing
+opt.wildmenu = true                -- Show list instead of just completing
 opt.wildmode = "list:longest,full" -- Command <Tab> completion, list matches, then longest common part, then all.
 opt.whichwrap = "b,s,h,l,<,>,[,]"  -- Backspace and cursor keys wrap too
 
