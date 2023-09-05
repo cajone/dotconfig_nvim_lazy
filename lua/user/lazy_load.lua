@@ -12,11 +12,20 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
 require("lazy").setup({
   {
-    { import = "user.plugins" },             -- ColorScheme
-    { import = "user.plugins.lsp" },             -- ColorScheme
+    { import = "user.plugins" }, -- Load plugin files
+    { import = "user.plugins.lsp" }, -- Load Lsp plugin files
+
+    { "tpope/vim-fugitive" }, -- Fugitive ( Git)
+    { "vimwiki/vimwiki" }, -- Vimwiki
+    { "instant-markdown/vim-instant-markdown" }, -- Instant Markdown
+    { "mzlogin/vim-markdown-toc" }, -- Markdown TOC
+    { "cohama/agit.vim" }, -- Git history Tree
+  },
+})
+
+--  BELOW IS JUST FOR REFERENCE ONLY
 --     { import = "plugins.colorscheme" },             -- ColorScheme
 --     { import = "plugins.gitsigns" },                -- Git Signs
 --     { import = "plugins.nvimtree" },                -- NvimTree
@@ -27,12 +36,3 @@ require("lazy").setup({
 --     { import = "plugins.telescope" },               -- Fuzzy file finder and many other things
 --     { import = "plugins.dressing" },                -- Allows prompts and selections
 --     { import = "plugins.lualine" },                 -- Status Line
-
-    { "tpope/vim-fugitive", },                      -- Fugitive ( Git)
-    { "vimwiki/vimwiki", },                         -- Vimwiki
-    { "instant-markdown/vim-instant-markdown", },   -- Instant Markdown
-    { "mzlogin/vim-markdown-toc", },                -- Markdown TOC
-    { "cohama/agit.vim", },                         -- Git history Tree
-  },
-})
-

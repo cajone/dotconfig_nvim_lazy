@@ -11,8 +11,8 @@ return {
     lualine.setup({
       options = {
         icon_enabled = false,
-        component_separators = { left = '|', right = '|' },
-        section_separators = { left = '|', right = '|' },
+        component_separators = { left = "|", right = "|" },
+        section_separators = { left = "|", right = "|" },
         theme = "jellybeans",
       },
       sections = {
@@ -45,7 +45,7 @@ return {
         lualine_y = {
           "progress",
         },
-        lualine_z = {     -- Show LCD
+        lualine_z = { -- Show LCD
           function()
             return vim.fn.getcwd()
           end,

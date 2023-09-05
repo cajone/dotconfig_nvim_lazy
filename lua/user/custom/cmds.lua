@@ -29,8 +29,6 @@ vim.g.vimwiki_list = {
     path = "~/vimwiki/", -- Change this to the path where you want to keep your wiki files
     syntax = "markdown",
     ext = ".md",
-    link_format = "fg=blue"
+    link_format = "fg=blue",
   },
 }
-
-

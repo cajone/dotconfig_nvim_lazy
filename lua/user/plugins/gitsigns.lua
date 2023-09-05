@@ -1,5 +1,5 @@
 return {
-  { "nvim-lua/plenary.nvim", },
+  { "nvim-lua/plenary.nvim" },
   {
     "lewis6991/gitsigns.nvim",
     config = function()
