@@ -1,2 +1,2 @@
-require("plugins")
-require("custom")
+require("user.custom")
+require("user.plugins.lazy_load")
