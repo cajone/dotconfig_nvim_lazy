@@ -15,6 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   {
+    { import = "plugins.lsp" },             -- ColorScheme
     { import = "plugins.colorscheme" },             -- ColorScheme
     { import = "plugins.gitsigns" },                -- Git Signs
     { import = "plugins.nvimtree" },                -- NvimTree

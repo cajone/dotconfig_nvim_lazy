@@ -36,6 +36,7 @@ return {
         ["<CR>"] = cmp.mapping.confirm({select = false }),
       }),
       sources = cmp.config.sources({                  -- list is in priority
+        { name = "nvim_lsp" },                         -- nvim completion
         { name = "luasnip" },                         -- snippets
         { name = "buffer" },                          -- text within the current buffer
         { name = "path" },                            -- file system paths
