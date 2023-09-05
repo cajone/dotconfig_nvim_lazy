@@ -70,6 +70,12 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
+    -- configure ruby server
+    lspconfig["ruby_ls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
     -- configure python server
     lspconfig["pyright"].setup({
       capabilities = capabilities,
