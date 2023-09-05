@@ -1,4 +1,4 @@
-local M = {
+return {
   { "nvim-tree/nvim-web-devicons", }, -- filesystem icons,
   {
     "nvim-tree/nvim-tree.lua",  -- Some comment
@@ -7,4 +7,3 @@ local M = {
     end,
   },
 }
-return M

@@ -1,4 +1,4 @@
-local M = {
+return {
   "prettier/vim-prettier", -- Will only parse { Angular, CSS, Flow, GraphQL, HTML, JSON, JSX, JavaScript, LESS, Markdown, SCSS, TypeScript, Vue, YAML }
   config = function()
     local lspconfig = require("lspconfig")
@@ -8,4 +8,3 @@ local M = {
     }
   end,
 }
-return M

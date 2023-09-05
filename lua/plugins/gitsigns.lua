@@ -1,4 +1,4 @@
-local M = {
+return {
   { "nvim-lua/plenary.nvim", },
   {
     "lewis6991/gitsigns.nvim",
@@ -7,4 +7,3 @@ local M = {
     end,
   },
 }
-return M

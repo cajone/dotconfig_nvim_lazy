@@ -1,4 +1,4 @@
-local M = {
+return {
   "akinsho/toggleterm.nvim",
   version = "*",
   opts = {
@@ -15,4 +15,3 @@ local M = {
     shell = vim.o.shell,
   },
 }
-return M

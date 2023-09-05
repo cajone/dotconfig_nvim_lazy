@@ -1,5 +1,3 @@
--- Using this Plugin manager start loading plugins using setup()
-
 -- OK first setup the plugin manager "Lazy"
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -15,54 +13,24 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 
-
 require("lazy").setup({
   {
-    "folke/which-key.nvim",
-    { "folke/neoconf.nvim", cmd = "Neoconf" },
-    "folke/neodev.nvim",
+    { import = "plugins.colorscheme" },             -- ColorScheme
+    { import = "plugins.gitsigns" },                -- Git Signs
+    { import = "plugins.nvimtree" },                -- NvimTree
+    { import = "plugins.nvim_lspconfig" },          -- LSP & Language parser syntax highlighting
+    { import = "plugins.treesitter" },              -- TreeSitter  Language Parsers
+    { import = "plugins.terminal" },                -- Toggle Terminal window
+    { import = "plugins.nvim-cmp" },                -- Auto Completion
+    { import = "plugins.telescope" },               -- Fuzzy file finder and many other things
+    { import = "plugins.dressing" },                -- Allows prompts and selections
+    { import = "plugins.lualine" },                 -- Status Line
 
-    { import = "plugins.colorscheme" },     -- ColorScheme
-    { import = "plugins.gitsigns" },        -- Git Signs
-    { import = "plugins.nvimtree" },        -- NvimTree
-    { import = "plugins.nvim_lspconfig" },  -- LSP & Language parser syntax highlighting
-    { import = "plugins.treesitter" },      -- TreeSitter  Language Parsers
-    { import = "plugins.terminal" },        -- Toggle Terminal window
-    { import = "plugins.nvim-cmp" },        -- Auto Completion
-    { import = "plugins.telescope" },       -- Fuzzy file finder and many other things
-    { import = "plugins.dressing" },        -- Allows prompts and selections
-    { import = "plugins.lualine" },
-
-
-    { "tpope/vim-fugitive", },                          -- Fugitive ( Git)
-    { "nvim-lualine/lualine.nvim", },                   -- Status Bar
-    { "vimwiki/vimwiki", },                             -- Vimwiki
-    { "instant-markdown/vim-instant-markdown", },       -- Instant Markdown
-    { "mzlogin/vim-markdown-toc", },                    -- Markdown TOC
-    { "cohama/agit.vim", },                             -- Git history Tree
-
-    --   {  -- Requires you setup API keys with jenkins server
-    --     "ckipp01/nvim-jenkinsfile-linter",
-    --     requires = { "nvim-lua/plenary.nvim" },
-    --   },
-
-    --  { "dense-analysis/ale", },                          -- Linter plugin
-
-    -- Mason install and manage LSP servers, DAP servers, linters, and formatters.
-    -- { import = "plugins.mason" },
-
-    -- Prettier format
-    -- { import = "plugins.prettier" },
-
-    -- Linter
-    --  { import = "dense-analysis/ale" },
+    { "tpope/vim-fugitive", },                      -- Fugitive ( Git)
+    { "vimwiki/vimwiki", },                         -- Vimwiki
+    { "instant-markdown/vim-instant-markdown", },   -- Instant Markdown
+    { "mzlogin/vim-markdown-toc", },                -- Markdown TOC
+    { "cohama/agit.vim", },                         -- Git history Tree
   },
+})
 
-}) -- End of Lazy Plugin install section
-
--- vim.g.ale_linters = {
---   ruby = { 'cookstyle -a' },
--- }
--- vim.cmd('autocmd! TermOpen term://* lua Set_terminal_keymaps()')
---  local Terminal = require("toggleterm.terminal").Terminal
---  local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })

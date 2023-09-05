@@ -1,4 +1,4 @@
-local M = {
+return {
   "neovim/nvim-lspconfig",
   config = function()
     local lspconfig = require('lspconfig')
@@ -31,4 +31,3 @@ local M = {
     -- }
   end,
 }
-return M

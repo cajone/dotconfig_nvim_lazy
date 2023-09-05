@@ -1,4 +1,4 @@
-local M = {
+return {
   {
     "williamboman/mason.nvim",
     config = function()
@@ -6,4 +6,3 @@ local M = {
     end,
   },
 }
-return M

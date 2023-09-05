@@ -1,4 +1,4 @@
-local M = {
+return {
   "rafi/awesome-vim-colorschemes",
   lazy = false,
   priority = 1000,
@@ -6,4 +6,3 @@ local M = {
     vim.cmd([[colorscheme jellybeans]])
   end,
 }
-return M

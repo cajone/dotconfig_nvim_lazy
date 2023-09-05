@@ -47,6 +47,7 @@ opt.splitbelow = true -- bool: Place new window below the current one
 opt.undofile = true                    -- Allow undo history to be kept
 vim.g.undodir = "~/.config/nvim/undo/" -- Where to keep the undo history
 opt.viminfo:append({ 'n' })            -- Remember cursor position between sessions
+opt.swapfile = false                   -- Dont generate a swap file
 
 -- [[ Ctrl-n menu options ]]
 opt.wildmenu = true                -- Show list instead of just completing

@@ -1,4 +1,4 @@
-local M = {
+return {
   "nvim-treesitter/nvim-treesitter",
   opts = {
     highlight = {
@@ -9,4 +9,3 @@ local M = {
     query_linter = true,
   },
 }
-return M
