@@ -56,3 +56,16 @@ opt.whichwrap = "b,s,h,l,<,>,[,]" -- Backspace and cursor keys wrap too
 
 -- [[ Change the default shell out to /usr/bin/zsh ]]
 opt.shell = "/usr/bin/zsh" -- Change the :! shell to use zsh
+
+-- Disable perl requirements
+vim.g.loaded_perl_provider = 0
+
+-- Setup for vimwiki, if I dont put this here it does not load the markdown, must find a way to fix this
+vim.g.vimwiki_list = {
+  {
+    path = "~/vimwiki/", -- Change this to the path where you want to keep your wiki files
+    syntax = "markdown",
+    ext = ".md",
+    link_format = "fg=blue",
+  },
+}
