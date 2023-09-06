@@ -76,6 +76,34 @@ return {
       on_attach = on_attach,
     })
 
+    -- configure ansible server
+    lspconfig["ansiblels"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      settings = {
+        ansible = {
+          ansible = {
+            path = "ansible",
+            useFullyQualifiedCollectionNames = true,
+          },
+          ansibleLint = {
+            enabled = true,
+            path = "ansible-lint",
+          },
+          executionEnvironment = {
+            enabled = false,
+          },
+          python = {
+            interpreterPath = "python",
+          },
+          completion = {
+            provideRedirectModules = true,
+            provideModuleOptionAliases = true,
+          },
+        },
+      },
+    })
+
     -- configure python server
     lspconfig["pyright"].setup({
       capabilities = capabilities,
