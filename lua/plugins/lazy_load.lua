@@ -27,7 +27,7 @@ require("lazy").setup({
 
     { "tpope/vim-fugitive" }, -- Fugitive ( Git)
     { "vimwiki/vimwiki" }, -- Vimwiki
-    --    { "instant-markdown/vim-instant-markdown", },   -- Instant Markdown
+    { "instant-markdown/vim-instant-markdown", },   -- Instant Markdown
     { "mzlogin/vim-markdown-toc" }, -- Markdown TOC
     { "cohama/agit.vim" }, -- Git history Tree
   },

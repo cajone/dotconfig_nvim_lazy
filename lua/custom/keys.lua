@@ -69,6 +69,21 @@
 -- Add a mapping to open plugin help
   vim.api.nvim_set_keymap('n', '<Leader>ph', [[:lua OpenPluginHelp()<CR>]], { silent = true })
 
+-- Instant Markdown
+--  vim.g.instant_markdown_slow = 0
+  vim.g.instant_markdown_autostart = 0
+--  vim.g.instant_markdown_open_to_the_world = 1
+--  vim.g.instant_markdown_allow_unsafe_content = 1
+--  vim.g.instant_markdown_allow_external_content = 0
+--  vim.g.instant_markdown_mathjax = 1
+--  vim.g.instant_markdown_mermaid = 1
+--  vim.g.instant_markdown_logfile = '/tmp/instant_markdown.log'
+--  vim.g.instant_markdown_autoscroll = 1
+--  vim.g.instant_markdown_port = 8888
+--  vim.g.instant_markdown_python = 1
+
+  map('n', '<leader>md', [[:InstantMarkdownPreview<CR>]], { noremap = true })
+
 -- MarkdownToc
   map('n', '<Leader>tc', ':GenTocGFM<CR>', { noremap = true, silent = true })
   map('n', '<Leader>tcu', ':UpdateToc<CR>', { noremap = true, silent = true })
