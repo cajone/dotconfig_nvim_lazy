@@ -25,9 +25,7 @@ require("lazy").setup({
     { import = "plugins.telescope" },               -- Fuzzy file finder and many other things
     { import = "plugins.dressing" },                -- Allows prompts and selections
     { import = "plugins.lualine" },                 -- Status Line
---    { import = "plugins.gh" },                      -- Status Line
 
-    { "ldelossa/litee.nvim", event = "VeryLazy" },
     { "tpope/vim-fugitive", },                      -- Fugitive ( Git)
     { 'tpope/vim-rhubarb', },                       -- Git Support
     { "vimwiki/vimwiki", },                         -- Vimwiki
