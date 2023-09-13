@@ -19,6 +19,9 @@
   vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = "Open help pages" })
 
 
+-- :only
+  map("n", "<Leader>0", ":only<CR>", { noremap = true, silent = true })
+
 -- Git
   map("n", "<Leader>Gb", ":Git blame<CR>", { noremap = true, silent = true })
 
