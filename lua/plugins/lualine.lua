@@ -32,22 +32,24 @@ return {
             symbols = { error = "E", warn = "W", info = "I", hint = "H" },
           },
         },
-        lualine_w = {
+        lualine_x = {
           {
             lazy_status.updates,
             cond = lazy_status.has_updates,
             color = { fg = "#ff9e64" },
           },
         },
-        lualine_x = {
-          "filetype",
-        },
         lualine_y = {
           "progress",
+          "|",
+          "filetype",
         },
-        lualine_z = {     -- Show LCD
+        lualine_z = {
           function()
             return vim.fn.getcwd()
+          end,
+          function()
+            return os.date("%H:%M")
           end,
         },
       },
