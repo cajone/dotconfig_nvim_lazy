@@ -17,7 +17,7 @@ require("lazy").setup({
   {
     { import = "plugins.colorscheme" },             -- ColorScheme
     { import = "plugins.gitsigns" },                -- Git Signs
---    { import = "plugins.nvimtree" },                -- NvimTree
+    { import = "plugins.nvimtree" },                -- NvimTree
     { import = "plugins.nvim_lspconfig" },          -- LSP & Language parser syntax highlighting
     { import = "plugins.treesitter" },              -- TreeSitter  Language Parsers
     { import = "plugins.terminal" },                -- Toggle Terminal window
@@ -25,6 +25,7 @@ require("lazy").setup({
     { import = "plugins.telescope" },               -- Fuzzy file finder and many other things
     { import = "plugins.dressing" },                -- Allows prompts and selections
     { import = "plugins.lualine" },                 -- Status Line
+    { import = "plugins.git-worktree" },            -- Treesitter git-worktree[
 
     { "tpope/vim-fugitive", },                      -- Fugitive ( Git)
     { 'tpope/vim-rhubarb', },                       -- Git Support
