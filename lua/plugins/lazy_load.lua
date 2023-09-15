@@ -25,7 +25,7 @@ require("lazy").setup({
     { import = "plugins.telescope" },               -- Fuzzy file finder and many other things
     { import = "plugins.dressing" },                -- Allows prompts and selections
     { import = "plugins.lualine" },                 -- Status Line
-    { import = "plugins.git-worktree" },            -- Treesitter git-worktree
+--    { import = "plugins.git-worktree" },            -- Treesitter git-worktree
 
     { "tpope/vim-fugitive", },                      -- Fugitive ( Git)
     { 'tpope/vim-rhubarb', },                       -- Git Support
