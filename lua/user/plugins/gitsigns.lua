@@ -1,3 +1,5 @@
+-- Git Gutter like plugin
+
 return {
   { "nvim-lua/plenary.nvim" },
   {
