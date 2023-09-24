@@ -1,7 +1,5 @@
 -- [[ keys.lua ]]
 
--- testing git worktrees
-
 -- For info the <Leader> key is mapped to '\'
 local map = vim.api.nvim_set_keymap
 
@@ -10,6 +8,22 @@ map("n", "<C-h>", "<C-w>h", { noremap = true })
 map("n", "<C-j>", "<C-w>j", { noremap = true })
 map("n", "<C-k>", "<C-w>k", { noremap = true })
 map("n", "<C-l>", "<C-w>l", { noremap = true })
+
+-- Telescope Keys some of this requires "ripgrep" install using you system package manager
+  local builtin = require('telescope.builtin')
+  vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = "Fuzzy find files in cwd" })
+  vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = "List recently opened files" })
+  vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = "Find string in cwd" })
+  vim.keymap.set('n', '<leader>fc', builtin.grep_string, { desc = "Find string under cursor" })
+  vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = "Show currently opend buffers" })
+  vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = "Open help pages" })
+
+-- Git-Worktree  local telescope = require('telescope')
+  vim.keymap.set('n', '<leader>sr', ":lua require('telescope').extensions.git_worktree.git_worktrees()<CR>" )
+  vim.keymap.set('n', '<leader>sR', ":lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>" )
+
+-- :only
+  map("n", "<Leader>0", ":only<CR>", { noremap = true, silent = true })
 
 -- Git
 map("n", "<Leader>Gb", ":Git blame<CR>", { noremap = true, silent = true })
