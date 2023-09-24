@@ -18,7 +18,7 @@
   vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = "Show currently opend buffers" })
   vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = "Open help pages" })
 
---  local telescope = require('telescope')
+-- Git-Worktree  local telescope = require('telescope')
   vim.keymap.set('n', '<leader>sr', ":lua require('telescope').extensions.git_worktree.git_worktrees()<CR>" )
   vim.keymap.set('n', '<leader>sR', ":lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>" )
 
@@ -26,7 +26,7 @@
   map("n", "<Leader>0", ":only<CR>", { noremap = true, silent = true })
 
 -- Git
-  map("n", "<Leader>Gb", ":Git blame<CR>", { noremap = true, silent = true })
+  map("n", "<Leader>Gb", ":G blame<CR>", { noremap = true, silent = true })
 
   vim.cmd([[
   command! -nargs=0 FugitiveInside execute "lcd %:h" | :G
