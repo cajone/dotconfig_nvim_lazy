@@ -16,16 +16,16 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   {
     { import = "plugins.colorscheme" },             -- ColorScheme
-    { import = "plugins.gitsigns" },                -- Git Signs
-    { import = "plugins.nvimtree" },                -- NvimTree
-    { import = "plugins.nvim_lspconfig" },          -- LSP & Language parser syntax highlighting
-    { import = "plugins.treesitter" },              -- TreeSitter  Language Parsers
-    { import = "plugins.terminal" },                -- Toggle Terminal window
-    { import = "plugins.nvim-cmp" },                -- Auto Completion
-    { import = "plugins.telescope" },               -- Fuzzy file finder and many other things
     { import = "plugins.dressing" },                -- Allows prompts and selections
-    { import = "plugins.lualine" },                 -- Status Line
     { import = "plugins.git-worktree" },            -- Treesitter git-worktree
+    { import = "plugins.gitsigns" },                -- Git Signs
+    { import = "plugins.lualine" },                 -- Status Line
+    { import = "plugins.nvim-cmp" },                -- Auto Completion
+    { import = "plugins.nvim_lspconfig" },          -- LSP & Language parser syntax highlighting
+    { import = "plugins.nvimtree" },                -- NvimTree
+    { import = "plugins.telescope" },               -- Fuzzy file finder and many other things
+    { import = "plugins.terminal" },                -- Toggle Terminal window
+    { import = "plugins.treesitter" },              -- TreeSitter  Language Parsers
 
     { "tpope/vim-fugitive", },                      -- Fugitive ( Git)
     { 'tpope/vim-rhubarb', },                       -- Git Support
