@@ -7,6 +7,8 @@ local cmd = vim.cmd
 -- vim.g.mapleader = "\\"
 vim.g.localleader = "\\"
 
+vim.g.python3_host_prog = '/usr/bin/python3'
+
 -- [[ Context ]]
 -- opt.colorcolumn = '120'           -- str:  Show col for max line length
 opt.number = true         -- bool: Show line numbers
