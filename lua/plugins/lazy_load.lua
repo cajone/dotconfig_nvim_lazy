@@ -13,7 +13,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  {
     { import = "plugins.colorscheme" },             -- ColorScheme
     { import = "plugins.dressing" },                -- Allows prompts and selections
     { import = "plugins.git-worktree" },            -- Treesitter git-worktree
@@ -32,6 +31,5 @@ require("lazy").setup({
     { "instant-markdown/vim-instant-markdown", },   -- Instant Markdown
     { "mzlogin/vim-markdown-toc", },                -- Markdown TOC
     { "cohama/agit.vim", },                         -- Git history Tree
-  },
 })
 
