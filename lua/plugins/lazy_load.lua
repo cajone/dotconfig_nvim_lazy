@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     { import = "plugins.colorscheme" },             -- ColorScheme
-    { import = "plugins.dressing" },                -- Allows prompts and selections
+--    { import = "plugins.dressing" },                -- Allows prompts and selections
     { import = "plugins.git-worktree" },            -- Treesitter git-worktree
     { import = "plugins.gitsigns" },                -- Git Signs
     { import = "plugins.lualine" },                 -- Status Line
