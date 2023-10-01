@@ -1,4 +1,3 @@
-
 -- Nvimtree key mappings 
  local api = require('nvim-tree.api')
 
