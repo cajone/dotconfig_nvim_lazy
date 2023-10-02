@@ -26,6 +26,9 @@ require("lazy").setup({
     { import = "plugins.treesitter" },              -- TreeSitter  Language Parsers
 
     { "tpope/vim-fugitive", },                      -- Fugitive ( Git)
+    { "tpope/vim-dadbod", },                        -- DB interaction
+    { "kristijanhusak/vim-dadbod-completion", },    -- DB autocompletion
+    { "kristijanhusak/vim-dadbod-ui", },            -- UI for the above
     { 'tpope/vim-rhubarb', },                       -- Git Support
     { "vimwiki/vimwiki", },                         -- Vimwiki
     { "instant-markdown/vim-instant-markdown", },   -- Instant Markdown
