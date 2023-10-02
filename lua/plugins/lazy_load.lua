@@ -13,28 +13,28 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    { 'nvim-treesitter/nvim-treesitter' },           -- Install Treesitter
+  { 'nvim-treesitter/nvim-treesitter' },           -- Install Treesitter
 
-    { import = "plugins.colorscheme" },             -- ColorScheme
-    { import = "plugins.dressing" },                -- Allows prompts and selections
-    { import = "plugins.git-worktree" },            -- Treesitter git-worktree
-    { import = "plugins.gitsigns" },                -- Git Signs
-    { import = "plugins.lualine" },                 -- Status Line
-    { import = "plugins.nvim-cmp" },                -- Auto Completion
-    { import = "plugins.nvim_lspconfig" },          -- LSP & Language parser syntax highlighting
-    { import = "plugins.nvimtree" },                -- NvimTree
-    { import = "plugins.telescope" },               -- Fuzzy file finder and many other things
-    { import = "plugins.terminal" },                -- Toggle Terminal window
-    { import = "plugins.nvim-treesitter" },         -- Configure TreeSitter  Language Parsers
+  { import = "plugins.colorscheme" },             -- ColorScheme
+  { import = "plugins.dressing" },                -- Allows prompts and selections
+  { import = "plugins.git-worktree" },            -- Treesitter git-worktree
+  { import = "plugins.gitsigns" },                -- Git Signs
+  { import = "plugins.lualine" },                 -- Status Line
+  { import = "plugins.nvim-cmp" },                -- Auto Completion
+  { import = "plugins.nvim_lspconfig" },          -- LSP & Language parser syntax highlighting
+  { import = "plugins.nvimtree" },                -- NvimTree
+  { import = "plugins.telescope" },               -- Fuzzy file finder and many other things
+  { import = "plugins.terminal" },                -- Toggle Terminal window
+  { import = "plugins.nvim-treesitter" },         -- Configure TreeSitter  Language Parsers
 
-    { "tpope/vim-fugitive", },                      -- Fugitive ( Git)
-    { "tpope/vim-dadbod", },                        -- DB interaction
-    { "kristijanhusak/vim-dadbod-completion", },    -- DB autocompletion
-    { "kristijanhusak/vim-dadbod-ui", },            -- UI for the above
-    { 'tpope/vim-rhubarb', },                       -- Git Support
-    { "vimwiki/vimwiki", },                         -- Vimwiki
-    { "instant-markdown/vim-instant-markdown", },   -- Instant Markdown
-    { "mzlogin/vim-markdown-toc", },                -- Markdown TOC
-    { "cohama/agit.vim", },                         -- Git history Tree
+  { "tpope/vim-fugitive", },                      -- Fugitive ( Git)
+  { "tpope/vim-dadbod", },                        -- DB interaction
+  { "kristijanhusak/vim-dadbod-completion", },    -- DB autocompletion
+  { "kristijanhusak/vim-dadbod-ui", },            -- UI for the above
+  { 'tpope/vim-rhubarb', },                       -- Git Support
+  { "vimwiki/vimwiki", },                         -- Vimwiki
+  { "instant-markdown/vim-instant-markdown", },   -- Instant Markdown
+  { "mzlogin/vim-markdown-toc", },                -- Markdown TOC
+  { "cohama/agit.vim", },                         -- Git history Tree
 })
 
