@@ -1,5 +1,10 @@
 -- [[ local_fun.lua ]]
 
+-- Save a session before leaving
+function SaveSessionOnExit()
+    vim.cmd(':mksession! ~/.config/nvim/.mksession/latest.vim')
+end
+
 -- Define the function to toggle line numbers and relative numbers
 function ToggleLineNumbers()
   vim.wo.number = not vim.wo.number
