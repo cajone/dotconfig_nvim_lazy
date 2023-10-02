@@ -13,8 +13,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+    { 'nvim-treesitter/nvim-treesitter' },           -- Install Treesitter
+
     { import = "plugins.colorscheme" },             -- ColorScheme
---    { import = "plugins.dressing" },                -- Allows prompts and selections
+    { import = "plugins.dressing" },                -- Allows prompts and selections
     { import = "plugins.git-worktree" },            -- Treesitter git-worktree
     { import = "plugins.gitsigns" },                -- Git Signs
     { import = "plugins.lualine" },                 -- Status Line
@@ -23,7 +25,7 @@ require("lazy").setup({
     { import = "plugins.nvimtree" },                -- NvimTree
     { import = "plugins.telescope" },               -- Fuzzy file finder and many other things
     { import = "plugins.terminal" },                -- Toggle Terminal window
-    { import = "plugins.treesitter" },              -- TreeSitter  Language Parsers
+    { import = "plugins.nvim-treesitter" },         -- Configure TreeSitter  Language Parsers
 
     { "tpope/vim-fugitive", },                      -- Fugitive ( Git)
     { "tpope/vim-dadbod", },                        -- DB interaction
