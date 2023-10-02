@@ -8,4 +8,5 @@ foo.*
 lazy-lock.json
 tt.*
 worktrees
+.mksession
 ~/
