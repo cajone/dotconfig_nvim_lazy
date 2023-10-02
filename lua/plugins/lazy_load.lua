@@ -13,23 +13,24 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  {
-    { import = "plugins.colorscheme" }, -- ColorScheme
-    { import = "plugins.dressing" }, -- Allows prompts and selections
-    { import = "plugins.git-worktree" },            -- Treesitter git-worktree
-    { import = "plugins.gitsigns" }, -- Git Signs
-    { import = "plugins.lualine" }, -- Status Line
-    { import = "plugins.nvim-cmp" }, -- Auto Completion
-    { import = "plugins.nvim_lspconfig" }, -- LSP & Language parser syntax highlighting
-    { import = "plugins.nvimtree" }, -- NvimTree
-    { import = "plugins.telescope" }, -- Fuzzy file finder and many other things
-    { import = "plugins.terminal" }, -- Toggle Terminal window
-    { import = "plugins.treesitter" }, -- TreeSitter  Language Parsers
+  { 'nvim-treesitter/nvim-treesitter' },           -- Install Treesitter
 
-    { "tpope/vim-fugitive" }, -- Fugitive ( Git)
-    { "vimwiki/vimwiki" }, -- Vimwiki
-    { "instant-markdown/vim-instant-markdown", },   -- Instant Markdown
-    { "mzlogin/vim-markdown-toc" }, -- Markdown TOC
-    { "cohama/agit.vim" }, -- Git history Tree
-  },
+  { import = "plugins.colorscheme" }, -- ColorScheme
+  { import = "plugins.dressing" }, -- Allows prompts and selections
+  { import = "plugins.git-worktree" },            -- Treesitter git-worktree
+  { import = "plugins.gitsigns" }, -- Git Signs
+  { import = "plugins.lualine" }, -- Status Line
+  { import = "plugins.nvim-cmp" }, -- Auto Completion
+  { import = "plugins.nvim_lspconfig" }, -- LSP & Language parser syntax highlighting
+  { import = "plugins.nvimtree" }, -- NvimTree
+  { import = "plugins.telescope" }, -- Fuzzy file finder and many other things
+  { import = "plugins.terminal" }, -- Toggle Terminal window
+  { import = "plugins.nvim-treesitter" }, --  Configure TreeSitter  Language Parsers
+
+  { "tpope/vim-fugitive" }, -- Fugitive ( Git)
+  { "tpope/vim-dadbod" }, -- DB interaction
+  { "vimwiki/vimwiki" }, -- Vimwiki
+  { "instant-markdown/vim-instant-markdown", },   -- Instant Markdown
+  { "mzlogin/vim-markdown-toc" }, -- Markdown TOC
+  { "cohama/agit.vim" }, -- Git history Tree
 })
