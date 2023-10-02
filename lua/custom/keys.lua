@@ -80,3 +80,12 @@
   map('n', '<Leader>tcu', ':UpdateToc<CR>', { noremap = true, silent = true })
   map('n', '<Leader>tcr', ':RemoveToc<CR>', { noremap = true, silent = true })
 
+
+-- Tabs
+  map('n', '<leader>tp',  ':tabprevious<cr>', { noremap = true, silent = true })
+  map('n', '<leader>tn',  ':tabNext<cr>', { noremap = true, silent = true })
+  map('n', '<leader>tN',  ':tabnew<cr>', { noremap = true, silent = true })
+  map('n', '<leader>tc',  ':tabclose<cr>', { noremap = true, silent = true })
+
+
+
