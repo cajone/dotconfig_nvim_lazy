@@ -29,8 +29,8 @@ require("lazy").setup({
 
   { "tpope/vim-fugitive" }, -- Fugitive ( Git)
   { "tpope/vim-dadbod" }, -- DB interaction
+  { "kristijanhusak/vim-dadbod-completion", },    -- DB autocompletion
   { "vimwiki/vimwiki" }, -- Vimwiki
-  { "instant-markdown/vim-instant-markdown", },   -- Instant Markdown
   { "mzlogin/vim-markdown-toc" }, -- Markdown TOC
   { "cohama/agit.vim" }, -- Git history Tree
 })
