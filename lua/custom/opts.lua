@@ -9,6 +9,10 @@ vim.g.localleader = "\\"
 
 vim.g.python3_host_prog = '/usr/bin/python3'
 
+vim.g.instant_markdown_slow = 2
+vim.g.instant_markdown_autostart = 0
+
+
 -- [[ Nvimtree ]]
 vim.g.loaded_netrw       = 1
 vim.g.loaded_netrwPlugin = 1

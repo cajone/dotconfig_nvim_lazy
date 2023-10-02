@@ -1,14 +1,4 @@
-return {
-  "hrsh7th/nvim-cmp",
-  event = "InsertEnter",
-  dependencies = {
-    "hrsh7th/cmp-buffer",           -- source for the text in buffer
-    "hrsh7th/cmp-path",             -- source files system paths
-    "L3MON4D3/LuaSnip",             -- Snippet engine
-    "saadparwaiz1/cmp_luasnip",     -- for autocompletion
-    "rafamadriz/friendly-snippets", -- Use snippets
-    "onsails/lspkind.nvim",         -- vs-code like pictograms
-  },
+M = {
   config = function()
     local cmp = require("cmp")
     local luasnip = require("luasnip")
@@ -27,16 +17,17 @@ return {
         end,
       },
       mapping = cmp.mapping.preset.insert({
-        ["<C-k]"] = cmp.mapping.select_prev_item(),   -- previous suggestion
-        ["<C-j]"] = cmp.mapping.select_next_item(),   -- next suggestion
-        ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-f>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-space>"] = cmp.mapping.complete(),       -- show completion suggestions
-        ["<C-e>"] = cmp.mapping.abort(),              -- Close completion window
+        -- ["<C-k]"] = cmp.mapping.select_prev_item(),   -- previous suggestion
+        -- ["<C-j]"] = cmp.mapping.select_next_item(),   -- next suggestion
+        -- ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+        -- ["<C-f>"] = cmp.mapping.scroll_docs(-4),
+        -- ["<C-space>"] = cmp.mapping.complete(),       -- show completion suggestions
+        -- ["<C-e>"] = cmp.mapping.abort(),              -- Close completion window
         ["<CR>"] = cmp.mapping.confirm({select = false }),
       }),
       sources = cmp.config.sources({                  -- list is in priority
         { name = "luasnip" },                         -- snippets
+        { name = "nvim_lsp" },                         -- snippets
         { name = "buffer" },                          -- text within the current buffer
         { name = "path" },                            -- file system paths
       }),
@@ -50,4 +41,4 @@ return {
       },
     })
   end,
-}
+} return M
