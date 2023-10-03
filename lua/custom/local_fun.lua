@@ -2,8 +2,41 @@
 
 -- Save a session before leaving
 function SaveSessionOnExit()
-    vim.cmd(':mksession! ~/.config/nvim/.mksession/latest.vim')
+ -- Get the current date and timestamp
+  local timestamp = vim.fn.strftime("%Y%m%d%H%M")
+
+  -- Define the session file path
+  local session_path = vim.fn.stdpath('config') .. '/nvim/.mksession/' .. timestamp .. '.vim'
+
+  -- Save the session
+  vim.cmd('mksession! ' .. session_path)
 end
+
+-- Define a function to list and load mksession files
+local function list_and_load_sessions()
+  local session_dir = vim.fn.stdpath('config') .. '/nvim/.mksession/'
+
+  -- Use Telescope to list the session files
+  require('telescope.builtin').find_files({
+    prompt_title = 'Load Session',
+    cwd = session_dir,
+    file_ignore_patterns = {'__Session__.vim'},
+    attach_mappings = function(_, map)
+      -- When a session is selected, load it with :source
+      map('i', '<CR>', function(prompt_bufnr)
+        local session_path = require('telescope.actions').get_selected_entry(prompt_bufnr).path
+        vim.cmd('source ' .. session_path)
+        require('telescope.actions').close(prompt_bufnr)
+      end)
+
+      return true
+    end,
+  })
+end
+
+-- Create a custom Telescope command to list and load sessions
+vim.cmd([[command! LoadSessions lua list_and_load_sessions()]])
+
 
 -- Define the function to toggle line numbers and relative numbers
 function ToggleLineNumbers()

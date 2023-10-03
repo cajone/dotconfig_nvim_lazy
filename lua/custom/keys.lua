@@ -18,6 +18,9 @@
   vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = "Show currently opend buffers" })
   vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = "Open help pages" })
 
+  -- Define a mapping (e.g., <leader>ls) to call the function
+  map('n', '<leader>fs', [[:LoadSessions<CR>]], { noremap = true, silent = true })
+
 -- Git-Worktree  local telescope = require('telescope')
   vim.keymap.set('n', '<leader>sr', ":lua require('telescope').extensions.git_worktree.git_worktrees()<CR>" )
   vim.keymap.set('n', '<leader>sR', ":lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>" )
@@ -79,6 +82,10 @@
   map('n', '<Leader>tc', ':GenTocGFM<CR>', { noremap = true, silent = true })
   map('n', '<Leader>tcu', ':UpdateToc<CR>', { noremap = true, silent = true })
   map('n', '<Leader>tcr', ':RemoveToc<CR>', { noremap = true, silent = true })
+
+-- Instant Markdown Preview on and off mappings
+  map('n', '<leader>md', ':InstantMarkdownPreview<CR>', { noremap = true, silent = true })
+  map('n', '<leader>mo', ':InstantMarkdownStop<CR>', { noremap = true, silent = true })
 
 
 -- Tabs

@@ -17,4 +17,5 @@ vim.cmd('autocmd! TermOpen term://* lua Set_terminal_keymaps()')
 -- Auto Save session before exit
 vim.cmd([[autocmd VimLeave * lua SaveSessionOnExit()]])
 
-
+-- Create a custom Telescope command to list and load sessions
+vim.cmd([[command! LoadSessions lua list_and_load_sessions()]])
