@@ -1,11 +1,12 @@
 M = {
+  "hrsh7th/nvim-cmp",
   config = function()
     local cmp = require("cmp")
-    local luasnip = require("luasnip")
-    local lspkind = require("lspkind")
+--    local luasnip = require("luasnip")
+--    local lspkind = require("lspkind")
 
     -- load vscode style snippets from  installed plugins ( e.g. friendly-snippets )
-    require("luasnip.loaders.from_vscode").lazy_load()
+--    require("luasnip.loaders.from_vscode").lazy_load()
 
     cmp.setup = ({
       completion = {
@@ -26,19 +27,19 @@ M = {
         ["<CR>"] = cmp.mapping.confirm({select = false }),
       }),
       sources = cmp.config.sources({                  -- list is in priority
-        { name = "luasnip" },                         -- snippets
+   --     { name = "luasnip" },                         -- snippets
         { name = "nvim_lsp" },                         -- snippets
         { name = "buffer" },                          -- text within the current buffer
         { name = "path" },                            -- file system paths
       }),
 
       -- Formatting lspkind for vs-code like pictograms in completion menu
-      formatting = {
-        format = lspkind.cmp_format({
-          maxwidth = 50,
-          ellipsis_char = "...",
-        }),
-      },
+   --   formatting = {
+    --    format = lspkind.cmp_format({
+    --      maxwidth = 50,
+    --      ellipsis_char = "...",
+    --    }),
+   --   }
     })
   end,
 } return M
