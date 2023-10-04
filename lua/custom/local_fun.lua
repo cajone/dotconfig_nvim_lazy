@@ -1,42 +1,49 @@
 -- [[ local_fun.lua ]]
 
--- Save a session before leaving
-function SaveSessionOnExit()
+-- Save a session 
+function SaveSession()
  -- Get the current date and timestamp
   local timestamp = vim.fn.strftime("%Y%m%d%H%M")
+  if vim.fn.exists(':NvimTreeToggle') == 0 then
+    vim.cmd('NvimTreeToggle')
+  end
 
   -- Define the session file path
-  local session_path = vim.fn.stdpath('config') .. '/nvim/.mksession/' .. timestamp .. '.vim'
-
+  local session_path =vim.fn.stdpath('config') .. '/.mksession/' .. timestamp .. '.vim'
   -- Save the session
-  vim.cmd('mksession! ' .. session_path)
+  vim.cmd('mksession!' .. session_path)
 end
 
--- Define a function to list and load mksession files
-local function list_and_load_sessions()
-  local session_dir = vim.fn.stdpath('config') .. '/nvim/.mksession/'
+-- Load a mkSession from a list of saved ones
+function LoadSession()
+  local session_dir = vim.fn.stdpath('config') .. '/.mksession/'
 
-  -- Use Telescope to list the session files
-  require('telescope.builtin').find_files({
-    prompt_title = 'Load Session',
-    cwd = session_dir,
-    file_ignore_patterns = {'__Session__.vim'},
-    attach_mappings = function(_, map)
-      -- When a session is selected, load it with :source
-      map('i', '<CR>', function(prompt_bufnr)
-        local session_path = require('telescope.actions').get_selected_entry(prompt_bufnr).path
-        vim.cmd('source ' .. session_path)
-        require('telescope.actions').close(prompt_bufnr)
-      end)
+  local session_files = vim.fn.glob(session_dir .. '*.vim', false, true)
 
-      return true
-    end,
-  })
+  if #session_files == 0 then
+    print('No session files found.')
+    return
+  end
+
+  print('Select a session to load:')
+  for i, session_file in ipairs(session_files) do
+    print(i .. '. ' .. session_file)
+  end
+
+  local selection = vim.fn.input('Enter the number of the session to load: ')
+
+  if tonumber(selection) and tonumber(selection) >= 1 and tonumber(selection) <= #session_files then
+    local session_path = session_files[tonumber(selection)]
+    vim.cmd('source ' .. session_path)
+    ChangeWorkingDirectoryToGitRoot()
+    -- Ensure nvim-tree is loaded and displayed
+    if vim.fn.exists(':NvimTreeToggle') == 0 then
+      vim.cmd('NvimTreeToggle')
+    end
+  else
+    print('Invalid selection.')
+  end
 end
-
--- Create a custom Telescope command to list and load sessions
-vim.cmd([[command! LoadSessions lua list_and_load_sessions()]])
-
 
 -- Define the function to toggle line numbers and relative numbers
 function ToggleLineNumbers()

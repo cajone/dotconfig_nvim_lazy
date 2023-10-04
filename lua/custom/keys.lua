@@ -18,8 +18,10 @@
   vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = "Show currently opend buffers" })
   vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = "Open help pages" })
 
-  -- Define a mapping (e.g., <leader>ls) to call the function
-  map('n', '<leader>fs', [[:LoadSessions<CR>]], { noremap = true, silent = true })
+-- Mksession functions
+  vim.keymap.set('n', '<leader>sl', [[:LoadSessions<CR>]], { noremap = true, silent = true })
+  vim.keymap.set('n', '<leader>ss', [[:SaveSessions<CR>]], { noremap = true, silent = true })
+  vim.keymap.set('n', '<leader>sc', [[:ClearSessions<CR>]], { noremap = true, silent = true })
 
 -- Git-Worktree  local telescope = require('telescope')
   vim.keymap.set('n', '<leader>sr', ":lua require('telescope').extensions.git_worktree.git_worktrees()<CR>" )
