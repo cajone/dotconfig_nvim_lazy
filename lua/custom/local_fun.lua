@@ -4,12 +4,19 @@
 function SaveSession()
  -- Get the current date and timestamp
   local timestamp = vim.fn.strftime("%Y%m%d%H%M")
-  if vim.fn.exists(':NvimTreeToggle') == 0 then
-    vim.cmd('NvimTreeToggle')
-  end
+  vim.cmd(':NvimTreeClose')
+
+  -- Get the current working directory
+  local cwd = vim.fn.getcwd()
+
+  -- Extract the base name of the directory
+  local cwd_basename = vim.fn.fnamemodify(cwd, ':t')
+
+  -- Convert the base name to a valid filename
+  local cwd_filename = vim.fn.substitute(cwd_basename, '/', '_', 'g')
 
   -- Define the session file path
-  local session_path =vim.fn.stdpath('config') .. '/.mksession/' .. timestamp .. '.vim'
+  local session_path =vim.fn.stdpath('config') .. '/.mksession/' .. cwd_filename .. '_' .. timestamp .. '.vim'
   -- Save the session
   vim.cmd('mksession!' .. session_path)
 end
@@ -44,6 +51,27 @@ function LoadSession()
     print('Invalid selection.')
   end
 end
+
+-- Define a function to clean the mksession directory
+function ClearSession()
+  local session_dir = vim.fn.stdpath('config') .. '/.mksession/'
+
+  -- Get a list of session files sorted by modification time
+  local session_files = vim.fn.systemlist('ls -t ' .. session_dir)
+
+  -- Keep the last 5 session files
+  local num_to_keep = 5
+  for i = 1, #session_files do
+    if i > num_to_keep then
+      local session_path = session_dir .. session_files[i]
+      vim.fn.delete(session_path)
+      print('Deleted: ' .. session_path)
+    end
+  end
+
+  print('Session directory cleaned.')
+end
+
 
 -- Define the function to toggle line numbers and relative numbers
 function ToggleLineNumbers()
