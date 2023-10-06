@@ -2,9 +2,9 @@ M = {
   configs = require('nvim-treesitter.configs').setup {
     require('nvim-treesitter.configs').setup{
       ensure_installed = {
-        'bash',
+--        'bash',
         'groovy',
-        'lua',
+--        'lua',
         'python',
         'ruby',
       },
