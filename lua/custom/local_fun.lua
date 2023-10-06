@@ -16,7 +16,14 @@ function SaveSession()
   local cwd_filename = vim.fn.substitute(cwd_basename, '/', '_', 'g')
 
   -- Define the session file path
-  local session_path =vim.fn.stdpath('config') .. '/.mksession/' .. cwd_filename .. '_' .. timestamp .. '.vim'
+  local session_dir = vim.fn.stdpath('config') .. '/.mksession/'
+  local session_path = session_dir .. cwd_filename .. '_' .. timestamp .. '.vim'
+
+  -- Create the session directory if it doesn't exist
+  if vim.fn.isdirectory(session_dir) == 0 then
+    os.execute('mkdir -p ' .. session_dir)
+  end
+
   -- Save the session
   vim.cmd('mksession!' .. session_path)
 end
