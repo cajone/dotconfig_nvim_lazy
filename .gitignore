@@ -9,3 +9,4 @@ data
 ~/
 worktrees
 lazy-lock.json
+.mksession
