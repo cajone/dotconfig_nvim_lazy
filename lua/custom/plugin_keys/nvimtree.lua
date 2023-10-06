@@ -1,5 +1,5 @@
 -- Nvimtree key mappings 
- local api = require('nvim-tree.api')
+local api = require('nvim-tree.api')
 
 local function opts(desc,bufnr)
   return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
