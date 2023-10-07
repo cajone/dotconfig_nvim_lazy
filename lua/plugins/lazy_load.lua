@@ -26,7 +26,7 @@ require("lazy").setup({
   { import = "plugins.telescope" }, -- Fuzzy file finder and many other things
   { import = "plugins.terminal" }, -- Toggle Terminal window
   { import = "plugins.nvim-treesitter" }, --  Configure TreeSitter  Language Parsers
-  { import = "plugins.distant" } ,                -- ssh connections
+--  { import = "plugins.distant" } ,                -- ssh connections
 
   { "tpope/vim-fugitive" }, -- Fugitive ( Git)
   { "tpope/vim-dadbod" }, -- DB interaction
