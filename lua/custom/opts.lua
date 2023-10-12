@@ -64,5 +64,5 @@ opt.wildmenu = true                -- Show list instead of just completing
 opt.wildmode = "list:longest,full" -- Command <Tab> completion, list matches, then longest common part, then all.
 opt.whichwrap = "b,s,h,l,<,>,[,]"  -- Backspace and cursor keys wrap too
 
--- [[ Change the default shell out to /usr/bin/zsh ]]
-opt.shell = "/usr/bin/zsh" -- Change the :! shell to use zsh
+-- [[ Change the default shell out to /usr/bin/bash ]]
+opt.shell = "/usr/bin/bash" -- Change the :! shell to use bash
