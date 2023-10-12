@@ -9,6 +9,7 @@ vim.g.localleader = "\\"
 
 vim.g.python3_host_prog = '/usr/bin/python3'
 
+-- [[ Instant Markdown ]]
 vim.g.instant_markdown_slow = 2
 vim.g.instant_markdown_autostart = 0
 
