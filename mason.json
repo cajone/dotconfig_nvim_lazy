@@ -1,0 +1,13 @@
+{
+  "install": [
+    {
+      "server": "sumneko_lua",
+      "command": "sumneko-lua",
+      "args": ["-E", "/path/to/sumneko-lua/main.lua"]
+    },
+    {
+      "server": "pyright",
+      "command": "pyright"
+    }
+  ]
+
