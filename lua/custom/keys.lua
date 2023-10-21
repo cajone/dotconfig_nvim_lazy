@@ -61,6 +61,13 @@
   -- resize current focused vertical panel by 5 chars
     map("n", "<F3>", ":vertical resize -5<CR>", { noremap = true })
     map("n", "<F4>", ":vertical resize +5<CR>", { noremap = true })
+  -- Spelling 
+  -- F5 will find next word in doc, 
+    map("n", "<F5>", "]s", { noremap = true })
+  -- F6 will add word to local dictionary
+    map("n", "<F6>", "zg", { noremap = true })
+  -- F7 will prompt to select from a dictionary
+    map("n", "<F7>", "z=", { noremap = true })
 
 
 -- Mapping for cookstyle

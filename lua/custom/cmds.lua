@@ -22,3 +22,9 @@ vim.cmd([[command! LoadSessions lua LoadSession()]])
 vim.cmd([[command! SaveSessions lua SaveSession()]])
 vim.cmd([[command! ClearSessions lua ClearSession()]])
 
+-- Turn spelling on if editing either txt or md files
+-- Enable spell checking for specific filetypes
+vim.cmd[[
+  autocmd BufRead,BufNewFile *.txt,*.md setlocal spell
+]]
+
