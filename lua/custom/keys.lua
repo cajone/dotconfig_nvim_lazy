@@ -62,10 +62,10 @@
   -- Spelling 
     -- F5 will find next word in doc, 
     map("n", "<F5>", "]s", { noremap = true })
-    -- F6 will add word to local dictionary
-    map("n", "<F6>", "zg", { noremap = true })
     -- F7 will prompt to select from a dictionary
-    map("n", "<F7>", "z=", { noremap = true })
+    map("n", "<F6>", "z=", { noremap = true })
+    -- F6 will add word to local dictionary
+    map("n", "<F7>", "zg", { noremap = true })
   -- Toggle Vimwiki URL's
     map("n", "<F8>", ":lua ToggleVimwikiConceallevel()<CR>", { noremap = true })
 
