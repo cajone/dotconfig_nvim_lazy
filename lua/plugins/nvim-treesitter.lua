@@ -3,10 +3,10 @@ M = {
     require('nvim-treesitter.configs').setup{
       ensure_installed = {
 --        'bash',
-        'groovy',
+--        'groovy',
 --        'lua',
-        'python',
-        'ruby',
+--        'python',
+--        'ruby',
       },
       highlight = {
         enable = true,
