@@ -9,6 +9,9 @@
   map("n", "<C-k>", "<C-w>k", { noremap = true })
   map("n", "<C-l>", "<C-w>l", { noremap = true })
 
+
+  map("n", "<C-c>", '"yy', { noremap = true })
+
 -- Telescope Keys some of this requires "ripgrep" install using you system package manager
   local builtin = require('telescope.builtin')
   vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = "Fuzzy find files in cwd" })
