@@ -4,7 +4,7 @@ M = {
       ensure_installed = {
 --        'bash',
 --        'groovy',
---        'lua',
+        'lua',
 --        'python',
 --        'ruby',
       },
