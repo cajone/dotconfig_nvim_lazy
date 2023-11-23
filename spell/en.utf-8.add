@@ -16,3 +16,4 @@ Dockerfile
 ansible
 InSpec
 Yanmar
+Ollama

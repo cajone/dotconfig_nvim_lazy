@@ -45,6 +45,6 @@ require("lazy").setup({
 
 require('gen').prompts['Devops'] = {
   prompt = "You are a senior devops engineer, acting as an assistant. You offer help with devops technologies like lua, nvim,Jenkins, Ansible, Chef, Ruby, Docker, Docker-Compose, Python. You answer with code examples when possible $input\n$text",
-  replace = false
+  replace = true
 }
 
