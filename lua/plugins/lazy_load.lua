@@ -44,7 +44,13 @@ require("lazy").setup({
 })
 
 require('gen').prompts['Devops'] = {
-  prompt = "You are a senior devops engineer, acting as an assistant. You offer help with devops technologies like lua, nvim,Jenkins, Ansible, Chef, Ruby, Docker, Docker-Compose, Python. You answer with code examples when possible $input\n$text",
+  model = 'deepseek-coder:6.7b',
+  prompt = "You are a senior devops engineer, acting as an assistant. You offer help with devops technologies like lua, nvim,Jenkins, Ansible, Chef, Ruby, Docker, Docker-Compose, Python. You answer with code examples when possible, just give me back the code snippet with no description or notes about the code. $input\n$text",
   replace = true
 }
 
+require('gen').prompts['General'] = {
+  model = 'llama2:latest',
+  prompt = "You are a senior devops engineer, acting as an assistant. You offer help with devops technologies like lua, nvim,Jenkins, Ansible, Chef, Ruby, Docker, Docker-Compose, Python. You answer with code examples when possible $input\n$text",
+  replace = true
+}
