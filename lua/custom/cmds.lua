@@ -28,3 +28,6 @@ vim.cmd[[
   autocmd BufRead,BufNewFile *.txt,*.md setlocal spell
 ]]
 
+
+-- Fugitive
+vim.cmd([[command! -nargs=0 FugitiveInside execute "lcd %:h" | :G]])

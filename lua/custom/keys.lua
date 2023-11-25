@@ -36,9 +36,6 @@
 -- Git
   map("n", "<Leader>Gb", ":G blame<CR>", { noremap = true, silent = true })
 
-  vim.cmd([[
-  command! -nargs=0 FugitiveInside execute "lcd %:h" | :G
-  ]])
 
   map('n', '<Leader>gf', ':FugitiveInside<CR>', { noremap = true })
 
@@ -72,8 +69,12 @@
   -- Toggle Vimwiki URL's
     map("n", "<F8>", ":lua ToggleVimwikiConceallevel()<CR>", { noremap = true })
 
+-- Mapping for windo diffs
+    map('n', "<leader>wd", ":windo diffthis<CR>", { noremap = true })
+    map('n', "<leader>wD", ":windo diffoff<CR>", { noremap = true })
+
 -- Mapping for cookstyle
-  map("n", "<leader>cs", ":!cookstyle -a %<CR>", { noremap = true })
+    map("n", "<leader>cs", ":!cookstyle -a %<CR>", { noremap = true })
 
 -- Map a key combination to open Vimwiki and set LCD
   vim.api.nvim_set_keymap('n', '<Leader>ww', ':lua OpenVimwiki()<CR>', { noremap = true, silent = true })
