@@ -15,7 +15,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   { "nvim-treesitter/nvim-treesitter" },          -- Install Treesitter
   { "hrsh7th/nvim-cmp" },                         -- Neo Complete
-  { "David-Kunz/gen.nvim" },                      -- ollama prompts
   { import = "plugins.colorscheme" },             -- ColorScheme
   { import = "plugins.dressing" },                -- Allows prompts and selections
   { import = "plugins.git-worktree" },            -- Treesitter git-worktree
@@ -27,7 +26,7 @@ require("lazy").setup({
   { import = "plugins.telescope" },               -- Fuzzy file finder and many other things
   { import = "plugins.terminal" },                -- Toggle Terminal window
   { import = "plugins.nvim-treesitter" },         -- Configure TreeSitter  Language Parsers
---  { import = "plugins.ai" },                      -- Configure AI prompt
+  { import = "plugins.ai" },                      -- Configure AI prompt
 
 --  { import = "plugins.distant" } ,                -- ssh connections
 --  { import = "plugins.nvim-cmp" },                -- Auto Completion
@@ -43,21 +42,4 @@ require("lazy").setup({
   { "cohama/agit.vim", },                         -- Git history Tree
 })
 
-require('gen').prompts['Devops'] = {
-  model = 'deepseek-coder:6.7b',
-  prompt = "You are a senior devops engineer, acting as an assistant. You offer help with devops technologies like lua, nvim,Jenkins, Ansible, Chef, Ruby, Docker, Docker-Compose, Python. You answer with code examples when possible, just give me back the code snippet with no description or notes about the code. $input\n$text",
-  replace = true
-}
 
-
-require('gen').prompts['Ansible'] = {
-  model = 'deepseek-coder:6.7b',
-  prompt = "You are a senior devops engineer, acting as an assistant. You offer help with  Ansible. You answer with code examples when possible, just give me back the code snippet with no description or notes about the code. $input\n$text",
-  replace = true
-}
-
-require('gen').prompts['General'] = {
-  model = 'llama2:latest',
-  prompt = "You are a senior devops engineer, acting as an assistant. You offer help with devops technologies like lua, nvim,Jenkins, Ansible, Chef, Ruby, Docker, Docker-Compose, Python. You answer with code examples when possible $input\n$text",
-  replace = true
-}
