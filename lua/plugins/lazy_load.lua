@@ -35,7 +35,7 @@ require("lazy").setup({
   { "tpope/vim-dadbod", },                        -- DB interaction
   { "kristijanhusak/vim-dadbod-completion", },    -- DB autocompletion
   { "kristijanhusak/vim-dadbod-ui", },            -- UI for the above
-  { 'tpope/vim-rhubarb', },                       -- Git Support
+  { "tpope/vim-rhubarb", },                       -- Git Support
   { "vimwiki/vimwiki", },                         -- Vimwiki
   { "instant-markdown/vim-instant-markdown", },   -- Instant Markdown
   { "mzlogin/vim-markdown-toc", },                -- Markdown TOC
