@@ -41,5 +41,3 @@ require("lazy").setup({
   { "mzlogin/vim-markdown-toc", },                -- Markdown TOC
   { "cohama/agit.vim", },                         -- Git history Tree
 })
-
-
