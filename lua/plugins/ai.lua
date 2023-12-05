@@ -3,7 +3,7 @@ return {
     "David-Kunz/gen.nvim",
     config = function()
       require('gen').prompts['Devops'] = {
-        model = 'deepseek-coder:6.7b',
+        model = 'orca2',
         prompt = [[You are a senior DevOps engineer, answering questions about Lua, nvim, Jenkins, Ansible, Chef, Ruby, Docker, Docker-Compose and Python. Provide code examples where appropriate. $input\n$text]],
         replace = true
       }
