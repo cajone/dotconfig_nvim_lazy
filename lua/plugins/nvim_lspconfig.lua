@@ -2,7 +2,6 @@ return {
   "neovim/nvim-lspconfig",
   config = function()
     local lspconfig = require('lspconfig')
-    local vim = vim or {}
     local luaformatter = {
       formatcommand = "lua-format -i",
       formatStdin = true,

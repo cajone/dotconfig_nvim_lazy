@@ -3,7 +3,7 @@ M = {
     build = ":TSUpdate",
     event = { "BufReadPre", "BufNewFile" },
     require('nvim-treesitter.configs').setup{
-      ensure_installed = { 'bash', 'groovy', 'python', 'ruby', 'sql', 'typescript' },
+      ensure_installed = { 'bash', 'groovy', 'json', 'python', 'ruby', 'sql', 'typescript' },
       highlight = {
         enable = true,
         additional_vim_regex_highlighting = true,

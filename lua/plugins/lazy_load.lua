@@ -31,6 +31,7 @@ require("lazy").setup({
 --  { import = "plugins.distant" } ,                -- ssh connections
 --  { import = "plugins.nvim-cmp" },                -- Auto Completion
 
+  { "b0o/schemastore.nvim" },                     -- Language parser(s)
   { "tpope/vim-fugitive", },                      -- Fugitive ( Git)
   { "tpope/vim-dadbod", },                        -- DB interaction
   { "kristijanhusak/vim-dadbod-completion", },    -- DB autocompletion

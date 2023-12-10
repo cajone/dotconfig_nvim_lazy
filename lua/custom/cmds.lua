@@ -1,6 +1,7 @@
 -- Set syntax highlighting for Jenkins files with no extension
 vim.api.nvim_exec([[
   autocmd BufNewFile,BufRead JenkinsFile,*/Jenkinsfile,Jenkinfile* set filetype=groovy
+  autocmd BufNewFile,BufRead *.json set filetype=json
 ]], false)
 
 -- Auto run rubocop over ruby files
@@ -31,3 +32,5 @@ vim.cmd[[
 
 -- Fugitive
 vim.cmd([[command! -nargs=0 FugitiveInside execute "lcd %:h" | :G]])
+
+
