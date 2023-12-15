@@ -2,6 +2,11 @@ return {
   {
     "David-Kunz/gen.nvim",
     config = function()
+      require('gen').prompts['Ageneral'] = {
+        model = 'mixtral',
+        prompt = [[You are a senior DevOps engineer, answering questions about  Ansible, Docker, Docker-Compose and Python. Provide code examples where appropriate. If a question is asked about a specific software do not geive examples in other software languages, specifically stick to python where possible $input\n$text]],
+        replace = true
+      }
       require('gen').prompts['Devops'] = {
         model = 'wizardcoder',
         prompt = [[You are a senior DevOps engineer, answering questions about  Ansible, Docker, Docker-Compose and Python. Provide code examples where appropriate. $input\n$text]],
