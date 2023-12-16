@@ -1,10 +1,14 @@
 return {
   {
     "David-Kunz/gen.nvim",
+    opts = {
+      model = "mixtral",
+      display_mode = "split",
+    },
     config = function()
       require('gen').prompts['Ageneral'] = {
         model = 'mixtral',
-        prompt = [[You are a senior DevOps engineer, answering questions about  Ansible, Docker, Docker-Compose and Python. Provide code examples where appropriate. If a question is asked about a specific software do not geive examples in other software languages, specifically stick to python where possible $input\n$text]],
+        prompt = [[You answer question directly related to the question, without giving opions about anything eles unless requested to. $input\n$text]],
         replace = true
       }
       require('gen').prompts['Devops'] = {
