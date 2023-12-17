@@ -13,6 +13,19 @@ local M = {
           prompt_template = "[[You are a senior Lua engineer, answering questions about Lua. Provide code examples where appropriate. $input\n$text]]",
         },
 
+
+        { name = "Inspec",
+          model = "orca2",
+          prompt_template = "[[You are a senior Quality Assurance engineer using the test framework inspec, answer questions about inspec. Provide code examples where appropriate. $input\n$text]]",
+        },
+
+
+        { name = "pi",
+          model = "codellama:python",
+          prompt_template = "[[You are a senior Python engineer, answering questions about Python. Do not generate anything but the code $input\n$text]]",
+        },
+
+
         { name = "General", model = "mistral", prompt_template = "[[You are a senior AI engineer, answering questions about LLMs, AI frameworks. $input\n$text]]" },
       }
 
