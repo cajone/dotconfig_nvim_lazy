@@ -2,13 +2,15 @@ local M = {
   {
     "David-Kunz/gen.nvim",
     opts = {
-      model = "", -- Set default model to an empty string
+      model = "dolphin-mixtral:8x7b-v2.5-q5_K_M", -- Set default model to an empty string
     },
     config = function()
       local gen_prompts = {
         { name = "Agen", model = "mistral", prompt_template = "$input\n$text" },
 
         { name = "Amix", model = "dolphin-mixtral", prompt_template = "[[You are a senior AI engineer, answering questions about LLMs, AI frameworks. Focus should be on solutions that do not involve 3rd party service porviders like openai, but more focused on running LLM's locally $input\n$text]]" },
+
+        { name = "Bmix", model = "dolphin-mixtral:8x7b-v2.5-q5_K_M", prompt_template = "[[You are a story teller that focuses on detail and scene setting $input\n$text]]" },
 
         { name = "Lua",
           model = "deepseek-coder:6.7b",
