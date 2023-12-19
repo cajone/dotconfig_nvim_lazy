@@ -11,6 +11,7 @@ return {
     local actions = require("telescope.actions")
 
     telescope.setup({
+      use_regex = true, -- Add this line to enable the "use_regex" option
       defaults = {
         mappings = {
           i = {
@@ -25,4 +26,3 @@ return {
     telescope.load_extension("fzf");
   end
 }
-
