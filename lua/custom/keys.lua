@@ -14,21 +14,22 @@
 
 -- Telescope Keys some of this requires "ripgrep" install using you system package manager
   local builtin = require('telescope.builtin')
-  vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = "Fuzzy find files in cwd" })
-  vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = "List recently opened files" })
-  vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = "Find string in cwd" })
-  vim.keymap.set('n', '<leader>fc', builtin.grep_string, { desc = "Find string under cursor" })
-  vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = "Show currently opend buffers" })
-  vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = "Open help pages" })
+  local set = vim.keymap.set
+  set('n', '<leader>ff', builtin.find_files, { desc = "Fuzzy find files in cwd" })
+  set('n', '<leader>fr', builtin.oldfiles, { desc = "List recently opened files" })
+  set('n', '<leader>fg', builtin.live_grep, { desc = "Find string in cwd" })
+  set('n', '<leader>fc', builtin.grep_string, { desc = "Find string under cursor" })
+  set('n', '<leader>fb', builtin.buffers, { desc = "Show currently opend buffers" })
+  set('n', '<leader>fh', builtin.help_tags, { desc = "Open help pages" })
 
 -- Mksession functions
-  vim.keymap.set('n', '<leader>sl', [[:LoadSessions<CR>]], { noremap = true, silent = true })
-  vim.keymap.set('n', '<leader>ss', [[:SaveSessions<CR>]], { noremap = true, silent = true })
-  vim.keymap.set('n', '<leader>sc', [[:ClearSessions<CR>]], { noremap = true, silent = true })
+  set('n', '<leader>sl', [[:LoadSessions<CR>]], { noremap = true, silent = true })
+  set('n', '<leader>ss', [[:SaveSessions<CR>]], { noremap = true, silent = true })
+  set('n', '<leader>sc', [[:ClearSessions<CR>]], { noremap = true, silent = true })
 
 -- Git-Worktree  local telescope = require('telescope')
-  vim.keymap.set('n', '<leader>sr', ":lua require('telescope').extensions.git_worktree.git_worktrees()<CR>" )
-  vim.keymap.set('n', '<leader>sR', ":lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>" )
+  set('n', '<leader>sr', ":lua require('telescope').extensions.git_worktree.git_worktrees()<CR>" )
+  set('n', '<leader>sR', ":lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>" )
 
 -- :only
   map("n", "<Leader>0", ":only<CR>", { noremap = true, silent = true })
