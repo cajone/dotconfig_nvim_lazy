@@ -23,6 +23,11 @@ local M = {
           prompt_template = "[[You are a senior Quality Assurance engineer using the test framework inspec, answer questions about inspec. Provide code examples where appropriate. $input\n$text]]",
         },
 
+        { name = "phi",
+          model = "phi",
+          prompt_template = "[[You are a senior software engineer, answering questions. Do not generate anything but the code $input\n$text]]",
+        },
+
 
         { name = "pi",
           model = "codellama:python",
