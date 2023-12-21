@@ -1,7 +1,7 @@
 return {
-    'ldelossa/gh.nvim',
+    "ldelossa/gh.nvim",
   dependencies = {
-    'ldelossa/litee.nvim',
+    "ldelossa/litee.nvim",
   },
     config = function()
       require("litee.lib").setup()

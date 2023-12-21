@@ -8,9 +8,13 @@ local M = {
       local gen_prompts = {
         { name = "Agen", model = "mistral", prompt_template = "$input\n$text" },
 
-        { name = "Amix", model = "dolphin-mixtral", prompt_template = "[[You are a senior AI engineer, answering questions about LLMs, AI frameworks. Focus should be on solutions that do not involve 3rd party service porviders like openai, but more focused on running LLM's locally $input\n$text]]" },
+        { name = "Amix", model = "dolphin-mixtral",
+          prompt_template = "[[You are a senior AI engineer, answering questions about LLMs, AI frameworks. Focus should be on solutions that running LLM's locally $input\n$text]]"
+        },
 
-        { name = "Bmix", model = "dolphin-mixtral:8x7b-v2.5-q5_K_M", prompt_template = "[[You are a story teller that focuses on detail and scene setting $input\n$text]]" },
+        { name = "Bmix", model = "dolphin-mixtral:8x7b-v2.5-q5_K_M",
+          prompt_template = "[[You are a story teller that focuses on detail and scene setting $input\n$text]]"
+        },
 
         { name = "Lua",
           model = "deepseek-coder:6.7b",
@@ -20,7 +24,7 @@ local M = {
 
         { name = "Inspec",
           model = "orca2",
-          prompt_template = "[[You are a senior Quality Assurance engineer using the test framework inspec, answer questions about inspec. Provide code examples where appropriate. $input\n$text]]",
+          prompt_template = "[[You are a senior Quality Assurance engineer, answer questions about Chef Inspec testing. Provide code examples where appropriate. $input\n$text]]",
         },
 
         { name = "phi",

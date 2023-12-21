@@ -1,6 +1,6 @@
 -- [[ local_fun.lua ]]
 
--- Save a session 
+-- Save a Mksession 
 function SaveSession()
  -- Get the current date and timestamp
   local timestamp = vim.fn.strftime("%Y%m%d%H%M")
@@ -84,6 +84,7 @@ end
 function ToggleLineNumbers()
   vim.wo.number = not vim.wo.number
   vim.wo.relativenumber = not vim.wo.relativenumber
+  -- Add a call here to turn off :Gitsigns toggle_signs 
 end
 
 -- Toggle the ability to see url links in VimWiki

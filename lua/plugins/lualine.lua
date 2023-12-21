@@ -10,7 +10,7 @@ return {
     local lazy_status = require("lazy.status")
     lualine.setup({
       options = {
-        icon_enabled = false,
+        icon_enabled = true,
         component_separators = { left = '|', right = '|' },
         section_separators = { left = '|', right = '|' },
         theme = "jellybeans",
