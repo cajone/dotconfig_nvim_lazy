@@ -13,7 +13,8 @@ local M = {
         },
 
         { name = "Bmix", model = "dolphin-mixtral:8x7b-v2.5-q5_K_M",
-          prompt_template = "[[You are a story teller that focuses on detail and scene setting $input\n$text]]"
+          prompt_template = "[[You are a story teller that focuses on detail and scene setting $input\n$text]]",
+          temperature = 1.5
         },
 
         { name = "Lua",
