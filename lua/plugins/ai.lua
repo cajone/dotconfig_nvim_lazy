@@ -28,8 +28,8 @@ local M = {
           prompt_template = "[[You are a senior Quality Assurance engineer, answer questions about Chef Inspec testing. Provide code examples where appropriate. $input\n$text]]",
         },
 
-        { name = "phi",
-          model = "phi",
+        { name = "coder",
+          model = "magicoder:latest",
           prompt_template = "[[You are a senior software engineer, answering questions. Do not generate anything but the code $input\n$text]]",
         },
 
