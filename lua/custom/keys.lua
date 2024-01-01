@@ -39,6 +39,9 @@
 
   map('n', '<Leader>gf', ':FugitiveInside<CR>', { noremap = true })
 
+-- Clean up code
+  map("n", '<Leader>ec', "Extract_selected_code_blocks()<CR>", { noremap = true })
+
 -- Toggle Line Numbers
   map("n", "<Leader>nn", ":lua ToggleLineNumbers()<CR>", { noremap = true })
 

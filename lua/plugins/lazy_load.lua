@@ -31,6 +31,7 @@ require("lazy").setup({
 --  { import = "plugins.distant" } ,                -- ssh connections
 --  { import = "plugins.nvim-cmp" },                -- Auto Completion
 
+--  { "TabbyML/vim-tabby" },                        -- Co Pilot Alternative
   { "b0o/schemastore.nvim" },                     -- Language parser(s)
   { "tpope/vim-fugitive", },                      -- Fugitive ( Git)
   { "tpope/vim-dadbod", },                        -- DB interaction
