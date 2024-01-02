@@ -190,41 +190,41 @@ function OpenPluginHelp()
 end
 
 
-function Extract_selected_code_blocks()
-    local start_line, _, _, start_col = unpack(vim.fn.getpos("'<"))
-    local _, end_line, _, end_col = unpack(vim.fn.getpos("'>"))
-
-    local lines = vim.fn.getline(start_line, end_line)
-
-    local code_blocks = {}
-    local current_block = {}
-    local in_code_block = false
-
-    for i, line in ipairs(lines) do
-        local _, _, language = line:find("^%s*```([%a%d]*)%s*$")
-
-        if language then
-            in_code_block = not in_code_block
-        elseif in_code_block then
-            table.insert(current_block, line)
-        end
-
-        if not in_code_block or i == #lines then
-            if #current_block > 0 then
-                table.insert(code_blocks, table.concat(current_block, "\n"))
-                current_block = {}
-            end
-        end
-    end
-
-    -- Append the extracted code blocks to the end of the buffer
-    vim.fn.append(end_line, code_blocks)
-
-    -- Print the extracted code blocks
-    for _, block in ipairs(code_blocks) do
-        print("Code Block:")
-        print(block)
-        print("------------")
-    end
-end
+-- function Extract_selected_code_blocks()
+--     local start_line, _, _, start_col = unpack(vim.fn.getpos("'<"))
+--     local _, end_line, _, end_col = unpack(vim.fn.getpos("'>"))
+-- 
+--     local lines = vim.fn.getline(start_line, end_line)
+-- 
+--     local code_blocks = {}
+--     local current_block = {}
+--     local in_code_block = false
+-- 
+--     for i, line in ipairs(lines) do
+--         local _, _, language = line:find("^%s*```([%a%d]*)%s*$")
+-- 
+--         if language then
+--             in_code_block = not in_code_block
+--         elseif in_code_block then
+--             table.insert(current_block, line)
+--         end
+-- 
+--         if not in_code_block or i == #lines then
+--             if #current_block > 0 then
+--                 table.insert(code_blocks, table.concat(current_block, "\n"))
+--                 current_block = {}
+--             end
+--         end
+--     end
+-- 
+--     -- Append the extracted code blocks to the end of the buffer
+--     vim.fn.append(end_line, code_blocks)
+-- 
+--     -- Print the extracted code blocks
+--     for _, block in ipairs(code_blocks) do
+--         print("Code Block:")
+--         print(block)
+--         print("------------")
+--     end
+-- end
 
