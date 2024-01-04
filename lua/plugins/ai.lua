@@ -23,9 +23,9 @@ local M = {
         },
 
 
-        { name = "Inspec",
-          model = "orca2",
-          prompt_template = "[[You are a senior Quality Assurance engineer, answer questions about Chef Inspec testing. Provide code examples where appropriate. $input\n$text]]",
+        { name = "timy",
+          model = "tinyllama",
+          prompt_template = "[[You are a senior QA engineer answering question about python molecule $input\n$text]]",
         },
 
         { name = "coder",
