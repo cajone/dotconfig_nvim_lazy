@@ -17,6 +17,11 @@ local M = {
           temperature = 1.5
         },
 
+        { name = "Music", model = "dolphin-mixtral:8x7b-v2.5-q5_K_M",
+          prompt_template = "[[You are a piano music teacher $input\n$text]]",
+          temperature = 0.5
+        },
+
         { name = "Lua",
           model = "deepseek-coder:6.7b",
           prompt_template = "[[You are a senior Lua engineer, answering questions about Lua. Provide code examples where appropriate. $input\n$text]]",
