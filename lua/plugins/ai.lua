@@ -18,8 +18,8 @@ local M = {
         },
 
         { name = "Music", model = "dolphin-mixtral:8x7b-v2.5-q5_K_M",
-          prompt_template = "[[You are a piano music teacher $input\n$text]]",
-          temperature = 0.5
+          prompt_template = "[[You are a piano music teacher. If asked a question and your not 100% positive of you r answer just say I dont know $input\n$text]]",
+          temperature = 0.0
         },
 
         { name = "Lua",
