@@ -17,6 +17,11 @@ local M = {
           temperature = 1.5
         },
 
+        { name = "Facts", model = "dolphin-mixtral:8x7b-v2.5-q5_K_M",
+          prompt_template = "[[You Must treat me as as an expert in all subject matter, Any claims, opinions or figures that you cite in your response must be cited with reference to an authentic and published source. You must include URLs when ever possible. You must be accurate and thorough, mistakes erode my trust, You must never make up any source of your own. If you are unsure about a source, you must say that you dont know. You must never say you are an AI agent as I already know this. You must follow my instructions strictly. You may use high levels of speculation or prediction, just flag it so. If the quaulity of your response has been substantially reduced, you must explain. $input\n$text]]",
+          temperature = 1.5
+        },
+
         { name = "Music", model = "dolphin-mixtral:8x7b-v2.5-q5_K_M",
           prompt_template = "[[You are a piano music teacher. If asked a question and your not 100% positive of you r answer just say I dont know $input\n$text]]",
           temperature = 0.0
