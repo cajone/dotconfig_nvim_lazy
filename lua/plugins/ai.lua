@@ -6,7 +6,7 @@ local M = {
     },
     config = function()
       local gen_prompts = {
-        { name = "Agen", model = "mistral", prompt_template = "$input\n$text" },
+        { name = "Agen", model = "dolphin-mistral:7b", prompt_template = "$input\n$text" },
 
         { name = "Amix", model = "dolphin-mistral:7b-v2.6-q6_K",
           prompt_template = "[[You are a senior AI engineer, answering questions about LLMs, AI frameworks. Focus should be on solutions that running LLM's locally $input\n$text]]"
