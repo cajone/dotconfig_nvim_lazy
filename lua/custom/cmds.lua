@@ -5,9 +5,9 @@ vim.api.nvim_exec([[
 ]], false)
 
 -- Auto run rubocop over ruby files
-vim.api.nvim_exec([[
-  autocmd BufWritePost *.rb :silent !rubocop --auto-correct %
-]], false)
+-- vim.api.nvim_exec([[
+--   autocmd BufWritePost *.rb :silent !rubocop --auto-correct %
+-- ]], false)
 
 -- Change the LCD path for Vimwiki
 vim.cmd([[autocmd BufEnter *.wiki lcd ~/vimwiki]])
