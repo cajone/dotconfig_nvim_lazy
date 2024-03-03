@@ -8,11 +8,16 @@ local M = {
       local gen_prompts = {
         { name = "Agen", model = "dolphin-mistral:7b", prompt_template = "$input\n$text" },
 
-        { name = "Amix", model = "dolphin-mistral:7b-v2.6-q6_K",
+        { name = "AI_eng", model = "dolphin-mistral:7b-v2.6-q6_K",
           prompt_template = "[[You are a senior AI engineer, answering questions about LLMs, AI frameworks. Focus should be on solutions that running LLM's locally $input\n$text]]"
         },
 
-        { name = "Bmix", model = "dolphin-mixtral:8x7b-v2.5-q5_K_M",
+        { name = "coder",
+          model = "starcoder2:latest",
+          prompt_template = "[[You are a senior software engineer, answering questions. Do not generate anything but the code $input\n$text]]",
+        },
+
+        { name = "Story_Teller", model = "dolphin-mixtral:8x7b-v2.5-q5_K_M",
           prompt_template = "[[You are a story teller that focuses on detail and scene setting $input\n$text]]",
           temperature = 1.5
         },
@@ -39,7 +44,7 @@ local M = {
         },
 
         { name = "coder",
-          model = "magicoder:latest",
+          model = "starcoder2:latest",
           prompt_template = "[[You are a senior software engineer, answering questions. Do not generate anything but the code $input\n$text]]",
         },
 
