@@ -28,6 +28,8 @@ require("lazy").setup({
 --  { import = "plugins.nvim-treesitter" },         -- Configure TreeSitter  Language Parsers
   { import = "plugins.ai" },                      -- Configure AI prompt
   { import = "plugins.dadbod-ui", },              -- UI for the above
+-- W.I.P   { import = "plugins.telescope-github", },       -- Github extensions
+
 
 --  { import = "plugins.distant" } ,                -- ssh connections
 --  { import = "plugins.nvim-cmp" },                -- Auto Completion

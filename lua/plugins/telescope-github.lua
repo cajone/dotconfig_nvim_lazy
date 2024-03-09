@@ -1,0 +1,13 @@
+return {
+  "nvim-telescope/telescope.nvim",
+  dependencies = {
+    { "nvim-lua/plenary.nvim" },
+    { "nvim-telescope/telescope-github.nvim" },
+  },
+  config = function()
+--    local telescope = require("telescope")
+--    local gtihub = require("telescope-github")
+
+
+  end
+}
