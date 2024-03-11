@@ -32,6 +32,7 @@ require("lazy").setup({
 --  { import = "plugins.nvim-cmp" },                -- Auto Completion
 
 --  { "TabbyML/vim-tabby" },                        -- Co Pilot Alternative
+  { "sindrets/diffview.nvim", },                  -- gitdiff view
   { "b0o/schemastore.nvim" },                     -- Language parser(s)
   { "tpope/vim-fugitive", },                      -- Fugitive ( Git)
   { "tpope/vim-dadbod", },                        -- DB interaction
