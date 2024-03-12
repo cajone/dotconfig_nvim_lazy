@@ -30,6 +30,7 @@
 -- Git-Worktree  local telescope = require('telescope')
   set('n', '<leader>sr', ":lua require('telescope').extensions.git_worktree.git_worktrees()<CR>" )
   set('n', '<leader>sR', ":lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>" )
+  set('n', '<leader>km', [[:Telescope keymaps<CR>]], { noremap = true, silent = true })
 
 -- :only
   map("n", "<Leader>0", ":only<CR>", { noremap = true, silent = true })
