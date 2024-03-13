@@ -43,4 +43,5 @@ require("lazy").setup({
   { "instant-markdown/vim-instant-markdown", },   -- Instant Markdown
   { "mzlogin/vim-markdown-toc", },                -- Markdown TOC
   { "cohama/agit.vim", },                         -- Git history Tree
+  { "NLKNguyen/papercolor-theme", },              -- Alternative colorschemes
 })
