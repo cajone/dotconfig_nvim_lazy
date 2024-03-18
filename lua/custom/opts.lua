@@ -2,6 +2,10 @@
 
 local opt = vim.opt
 local cmd = vim.cmd
+local api = vim.api
+
+-- [[ BackGround Colour ]]
+api.nvim_set_option("background", "blue")
 
 --[[ LEADER ]]
 -- vim.g.mapleader = "\\"
@@ -17,6 +21,7 @@ vim.g.instant_markdown_autostart = 0
 -- [[ Nvimtree ]]
 vim.g.loaded_netrw       = 1
 vim.g.loaded_netrwPlugin = 1
+
 
 -- [[ Context ]]
 -- opt.colorcolumn = '120'           -- str:  Show col for max line length

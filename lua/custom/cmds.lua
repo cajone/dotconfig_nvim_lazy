@@ -4,6 +4,7 @@ vim.api.nvim_exec([[
   autocmd BufNewFile,BufRead *.json set filetype=json
 ]], false)
 
+
 -- Auto run rubocop over ruby files
 -- vim.api.nvim_exec([[
 --   autocmd BufWritePost *.rb :silent !rubocop --auto-correct %
