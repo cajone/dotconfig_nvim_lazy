@@ -2,10 +2,6 @@
 
 local opt = vim.opt
 local cmd = vim.cmd
-local api = vim.api
-
--- [[ BackGround Colour ]]
-api.nvim_set_option("background", "blue")
 
 --[[ LEADER ]]
 -- vim.g.mapleader = "\\"
@@ -33,7 +29,7 @@ opt.scrolljump = 5        -- Lines to scroll when cursor leaves screen
 
 -- [[ Filetypes ]]
 opt.encoding = "utf8"     -- str:  String encoding to use
-opt.fileencoding = "utf8" -- str:  File encoding to use
+-- opt.fileencoding = "utf8" -- str:  File encoding to use
 
 -- [[ Theme ]]
 opt.syntax = "ON"        -- str:  Allow syntax highlighting
