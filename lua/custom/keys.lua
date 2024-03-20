@@ -21,6 +21,7 @@
   set('n', '<leader>fc', builtin.grep_string, { desc = "Find string under cursor" })
   set('n', '<leader>fb', builtin.buffers, { desc = "Show currently opend buffers" })
   set('n', '<leader>fh', builtin.help_tags, { desc = "Open help pages" })
+  set('n', '<leader>lk', builtin.keymaps, { desc = "Open keymaps" })
 
 -- Mksession functions
   set('n', '<leader>sl', [[:LoadSessions<CR>]], { noremap = true, silent = true })
@@ -80,7 +81,7 @@
     map('n', "<leader>wD", ":windo diffoff<CR>", { noremap = true })
 
 -- Mapping for cookstyle
-    map("n", "<leader>cs", ":!cookstyle -a %<CR>", { noremap = true })
+    map("n", "<leader>cs", ":!/opt/chefkdk/embedded/bin/cookstyle -a %<CR>", { noremap = true })
 
 -- Map a key combination to open Vimwiki and set LCD
   vim.api.nvim_set_keymap('n', '<Leader>ww', ':lua OpenVimwiki()<CR>', { noremap = true, silent = true })
