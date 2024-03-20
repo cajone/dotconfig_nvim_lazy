@@ -19,7 +19,7 @@
   set('n', '<leader>fr', builtin.oldfiles, { desc = "List recently opened files" })
   set('n', '<leader>fg', builtin.live_grep, { desc = "Find string in cwd" })
   set('n', '<leader>fc', builtin.grep_string, { desc = "Find string under cursor" })
-  set('n', '<leader>fb', builtin.buffers, { desc = "Show currently opend buffers" })
+  set('n', '<leader>fb', builtin.buffers, { desc = "Show currently opened buffers" })
   set('n', '<leader>fh', builtin.help_tags, { desc = "Open help pages" })
   set('n', '<leader>km', builtin.keymaps, { desc = "Open keymaps" })
 
