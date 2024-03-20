@@ -97,9 +97,9 @@
   vim.api.nvim_set_keymap('n', '<Leader>ph', [[:lua OpenPluginHelp()<CR>]], { silent = true })
 
 -- MarkdownToc
-  map("n", "<Leader>tc",  ":GenTocGFM<CR>", { noremap = true, silent = true })
-  map('n', '<Leader>tcu', ':UpdateToc<CR>', { noremap = true, silent = true })
-  map('n', '<Leader>tcr', ':RemoveToc<CR>', { noremap = true, silent = true })
+  map("n", "<Leader>toc", ':GenTocGFM<CR>', { noremap = true, silent = true })
+  map('n', '<Leader>tou', ':UpdateToc<CR>', { noremap = true, silent = true })
+  map('n', '<Leader>tor', ':RemoveToc<CR>', { noremap = true, silent = true })
 
 -- Instant Markdown Preview on and off mappings
   map('n', '<leader>md', ':InstantMarkdownPreview<CR>', { noremap = true, silent = true })
