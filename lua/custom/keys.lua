@@ -39,6 +39,8 @@
   map("n", "<Leader>Gb", ":G blame<CR>", { noremap = true, silent = true })
 
   map('n', '<Leader>gf', ':FugitiveInside<CR>', { noremap = true })
+  map('n', '<Leader>gf', ':FugitiveInside<CR>', { noremap = true })
+  map('n', '<Leader>gls', ':G log --pretty=format:"%h - %an, %ar : %s"<CR> ', { desc = "Short formatted git log", noremap = true })
 
 -- Clean up code
   map("n", '<Leader>ec', "Extract_selected_code_blocks()<CR>", { noremap = true })
