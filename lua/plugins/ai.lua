@@ -3,6 +3,7 @@ local M = {
     "David-Kunz/gen.nvim",
     opts = {
       model = "dolphin-mixtral:8x7b-v2.5-q5_K_M", -- Set default model to an empty string
+      display_mode = "split",
     },
     config = function()
       local gen_prompts = {
