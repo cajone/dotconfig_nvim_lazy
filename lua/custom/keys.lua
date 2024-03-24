@@ -70,9 +70,9 @@
     -- F5 will find next word in doc, 
     map("n", "<F5>", "]s", { desc = "Spell check txt/md files", noremap = true })
     -- F6 will prompt to select from a dictionary
-    map("n", "<F6>", "z=", { noremap = true })
+    map("n", "<F6>", "z=", { desc = "Open Dictionary options for word under cursor", noremap = true })
     -- F7 will add word to local dictionary
-    map("n", "<F7>", "zg", { noremap = true })
+    map("n", "<F7>", "zg", { desc = "Save a word to a local dictionary", noremap = true })
 
   -- Toggle Vimwiki URL's
     map("n", "<F8>", ":lua ToggleVimwikiConceallevel()<CR>", { noremap = true })
