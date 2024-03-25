@@ -1,4 +1,4 @@
--- [[ keys.lua ]]
+-- [[ keys.lua, person keymaps, leader key is '\' by default ]]
 
 -- For info the <Leader> key is mapped to '\'
   local map = vim.api.nvim_set_keymap
