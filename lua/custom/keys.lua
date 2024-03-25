@@ -36,9 +36,6 @@
   map("n", "<Leader>0", ":only<CR>", { desc = "Close all buffers except current focus", noremap = true, silent = true })
 
 -- Git
-  map("n", "<Leader>Gb", ":G blame<CR>", { noremap = true, silent = true })
-
-  map('n', '<Leader>gf', ':FugitiveInside<CR>', { noremap = true })
   map('n', '<Leader>gf', ':FugitiveInside<CR>', { noremap = true })
   map('n', '<Leader>gls', ':G log --pretty=format:"%h - %an, %ar : %s"<CR> ', { desc = "Short formatted git log", noremap = true })
 
@@ -51,8 +48,8 @@
 -- Clear current search
   map("n", "<Leader>z", ":nohlsearch<CR>", { desc = "Clear current search", noremap = true })
 
--- Resource the nvim configuration after modification
-  map("n", "<Leader>sf", ":source %<CR>", { noremap = true })
+-- Refresh the nvim configuration after modification
+  map("n", "<Leader>sf", ":source %<CR>", { desc = "Reloads the configuration after a change", noremap = true })
 
 -- Toggle nvim-tree, load the DirectoryFiles
   map("n", "<Leader>df", ":NvimTreeToggle()<CR>", { desc = "Toggle Nvimtree", noremap = true })
