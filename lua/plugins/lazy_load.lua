@@ -13,6 +13,12 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  checker = {                                     -- turns off notificactions
+    enable = true,
+    notify = false,
+  },
+  change_detection = { notify = false, },         -- Stop reporting auto changes
+
   { "nvim-treesitter/nvim-treesitter" },          -- Install Treesitter
   { "hrsh7th/nvim-cmp" },                         -- Neo Complete
   { import = "plugins.colorscheme" },             -- ColorScheme
@@ -27,6 +33,8 @@ require("lazy").setup({
   { import = "plugins.terminal" },                -- Toggle Terminal window
 --  { import = "plugins.nvim-treesitter" },         -- Configure TreeSitter  Language Parsers
   { import = "plugins.ai" },                      -- Configure AI prompt
+--  { import = "plugins.which-key" },               -- which-key.nvim
+--  { import = "plugins.auto-session" },            -- Auto save restore sessions 
 
 --  { import = "plugins.distant" } ,                -- ssh connections
 --  { import = "plugins.nvim-cmp" },                -- Auto Completion

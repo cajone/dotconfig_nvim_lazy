@@ -13,6 +13,7 @@ return {
     telescope.setup({
       use_regex = true, -- Add this line to enable the "use_regex" option
       defaults = {
+        path_display = { "smart" },
         mappings = {
           i = {
             ["<C-k>"] = actions.move_selection_previous,  -- move to prev results

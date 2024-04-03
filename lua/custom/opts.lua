@@ -34,6 +34,8 @@ opt.encoding = "utf8"     -- str:  String encoding to use
 -- [[ Theme ]]
 opt.syntax = "ON"        -- str:  Allow syntax highlighting
 opt.termguicolors = true -- bool: If term supports ui color then enable
+opt.background = "dark"  -- colorschemes that can be light or dark will make it dark
+opt.signcolumn = "yes"   -- show sign column so that text does not shift
 cmd("highlight LineNr guifg=#48558f")
 cmd("highlight LineNr guibg=#1e2132")
 cmd("highlight SignColumn guibg=#1e2132")
@@ -43,7 +45,7 @@ opt.ignorecase = true -- bool: Ignore case in search patterns
 opt.smartcase = true  -- bool: Override ignorecase if search contains capitals
 opt.incsearch = true  -- bool: Use incremental search
 opt.hlsearch = true   -- bool: Highlight search matches
-opt.showmatch = true  -- Show matching brackets/parenthesis
+opt.showmatch = true  -- bool: Show matching brackets/parenthesis
 
 -- [[ Whitespace ]]
 opt.expandtab = true -- bool: Use spaces instead of tabs
@@ -68,3 +70,6 @@ opt.whichwrap = "b,s,h,l,<,>,[,]"  -- Backspace and cursor keys wrap too
 
 -- [[ Change the default shell out to /usr/bin/bash ]]
 opt.shell = "/usr/bin/bash" -- Change the :! shell to use bash
+
+-- [[ Clipboard ]]
+opt.clipboard:append("unnamedplus") -- use system clipboard as default register

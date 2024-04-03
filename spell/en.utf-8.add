@@ -21,3 +21,5 @@ Kubernetes
 AWS
 GitLab
 mariadb
+Journalctl
+journalctl
