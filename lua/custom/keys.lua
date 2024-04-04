@@ -100,8 +100,11 @@
   map('n', '<Leader>tor', ':RemoveToc<CR>', { desc = "Remove TOC ( in situ )", noremap = true, silent = true })
 
 -- Instant Markdown Preview on and off mappings
-  map('n', '<leader>md', ':InstantMarkdownPreview<CR>', { desc = "Instant Markdown preview in browser", noremap = true, silent = true })
-  map('n', '<leader>mo', ':InstantMarkdownStop<CR>', { desc = "Instant Markdown preview off", noremap = true, silent = true })
+--  map('n', '<leader>md', ':InstantMarkdownPreview<CR>', { desc = "Instant Markdown preview in browser", noremap = true, silent = true })
+--  map('n', '<leader>mo', ':InstantMarkdownStop<CR>', { desc = "Instant Markdown preview off", noremap = true, silent = true })
+  map('n', '<leader>md', ':MarkdownPreview<CR>', { desc = "Instant Markdown preview in browser", noremap = true, silent = true })
+  map('n', '<leader>mo', ':MarkdownPreviewStop<CR>', { desc = "Instant Markdown preview off", noremap = true, silent = true })
+  map('n', '<leader>mt', ':MarkdownPreviewToggle<CR>', { desc = "Instant Markdown preview off", noremap = true, silent = true })
 
 
 -- Tabs

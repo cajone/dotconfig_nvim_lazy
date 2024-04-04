@@ -21,6 +21,7 @@ require("lazy").setup({
 
   { "nvim-treesitter/nvim-treesitter" },          -- Install Treesitter
   { "hrsh7th/nvim-cmp" },                         -- Neo Complete
+  { import = "plugins.markdown-preview" },        -- Instant Markdown for neovim
   { import = "plugins.colorscheme" },             -- ColorScheme
   { import = "plugins.dressing" },                -- Allows prompts and selections
   { import = "plugins.git-worktree" },            -- Treesitter git-worktree
@@ -49,7 +50,7 @@ require("lazy").setup({
   { "kristijanhusak/vim-dadbod-ui", },            -- UI for the above
   { "tpope/vim-rhubarb", },                       -- Git Support
   { "vimwiki/vimwiki", },                         -- Vimwiki
-  { "instant-markdown/vim-instant-markdown", },   -- Instant Markdown
+--  { "instant-markdown/vim-instant-markdown", },   -- Instant Markdown
   { "mzlogin/vim-markdown-toc", },                -- Markdown TOC
 --  { "cohama/agit.vim", },                         -- Git history Tree
   { "NLKNguyen/papercolor-theme", },              -- Alternative colorschemes
