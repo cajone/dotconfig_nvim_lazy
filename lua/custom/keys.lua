@@ -59,26 +59,26 @@
 
 -- <F> Keys
   -- resize current focused vertical panel by 5 chars
-    map("n", "<F3>", ":vertical resize -5<CR>", { desc = "Descrease current window size by 5 chars", noremap = true })
-    map("n", "<F4>", ":vertical resize +5<CR>", { desc = "Increase current window size by 5 chars", noremap = true })
+  map("n", "<F3>", ":vertical resize -5<CR>", { desc = "Descrease current window size by 5 chars", noremap = true })
+  map("n", "<F4>", ":vertical resize +5<CR>", { desc = "Increase current window size by 5 chars", noremap = true })
 
   -- Spelling 
-    -- F5 will find next word in doc, 
-    map("n", "<F5>", "]s", { desc = "Spell check txt/md files", noremap = true })
-    -- F6 will prompt to select from a dictionary
-    map("n", "<F6>", "z=", { desc = "Open Dictionary options for word under cursor", noremap = true })
-    -- F7 will add word to local dictionary
-    map("n", "<F7>", "zg", { desc = "Save a word to a local dictionary", noremap = true })
+  -- F5 will find next word in doc, 
+  map("n", "<F5>", "]s", { desc = "Spell check txt/md files", noremap = true })
+  -- F6 will prompt to select from a dictionary
+  map("n", "<F6>", "z=", { desc = "Open Dictionary options for word under cursor", noremap = true })
+  -- F7 will add word to local dictionary
+  map("n", "<F7>", "zg", { desc = "Save a word to a local dictionary", noremap = true })
 
   -- Toggle Vimwiki URL's
-    map("n", "<F8>", ":lua ToggleVimwikiConceallevel()<CR>", { desc = "Show url paths in markdown files", noremap = true })
+  map("n", "<F8>", ":lua ToggleVimwikiConceallevel()<CR>", { desc = "Show url paths in markdown files", noremap = true })
 
 -- Mapping for windo diffs
-    map('n', "<leader>wd", ":windo diffthis<CR>", { desc = "Diff compare open split buffers", noremap = true })
-    map('n', "<leader>wD", ":windo diffoff<CR>", { desc = "Diff compare off", noremap = true })
+  map('n', "<leader>wd", ":windo diffthis<CR>", { desc = "Diff compare open split buffers", noremap = true })
+  map('n', "<leader>wD", ":windo diffoff<CR>", { desc = "Diff compare off", noremap = true })
 
 -- Mapping for cookstyle
-    map("n", "<leader>cs", ":!/opt/chefkdk/embedded/bin/cookstyle -a %<CR>", { noremap = true })
+  map("n", "<leader>cs", ":!/opt/chefkdk/embedded/bin/cookstyle -a %<CR>", { noremap = true })
 
 -- Map a key combination to open Vimwiki and set LCD
   vim.api.nvim_set_keymap('n', '<Leader>ww', ':lua OpenVimwiki()<CR>', { desc = "Open Wiki", noremap = true, silent = true })
@@ -109,6 +109,4 @@
   map('n', '<leader>tn',  ':tabNext<cr>', { desc = "Select Next Tab", noremap = true, silent = true })
   map('n', '<leader>tN',  ':tabnew<cr>', { desc = "Open New Tab", noremap = true, silent = true })
   map('n', '<leader>tc',  ':tabclose<cr>', { desc = "Close Current Tab", noremap = true, silent = true })
-
-
 
