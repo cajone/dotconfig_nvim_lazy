@@ -71,11 +71,11 @@
     map("n", "<F7>", "zg", { desc = "Save a word to a local dictionary", noremap = true })
 
   -- Toggle Vimwiki URL's
-    map("n", "<F8>", ":lua ToggleVimwikiConceallevel()<CR>", { noremap = true })
+    map("n", "<F8>", ":lua ToggleVimwikiConceallevel()<CR>", { desc = "Show url paths in markdown files", noremap = true })
 
 -- Mapping for windo diffs
-    map('n', "<leader>wd", ":windo diffthis<CR>", { noremap = true })
-    map('n', "<leader>wD", ":windo diffoff<CR>", { noremap = true })
+    map('n', "<leader>wd", ":windo diffthis<CR>", { desc = "Diff compare open split buffers", noremap = true })
+    map('n', "<leader>wD", ":windo diffoff<CR>", { desc = "Diff compare off", noremap = true })
 
 -- Mapping for cookstyle
     map("n", "<leader>cs", ":!/opt/chefkdk/embedded/bin/cookstyle -a %<CR>", { noremap = true })
@@ -84,7 +84,7 @@
   vim.api.nvim_set_keymap('n', '<Leader>ww', ':lua OpenVimwiki()<CR>', { desc = "Open Wiki", noremap = true, silent = true })
 
 -- Set LCD
-  map('n', '<Leader>lcd', [[<Cmd>lua ChangeWorkingDirectoryToGitRoot()<CR>]], { noremap = true, silent = true })
+  map('n', '<Leader>lcd', [[<Cmd>lua ChangeWorkingDirectoryToGitRoot()<CR>]], { desc = "Set nvimtree to local working directory", noremap = true, silent = true })
 
 
 -- Add Frozen string literal to ruby files
@@ -100,8 +100,8 @@
   map('n', '<Leader>tor', ':RemoveToc<CR>', { desc = "Remove TOC ( in situ )", noremap = true, silent = true })
 
 -- Instant Markdown Preview on and off mappings
-  map('n', '<leader>md', ':InstantMarkdownPreview<CR>', { noremap = true, silent = true })
-  map('n', '<leader>mo', ':InstantMarkdownStop<CR>', { noremap = true, silent = true })
+  map('n', '<leader>md', ':InstantMarkdownPreview<CR>', { desc = "Instant Markdown preview in browser", noremap = true, silent = true })
+  map('n', '<leader>mo', ':InstantMarkdownStop<CR>', { desc = "Instant Markdown preview off", noremap = true, silent = true })
 
 
 -- Tabs
