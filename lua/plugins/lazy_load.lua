@@ -22,7 +22,7 @@ require("lazy").setup({
   { "nvim-treesitter/nvim-treesitter" },          -- Install Treesitter
   { "hrsh7th/nvim-cmp" },                         -- Neo Complete
   { import = "plugins.markdown-preview" },        -- Instant Markdown for neovim
-  { import = "plugins.colorscheme" },             -- ColorScheme
+--  { import = "plugins.colorscheme" },             -- ColorScheme
   { import = "plugins.dressing" },                -- Allows prompts and selections
   { import = "plugins.git-worktree" },            -- Treesitter git-worktree
   { import = "plugins.gitsigns" },                -- Git Signs
@@ -32,7 +32,7 @@ require("lazy").setup({
   { import = "plugins.nvimtree" },                -- NvimTree
   { import = "plugins.telescope" },               -- Fuzzy file finder and many other things
   { import = "plugins.terminal" },                -- Toggle Terminal window
---  { import = "plugins.nvim-treesitter" },         -- Configure TreeSitter  Language Parsers
+  { import = "plugins.nvim-treesitter" },         -- Configure TreeSitter  Language Parsers
   { import = "plugins.ai" },                      -- Configure AI prompt
   { import = "plugins.indent-blankline" },        -- Visually show indentation
 --  { import = "plugins.which-key" },               -- which-key.nvim
@@ -41,7 +41,6 @@ require("lazy").setup({
 --  { import = "plugins.distant" } ,                -- ssh connections
 --  { import = "plugins.nvim-cmp" },                -- Auto Completion
 
---  { "TabbyML/vim-tabby" },                        -- Co Pilot Alternative
   { "sindrets/diffview.nvim", },                  -- gitdiff view
   { "b0o/schemastore.nvim" },                     -- Language parser(s)
   { "tpope/vim-fugitive", },                      -- Fugitive ( Git)
@@ -52,6 +51,6 @@ require("lazy").setup({
   { "vimwiki/vimwiki", },                         -- Vimwiki
 --  { "instant-markdown/vim-instant-markdown", },   -- Instant Markdown
   { "mzlogin/vim-markdown-toc", },                -- Markdown TOC
---  { "cohama/agit.vim", },                         -- Git history Tree
   { "NLKNguyen/papercolor-theme", },              -- Alternative colorschemes
+  { "metalelf0/jellybeans-nvim", },              -- JellyBeans lua colorschemes
 })

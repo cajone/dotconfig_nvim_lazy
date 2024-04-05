@@ -13,8 +13,8 @@ return {
 --    local fg_gutter = "#627E97"
 --    local border = "#547998"
 --
---    require("colorscheme").setup({
-----      style = "night",
+    require("colors").setup({
+      style = "night",
 --      on_colors = function(colors)
 --        colors.bg = bg
 --        colors.bg_dark = bg_dark
@@ -32,7 +32,7 @@ return {
 --        colors.fg_gutter = fg_gutter
 --        colors.sidebar = fg_dark
 --      end
---    })
+    })
 
     vim.cmd([[colorscheme jellybeans]])
   end,

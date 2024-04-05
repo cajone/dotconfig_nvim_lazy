@@ -7,7 +7,8 @@ return {
     local treesitter = require('nvim-treesitter.configs')
 
     treesitter.setup({
-      ensure_installed = { 'bash', 'groovy', 'json', 'python', 'ruby', 'sql', 'typescript' },
+--      ensure_installed = { 'bash', 'groovy', 'json', 'python', 'ruby', 'sql', 'typescript' },
+      ensure_installed = { 'lua' },
       sync_install = false,
       auto_install = true,
       highlight = {
