@@ -22,7 +22,7 @@ require("lazy").setup({
   { "nvim-treesitter/nvim-treesitter" },          -- Install Treesitter
   { "hrsh7th/nvim-cmp" },                         -- Neo Complete
   { import = "plugins.markdown-preview" },        -- Instant Markdown for neovim
---  { import = "plugins.colorscheme" },             -- ColorScheme
+  { import = "plugins.colorscheme" },             -- ColorScheme
   { import = "plugins.dressing" },                -- Allows prompts and selections
   { import = "plugins.git-worktree" },            -- Treesitter git-worktree
   { import = "plugins.gitsigns" },                -- Git Signs
@@ -52,5 +52,5 @@ require("lazy").setup({
 --  { "instant-markdown/vim-instant-markdown", },   -- Instant Markdown
   { "mzlogin/vim-markdown-toc", },                -- Markdown TOC
   { "NLKNguyen/papercolor-theme", },              -- Alternative colorschemes
-  { "metalelf0/jellybeans-nvim", },              -- JellyBeans lua colorschemes
+--  { "metalelf0/jellybeans-nvim", },              -- JellyBeans lua colorschemes
 })
