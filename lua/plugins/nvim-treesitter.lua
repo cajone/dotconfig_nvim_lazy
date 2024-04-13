@@ -8,7 +8,7 @@ return {
 
     treesitter.setup({
 --      ensure_installed = { 'bash', 'groovy', 'json', 'python', 'ruby', 'sql', 'typescript' },
-      ensure_installed = { 'lua' },
+      ensure_installed = { 'lua', 'groovy' },
       sync_install = false,
       auto_install = true,
       highlight = {
