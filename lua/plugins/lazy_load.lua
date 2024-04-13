@@ -26,9 +26,9 @@ require("lazy").setup({
   { "b0o/schemastore.nvim" },                     -- Language parser(s)
   { "tpope/vim-fugitive", },                      -- Fugitive ( Git)
   { "tpope/vim-dadbod", },                        -- DB interaction
+  { "tpope/vim-rhubarb", },                       -- Git Support
   { "kristijanhusak/vim-dadbod-completion", },    -- DB autocompletion
   { "kristijanhusak/vim-dadbod-ui", },            -- UI for the above
-  { "tpope/vim-rhubarb", },                       -- Git Support
   { "vimwiki/vimwiki", },                         -- Vimwiki
   { "instant-markdown/vim-instant-markdown", },   -- Instant Markdown
 
