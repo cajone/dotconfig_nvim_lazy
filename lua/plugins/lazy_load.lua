@@ -19,8 +19,20 @@ require("lazy").setup({
   },
   change_detection = { notify = false, },         -- Stop reporting auto changes
 
+  -- Plugins used straight out the box
   { "nvim-treesitter/nvim-treesitter" },          -- Install Treesitter
   { "hrsh7th/nvim-cmp" },                         -- Neo Complete
+  { "sindrets/diffview.nvim", },                  -- gitdiff view
+  { "b0o/schemastore.nvim" },                     -- Language parser(s)
+  { "tpope/vim-fugitive", },                      -- Fugitive ( Git)
+  { "tpope/vim-dadbod", },                        -- DB interaction
+  { "kristijanhusak/vim-dadbod-completion", },    -- DB autocompletion
+  { "kristijanhusak/vim-dadbod-ui", },            -- UI for the above
+  { "tpope/vim-rhubarb", },                       -- Git Support
+  { "vimwiki/vimwiki", },                         -- Vimwiki
+  { "instant-markdown/vim-instant-markdown", },   -- Instant Markdown
+
+  -- Plugins that have some localisation done to them
   { import = "plugins.markdown-preview" },        -- Instant Markdown for neovim
   { import = "plugins.colorscheme" },             -- ColorScheme
   { import = "plugins.dressing" },                -- Allows prompts and selections
@@ -35,22 +47,10 @@ require("lazy").setup({
   { import = "plugins.nvim-treesitter" },         -- Configure TreeSitter  Language Parsers
   { import = "plugins.ai" },                      -- Configure AI prompt
   { import = "plugins.indent-blankline" },        -- Visually show indentation
+
+  -- Plugins being tested
 --  { import = "plugins.which-key" },               -- which-key.nvim
 --  { import = "plugins.auto-session" },            -- Auto save restore sessions 
-
 --  { import = "plugins.distant" } ,                -- ssh connections
 --  { import = "plugins.nvim-cmp" },                -- Auto Completion
-
-  { "sindrets/diffview.nvim", },                  -- gitdiff view
-  { "b0o/schemastore.nvim" },                     -- Language parser(s)
-  { "tpope/vim-fugitive", },                      -- Fugitive ( Git)
-  { "tpope/vim-dadbod", },                        -- DB interaction
-  { "kristijanhusak/vim-dadbod-completion", },    -- DB autocompletion
-  { "kristijanhusak/vim-dadbod-ui", },            -- UI for the above
-  { "tpope/vim-rhubarb", },                       -- Git Support
-  { "vimwiki/vimwiki", },                         -- Vimwiki
---  { "instant-markdown/vim-instant-markdown", },   -- Instant Markdown
-  { "mzlogin/vim-markdown-toc", },                -- Markdown TOC
-  { "NLKNguyen/papercolor-theme", },              -- Alternative colorschemes
---  { "metalelf0/jellybeans-nvim", },              -- JellyBeans lua colorschemes
 })
