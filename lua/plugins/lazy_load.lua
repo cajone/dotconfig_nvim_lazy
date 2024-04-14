@@ -24,17 +24,13 @@ require("lazy").setup({
   { "b0o/schemastore.nvim" },                     -- Language parser(s)
   { "instant-markdown/vim-instant-markdown", },   -- Instant Markdown
   { "vimwiki/vimwiki", },                         -- Vimwiki
-  { "tpope/vim-dadbod", },                        -- DB interaction
---    { "kristijanhusak/vim-dadbod-completion", },    -- DB autocompletion ( currently breaks LSP )
---    { "kristijanhusak/vim-dadbod-ui", },            -- UI for the above ( currently breaks LSP )
 
   -- Plugins that have some localisation done to them
   { import = "plugins.ai" },                      -- Configure AI prompt
   { import = "plugins.colorscheme" },             -- ColorScheme
+  { import = "plugins.db" },                      -- Database related plugins
   { import = "plugins.dressing" },                -- Allows prompts and selections
   { import = "plugins.git" },                     -- git related plugins
--- { import = "plugins.git-worktree" },            -- Treesitter git-worktree
---  { import = "plugins.gitsigns" },                -- Git Signs
   { import = "plugins.indent-blankline" },        -- Visually show indentation
   { import = "plugins.lualine" },                 -- Status Line
   { import = "plugins.markdown-preview" },        -- Instant Markdown for neovim
