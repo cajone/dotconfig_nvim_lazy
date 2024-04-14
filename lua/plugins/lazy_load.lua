@@ -10,6 +10,7 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
+
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
@@ -20,37 +21,40 @@ require("lazy").setup({
   change_detection = { notify = false, },         -- Stop reporting auto changes
 
   -- Plugins used straight out the box
-  { "nvim-treesitter/nvim-treesitter" },          -- Install Treesitter
-  { "hrsh7th/nvim-cmp" },                         -- Neo Complete
-  { "sindrets/diffview.nvim", },                  -- gitdiff view
   { "b0o/schemastore.nvim" },                     -- Language parser(s)
-  { "tpope/vim-fugitive", },                      -- Fugitive ( Git)
-  { "tpope/vim-dadbod", },                        -- DB interaction
-  { "tpope/vim-rhubarb", },                       -- Git Support
-  { "kristijanhusak/vim-dadbod-completion", },    -- DB autocompletion
-  { "kristijanhusak/vim-dadbod-ui", },            -- UI for the above
-  { "vimwiki/vimwiki", },                         -- Vimwiki
   { "instant-markdown/vim-instant-markdown", },   -- Instant Markdown
+  { "nvim-treesitter/nvim-treesitter" },          -- Install Treesitter
+  { "sindrets/diffview.nvim", },                  -- gitdiff view
+  { "tpope/vim-dadbod", },                        -- DB interaction
+  { "tpope/vim-fugitive", },                      -- Fugitive ( Git)
+  { "tpope/vim-rhubarb", },                       -- Git Support
+  { "vimwiki/vimwiki", },                         -- Vimwiki
+--    { "kristijanhusak/vim-dadbod-completion", },    -- DB autocompletion
+--    { "kristijanhusak/vim-dadbod-ui", },            -- UI for the above
 
   -- Plugins that have some localisation done to them
-  { import = "plugins.markdown-preview" },        -- Instant Markdown for neovim
+  { import = "plugins.ai" },                      -- Configure AI prompt
   { import = "plugins.colorscheme" },             -- ColorScheme
   { import = "plugins.dressing" },                -- Allows prompts and selections
   { import = "plugins.git-worktree" },            -- Treesitter git-worktree
   { import = "plugins.gitsigns" },                -- Git Signs
+  { import = "plugins.indent-blankline" },        -- Visually show indentation
   { import = "plugins.lualine" },                 -- Status Line
-  { import = "plugins.mason" },                   -- LSP installer
+  { import = "plugins.markdown-preview" },        -- Instant Markdown for neovim
+--  { import = "plugins.mason" },                   -- LSP installer
+  { import = "plugins.nvim-cmp" },                -- Auto Completion
+  { import = "plugins.nvim-treesitter" },         -- Configure TreeSitter  Language Parsers
   { import = "plugins.nvim_lspconfig" },          -- LSP & Language parser syntax highlighting
   { import = "plugins.nvimtree" },                -- NvimTree
   { import = "plugins.telescope" },               -- Fuzzy file finder and many other things
   { import = "plugins.terminal" },                -- Toggle Terminal window
-  { import = "plugins.nvim-treesitter" },         -- Configure TreeSitter  Language Parsers
-  { import = "plugins.ai" },                      -- Configure AI prompt
-  { import = "plugins.indent-blankline" },        -- Visually show indentation
+
+  -- LSP Plugins
+  { import = "plugins.lsp.mason" },               -- LSP installer
 
   -- Plugins being tested
 --  { import = "plugins.which-key" },               -- which-key.nvim
 --  { import = "plugins.auto-session" },            -- Auto save restore sessions 
 --  { import = "plugins.distant" } ,                -- ssh connections
---  { import = "plugins.nvim-cmp" },                -- Auto Completion
+--  { "hrsh7th/nvim-cmp" },                         -- Neo Complete
 })
