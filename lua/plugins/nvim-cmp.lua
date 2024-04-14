@@ -40,10 +40,10 @@ M = {
       }),
 
       sources = cmp.config.sources({            -- ORDER MATTERS HERE
+        { name = "nvim_lsp" },
         { name = "luasnip" },   -- snippets
         { name = "buffer" },    -- text within curent buffer
         { name = "path" },      -- file system paths
---        { name = "nvim_lsp" },
       }),
     })
   end,
