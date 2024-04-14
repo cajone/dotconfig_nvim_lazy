@@ -23,9 +23,6 @@ require("lazy").setup({
   -- Plugins used straight out the box
   { "b0o/schemastore.nvim" },                     -- Language parser(s)
   { "instant-markdown/vim-instant-markdown", },   -- Instant Markdown
-  { "sindrets/diffview.nvim", },                  -- gitdiff view
-  { "tpope/vim-fugitive", },                      -- Fugitive ( Git)
-  { "tpope/vim-rhubarb", },                       -- Git Support
   { "vimwiki/vimwiki", },                         -- Vimwiki
   { "tpope/vim-dadbod", },                        -- DB interaction
 --    { "kristijanhusak/vim-dadbod-completion", },    -- DB autocompletion ( currently breaks LSP )
@@ -35,8 +32,9 @@ require("lazy").setup({
   { import = "plugins.ai" },                      -- Configure AI prompt
   { import = "plugins.colorscheme" },             -- ColorScheme
   { import = "plugins.dressing" },                -- Allows prompts and selections
-  { import = "plugins.git-worktree" },            -- Treesitter git-worktree
-  { import = "plugins.gitsigns" },                -- Git Signs
+  { import = "plugins.git" },                     -- git related plugins
+-- { import = "plugins.git-worktree" },            -- Treesitter git-worktree
+--  { import = "plugins.gitsigns" },                -- Git Signs
   { import = "plugins.indent-blankline" },        -- Visually show indentation
   { import = "plugins.lualine" },                 -- Status Line
   { import = "plugins.markdown-preview" },        -- Instant Markdown for neovim
