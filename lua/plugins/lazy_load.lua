@@ -41,8 +41,8 @@ require("lazy").setup({
   { import = "plugins.terminal" },                -- Toggle Terminal window
 
   -- LSP Plugins
---  { import = "plugins.lsp.mason" },               -- LSP installer
---  { import = "plugins.lsp.lsp_config" },          -- LSP configuration
+  { import = "plugins.lsp.mason" },               -- LSP installer
+  { import = "plugins.lsp.lsp_config" },          -- LSP configuration
 
   -- Plugins being tested
 --  { import = "plugins.which-key" },               -- which-key.nvim
