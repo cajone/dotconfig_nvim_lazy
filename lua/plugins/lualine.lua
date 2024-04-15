@@ -1,6 +1,6 @@
 -- Lualine Setup
 
-return {
+M = {
   "nvim-lualine/lualine.nvim",
   dependencies = {
     "nvim-tree/nvim-web-devicons",
@@ -18,28 +18,6 @@ return {
       bg = "#112638",
       inactive_bg = "#2c3043",
     }
---    local my_lualine_theme = {
---      normal = {
---        a = { bg = colors.blue, fg = colors.bg, gui = "bold" },
---        b = { bg = colors.bg, fg = colors.fg },
---        c = { bg = colors.bg, fg = colors.fg },
---      },
---      insert = {
---        a = { bg = colors.green, fg = colors.bg, gui = "bold" },
---        b = { bg = colors.bg, fg = colors.fg },
---        c = { bg = colors.bg, fg = colors.fg },
---      },
---      visual = {
---        a = { bg = colors.violet, fg = colors.bg, gui = "bold" },
---        b = { bg = colors.bg, fg = colors.fg },
---        c = { bg = colors.bg, fg = colors.fg },
---      },
---      command = {
---        a = { bg = colors.yellow, fg = colors.bg, gui = "bold" },
---        b = { bg = colors.bg, fg = colors.fg },
---        c = { bg = colors.bg, fg = colors.fg },
---      },
---    }
     lualine.setup({
       options = {
         theme = "iceberg",
@@ -87,4 +65,4 @@ return {
       },
     })
   end,
-}
+} return M

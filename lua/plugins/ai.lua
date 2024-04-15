@@ -1,4 +1,4 @@
-local M = {
+M = {
   {
     "David-Kunz/gen.nvim",
     opts = {

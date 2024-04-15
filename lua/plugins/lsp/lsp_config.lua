@@ -1,11 +1,11 @@
 M = {
+
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
   },
-
 
   config = function()
     -- import lspconfig plugin
@@ -72,7 +72,7 @@ M = {
     end
 
     -- configure lua server
-    lspconfig["lua_ls"].setup({
+    lspconfig.lua_ls.setup({
       capabilities = capabilities,
       on_attach = on_attach,
       settings = {
@@ -91,31 +91,31 @@ M = {
     })
 
     -- configure groovy server
-    lspconfig["groovyls"].setup({
+    lspconfig.groovyls.setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
 
     -- configure bash server
-    lspconfig["bashls"].setup({
+    lspconfig.bashls.setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
 
     -- configure python server
-    lspconfig["pylsp"].setup({
+    lspconfig.pylsp.setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
 
     -- configure ansible server
-    lspconfig["ansiblels"].setup({
+    lspconfig.ansiblels.setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
 
     -- configure docker server
-    lspconfig["dockerls"].setup({
+    lspconfig.dockerls.setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })

@@ -10,7 +10,8 @@ M = {
   {
     "lewis6991/gitsigns.nvim",
     config = function()
-      require("gitsigns").setup()
+      local gitsigns = require("gitsigns")
+      gitsigns.setup()
     end,
   },
 

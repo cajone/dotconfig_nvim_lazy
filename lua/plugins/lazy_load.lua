@@ -45,7 +45,6 @@ require("lazy").setup({
   { import = "plugins.lsp.lsp_config" },          -- LSP configuration
 
   -- Plugins being tested
---  { import = "plugins.which-key" },               -- which-key.nvim
 --  { import = "plugins.auto-session" },            -- Auto save restore sessions 
 --  { import = "plugins.distant" } ,                -- ssh connections
 })
