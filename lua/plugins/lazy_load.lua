@@ -14,7 +14,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  checker = {                                     -- turns off notificactions
+  checker = {                                     -- turns off notifications
     enable = true,
     notify = false,
   },
@@ -36,6 +36,7 @@ require("lazy").setup({
   { import = "plugins.markdown-preview" },        -- Instant Markdown for neovim
   { import = "plugins.nvim-cmp" },                -- Auto Completion
   { import = "plugins.nvimtree" },                -- NvimTree
+  { import = "plugins.none-ls" },                 -- null-ls replacement
   { import = "plugins.telescope" },               -- Fuzzy file finder and many other things
   { import = "plugins.terminal" },                -- Toggle Terminal window
 
