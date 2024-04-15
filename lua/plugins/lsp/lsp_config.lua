@@ -1,11 +1,11 @@
 M = {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
-
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
   },
+
 
   config = function()
     -- import lspconfig plugin
@@ -20,6 +20,7 @@ M = {
 
     local on_attach = function(client, bufnr)
       opts.buffer = bufnr
+      client = client
 
       opts.desc = "LSP Show references"
       keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definitions, references
@@ -43,10 +44,10 @@ M = {
       keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- Smart rename
 
       opts.desc = "LSP Show buffer diagnostics"
-      keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show diagnostics for file 
+      keymap.set("n", "<leader>lD", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show diagnostics for file 
 
       opts.desc = "LSP Show line diagnostics"
-      keymap.set("n", "<leader>d", vim.diagnostics.open_float, opts) -- show diagnostics for line
+      keymap.set("n", "<leader>lsd", vim.diagnostics.open_float, opts) -- show diagnostics for line
 
       opts.desc = "LSP Goto previous diagnostic"
       keymap.set("n", "[d", vim.diagnostics.goto_prev, opts) -- Jump to previous in buffer 
@@ -58,7 +59,7 @@ M = {
       keymap.set("n", "K", vim.lsp.buf.hover, opts) -- Show documentation for what is under cursor
 
       opts.desc = "LSP Restart LSP"
-      keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- LSP Restart
+      keymap.set("n", "<leaser>rs", ":LspRestart<CR>", opts) -- LSP Restart
     end
 
     -- used to enable autocompletion ( assign to every lsp server config )

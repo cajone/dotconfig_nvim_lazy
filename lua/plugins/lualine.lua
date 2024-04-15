@@ -42,7 +42,7 @@ return {
 --    }
     lualine.setup({
       options = {
-        theme = "jellybeans",
+        theme = "iceberg",
         icon_enabled = true,
         component_separators = { left = '|', right = '|' },
         section_separators = { left = '|', right = '|' },
