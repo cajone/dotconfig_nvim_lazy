@@ -2,30 +2,22 @@
 
 -- Save a Mksession 
 function SaveSession()
- -- Get the current date and timestamp
-  local timestamp = vim.fn.strftime("%Y%m%d%H%M")
+  local timestamp = vim.fn.strftime("%Y%m%d%H%M")                       -- Get the current date and timestamp
   vim.cmd(':NvimTreeClose')
 
-  -- Get the current working directory
-  local cwd = vim.fn.getcwd()
+  local cwd = vim.fn.getcwd()                                           -- Get the current working directory
+  local cwd_basename = vim.fn.fnamemodify(cwd, ':t')                    -- Extract the base name of the directory
+  local cwd_filename = vim.fn.substitute(cwd_basename, '/', '_', 'g')   -- Convert the base name to a valid filename
 
-  -- Extract the base name of the directory
-  local cwd_basename = vim.fn.fnamemodify(cwd, ':t')
-
-  -- Convert the base name to a valid filename
-  local cwd_filename = vim.fn.substitute(cwd_basename, '/', '_', 'g')
-
-  -- Define the session file path
-  local session_dir = vim.fn.stdpath('config') .. '/.mksession/'
-  local session_path = session_dir .. cwd_filename .. '_' .. timestamp .. '.vim'
+  local session_dir = vim.fn.stdpath('config') .. '/.mksession/'                  -- Define the session dir 
+  local session_path = session_dir .. cwd_filename .. '_' .. timestamp .. '.vim'  -- Define the session path
 
   -- Create the session directory if it doesn't exist
   if vim.fn.isdirectory(session_dir) == 0 then
     os.execute('mkdir -p ' .. session_dir)
   end
 
-  -- Save the session
-  vim.cmd('mksession!' .. session_path)
+  vim.cmd('mksession!' .. session_path)                                 -- Save the session
 end
 
 -- Load a mkSession from a list of saved ones
@@ -113,55 +105,10 @@ function ChangeWorkingDirectoryToGitRoot()
   end
 end
 
--- List of packages that can be installed if :InstallMasonConfig() is called
-local masonCommands = {
-  ":MasonInstall lua-language-server",
-  --  ":MasonInstall bash-language-server",
-  ":MasonInstall groovy-language-server",
-  ":MasonInstall tree-sitter-cli",
-  ":MasonInstall rubocop",
-  ":MasonInstall luacheck",
-  ":MasonInstall shellcheck",
-  --  ":MasonInstall prettier",
-  ":MasonInstall luaformatter",
-  ":MasonInstall beautysh",
-}
-
-
--- Run this sparingly as it will re-install everyting i the masonCommands above
---  function InstallMasonConfig()
---    for _, command in ipairs(masonCommands) do
---      vim.cmd(command)
---    end
---  end
-
--- When using Rubocop it will complain about frozen string literals
--- This function is a keybinding to put the string literal in place
--- Keybinding '\asl' (Add String Literal )
-function AddFrozenStringLiteral()
-  -- Move to the first line
-  vim.cmd('normal! gg')
-
-  -- Check if the line is empty or already contains the frozen string literal
-  local line = vim.fn.getline('.')
-  if vim.fn.empty(line) == 1 or line:match('^%s*#%s*frozen_string_literal:%s*true%s*$') then
-    return
-  end
-
-  -- Insert the frozen string literal line
-  vim.fn.append(0, '# frozen_string_literal: true')
-
-  -- Save the file
-  vim.cmd('write')
-end
-
 -- Open Vimwiki and set LCD
 function OpenVimwiki()
-  -- Open Vimwiki
-  vim.cmd("VimwikiIndex")
-
-  -- Set the LCD to ~/vimwiki
-  vim.cmd("lcd ~/vimwiki")
+  vim.cmd("VimwikiIndex")    -- Open Vimwiki
+  vim.cmd("lcd ~/vimwiki")   -- Set the LCD to ~/vimwiki
 end
 
 -- Termainal Key Mapings
@@ -188,43 +135,4 @@ function OpenPluginHelp()
     print('No double-quoted substring found in the line under the cursor: ' .. line)
   end
 end
-
-
--- function Extract_selected_code_blocks()
---     local start_line, _, _, start_col = unpack(vim.fn.getpos("'<"))
---     local _, end_line, _, end_col = unpack(vim.fn.getpos("'>"))
--- 
---     local lines = vim.fn.getline(start_line, end_line)
--- 
---     local code_blocks = {}
---     local current_block = {}
---     local in_code_block = false
--- 
---     for i, line in ipairs(lines) do
---         local _, _, language = line:find("^%s*```([%a%d]*)%s*$")
--- 
---         if language then
---             in_code_block = not in_code_block
---         elseif in_code_block then
---             table.insert(current_block, line)
---         end
--- 
---         if not in_code_block or i == #lines then
---             if #current_block > 0 then
---                 table.insert(code_blocks, table.concat(current_block, "\n"))
---                 current_block = {}
---             end
---         end
---     end
--- 
---     -- Append the extracted code blocks to the end of the buffer
---     vim.fn.append(end_line, code_blocks)
--- 
---     -- Print the extracted code blocks
---     for _, block in ipairs(code_blocks) do
---         print("Code Block:")
---         print(block)
---         print("------------")
---     end
--- end
 
