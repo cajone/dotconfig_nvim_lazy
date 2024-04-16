@@ -9,11 +9,11 @@
   map("n", "<C-k>", "<C-w>k", { noremap = true })
   map("n", "<C-l>", "<C-w>l", { noremap = true })
 
+-- Cut & Paste to system buffer if clipboard is set
   map('n', '<leader>y', '"+yy', { noremap = true, silent = true })
   map('v', '<leader>y', '"+yy', { noremap = true, silent = true })
   map('n', '<leader>p', '"+p', { noremap = true, silent = true })
   map('v', '<leader>p', '"+p', { noremap = true, silent = true })
-  -- map("n", "<C-c>", '"yy', { noremap = true }) -- Ctlr c should copy to system registry clipboard
 
 -- Telescope Keys some of this requires "ripgrep" install using you system package manager
   local builtin = require('telescope.builtin')
@@ -85,7 +85,7 @@
   map("n", "<leader>cs", ":!/opt/chefkdk/embedded/bin/cookstyle -a %<CR>", { noremap = true })
 
 -- Map a key combination to open Vimwiki and set LCD
-  vim.api.nvim_set_keymap('n', '<Leader>ww', ':lua OpenVimwiki()<CR>', { desc = "Open Wiki", noremap = true, silent = true })
+  map('n', '<Leader>ww', ':lua OpenVimwiki()<CR>', { desc = "Open Wiki", noremap = true, silent = true })
 
 -- Set LCD
   map('n', '<Leader>lcd', [[<Cmd>lua ChangeWorkingDirectoryToGitRoot()<CR>]], { desc = "Set nvimtree to local working directory", noremap = true, silent = true })
@@ -96,7 +96,7 @@
 
 
 -- Add a mapping to open plugin help
-  vim.api.nvim_set_keymap('n', '<Leader>ph', [[:lua OpenPluginHelp()<CR>]], { silent = true })
+  map('n', '<Leader>ph', [[:lua OpenPluginHelp()<CR>]], { silent = true })
 
 -- MarkdownToc
   map("n", "<Leader>toc", ':GenTocGFM<CR>', { desc = "Generate TOC ( in situ )", noremap = true, silent = true })

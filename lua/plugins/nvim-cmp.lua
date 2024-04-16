@@ -18,7 +18,7 @@ M = {
        "hrsh7th/cmp-path",            -- source for file system path
     },
 
-   -- event = "InsertEnter",
+    event = "InsertEnter",
 
     config = function()
       local cmp = require("cmp")
@@ -42,9 +42,8 @@ M = {
 
         completion = {                    -- :h completeopt for details
            completeopt = "menu,menuone,preview,noselect",
-        },                                                      
+        },
 
-      
         mapping = cmp.mapping.preset.insert({
           ["<C-k>"] = cmp.mapping.select_prev_item(),
           ["<C-j>"] = cmp.mapping.select_next_item(),
@@ -62,6 +61,6 @@ M = {
           { name = "path" },                                    -- file system paths
         }),
       })
-    end,
+    end
   }
 } return M
