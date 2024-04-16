@@ -4,7 +4,7 @@ M = {
   lazy = false,
   priority = 1000,
   config = function()
-    vim.cmd([[colorscheme iceberg]])
+    vim.cmd([[colorscheme jellybeans]])
   end,
 } return M
 

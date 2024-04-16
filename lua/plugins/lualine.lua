@@ -20,7 +20,7 @@ M = {
     }
     lualine.setup({
       options = {
-        theme = "iceberg",
+        theme = "jellybeans",
         icon_enabled = true,
         component_separators = { left = '|', right = '|' },
         section_separators = { left = '|', right = '|' },
