@@ -1,4 +1,5 @@
 M = {
+  -- Fugitive
   { "tpope/vim-fugitive", },                      -- Fugitive ( Git)
   { "tpope/vim-rhubarb", },                       -- Git Support
 
