@@ -9,7 +9,11 @@
   map("n", "<C-k>", "<C-w>k", { noremap = true })
   map("n", "<C-l>", "<C-w>l", { noremap = true })
 
-  map("n", "<C-c>", '"yy', { noremap = true }) -- Ctlr c should copy to system registry clipboard
+  map('n', '<leader>y', '"+yy', { noremap = true, silent = true })
+  map('v', '<leader>y', '"+yy', { noremap = true, silent = true })
+  map('n', '<leader>p', '"+p', { noremap = true, silent = true })
+  map('v', '<leader>p', '"+p', { noremap = true, silent = true })
+  -- map("n", "<C-c>", '"yy', { noremap = true }) -- Ctlr c should copy to system registry clipboard
 
 -- Telescope Keys some of this requires "ripgrep" install using you system package manager
   local builtin = require('telescope.builtin')
