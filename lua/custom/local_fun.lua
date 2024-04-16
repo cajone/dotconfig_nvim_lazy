@@ -129,11 +129,11 @@ local masonCommands = {
 
 
 -- Run this sparingly as it will re-install everyting i the masonCommands above
-function InstallMasonConfig()
-  for _, command in ipairs(masonCommands) do
-    vim.cmd(command)
-  end
-end
+--  function InstallMasonConfig()
+--    for _, command in ipairs(masonCommands) do
+--      vim.cmd(command)
+--    end
+--  end
 
 -- When using Rubocop it will complain about frozen string literals
 -- This function is a keybinding to put the string literal in place
