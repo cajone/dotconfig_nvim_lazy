@@ -6,8 +6,9 @@ M = {
   {
     "L3MON4D3/LuaSnip",             -- Snippet Engine
     dependencies = {
-     "saadparwaiz1/cmp_luasnip",      -- for autocompletion
-     "rafamadriz/friendly-snippets",  -- useful snippets
+      "kmarius/jsregexp",  -- still an issue with this showing in :checkhealth
+      "saadparwaiz1/cmp_luasnip",      -- for autocompletion
+      "rafamadriz/friendly-snippets",  -- useful snippets
     },
   },
 
