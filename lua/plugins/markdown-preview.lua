@@ -2,11 +2,11 @@ M = {
   "iamcco/markdown-preview.nvim",
   cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
   build = "cd app && yarn install",
+  ft = { "markdown" },
   init = function()
     vim.g.mkdp_filetypes = { "markdown" }
   end,
 
-  ft = { "markdown" },
   markdown_css = "", -- set a custom CSS style for rendering markdown files
   highlight_css = "", -- set a custom CSS style for syntax highlighting
   port = "", -- specify a custom port for starting the server or leave empty for random port
