@@ -12,6 +12,7 @@ M = {
     -- H_ Heavyweight >15GB in size
     config = function()
       local gen_prompts = {
+        { name = "A_lama3", model = "llama3:latest", prompt_template = "$input\n$text" },
         { name = "A_Agen", model = "dolphin-mistral:7b", prompt_template = "$input\n$text" },
 
         { name = "M_Amix", model = "dolphin-mistral:7b-v2.6-q6_K",
