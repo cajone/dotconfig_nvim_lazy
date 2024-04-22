@@ -1,6 +1,7 @@
 M = {
 --  "rainglow/vim",
-  "rafi/awesome-vim-colorschemes",
+--  "rafi/awesome-vim-colorschemes",
+  "tonsky/neovim-colors.git",
   lazy = false,
   priority = 1000,
   config = function()

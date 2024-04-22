@@ -13,13 +13,19 @@ M = {
     config = function()
       local gen_prompts = {
         { name = "A_lama3", model = "llama3:latest", prompt_template = "$input\n$text" },
+
         { name = "A_Agen", model = "dolphin-mistral:7b", prompt_template = "$input\n$text" },
 
         { name = "M_Amix", model = "dolphin-mistral:7b-v2.6-q6_K",
           prompt_template = "[[You are a senior AI engineer, answering questions about LLMs, AI frameworks. Focus should be on solutions that running LLM's locally $input\n$text]]"
         },
 
-        { name = "M_Bmix", model = "dolphin-mixtral:8x7b-v2.5-q5_K_M",
+        { name = "M_DL8B", model = "dolphin-llama3:8b-v2.9-q8_0",
+          prompt_template = "[[You are a senior Lua engineer, answering questions about Lua. Provide code examples where appropriate. $input\n$text]]",
+          temperature = 0.0
+        },
+
+        { name = "M_Bmix", model = "dolphin-llama3:8b-v2.9-q8_0",
           prompt_template = "[[You are a story teller that focuses on detail and scene setting $input\n$text]]",
           temperature = 1.5
         },

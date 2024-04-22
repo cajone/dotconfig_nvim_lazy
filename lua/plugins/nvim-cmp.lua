@@ -3,8 +3,9 @@ M = {
     "hrsh7th/cmp-nvim-lsp",
   },
 
-  {
-    "L3MON4D3/LuaSnip",             -- Snippet Engine
+  { "L3MON4D3/LuaSnip",
+    version = "v2.*",
+    build = "make install_jsregexp",
     dependencies = {
       "kmarius/jsregexp",  -- still an issue with this showing in :checkhealth
       "saadparwaiz1/cmp_luasnip",      -- for autocompletion
@@ -34,6 +35,7 @@ M = {
            expand = function(args)
              luasnip.lsp_expand(args.body)
            end,
+           extensions = {'jenkinsfile', 'groovy'}  -- files that have a suffix of jenkinsfile are actually groovy
         },
 
         window = {
