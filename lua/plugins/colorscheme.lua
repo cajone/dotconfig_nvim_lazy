@@ -1,22 +1,29 @@
 M = {
-  "olivercederborg/poimandres.nvim",
-  lazy = false,
-  priority = 1000,
-  config = function()
-    require('poimandres').setup{}
-  end,
-
-  init = function()
-    vim.cmd([[colorscheme poimandres]])
-  end
-} return M
-
-
 -- Other color schemes under consideration
 --  "rainglow/vim",
 --  "rafi/awesome-vim-colorschemes",
---  "tonsky/neovim-colors.git",
+--  "StarryLeo/starry-vim-colorschemes",
+  "folke/tokyonight.nvim",
 --  "jacoborus/tender.vim",
+
+--  "olivercederborg/poimandres.nvim",
+  lazy = false,
+  priority = 1000,
+  opts = {},
+--  config = function()
+--    require('jellybeans').setup{
+--      bold_vert_split = true,
+--      dim_nc_background = true,
+--      disable_background = true,
+--      disable_float_background = true,
+--      disable_italics = true,
+--    }
+--  end,
+
+  init = function()
+    vim.cmd([[colorscheme tokyonight]])
+  end,
+} return M
 
 -- gotham
 -- lunaperche
