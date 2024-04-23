@@ -5,7 +5,7 @@ M = {
   opts = {},
 
   init = function()
-    vim.cmd([[colorscheme tokyonight-moon]])
+    vim.cmd([[colorscheme tokyonight-storm]])
   end,
 } return M
 

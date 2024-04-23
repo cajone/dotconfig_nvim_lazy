@@ -1,5 +1,4 @@
 -- Lualine Setup
-
 M = {
   "nvim-lualine/lualine.nvim",
   dependencies = {
@@ -10,7 +9,6 @@ M = {
     local lazy_status = require("lazy.status")
     lualine.setup({
       options = {
-        theme = "tokoyonight",
         icon_enabled = true,
         component_separators = { left = '|', right = '|' },
         section_separators = { left = '|', right = '|' },
