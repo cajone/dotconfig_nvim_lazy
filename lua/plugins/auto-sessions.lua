@@ -1,4 +1,4 @@
-return {
+M = {
   "rmagatti/auto-session",
 
   config = function()
@@ -9,4 +9,4 @@ return {
       auto_session_suppress_dirs = { "~/", "~/Dev/", "~/Downloads", "~/Documents", "~/Desktop" },
     })
   end,
-}
+} return M

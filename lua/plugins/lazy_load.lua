@@ -31,7 +31,7 @@ require("lazy").setup({
   { import = "plugins.db" },                      -- Database related plugins
   { import = "plugins.dressing" },                -- Allows prompts and selections
   { import = "plugins.git" },                     -- git related plugins
-  { import = "plugins.indent-blankline" },        -- Visually show indentation
+--  { import = "plugins.indent-blankline" },        -- Visually show indentation
   { import = "plugins.lualine" },                 -- Status Line
   { import = "plugins.markdown-preview" },        -- Instant Markdown for neovim
   { import = "plugins.nvim-cmp" },                -- Auto Completion

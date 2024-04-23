@@ -1,4 +1,4 @@
-return {
+M = {
   "akinsho/toggleterm.nvim",
   version = "*",
   opts = {
@@ -15,8 +15,8 @@ return {
     shell = vim.o.shell,
     hightlights = {
       Normal = {
-        guibg = "#AAA777",
+        guibg = "#000000",
       }
     }
-  },
-}
+  }
+} return M

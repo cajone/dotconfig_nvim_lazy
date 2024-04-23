@@ -1,4 +1,4 @@
-return {
+M = {
     "ldelossa/gh.nvim",
   dependencies = {
     "ldelossa/litee.nvim",
@@ -7,4 +7,4 @@ return {
     require("litee.lib").setup()
     require("litee.gh").setup()
   end,
-}
+} return M
