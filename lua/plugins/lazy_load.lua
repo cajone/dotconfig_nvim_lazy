@@ -38,6 +38,7 @@ require("lazy").setup({
   { import = "plugins.nvimtree" },                -- NvimTree
   { import = "plugins.none-ls" },                 -- null-ls replacement
   { import = "plugins.telescope" },               -- Fuzzy file finder and many other things
+--  { import = "plugins.commander" },               -- Command line 
   { import = "plugins.terminal" },                -- Toggle Terminal window
 
   -- LSP Plugins
