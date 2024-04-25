@@ -2,8 +2,9 @@ M = {
   {
     "David-Kunz/gen.nvim",
     opts = {
-      model = "", -- Set default model to an empty string
+      model = "llama3:latest", -- Set default model to an empty string
       display_mode = "split",
+      host = 'localhost',
       port = "11434",
     },
     -- The models have a prefix A_ / M_ / H_ which refers to there size
