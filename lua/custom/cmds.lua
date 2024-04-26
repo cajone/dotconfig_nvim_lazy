@@ -4,6 +4,7 @@ vim.api.nvim_exec([[
   autocmd BufNewFile,BufRead *.json set filetype=json
 ]], false)
 
+vim.cmd([[colorscheme tokyonight]])  -- ok now load the colorscheme
 
 -- Auto run rubocop over ruby files
 -- vim.api.nvim_exec([[

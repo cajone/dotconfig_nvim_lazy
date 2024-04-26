@@ -1,22 +1,26 @@
 -- [[ opts.lua ]]
 
 local opt = vim.opt
-local cmd = vim.cmd
+local g = vim.g
+-- local cmd = vim.cmd
 
---[[ LEADER ]]
--- vim.g.mapleader = "\\"
-vim.g.localleader = "\\"
+-- Sync clipboard between OS and Neovim.
+--  Remove this option if you want your OS clipboard to remain independent.
+--  See `:help 'clipboard'`
+opt.clipboard = 'unnamedplus'
 
-vim.g.python3_host_prog = '/usr/bin/python3'
+
+-- Define which version of python to use
+g.python3_host_prog = '/usr/bin/python3'
 
 -- [[ Instant Markdown ]]
-vim.g.instant_markdown_slow = 2
-vim.g.instant_markdown_autostart = 0
+g.instant_markdown_slow = 2
+g.instant_markdown_autostart = 0
 
 
--- [[ Nvimtree ]]
-vim.g.loaded_netrw       = 1
-vim.g.loaded_netrwPlugin = 1
+-- [[ Nree ]]
+g.loaded_netrw       = 1
+g.loaded_netrwPlugin = 1
 
 
 -- [[ Context ]]
@@ -29,16 +33,10 @@ opt.scrolljump = 5        -- Lines to scroll when cursor leaves screen
 
 -- [[ Filetypes ]]
 opt.encoding = "utf8"     -- str:  String encoding to use
--- opt.fileencoding = "utf8" -- str:  File encoding to use
 
 -- [[ Theme ]]
 opt.syntax = "ON"        -- str:  Allow syntax highlighting
 opt.termguicolors = true -- bool: If term supports ui color then enable
---  opt.background = "dark"  -- colorschemes that can be light or dark will make it dark
---  opt.signcolumn = "yes"   -- show sign column so that text does not shift
---  cmd("highlight LineNr guifg=#48558f")
---  cmd("highlight LineNr guibg=#1e2132")
---  cmd("highlight SignColumn guibg=#1e2132")
 
 -- [[ Search ]]
 opt.ignorecase = true -- bool: Ignore case in search patterns
@@ -59,7 +57,7 @@ opt.splitbelow = true -- bool: Place new window below the current one
 
 -- [[ Maintain undo history between sessions :echo g:undodir ]]
 opt.undofile = true                    -- Allow undo history to be kept
-vim.g.undodir = "~/.config/nvim/undo/" -- Where to keep the undo history
+g.undodir = "~/.config/nvim/undo/" -- Where to keep the undo history
 opt.viminfo:append({ 'n' })            -- Remember cursor position between sessions
 opt.swapfile = false                   -- Dont generate a swap file
 
@@ -71,5 +69,3 @@ opt.whichwrap = "b,s,h,l,<,>,[,]"  -- Backspace and cursor keys wrap too
 -- [[ Change the default shell out to /usr/bin/bash ]]
 opt.shell = "/usr/bin/bash" -- Change the :! shell to use bash
 
--- [[ Clipboard ]]
-opt.clipboard:append("unnamedplus") -- use system clipboard as default register
