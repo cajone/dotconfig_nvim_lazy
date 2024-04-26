@@ -1,25 +1,21 @@
 
 M = {
   "folke/tokyonight.nvim",
---  "cajone/cajone-nvim",
-  lazy = false,
-  priority = 1000,
-  opts = {},
-
   init = function()
     vim.cmd([[colorscheme tokyonight]])
   end,
+  config = function()
+    local tokyonight = require("tokyonight")
+    tokyonight.setup({
+      lazy = false,
+      priority = 1000,
+      style = 'night',
+      transparent = false, -- Enable this to disable setting the background color
+      terminal_colors = true, -- Configure the colors used when opening a `:terminal` in [Neovim](https://github.com/neovim/neovim)
+      opts = {
+      },
+    })
+  end,
+
 } return M
 
-
--- Other color schemes under consideration
---  "rainglow/vim",
---  "rafi/awesome-vim-colorschemes",
---  "StarryLeo/starry-vim-colorschemes",
---  "jacoborus/tender.vim",
---  "olivercederborg/poimandres.nvim",
-
--- gotham
--- lunaperche
--- iceberg
--- jellybeans
