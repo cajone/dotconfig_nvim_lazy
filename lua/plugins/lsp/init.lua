@@ -1,3 +1,5 @@
 -- LSP based tooling
 
--- require("mason")
+return {
+  { "b0o/schemastore.nvim" }, -- Language parser(s)
+}

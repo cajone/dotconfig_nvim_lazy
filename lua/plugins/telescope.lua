@@ -4,6 +4,7 @@ M = {
   branch = "0.1.x",
   dependencies = {
     "nvim-lua/plenary.nvim",
+    "nvim-tree/nvim-web-devicons",
     {
       "nvim-telescope/telescope-fzf-native.nvim",
       build = "make",
@@ -14,6 +15,7 @@ M = {
       end,
     },
 
+    { "nvim-telescope/telescope-ui-select.nvim" },
     { -- Highlight, edit, and navigate code
       "nvim-treesitter/nvim-treesitter",
       build = ":TSUpdate",
@@ -46,8 +48,6 @@ M = {
         --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
       end,
     },
-
-    { "nvim-tree/nvim-web-devicons" },
   },
   config = function()
     local telescope = require("telescope")

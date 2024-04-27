@@ -4,7 +4,7 @@ M = {
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
-      { "antosha417/nvim-lsp-file-operations", config = true },
+      --      { "antosha417/nvim-lsp-file-operations", config = true },
       { "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
       "WhoIsSethDaniel/mason-tool-installer.nvim",
       { "j-hui/fidget.nvim", opts = {} },

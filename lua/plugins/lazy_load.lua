@@ -21,7 +21,6 @@ require("lazy").setup({
   change_detection = { notify = false }, -- Stop reporting auto changes
 
   -- Plugins used straight out the box
-  { "b0o/schemastore.nvim" }, -- Language parser(s)
   { "instant-markdown/vim-instant-markdown" }, -- Instant Markdown
   { "vimwiki/vimwiki" }, -- Vimwiki
 
@@ -31,6 +30,7 @@ require("lazy").setup({
   { import = "plugins.dressing" }, -- Allows prompts and selections
   { import = "plugins.git" }, -- git related plugins
   { import = "plugins.lualine" }, -- Status Line
+  { import = "plugins.lint" }, -- Linter(s)
   { import = "plugins.markdown-preview" }, -- Instant Markdown for neovim
   { import = "plugins.mini" }, -- Collections on notes, todo's
   { import = "plugins.nvim-cmp" }, -- Auto Completion
@@ -41,5 +41,6 @@ require("lazy").setup({
 
   -- LSP Plugins
   { import = "plugins.lsp.mason" }, -- LSP installer
+  { import = "plugins.lsp.debug" }, -- LSP Debug
   { import = "plugins.lsp.lsp_config" }, -- LSP configuration
 })
