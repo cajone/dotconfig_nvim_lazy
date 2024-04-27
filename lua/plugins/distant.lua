@@ -6,5 +6,5 @@ M = {
       require("distant").setup()
     end,
   },
-} return M
-
+}
+return M

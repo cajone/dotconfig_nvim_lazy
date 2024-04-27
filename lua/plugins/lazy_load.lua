@@ -14,32 +14,32 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  checker = {                                     -- turns off notifications
+  checker = { -- turns off notifications
     enable = true,
     notify = false,
   },
-  change_detection = { notify = false, },         -- Stop reporting auto changes
+  change_detection = { notify = false }, -- Stop reporting auto changes
 
   -- Plugins used straight out the box
-  { "b0o/schemastore.nvim" },                     -- Language parser(s)
-  { "instant-markdown/vim-instant-markdown", },   -- Instant Markdown
-  { "vimwiki/vimwiki", },                         -- Vimwiki
+  { "b0o/schemastore.nvim" }, -- Language parser(s)
+  { "instant-markdown/vim-instant-markdown" }, -- Instant Markdown
+  { "vimwiki/vimwiki" }, -- Vimwiki
 
   -- Plugins that have some localisation done to them
-  { import = "plugins.ai" },                      -- Configure AI prompt
-  { import = "plugins.colorscheme" },             -- ColorScheme
-  { import = "plugins.dressing" },                -- Allows prompts and selections
-  { import = "plugins.git" },                     -- git related plugins
-  { import = "plugins.lualine" },                 -- Status Line
-  { import = "plugins.markdown-preview" },        -- Instant Markdown for neovim
-  { import = "plugins.nvim-cmp" },                -- Auto Completion
-  { import = "plugins.nvimtree" },                -- NvimTree
-  { import = "plugins.none-ls" },                 -- null-ls replacement
-  { import = "plugins.telescope" },               -- Fuzzy file finder and many other things
-  { import = "plugins.terminal" },                -- Toggle Terminal window
+  { import = "plugins.ai" }, -- Configure AI prompt
+  { import = "plugins.colorscheme" }, -- ColorScheme
+  { import = "plugins.dressing" }, -- Allows prompts and selections
+  { import = "plugins.git" }, -- git related plugins
+  { import = "plugins.lualine" }, -- Status Line
+  { import = "plugins.markdown-preview" }, -- Instant Markdown for neovim
+  { import = "plugins.mini" }, -- Collections on notes, todo's
+  { import = "plugins.nvim-cmp" }, -- Auto Completion
+  { import = "plugins.nvimtree" }, -- NvimTree
+  { import = "plugins.none-ls" }, -- null-ls replacement
+  { import = "plugins.telescope" }, -- Fuzzy file finder and many other things
+  { import = "plugins.terminal" }, -- Toggle Terminal window
 
   -- LSP Plugins
-  { import = "plugins.lsp.mason" },               -- LSP installer
-  { import = "plugins.lsp.lsp_config" },          -- LSP configuration
-
+  { import = "plugins.lsp.mason" }, -- LSP installer
+  { import = "plugins.lsp.lsp_config" }, -- LSP configuration
 })

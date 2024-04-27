@@ -16,7 +16,8 @@ M = {
     hightlights = {
       Normal = {
         guibg = "#000000",
-      }
-    }
-  }
-} return M
+      },
+    },
+  },
+}
+return M

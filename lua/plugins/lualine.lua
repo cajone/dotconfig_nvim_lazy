@@ -10,8 +10,8 @@ M = {
     lualine.setup({
       options = {
         icon_enabled = true,
-        component_separators = { left = '|', right = '|' },
-        section_separators = { left = '|', right = '|' },
+        component_separators = { left = "|", right = "|" },
+        section_separators = { left = "|", right = "|" },
       },
       sections = {
         lualine_a = {
@@ -53,4 +53,5 @@ M = {
       },
     })
   end,
-} return M
+}
+return M

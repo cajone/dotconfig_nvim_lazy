@@ -12,9 +12,9 @@ M = {
     },
 
     config = function()
-      local vim = M.vim
+      --      local vim = M.vim
       vim.api.nvim_create_autocmd("LspAttach", {
-        group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
+        group = vim.api.nvim_create_augroup("cajone-lsp-attach", { clear = true }),
         callback = function(event)
           local map = function(keys, func, desc)
             vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
@@ -65,7 +65,7 @@ M = {
           -- When you move your cursor, the highlights will be cleared (the second autocommand).
           local client = vim.lsp.get_client_by_id(event.data.client_id)
           if client and client.server_capabilities.documentHighlightProvider then
-            local highlight_augroup = vim.api.nvim_create_augroup("kickstart-lsp-highlight", { clear = false })
+            local highlight_augroup = vim.api.nvim_create_augroup("cajone-lsp-highlight", { clear = false })
             vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
               buffer = event.buf,
               group = highlight_augroup,
@@ -92,10 +92,10 @@ M = {
       })
 
       vim.api.nvim_create_autocmd("LspDetach", {
-        group = vim.api.nvim_create_augroup("kickstart-lsp-detach", { clear = true }),
+        group = vim.api.nvim_create_augroup("cajone-lsp-detach", { clear = true }),
         callback = function(event)
           vim.lsp.buf.clear_references()
-          vim.api.nvim_clear_autocmds({ group = "kickstart-lsp-highlight", buffer = event.buf })
+          vim.api.nvim_clear_autocmds({ group = "cajone-lsp-highlight", buffer = event.buf })
         end,
       })
 
@@ -170,7 +170,7 @@ M = {
         local disable_filetypes = { c = true, cpp = true }
         return {
           timeout_ms = 500,
-          lsp_fallback = not disable_filetypes[M.vim.bo[bufnr].filetype],
+          lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
         }
       end,
       formatters_by_ft = {
@@ -193,7 +193,6 @@ M = {
       {
         "L3MON4D3/LuaSnip",
         build = (function()
-          local vim = M.vim
           -- Build Step is needed for regex support in snippets.
           -- This step is not supported in many windows environments.
           -- Remove the below condition to re-enable on windows.
@@ -222,6 +221,8 @@ M = {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-path",
     },
+
+    --- Completion & Snippets
     config = function()
       -- See `:help cmp`
       local cmp = require("cmp")

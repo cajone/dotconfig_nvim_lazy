@@ -1,18 +1,20 @@
 M = {
   "nvim-telescope/telescope.nvim",
-  event = 'VimEnter',
+  event = "VimEnter",
   branch = "0.1.x",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    {  "nvim-telescope/telescope-fzf-native.nvim", build = "make" ,
-        -- `cond` is a condition used to determine whether this plugin should be
-        -- installed and loaded.
-        cond = function()
-          return vim.fn.executable 'make' == 1
-        end,
+    {
+      "nvim-telescope/telescope-fzf-native.nvim",
+      build = "make",
+      -- `cond` is a condition used to determine whether this plugin should be
+      -- installed and loaded.
+      cond = function()
+        return vim.fn.executable("make") == 1
+      end,
     },
-    { "nvim-treesitter/nvim-treesitter", },
-    { "nvim-tree/nvim-web-devicons", },
+    { "nvim-treesitter/nvim-treesitter" },
+    { "nvim-tree/nvim-web-devicons" },
   },
   config = function()
     local telescope = require("telescope")
@@ -24,14 +26,15 @@ M = {
         path_display = { "smart" },
         mappings = {
           i = {
-            ["<C-k>"] = actions.move_selection_previous,  -- move to prev results
-            ["<C-j>"] = actions.move_selection_next,      -- move to next result
+            ["<C-k>"] = actions.move_selection_previous, -- move to prev results
+            ["<C-j>"] = actions.move_selection_next, -- move to next result
             ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-          }
-        }
-      }
+          },
+        },
+      },
     })
 
-    telescope.load_extension("fzf");
-  end
-} return M
+    telescope.load_extension("fzf")
+  end,
+}
+return M
