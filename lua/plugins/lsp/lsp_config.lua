@@ -12,7 +12,7 @@ M = {
     },
 
     config = function()
-      --      local vim = M.vim
+      --      local vim = vim
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("cajone-lsp-attach", { clear = true }),
         callback = function(event)
@@ -117,7 +117,7 @@ M = {
                 callSnippet = "Replace",
               },
               -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-              -- diagnostics = { disable = { 'missing-fields' } },
+              diagnostics = { disable = { "missing-fields", "undefined-global" } },
             },
           },
         },
