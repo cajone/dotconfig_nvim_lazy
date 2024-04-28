@@ -39,7 +39,7 @@ require("lazy").setup({
   { import = "plugins.ui.nvimtree" }, -- NvimTree
   { import = "plugins.ui.todo" }, -- Todo notes etc
 
-  -- LSP / AUto completion language Plugins
+  -- LSP / Auto completion language Plugins
   { import = "plugins.lsp.nvim-cmp" }, -- Auto Completion
   { import = "plugins.lsp.lint" }, -- Linter(s)
   { import = "plugins.lsp.mason" }, -- LSP installer

@@ -1,4 +1,4 @@
-return {
+M = {
 
   { -- Linting
     "mfussenegger/nvim-lint",
@@ -53,3 +53,4 @@ return {
     end,
   },
 }
+return M
