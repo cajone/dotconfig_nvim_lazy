@@ -12,9 +12,8 @@ M = {
     },
 
     config = function()
-      --      local vim = vim
       vim.api.nvim_create_autocmd("LspAttach", {
-        group = vim.api.nvim_create_augroup("cajone-lsp-attach", { clear = true }),
+        group = vim.api.nvim_create_augroup("plugins-lsp-lsp-attach", { clear = true }),
         callback = function(event)
           local map = function(keys, func, desc)
             vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
@@ -65,7 +64,7 @@ M = {
           -- When you move your cursor, the highlights will be cleared (the second autocommand).
           local client = vim.lsp.get_client_by_id(event.data.client_id)
           if client and client.server_capabilities.documentHighlightProvider then
-            local highlight_augroup = vim.api.nvim_create_augroup("cajone-lsp-highlight", { clear = false })
+            local highlight_augroup = vim.api.nvim_create_augroup("plugins-lsp-lsp-highlight", { clear = false })
             vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
               buffer = event.buf,
               group = highlight_augroup,
@@ -92,10 +91,10 @@ M = {
       })
 
       vim.api.nvim_create_autocmd("LspDetach", {
-        group = vim.api.nvim_create_augroup("cajone-lsp-detach", { clear = true }),
+        group = vim.api.nvim_create_augroup("plugins-lsp-lsp-detach", { clear = true }),
         callback = function(event)
           vim.lsp.buf.clear_references()
-          vim.api.nvim_clear_autocmds({ group = "cajone-lsp-highlight", buffer = event.buf })
+          vim.api.nvim_clear_autocmds({ group = "plugins-lsp-lsp-highlight", buffer = event.buf })
         end,
       })
 

@@ -26,21 +26,24 @@ require("lazy").setup({
 
   -- Plugins that have some localisation done to them
   { import = "plugins.ai" }, -- Configure AI prompt
-  { import = "plugins.colorscheme" }, -- ColorScheme
-  { import = "plugins.dressing" }, -- Allows prompts and selections
   { import = "plugins.git" }, -- git related plugins
-  { import = "plugins.lualine" }, -- Status Line
-  { import = "plugins.lint" }, -- Linter(s)
   { import = "plugins.markdown-preview" }, -- Instant Markdown for neovim
-  { import = "plugins.mini" }, -- Collections on notes, todo's
-  { import = "plugins.nvim-cmp" }, -- Auto Completion
-  { import = "plugins.nvimtree" }, -- NvimTree
-  { import = "plugins.none-ls" }, -- null-ls replacement
   { import = "plugins.telescope" }, -- Fuzzy file finder and many other things
   { import = "plugins.terminal" }, -- Toggle Terminal window
 
-  -- LSP Plugins
+  -- UI based plugins
+  { import = "plugins.ui.colorscheme" }, -- ColorScheme
+  { import = "plugins.ui.dressing" }, -- Allows prompts and selections
+  { import = "plugins.ui.lualine" }, -- Status Line
+  { import = "plugins.ui.mini" }, -- Collections on notes, todo's
+  { import = "plugins.ui.nvimtree" }, -- NvimTree
+  { import = "plugins.ui.todo" }, -- Todo notes etc
+
+  -- LSP / AUto completion language Plugins
+  { import = "plugins.lsp.nvim-cmp" }, -- Auto Completion
+  { import = "plugins.lsp.lint" }, -- Linter(s)
   { import = "plugins.lsp.mason" }, -- LSP installer
+  { import = "plugins.lsp.none-ls" }, -- null-ls replacement
   { import = "plugins.lsp.debug" }, -- LSP Debug
   { import = "plugins.lsp.lsp_config" }, -- LSP configuration
 })
