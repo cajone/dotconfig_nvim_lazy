@@ -28,7 +28,6 @@ require("lazy").setup({
   { import = "plugins.ai" }, -- Configure AI prompt
   { import = "plugins.git" }, -- git related plugins
   { import = "plugins.markdown-preview" }, -- Instant Markdown for neovim
-  { import = "plugins.telescope" }, -- Fuzzy file finder and many other things
   { import = "plugins.terminal" }, -- Toggle Terminal window
 
   -- UI based plugins
@@ -37,6 +36,7 @@ require("lazy").setup({
   { import = "plugins.ui.lualine" }, -- Status Line
   { import = "plugins.ui.mini" }, -- Collections on notes, todo's
   { import = "plugins.ui.nvimtree" }, -- NvimTree
+  { import = "plugins.ui.telescope" }, -- Fuzzy file finder and many other things
   { import = "plugins.ui.todo" }, -- Todo notes etc
 
   -- LSP / Auto completion language Plugins

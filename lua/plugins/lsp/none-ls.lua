@@ -1,5 +1,7 @@
 M = {
   "nvimtools/none-ls.nvim",
+  event = "LazyFile",
+  dependencies = { "mason.nvim" },
   optional = true,
   opts = function(_, opts)
     local nls = require("null-ls")
