@@ -3,7 +3,6 @@ M = {
     "David-Kunz/gen.nvim",
     opts = {
       model = "lamma3:latest", -- Set default model to an empty string
-      display_mode = "float",
       host = "localhost",
       port = "11434",
       init = function(options)
@@ -18,6 +17,7 @@ M = {
           .. options.port
           .. "/api/chat -d $body"
       end,
+      display_mode = "float",
     },
     config = function()
       local gen_prompts = {

@@ -46,4 +46,8 @@ require("lazy").setup({
   { import = "plugins.lsp.none-ls" }, -- null-ls replacement
   { import = "plugins.lsp.debug" }, -- LSP Debug
   { import = "plugins.lsp.lsp_config" }, -- LSP configuration
+
+  -- DAP Debugging code base
+  { "mfussenegger/nvim-dap" },
+  { "jbyuki/one-small-step-for-vimkind" },
 })
