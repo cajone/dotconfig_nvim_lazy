@@ -18,11 +18,13 @@ require("lazy").setup({
   --     enable = true,
   --     notify = false,
   --   },
-  --   change_detection = { notify = false }, -- Stop reporting auto changes
+  change_detection = { notify = false }, -- Stop reporting auto changes
 
   -- Plugins used straight out the box
   { "instant-markdown/vim-instant-markdown" }, -- Instant Markdown
   { "vimwiki/vimwiki" }, -- Vimwiki
+
+  { import = "plugins.lint" }, -- Linter(s)
 
   -- Plugins that have some localisation done to them
   --  { import = "plugins.ai" }, -- Configure AI prompt  ( Currently broken 29/4/24 )
@@ -41,7 +43,6 @@ require("lazy").setup({
 
   -- LSP / Auto completion language Plugins
 --  { import = "plugins.lsp.nvim-cmp" }, -- Auto Completion
-  { import = "plugins.lsp.lint" }, -- Linter(s)
   --  { import = "plugins.lsp.mason" }, -- LSP installer
 --  { import = "plugins.lsp.none-ls" }, -- null-ls replacement
   --  { import = "plugins.lsp.debug" }, -- LSP Debug
