@@ -24,9 +24,9 @@ M = {
       -- list of servers for mason to install
       ensure_installed = {
         "lua_ls",
-        "groovyls",
-        "pylsp",
-        "bashls",
+        --        "groovyls",
+        --        "pylsp",
+        --        "bashls",
       },
       -- auto-install configured servers ( with lspconfig )
       automatic_installation = true, -- not the same as ensure_installed

@@ -25,7 +25,7 @@ require("lazy").setup({
   { "vimwiki/vimwiki" }, -- Vimwiki
 
   -- Plugins that have some localisation done to them
-  { import = "plugins.ai" }, -- Configure AI prompt
+  --  { import = "plugins.ai" }, -- Configure AI prompt  ( Currently broken 29/4/24 )
   { import = "plugins.git" }, -- git related plugins
   { import = "plugins.markdown-preview" }, -- Instant Markdown for neovim
   { import = "plugins.terminal" }, -- Toggle Terminal window
@@ -40,14 +40,14 @@ require("lazy").setup({
   { import = "plugins.ui.todo" }, -- Todo notes etc
 
   -- LSP / Auto completion language Plugins
-  { import = "plugins.lsp.nvim-cmp" }, -- Auto Completion
+--  { import = "plugins.lsp.nvim-cmp" }, -- Auto Completion
   { import = "plugins.lsp.lint" }, -- Linter(s)
-  { import = "plugins.lsp.mason" }, -- LSP installer
-  { import = "plugins.lsp.none-ls" }, -- null-ls replacement
-  { import = "plugins.lsp.debug" }, -- LSP Debug
-  { import = "plugins.lsp.lsp_config" }, -- LSP configuration
+  --  { import = "plugins.lsp.mason" }, -- LSP installer
+--  { import = "plugins.lsp.none-ls" }, -- null-ls replacement
+  --  { import = "plugins.lsp.debug" }, -- LSP Debug
+  --  { import = "plugins.lsp.lsp_config" }, -- LSP configuration
 
   -- DAP Debugging code base
-  { "mfussenegger/nvim-dap" },
-  { "jbyuki/one-small-step-for-vimkind" },
+  --  { "mfussenegger/nvim-dap" },
+  --  { "jbyuki/one-small-step-for-vimkind" },
 })

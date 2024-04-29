@@ -7,5 +7,4 @@ M = {
       cmd = { vim.fn.expand("~/.local/share/nvim/mason/bin/prettier --no-jsx-bracket-same-line --no-loglevel=error") },
     })
   end,
-}
-return M
+} return M
