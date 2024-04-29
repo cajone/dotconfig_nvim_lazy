@@ -14,10 +14,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  --   checker = { -- turns off notifications
-  --     enable = true,
-  --     notify = false,
-  --   },
+  checker = { -- turns off notifications
+    enable = true,
+    notify = false,
+  },
   change_detection = { notify = false }, -- Stop reporting auto changes
 
   -- Plugins used straight out the box
@@ -40,7 +40,6 @@ require("lazy").setup({
   { import = "plugins.ui.todo" }, -- Todo notes etc
 
   -- Linters 
-  { import = "plugins.nvim-cmp" }, -- Auto Completion
   { import = "plugins.lint" }, -- Linter(s)
   { import = "plugins.none-ls" }, -- null-ls replacement
 
