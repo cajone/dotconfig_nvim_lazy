@@ -18,7 +18,7 @@ require("lazy").setup({
   --     enable = true,
   --     notify = false,
   --   },
-  --   change_detection = { notify = false }, -- Stop reporting auto changes
+  change_detection = { notify = false }, -- Stop reporting auto changes
 
   -- Plugins used straight out the box
   { "instant-markdown/vim-instant-markdown" }, -- Instant Markdown
@@ -39,15 +39,9 @@ require("lazy").setup({
   { import = "plugins.ui.telescope" }, -- Fuzzy file finder and many other things
   { import = "plugins.ui.todo" }, -- Todo notes etc
 
-  -- LSP / Auto completion language Plugins
-  { import = "plugins.lsp.nvim-cmp" }, -- Auto Completion
-  { import = "plugins.lsp.lint" }, -- Linter(s)
-  { import = "plugins.lsp.mason" }, -- LSP installer
-  { import = "plugins.lsp.none-ls" }, -- null-ls replacement
-  { import = "plugins.lsp.debug" }, -- LSP Debug
-  { import = "plugins.lsp.lsp_config" }, -- LSP configuration
+  -- Linters 
+  { import = "plugins.nvim-cmp" }, -- Auto Completion
+  { import = "plugins.lint" }, -- Linter(s)
+  { import = "plugins.none-ls" }, -- null-ls replacement
 
-  -- DAP Debugging code base
-  { "mfussenegger/nvim-dap" },
-  { "jbyuki/one-small-step-for-vimkind" },
 })

@@ -2,6 +2,5 @@
 
 -- Order is Important !!
 require("plugins")
-require("plugins.lsp")
 require("plugins.ui")
 require("custom")
