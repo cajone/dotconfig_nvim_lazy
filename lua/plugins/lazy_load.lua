@@ -14,11 +14,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  checker = { -- turns off notifications
-    enable = true,
-    notify = false,
-  },
-  change_detection = { notify = false }, -- Stop reporting auto changes
+  --   checker = { -- turns off notifications
+  --     enable = true,
+  --     notify = false,
+  --   },
+  --   change_detection = { notify = false }, -- Stop reporting auto changes
 
   -- Plugins used straight out the box
   { "instant-markdown/vim-instant-markdown" }, -- Instant Markdown
