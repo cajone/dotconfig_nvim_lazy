@@ -136,3 +136,13 @@ function OpenPluginHelp()
   end
 end
 
+-- vim.api.nvim_command("normal ggVG\"")
+-- vim.api.nvim_command("q")
+
+-- Define the macro as 'Trip'
+function Trip()
+    vim.cmd("read ~/.config/nvim/lua/templates/trip.txt")
+end
+
+
+vim.keymap.set("n", "<leader>tt", ":lua Trip()<cr>")
