@@ -1,0 +1,14 @@
+### Trip :  < Details > 
+
+- Crew : 
+- Wind :  
+- Weather : 
+- Duration : 
+- Distance : 
+- Max SOG : 
+
+#### Description
+
+<description>
+
+
