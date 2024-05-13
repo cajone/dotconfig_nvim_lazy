@@ -27,7 +27,7 @@ require("lazy").setup({
   { import = "plugins.lint" }, -- Linter(s)
 
   -- Plugins that have some localisation done to them
-  --  { import = "plugins.ai" }, -- Configure AI prompt  ( Currently broken 29/4/24 )
+  { import = "plugins.ai" }, -- Configure AI prompt
   { import = "plugins.git" }, -- git related plugins
   { import = "plugins.markdown-preview" }, -- Instant Markdown for neovim
   { import = "plugins.terminal" }, -- Toggle Terminal window
