@@ -29,8 +29,8 @@ M = {
         },
 
         {
-          name = "M_DL8B",
-          model = "dolphin-llama3:8b-v2.9-q8_0",
+          name = "codestral",
+          model = "codestral:latest",
           prompt_template = "You are a senior Lua engineer, answering questions about Lua. Provide code examples where appropriate. $input\n$text",
           temperature = 0.0,
         },
