@@ -141,7 +141,7 @@ end
 
 -- Define the macro as 'Trip'
 function Trip()
-    vim.cmd("read ~/.config/nvim/lua/templates/trip.txt")
+    vim.cmd("read ~/.config/nvim/lua/templates/trip.md")
 end
 
 
