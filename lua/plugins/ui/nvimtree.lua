@@ -80,12 +80,12 @@ M = {
           show_on_dirs = false,
           show_on_open_dirs = true,
           debounce_delay = 50,
-          icons = {
-            hint = "HintIcon", -- Replace HintIcon with your custom icon name
-            info = "InfoIcon",
-            warning = "WarningIcon",
-            error = "ErrorIcon",
-          },
+--          icons = {
+--            hint = "HintIcon", -- Replace HintIcon with your custom icon name
+--            info = "InfoIcon",
+--            warning = "WarningIcon",
+--            error = "ErrorIcon",
+--          },
         },
         filters = {
           dotfiles = false,
