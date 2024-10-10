@@ -92,7 +92,7 @@
 
 
 -- Add Frozen string literal to ruby files
-  map('n', '<Leader>asl', ':lua AddFrozenStringLiteral()<CR>', { noremap = true, silent = true })
+--  map('n', '<Leader>asl', ':lua AddFrozenStringLiteral()<CR>', { noremap = true, silent = true })
 
 
 -- Add a mapping to open plugin help
