@@ -26,10 +26,14 @@
   set('n', '<leader>fh', builtin.help_tags, { desc = "Open help pages" })
   set('n', '<leader>km', builtin.keymaps, { desc = "Open keymaps" })
 
+-- Remote SSH connections
+  map('n', '<Leader>rs', ':RemoteStart<CR>', { noremap = true })
+  map('n', '<Leader>rS', ':RemoteStop<CR>', { noremap = true })
+
 -- Mksession functions
   set('n', '<leader>sl', [[:LoadSessions<CR>]], { desc = "Load a previous mksession", noremap = true, silent = true })
   set('n', '<leader>ss', [[:SaveSessions<CR>]], { desc = "Save a mksession", noremap = true, silent = true })
-  set('n', '<leader>sc', [[:ClearSessions<CR>]], { desc = "Clear mksession", noremap = true, silent = true })
+  set('n', '<leader>sc', [[:CleasSessions<CR>]], { desc = "Clear mksession", noremap = true, silent = true })
 
 -- Git-Worktree  local telescope = require('telescope')
   set('n', '<leader>sr', ":lua require('telescope').extensions.git_worktree.git_worktrees()<CR>" )
