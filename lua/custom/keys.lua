@@ -30,15 +30,6 @@
   map('n', '<Leader>rs', ':RemoteStart<CR>', { noremap = true })
   map('n', '<Leader>rS', ':RemoteStop<CR>', { noremap = true })
 
--- Mksession functions
-  set('n', '<leader>sl', [[:LoadSessions<CR>]], { desc = "Load a previous mksession", noremap = true, silent = true })
-  set('n', '<leader>ss', [[:SaveSessions<CR>]], { desc = "Save a mksession", noremap = true, silent = true })
-  set('n', '<leader>sc', [[:CleasSessions<CR>]], { desc = "Clear mksession", noremap = true, silent = true })
-
--- Git-Worktree  local telescope = require('telescope')
-  set('n', '<leader>sr', ":lua require('telescope').extensions.git_worktree.git_worktrees()<CR>" )
-  set('n', '<leader>sR', ":lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>" )
-
 -- :only
   map("n", "<Leader>0", ":only<CR>", { desc = "Close all buffers except current focus", noremap = true, silent = true })
 

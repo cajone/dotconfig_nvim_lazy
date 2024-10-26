@@ -1,76 +1,5 @@
 -- [[ local_fun.lua ]]
 
--- Save a Mksession 
-function SaveSession()
-  local timestamp = vim.fn.strftime("%Y%m%d%H%M")                       -- Get the current date and timestamp
-  vim.cmd(':NvimTreeClose')
-
-  local cwd = vim.fn.getcwd()                                           -- Get the current working directory
-  local cwd_basename = vim.fn.fnamemodify(cwd, ':t')                    -- Extract the base name of the directory
-  local cwd_filename = vim.fn.substitute(cwd_basename, '/', '_', 'g')   -- Convert the base name to a valid filename
-
-  local session_dir = vim.fn.stdpath('config') .. '/.mksession/'                  -- Define the session dir 
-  local session_path = session_dir .. cwd_filename .. '_' .. timestamp .. '.vim'  -- Define the session path
-
-  -- Create the session directory if it doesn't exist
-  if vim.fn.isdirectory(session_dir) == 0 then
-    os.execute('mkdir -p ' .. session_dir)
-  end
-
-  vim.cmd('mksession!' .. session_path)                                 -- Save the session
-end
-
--- Load a mkSession from a list of saved ones
-function LoadSession()
-  local session_dir = vim.fn.stdpath('config') .. '/.mksession/'
-
-  local session_files = vim.fn.glob(session_dir .. '*.vim', false, true)
-
-  if #session_files == 0 then
-    print('No session files found.')
-    return
-  end
-
-  print('Select a session to load:')
-  for i, session_file in ipairs(session_files) do
-    print(i .. '. ' .. session_file)
-  end
-
-  local selection = vim.fn.input('Enter the number of the session to load: ')
-
-  if tonumber(selection) and tonumber(selection) >= 1 and tonumber(selection) <= #session_files then
-    local session_path = session_files[tonumber(selection)]
-    vim.cmd('source ' .. session_path)
-    ChangeWorkingDirectoryToGitRoot()
-    -- Ensure nvim-tree is loaded and displayed
-    if vim.fn.exists(':NvimTreeToggle') == 0 then
-      vim.cmd('NvimTreeToggle')
-    end
-  else
-    print('Invalid selection.')
-  end
-end
-
--- Define a function to clean the mksession directory
-function ClearSession()
-  local session_dir = vim.fn.stdpath('config') .. '/.mksession/'
-
-  -- Get a list of session files sorted by modification time
-  local session_files = vim.fn.systemlist('ls -t ' .. session_dir)
-
-  -- Keep the last 5 session files
-  local num_to_keep = 5
-  for i = 1, #session_files do
-    if i > num_to_keep then
-      local session_path = session_dir .. session_files[i]
-      vim.fn.delete(session_path)
-      print('Deleted: ' .. session_path)
-    end
-  end
-
-  print('Session directory cleaned.')
-end
-
 
 -- Define the function to toggle line numbers and relative numbers
 function ToggleLineNumbers()
@@ -111,7 +40,7 @@ function OpenVimwiki()
   vim.cmd("lcd ~/vimwiki")   -- Set the LCD to ~/vimwiki
 end
 
--- Termainal Key Mapings
+-- Terminal Key Mapings
 function Set_terminal_keymaps()
   local opts = { noremap = true }
   vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
