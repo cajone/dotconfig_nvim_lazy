@@ -72,6 +72,9 @@
   -- Toggle Vimwiki URL's
   map("n", "<F8>", ":lua ToggleVimwikiConceallevel()<CR>", { desc = "Show url paths in markdown files", noremap = true })
 
+
+
+
 -- Mapping for windo diffs
   map('n', "<leader>wd", ":windo diffthis<CR>", { desc = "Diff compare open split buffers", noremap = true })
   map('n', "<leader>wD", ":windo diffoff<CR>", { desc = "Diff compare off", noremap = true })
