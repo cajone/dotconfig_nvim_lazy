@@ -46,8 +46,11 @@ require("lazy").setup({
   { import = "plugins.ui.telescope" }, -- Fuzzy file finder and many other things
   { import = "plugins.ui.todo" }, -- Todo notes etc
 
+  -- Linting
+  { import = "plugins.conform" }, -- Formatting, linting
+  
   -- LSP / Auto completion language Plugins
---  { import = "plugins.lsp.mason" }, -- LSP installer
+  { import = "plugins.lsp.mason" }, -- LSP installer
 --  { import = "plugins.lsp.nvim-cmp" }, -- Auto Completion
 --  { import = "plugins.lsp.none-ls" }, -- null-ls replacement
 --  { import = "plugins.lsp.debug" }, -- LSP Debug
