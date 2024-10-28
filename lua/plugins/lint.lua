@@ -5,6 +5,7 @@ M = {
   config = function()
     local lint = require("lint")
     lint.linters_by_ft = {
+      json = { "jsonlint" },
       markdown = { "markdownlint" },
       ruby = { "ruby" },
     }

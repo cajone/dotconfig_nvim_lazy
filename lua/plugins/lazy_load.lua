@@ -35,7 +35,7 @@ require("lazy").setup({
   { import = "plugins.terminal" }, -- Toggle Terminal window
 
   -- ssh remote
-  { import = "plugins.remote" }, -- remote ssh
+--  { import = "plugins.remote" }, -- remote ssh
 
   -- UI based plugins
   { import = "plugins.ui.colorscheme" }, -- ColorScheme
