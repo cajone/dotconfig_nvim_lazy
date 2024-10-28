@@ -5,15 +5,15 @@ M = {
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
-    {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      build = "make",
-      -- `cond` is a condition used to determine whether this plugin should be
-      -- installed and loaded.
-      cond = function()
-        return vim.fn.executable("make") == 1
-      end,
-    },
+--     {
+--       "nvim-telescope/telescope-fzf-native.nvim",
+--       build = "make",
+--       -- `cond` is a condition used to determine whether this plugin should be
+--       -- installed and loaded.
+--       cond = function()
+--         return vim.fn.executable("make") == 1
+--       end,
+--     },
 
     { "nvim-telescope/telescope-ui-select.nvim" },
   },
@@ -35,7 +35,7 @@ M = {
       },
     })
 
-    telescope.load_extension("fzf")
+--    telescope.load_extension("fzf")
   end,
 }
 return M
