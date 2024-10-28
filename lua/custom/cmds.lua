@@ -1,10 +1,13 @@
 -- Set syntax highlighting for Jenkins files with no extension
-vim.api.nvim_exec([[
+vim.api.nvim_exec(
+  [[
   autocmd BufNewFile,BufRead JenkinsFile,*jenkinsfile,Jenkinfile* set filetype=groovy
   autocmd BufNewFile,BufRead *.json set filetype=json
-]], false)
+]],
+  false
+)
 
-vim.cmd([[colorscheme tokyonight]])  -- ok now load the colorscheme
+vim.cmd([[colorscheme tokyonight]]) -- ok now load the colorscheme
 
 -- Auto run rubocop over ruby files
 -- vim.api.nvim_exec([[
@@ -15,7 +18,7 @@ vim.cmd([[colorscheme tokyonight]])  -- ok now load the colorscheme
 vim.cmd([[autocmd BufEnter *.wiki lcd ~/vimwiki]])
 
 -- Open Terminal
-vim.cmd('autocmd! TermOpen term://* lua Set_terminal_keymaps()')
+vim.cmd("autocmd! TermOpen term://* lua Set_terminal_keymaps()")
 
 -- Auto Save session before exit
 -- vim.cmd([[autocmd VimLeave * lua SaveSessionOnExit()]])
@@ -27,12 +30,9 @@ vim.cmd([[command! ClearSessions lua ClearSession()]])
 
 -- Turn spelling on if editing either txt or md files
 -- Enable spell checking for specific filetypes
-vim.cmd[[
+vim.cmd([[
   autocmd BufRead,BufNewFile *.txt,*.md setlocal spell
-]]
-
+]])
 
 -- Fugitive
 vim.cmd([[command! -nargs=0 FugitiveInside execute "lcd %:h" | :G]])
-
-

@@ -3,11 +3,11 @@ M = {
   config = function()
     local conf = {
       providers = {
-        ollama = { 
-              disable = true, 
-              endpoint = "http://localhost:11434/v1/chat/completions", 
-              secret = "dummy_secret", 
-        }, 
+        ollama = {
+          disable = true,
+          endpoint = "http://localhost:11434/v1/chat/completions",
+          secret = "dummy_secret",
+        },
         agents = {
           provider = "ollama",
           name = "llama3.2",
@@ -25,10 +25,10 @@ M = {
         system_prompt = "You are a general AI assistant.",
       },
     }
-          -- For customization, refer to Install > Configuration in the Documentation/Readme
+    -- For customization, refer to Install > Configuration in the Documentation/Readme
     require("gp").setup(conf)
 
-      -- Setup shortcuts here (see Usage > Shortcuts in the Documentation/Readme)
+    -- Setup shortcuts here (see Usage > Shortcuts in the Documentation/Readme)
   end,
-} 
+}
 return M

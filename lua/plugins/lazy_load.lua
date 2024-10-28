@@ -35,7 +35,7 @@ require("lazy").setup({
   { import = "plugins.terminal" }, -- Toggle Terminal window
 
   -- ssh remote
---  { import = "plugins.remote" }, -- remote ssh
+  --  { import = "plugins.remote" }, -- remote ssh
 
   -- UI based plugins
   { import = "plugins.ui.colorscheme" }, -- ColorScheme
@@ -48,15 +48,15 @@ require("lazy").setup({
 
   -- Linting
   { import = "plugins.conform" }, -- Formatting, linting
-  
+
   -- LSP / Auto completion language Plugins
   { import = "plugins.lsp.mason" }, -- LSP installer
---  { import = "plugins.lsp.nvim-cmp" }, -- Auto Completion
---  { import = "plugins.lsp.none-ls" }, -- null-ls replacement
---  { import = "plugins.lsp.debug" }, -- LSP Debug
---  { import = "plugins.lsp.lsp_config" }, -- LSP configuration
+  --  { import = "plugins.lsp.nvim-cmp" }, -- Auto Completion
+  --  { import = "plugins.lsp.none-ls" }, -- null-ls replacement
+  --  { import = "plugins.lsp.debug" }, -- LSP Debug
+  --  { import = "plugins.lsp.lsp_config" }, -- LSP configuration
 
--- DAP Debugging code base
---  { "mfussenegger/nvim-dap" },
---  { "jbyuki/one-small-step-for-vimkind" },
+  -- DAP Debugging code base
+  --  { "mfussenegger/nvim-dap" },
+  --  { "jbyuki/one-small-step-for-vimkind" },
 })

@@ -52,4 +52,5 @@ M = {
       end,
     })
   end,
-} return M
+}
+return M

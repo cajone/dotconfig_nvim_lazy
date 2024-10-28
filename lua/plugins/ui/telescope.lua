@@ -5,7 +5,7 @@ M = {
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
-    { "nvim-telescope/telescope-fzf-native.nvim", build = 'make' },
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     { "nvim-telescope/telescope-ui-select.nvim" },
   },
   config = function()
@@ -14,7 +14,7 @@ M = {
 
     telescope.setup({
       extensions = {
-        fzf = { 
+        fzf = {
           fuzzy = true,
         },
       },
@@ -35,4 +35,3 @@ M = {
   end,
 }
 return M
-
