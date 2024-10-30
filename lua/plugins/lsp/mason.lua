@@ -27,6 +27,7 @@ M = {
       ensure_installed = {
         "prettier", -- prettier formatter
         "stylua", -- lua formatter
+        "groovyls", -- lsp
         --        "isort", -- python formatter
         --        "black", -- python formatter
         --        "pylint", -- python linter

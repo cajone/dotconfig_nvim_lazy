@@ -51,8 +51,8 @@ require("lazy").setup({
 
   -- LSP / Auto completion language Plugins
   { import = "plugins.lsp.mason" }, -- LSP installer
+  { import = "plugins.lsp.none-ls" }, -- null-ls replacement
   --  { import = "plugins.lsp.nvim-cmp" }, -- Auto Completion
-  --  { import = "plugins.lsp.none-ls" }, -- null-ls replacement
   --  { import = "plugins.lsp.debug" }, -- LSP Debug
   --  { import = "plugins.lsp.lsp_config" }, -- LSP configuration
 
