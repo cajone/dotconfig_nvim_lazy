@@ -45,6 +45,7 @@ require("lazy").setup({
   { import = "plugins.ui.nvimtree" }, -- NvimTree
   { import = "plugins.ui.telescope" }, -- Fuzzy file finder and many other things
   { import = "plugins.ui.todo" }, -- Todo notes etc
+  { import = "plugins.ui.noice" }, --  System messages
 
   -- Linting
   { import = "plugins.conform" }, -- Formatting, linting
