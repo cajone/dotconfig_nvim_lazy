@@ -2,7 +2,7 @@ M = {
   {
     "David-Kunz/gen.nvim",
     opts = {
-      model = "lamma3:latest", -- Set default model to an empty string
+      model = "lamma3.2:latest", -- Set default model to an empty string
       host = "localhost",
       port = "11434",
       --      init = function(options)
