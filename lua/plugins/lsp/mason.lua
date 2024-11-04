@@ -25,6 +25,7 @@ M = {
 
     mason_tool_installer.setup({
       ensure_installed = {
+        "ansible-lint", -- ansible linter
         "prettier", -- prettier formatter
         "stylua", -- lua formatter
         "groovyls", -- lsp
