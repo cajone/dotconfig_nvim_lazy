@@ -41,6 +41,7 @@ M = {
       ensure_installed = {
         "lua_ls",
         "groovyls",
+        "ansible-lint",
         --        "pylsp",
         --        "bashls",
       },

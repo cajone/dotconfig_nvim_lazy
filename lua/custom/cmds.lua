@@ -7,6 +7,12 @@ vim.api.nvim_exec(
   false
 )
 
+vim.filetype.add({
+  extension = {
+    yml = "yaml.ansible",
+  },
+})
+
 vim.cmd([[colorscheme tokyonight]]) -- ok now load the colorscheme
 
 -- Auto run rubocop over ruby files
