@@ -6,7 +6,7 @@ M = {
       "hrsh7th/cmp-nvim-lsp",
       --      { "antosha417/nvim-lsp-file-operations", config = true },
       { "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
-      "WhoIsSethDaniel/mason-tool-installer.nvim",
+      { "WhoIsSethDaniel/mason-tool-installer.nvim" },
       { "j-hui/fidget.nvim", opts = {} },
       { "folke/neodev.nvim", opts = {} },
     },
@@ -19,6 +19,7 @@ M = {
             vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
           end
 
+          -- Got the definition of the function
           map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
 
           -- Find references for the word under your cursor.
