@@ -29,7 +29,7 @@ M = {
         "prettier", -- prettier formatter
         "stylua", -- lua formatter
         "groovyls", -- lsp
-        "ansiblelanguage-server",
+        "ansiblels",
         --        "isort", -- python formatter
         --        "black", -- python formatter
         --        "pylint", -- python linter
@@ -43,7 +43,7 @@ M = {
         "lua_ls",
         "groovyls",
         "ansible-lint",
-        "ansible-language-server",
+        "ansiblels",
         --        "pylsp",
         --        "bashls",
       },
