@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="net.prominic.groovyls.util.FileContentsTrackerTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-11-05T19:45:02" hostname="gamebox" time="0.001">
+  <properties/>
+  <testcase name="testDidChangeWithRangeMultiline()" classname="net.prominic.groovyls.util.FileContentsTrackerTests" time="0.0"/>
+  <testcase name="testDidChangeWithoutRange()" classname="net.prominic.groovyls.util.FileContentsTrackerTests" time="0.001"/>
+  <testcase name="testDidOpen()" classname="net.prominic.groovyls.util.FileContentsTrackerTests" time="0.0"/>
+  <testcase name="testDidChangeWithRange()" classname="net.prominic.groovyls.util.FileContentsTrackerTests" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
