@@ -4,7 +4,7 @@ M = {
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
-      --      { "antosha417/nvim-lsp-file-operations", config = true },
+      { "antosha417/nvim-lsp-file-operations", config = true },
       { "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
       { "WhoIsSethDaniel/mason-tool-installer.nvim" },
       { "j-hui/fidget.nvim", opts = {} },
@@ -124,6 +124,24 @@ M = {
         },
       }
 
+      require("lspconfig").groovyls.setup({
+        on_attach = on_attach,
+        filetypes = { "groovy" },
+        settings = {
+          groovy = {
+            classpath = {
+              "/home/thomsope/.local/share/nvim/mason/packages/groovy-language-server/build/libs/",
+            },
+          },
+        },
+        cmd = {
+          "java",
+          "-jar",
+          "/home/thomsope/.local/share/nvim/mason/packages/groovy-language-server/build/libs/groovy-language-server-all.jar",
+        },
+      })
+
+      -- require("npm-groovy-lint").setup()
       require("mason").setup()
 
       -- You can add other tools here that you want Mason to install
