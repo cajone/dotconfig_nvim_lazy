@@ -52,7 +52,7 @@ require("lazy").setup({
   { import = "plugins.conform" }, -- Formatting, linting
 
   -- LSP / Auto completion language Plugins
-  { import = "plugins.lsp.mason" }, -- LSP installer
+  { import = "plugins.lsp.mason" }, -- LSP installer : NOTE THIS HAS TO BE THE FIRST LSP FILE TO LOAD!!!
   { import = "plugins.lsp.none-ls" }, -- null-ls replacement
   { import = "plugins.lsp.nvim-cmp" }, -- Auto Completion
   { import = "plugins.lsp.debug" }, -- LSP Debug
