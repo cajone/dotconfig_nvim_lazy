@@ -22,21 +22,6 @@ M = {
       },
     })
 
-    mason_tool_installer.setup({
-      ensure_installed = {
-        "ansible-lint", -- ansible linter
-        "ansiblels",
-        "eslint_d", -- js linter
-        "groovyls", -- lsp
-        "npm-groovy-lint", -- groovy linter
-        "prettier", -- prettier formatter
-        "stylua", -- lua formatter
-        --        "black", -- python formatter
-        --        "isort", -- python formatter
-        --        "pylint", -- python linter
-      },
-    })
-
     mason_lspconfig.setup({
       -- list of servers for mason to install
       ensure_installed = {
