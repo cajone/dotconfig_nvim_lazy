@@ -22,15 +22,56 @@ M = {
       },
     })
 
+<<<<<<< HEAD
+||||||| f12f1ec
+    mason_tool_installer.setup({
+      ensure_installed = {
+        "ansible-lint", -- ansible linter
+        "prettier", -- prettier formatter
+        "stylua", -- lua formatter
+        "groovyls", -- lsp
+        "ansiblels",
+        --        "isort", -- python formatter
+        --        "black", -- python formatter
+        --        "pylint", -- python linter
+        "eslint_d", -- js linter
+      },
+    })
+
+=======
+    mason_tool_installer.setup({
+      ensure_installed = {
+        "ansible-lint", -- ansible linter
+        "ansiblels",
+        "eslint_d", -- js linter
+        "groovyls", -- lsp
+        "npm-groovy-lint", -- groovy linter
+        "prettier", -- prettier formatter
+        "stylua", -- lua formatter
+        --        "black", -- python formatter
+        --        "isort", -- python formatter
+        --        "pylint", -- python linter
+      },
+    })
+
+>>>>>>> 7ddfac1604c555c03889980581bec5a9c8bbfc6c
     mason_lspconfig.setup({
       -- list of servers for mason to install
       ensure_installed = {
         "ansible-lint",
         "ansiblels",
+<<<<<<< HEAD
         "bashls",
         "beautysh", -- shell lsp
         "groovyls",
         "lua_ls",
+||||||| f12f1ec
+        --        "pylsp",
+=======
+        "groovyls",
+        "lua_ls",
+        "npm-groovy-lint", -- groovy linter
+>>>>>>> 7ddfac1604c555c03889980581bec5a9c8bbfc6c
         --        "bashls",
         --        "pylsp",
       },

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="net.prominic.groovyls.GroovyServicesSignatureHelpTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-11-05T19:45:00" hostname="gamebox" time="0.533">
+  <properties/>
+  <testcase name="testSignatureHelpOnMethod()" classname="net.prominic.groovyls.GroovyServicesSignatureHelpTests" time="0.183"/>
+  <testcase name="testSignatureHelpOnMethodWithMultipleParameters()" classname="net.prominic.groovyls.GroovyServicesSignatureHelpTests" time="0.171"/>
+  <testcase name="testSignatureHelpOnMethodWithActiveParameter()" classname="net.prominic.groovyls.GroovyServicesSignatureHelpTests" time="0.179"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
