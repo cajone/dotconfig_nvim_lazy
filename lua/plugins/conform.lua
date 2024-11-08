@@ -14,7 +14,6 @@ M = {
         javascriptreact = { "prettier" },
         json = { "prettier" },
         lua = { "stylua" },
-<<<<<<< HEAD
         markdown = { "prettier" },
         sh = { "beautysh" },
         svelte = { "prettier" },
@@ -22,17 +21,6 @@ M = {
         typescriptreact = { "prettier" },
         yaml = { "prettier" },
         zsh = { "beautysh" },
-        --        python = { "isort", "black" },
-||||||| f12f1ec
-        --        python = { "isort", "black" },
-=======
-        markdown = { "prettier" },
-        python = { "black" },
-        svelte = { "prettier" },
-        typescript = { "prettier" },
-        typescriptreact = { "prettier" },
-        yaml = { "prettier" },
->>>>>>> 7ddfac1604c555c03889980581bec5a9c8bbfc6c
       },
       format_on_save = {
         lsp_fallback = true,
