@@ -3,14 +3,8 @@ M = {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
-<<<<<<< HEAD
-||||||| f12f1ec
-      "hrsh7th/cmp-nvim-lsp",
-      --      { "antosha417/nvim-lsp-file-operations", config = true },
-=======
       "hrsh7th/cmp-nvim-lsp",
       { "antosha417/nvim-lsp-file-operations", config = true },
->>>>>>> 7ddfac1604c555c03889980581bec5a9c8bbfc6c
       { "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
       { "hrsh7th/cmp-nvim-lsp" },
       {
