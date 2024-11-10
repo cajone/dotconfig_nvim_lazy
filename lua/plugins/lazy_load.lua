@@ -24,6 +24,7 @@ require("lazy").setup({
   { "instant-markdown/vim-instant-markdown" }, -- Instant Markdown
   { "vimwiki/vimwiki" }, -- Vimwiki
 
+  { import = "plugins.treesitter" },
   { import = "plugins.lint" }, -- Linter(s)
 
   -- Plugins that have some localisation done to them
