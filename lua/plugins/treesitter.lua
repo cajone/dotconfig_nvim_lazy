@@ -3,12 +3,16 @@ M = {
   config = function()
     require("nvim-treesitter.configs").setup({
       ensure_installed = {
+        "bash",
         "c",
+        "groovy",
         "lua",
+        "markdown",
+        "markdown_inline",
+        "python",
+        "regex",
         "vim",
         "vimdoc",
-        "python",
-        "groovy",
       },
       auto_install = true,
       highlight = {
@@ -17,10 +21,10 @@ M = {
       incremental_selection = {
         enable = true,
         keymaps = {
-          init_selection = "gnn",
-          node_incremental = "grn",
-          scope_incremental = "grc",
-          node_decremental = "grm",
+          init_selection = "tis",
+          node_incremental = "tni",
+          scope_incremental = "tsi",
+          node_decremental = "tnd",
         },
       },
     })
