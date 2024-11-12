@@ -6,6 +6,8 @@ M = {
     local lint = require("lint")
     lint.linters_by_ft = {
       --      json = { "jsonlint" },
+      ansible = { "ansible-lint" },
+      bash = { "shellcheck" },
       markdown = { "markdownlint" },
       ruby = { "ruby" },
     }

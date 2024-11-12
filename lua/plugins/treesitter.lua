@@ -6,6 +6,7 @@ M = {
         "bash",
         "c",
         "groovy",
+        "json",
         "lua",
         "markdown",
         "markdown_inline",
@@ -13,6 +14,7 @@ M = {
         "regex",
         "vim",
         "vimdoc",
+        "xml",
       },
       auto_install = true,
       highlight = {
