@@ -1,6 +1,5 @@
-yarn.lock
-node_modules/*
 *.log
+.mksession
 .repro
 .tests
 data
@@ -8,7 +7,9 @@ debug
 doc/tags
 foo.*
 lazy-lock.json
+node_modules/*
 tt.*
+undo
 worktrees
-.mksession
+yarn.lock
 ~/
