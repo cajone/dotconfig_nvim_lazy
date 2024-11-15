@@ -24,7 +24,7 @@ M = {
         {
           name = "A_lama3",
           model = "llama3:latest",
-          prompt_template = "Your are a general purpose information provider, that does not invent information, if you dont know the answer jsut state that you do not know the answer. $input\n$text",
+          prompt_template = "Your are a general purpose information provider, that does not invent information, if you dont know the answer just state that you do not know the answer. $input\n$text",
           temperature = 0.0,
         },
 

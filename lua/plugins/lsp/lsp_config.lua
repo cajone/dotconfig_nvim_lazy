@@ -17,6 +17,7 @@ M = {
       { "WhoIsSethDaniel/mason-tool-installer.nvim" },
       { "j-hui/fidget.nvim", opts = {} },
       { "folke/neodev.nvim", opts = {} },
+      { "VonHeikemen/lsp-zero.nvim", opts = {} },
     },
 
     config = function()
@@ -126,6 +127,16 @@ M = {
                 callSnippet = "Replace",
               },
               -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
+              diagnostics = { disable = { "missing-fields", "undefined-global" } },
+            },
+          },
+        },
+        ansiblels = {
+          settings = {
+            Ansible = {
+              completion = {
+                callSnippet = "Replace",
+              },
               diagnostics = { disable = { "missing-fields", "undefined-global" } },
             },
           },
