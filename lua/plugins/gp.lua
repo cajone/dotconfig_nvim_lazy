@@ -1,34 +1,35 @@
 M = {
-  "robitx/gp.nvim",
-  config = function()
-    local conf = {
-      providers = {
-        ollama = {
-          -- disable = true,
-          endpoint = "http://localhost:11434/v1/chat/completions",
-          -- secret = "dummy_secret",
-        },
-        agents = {
-          provider = "ollama",
-          name = "llama3.2",
-          chat = true,
-          command = false,
-          -- string with model name or table with model name and parameters
-          model = {
-            model = "llama3.2",
-            temperature = 0.6,
-            top_p = 1,
-            min_p = 0.05,
+  {
+    "robitx/gp.nvim",
+    config = function()
+      local conf = {
+        providers = {
+          ollama = {
+            endpoint = "http://localhost:3000/v1/chat/completions",
+            secret = nil,
+            log_level = "debug", -- Example of enabling debug logging
           },
         },
-        -- system prompt (use this to specify the persona/role of the AI)
-        system_prompt = "You are a general AI assistant.",
-      },
-    }
-    -- For customization, refer to Install > Configuration in the Documentation/Readme
-    require("gp").setup(conf)
+        agents = {
+          ollama = {
+            chat = true,
+            command = false,
+            model = {
+              name = "qwen2.5-coder:14b",
+              temperature = 0.6,
+              top_p = 1,
+              min_p = 0.05,
+            },
+          },
+        },
+        system_prompt = "You are an experienced software developer.",
+      }
 
-    -- Setup shortcuts here (see Usage > Shortcuts in the Documentation/Readme)
-  end,
+      require("gp").setup(conf)
+
+      vim.api.nvim_set_keymap("n", "<leader>llm", ":GPChat<CR>", { desc = "Start AI Chat" })
+      vim.api.nvim_set_keymap("v", "<leader>llc", ":'<,'>GPExecute<CR>", { desc = "Execute Selection with AI" })
+    end,
+  },
 }
 return M

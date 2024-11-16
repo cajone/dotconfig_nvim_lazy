@@ -28,7 +28,7 @@ require("lazy").setup({
   { import = "plugins.lint" }, -- Linter(s)
 
   -- Plugins that have some localisation done to them
-  { import = "plugins.ai" }, -- Configure AI prompt
+  --  { import = "plugins.ai" }, -- Configure AI prompt
   --  { import = "plugins.gp" }, -- Configure AI prompt
   -- { import = "plugins.copilot" }, -- Configure AI prompt
   { import = "plugins.git" }, -- git related plugins
