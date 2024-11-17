@@ -30,7 +30,7 @@ require("lazy").setup({
   { "vimwiki/vimwiki" }, -- Vimwiki
 
   { import = "plugins.treesitter" },
-  { import = "plugins.lint" }, -- Linter(s)
+--  { import = "plugins.lint" }, -- Linter(s)
 
   -- Plugins that have some localisation done to them
   -- { import = "plugins.ai" }, -- Configure AI prompt
