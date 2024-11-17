@@ -1,25 +1,27 @@
 M = {
   "David-Kunz/gen.nvim",
   opts = {
-    model = "qwen2.5-coder:14b", -- Set default model to an empty string
+    model = "qwen2.5-coder:32b", -- Set default model to an empty string if needed
     host = "localhost",
-    port = "3000",
-    --      init = function(options)
-    --        pcall(io.popen, "ollama serve > /dev/null 2>&1 &")
-    --      end,
-    -- Function to initialize Ollama
+    port = "11434",
     command = function(options)
       local body = { model = options.model, stream = true }
-      return "curl --silent --no-buffer -X POST http://" .. options.host .. ":" .. options.port .. "/api/chat -d $body"
+      return string.format("curl -sN -X POST http://%s:%s/api/chat -d '%s'",
+        vim.fn.shellescape(options.host),
+        vim.fn.shellescape(options.port),
+        vim.fn.json_encode(body))
     end,
-    display_mode = "float",
+    display_mode = "horizontal-split",
   },
   config = function()
     local gen_prompts = {
       {
         name = "qwen23",
-        model = "qwen2.5-coder:14b",
-        prompt_template = "You are a senior Lua engineer, answering questions about Lua. Provide code examples where appropriate. $input\n$text",
+        model = "qwen2.5-coder:32b",
+        prompt_template = [[
+You are a senior Lua engineer, answering questions about Lua.
+Provide code examples where appropriate. $input\n$text
+]],
       },
     }
 

@@ -5,7 +5,7 @@ M = {
     require("gp").setup({
       providers = {
         ollama = {
-          endpoint = "http://localhost:3000/v1/chat/completions",
+          endpoint = "http://localhost:11434/v1/chat/completions",
         },
       },
       agents = {
@@ -14,7 +14,17 @@ M = {
           chat = true,
           command = true,
           provider = "ollama",
-          model = { model = "llama3.2" },
+          model = { model = "llama3.2:latest" },
+          system_prompt = "I am an AI meticulously crafted to provide programming guidance and code assistance. "
+            .. "To best serve you as a computer programmer, please provide detailed inquiries and code snippets when necessary, "
+            .. "and expect precise, technical responses tailored to your development needs.\n",
+        },
+        {
+          name = "qwen",
+          chat = true,
+          command = true,
+          provider = "ollama",
+          model = { model = "qwen2.5-coder:32b" },
           system_prompt = "I am an AI meticulously crafted to provide programming guidance and code assistance. "
             .. "To best serve you as a computer programmer, please provide detailed inquiries and code snippets when necessary, "
             .. "and expect precise, technical responses tailored to your development needs.\n",

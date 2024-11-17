@@ -24,6 +24,14 @@ set("n", "<leader>fh", builtin.help_tags, { desc = "Open help pages" })
 set("n", "<leader>fr", builtin.oldfiles, { desc = "List recently opened files" })
 set("n", "<leader>km", builtin.keymaps, { desc = "Open keymaps" })
 
+
+-- GP AI
+vim.api.nvim_set_keymap("n", "<Leader>qiA", ":GpAgent<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>qin", ":GpTabnew<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>qia", ":GpAppend<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>qip", ":GpPrepend<CR>", { noremap = true })
+
+
 -- Remote SSH connections
 vim.api.nvim_set_keymap("n", "<Leader>rs", ":RemoteStart<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>rS", ":RemoteStop<CR>", { noremap = true })
@@ -146,6 +154,7 @@ vim.api.nvim_set_keymap(
   ":GenTocGFM<CR>",
   { desc = "Generate TOC ( in situ )", noremap = true, silent = true }
 )
+
 vim.api.nvim_set_keymap("n", "<Leader>tou", ":UpdateToc<CR>", { desc = "Update TOC", noremap = true, silent = true })
 vim.api.nvim_set_keymap(
   "n",
