@@ -4,7 +4,7 @@ M = {
   dependencies = {
     "MunifTanjim/nui.nvim",
     -- If you want to use nvim-notify for notifications, uncomment the following line:
-    -- "rcarriga/nvim-notify",
+    "rcarriga/nvim-notify",
   },
   opts = {
     -- Enable or disable various features

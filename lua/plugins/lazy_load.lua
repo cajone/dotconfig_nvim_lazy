@@ -18,6 +18,11 @@ require("lazy").setup({
     enable = true,
     notify = false,
   },
+  defaults = {
+    lazy = true,
+    version = false,
+  },
+
   change_detection = { notify = false }, -- Stop reporting auto changes
 
   -- Plugins used straight out the box
@@ -28,8 +33,8 @@ require("lazy").setup({
   { import = "plugins.lint" }, -- Linter(s)
 
   -- Plugins that have some localisation done to them
-  --  { import = "plugins.ai" }, -- Configure AI prompt
-  --  { import = "plugins.gp" }, -- Configure AI prompt
+  -- { import = "plugins.ai" }, -- Configure AI prompt
+  { import = "plugins.gp" }, -- Configure AI prompt
   -- { import = "plugins.copilot" }, -- Configure AI prompt
   { import = "plugins.git" }, -- git related plugins
   --  { import = "plugins.markdown-preview" }, -- Instant Markdown for neovim
@@ -50,7 +55,7 @@ require("lazy").setup({
   { import = "plugins.ui.noice" }, --  System messages popup window
 
   -- Linting
-  { import = "plugins.conform" }, -- Formatting, linting
+  --  { import = "plugins.conform" }, -- Formatting, linting
 
   -- LSP / Auto completion language Plugins
   { import = "plugins.lsp.mason" }, -- LSP installer : NOTE THIS HAS TO BE THE FIRST LSP FILE TO LOAD!!!
