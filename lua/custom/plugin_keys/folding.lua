@@ -1,90 +1,72 @@
--------------------------------------------------------------------------------
---                           Folding Section
--------------------------------------------------------------------------------
+-- Begining
+-- Custom fold configuration for Markdown files
 
--- Use <CR> to toggle fold when in normal mode
-vim.keymap.set("n", "<CR>", function()
-  local line = vim.fn.line(".")
-  local foldlevel = vim.fn.foldlevel(line)
-  if foldlevel == 0 then
-    vim.notify("No fold found", vim.log.levels.INFO)
-  else
-    vim.cmd("normal! za")
-  end
-end, { desc = "Toggle Fold" })
+if vim.fn.expand('%:e'):match('markdown') then
+  -- Set up fold method and expression for Markdown files
+  vim.opt.foldmethod = "expr"
+  vim.opt.foldlevelstart = 99  -- Start with all folds closed
+  vim.opt.foldminlines = 1     -- Minimum lines to fold
 
--- Helper function to set fold method and expression
-local function set_foldmethod_expr()
-  if vim.fn.has("nvim-0.10") == 1 then
-    vim.opt.foldmethod = "expr"
-    local function require_ui(module)
-      return string.format("v:lua.%s()", module .. '.ui.foldexpr()')
-    end
-    vim.opt.foldexpr = require_ui('lazyvim.util')
-    vim.opt.foldtext = ""
-  else
-    vim.opt.foldmethod = "indent"
-    vim.opt.foldtext = function()
-      return require('lazyvim.util').ui.foldtext()
+  -- Define the fold expression for markdown headings
+  vim.opt_local.foldexpr = [[getline(v:lnum) =~ '^\s*#\+' ? strlen(submatch(0)) : -1]]
+
+  -- Function to toggle folds under the cursor safely
+  local function toggle_fold()
+    local line = vim.fn.line(".")
+    local foldlevel = vim.fn.foldlevel(line)
+    if foldlevel == 0 then
+      vim.notify("No fold found", vim.log.levels.INFO)
+    else
+      vim.cmd("normal! za")  -- Toggle the fold at the current line
     end
   end
-  vim.opt.foldlevelstart = 99 -- Set initial fold level
-end
 
--- Helper function to fold headings of a specific level
-local function fold_headings_of_level(level)
-  local total_lines = vim.fn.line("$")
-  for line = 1, total_lines do
-    local line_content = vim.fn.getline(line)
-    if line_content:match("^" .. string.rep("#", level) .. "%s") then
-      vim.fn.cursor(line, 1)
-      if vim.fn.foldclosed(line) == -1 then
-        vim.cmd("normal! za")
+  -- Helper function to identify and fold headings of a specific level
+  local function fold_headings_of_level(level)
+    local total_lines = vim.fn.line("$")
+    for line = 1, total_lines do
+      local line_content = vim.fn.getline(line)
+      local heading_pattern = "^" .. string.rep("#", level) .. "%s"
+      if vim.fn.match(line_content, heading_pattern) == 0 then
+        -- Ensure the cursor is on the line and toggle the fold safely
+        vim.fn.setpos(".", {0, line, 1, 0})
+        pcall(vim.cmd, "normal! za")
       end
     end
   end
-end
 
--- Function to fold markdown headings of specified levels
-local function fold_markdown_headings(levels)
-  set_foldmethod_expr()
-  local saved_view = vim.fn.winsaveview()
-  for _, level in ipairs(levels) do
-    fold_headings_of_level(level)
+  -- Function to fold markdown headings of specified levels
+  local function fold_markdown_headings(levels)
+    local saved_view = vim.fn.winsaveview()
+    for _, level in ipairs(levels) do
+      fold_headings_of_level(level)
+    end
+    vim.cmd("nohlsearch")
+    vim.fn.winrestview(saved_view)
   end
-  vim.cmd("nohlsearch")
-  vim.fn.winrestview(saved_view)
+
+  -- Keymap to toggle fold under cursor
+  vim.keymap.set("n", "<CR>", toggle_fold, { desc = "Toggle Fold" })
+
+  -- Keymaps for folding markdown headings based on level
+  local fold_keymaps = {
+    zj = { 6, 5, 4, 3, 2, 1 },   -- Fold all levels
+    zk = { 6, 5, 4, 3, 2 },      -- Fold levels 2 and above
+    zl = { 6, 5, 4, 3 },         -- Fold levels 3 and above
+    ["z;"] = { 6, 5, 4 }         -- Fold levels 4 and above
+  }
+
+  for key, levels in pairs(fold_keymaps) do
+    vim.keymap.set("n", key, function()
+      vim.cmd("edit!")           -- Reload the buffer to ensure latest state
+      vim.cmd("normal! zR")       -- Unfold all first
+      fold_markdown_headings(levels)
+    end, { desc = string.format("Fold Headings Level %d or Above", #levels) })
+  end
+
+  -- Additional keymap to unfold all folds (zR) and fold all at once (zM)
+  vim.keymap.set("n", "ze", vim.cmd[[normal! zR]], { desc = "Unfold All" })
+  vim.keymap.set("n", "zo", vim.cmd[[normal! zM]], { desc = "Fold All" })
 end
 
--- Keymap to unfold all headings (level 2 or above)
-vim.keymap.set("n", "zu", function()
-  vim.cmd("edit!")
-  vim.cmd("normal! zR") -- Unfold all
-end, { desc = "Unfold All Headings" })
-
--- Keymap to fold the heading under the cursor
-vim.keymap.set("n", "zi", function()
-  vim.cmd("normal gk")
-  vim.cmd("normal! za")
-end, { desc = "Fold Current Heading" })
-
--- Keymaps for folding markdown headings based on level
-local fold_keymaps = {
-  zj = { 6, 5, 4, 3, 2, 1 },
-  zk = { 6, 5, 4, 3, 2 },
-  zl = { 6, 5, 4, 3 },
-  ["z;"] = { 6, 5, 4 }
-}
-
-for key, levels in pairs(fold_keymaps) do
-  vim.keymap.set("n", key, function()
-    vim.cmd("edit!")
-    vim.cmd("normal! zR") -- Unfold all first
-    fold_markdown_headings(levels)
-  end, { desc = string.format("Fold Headings Level %d or Above", table.getn(levels)) })
-end
-
--------------------------------------------------------------------------------
---                         End Folding Section
--------------------------------------------------------------------------------
 
