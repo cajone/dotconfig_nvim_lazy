@@ -3,16 +3,17 @@ M = {
   event = { "BufReadPre", "BufNewFile" },
   config = function()
     local conform = require("conform")
+
     conform.setup({
       formatters_by_ft = {
         bash = { "beautysh" },
         css = { "prettier" },
         graphql = { "prettier" },
         html = { "prettier" },
-        javascript = { "prettier", "eslint_d" }, -- Use eslint_d as a fallback if prettier fails
+        javascript = { "prettier", "eslint_d" },
         javascriptreact = { "prettier" },
         json = { "prettier" },
-        lua = { "stylua", { args = { "--indent-type", "space", "--indent-width", "2" } } }, -- Custom Stylua arguments
+        lua = { "stylua", { args = { "--indent-type", "space", "--indent-width", "2" } } },
         markdown = { "prettier" },
         sh = { "beautysh" },
         svelte = { "prettier" },
@@ -23,24 +24,39 @@ M = {
       },
       format_on_save = {
         lsp_fallback = true,
-        async = false,
+        async = true,
         timeout_ms = 500,
       },
     })
 
-    -- Key mappings
+    -- Custom formatter configuration if needed
+    conform.formatters.stylua.args["--config-path"] = "~/.config/stylua.toml" -- Example custom Stylua config path
+
     vim.keymap.set({ "n", "v" }, "<leader>mp", function()
-      conform.format({
-        lsp_fallback = true,
-        async = false,
-        timeout_ms = 500,
-      })
+      local status, err = pcall(function()
+        conform.format({
+          lsp_fallback = true,
+          async = true,
+          timeout_ms = 500,
+        })
+      end)
+      if not status then
+        print("Formatter error: ", err)
+      end
     end, { desc = "Format file or range (in visual mode)" })
 
-    -- Additional key mapping for partial formatting
     vim.keymap.set("v", "<leader>mf", function()
-      conform.format({ async = false, timeout_ms = 500 })
+      local status, err = pcall(function()
+        conform.format({
+          async = true,
+          timeout_ms = 500,
+        })
+      end)
+      if not status then
+        print("Formatter error: ", err)
+      end
     end, { desc = "Format selection" })
   end,
 }
+
 return M

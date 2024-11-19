@@ -30,7 +30,7 @@ require("lazy").setup({
   { "vimwiki/vimwiki" }, -- Vimwiki
 
   { import = "plugins.treesitter" },
---  { import = "plugins.lint" }, -- Linter(s)
+  { import = "plugins.lint" }, -- Linter(s)
 
   -- Plugins that have some localisation done to them
   -- { import = "plugins.ai" }, -- Configure AI prompt
@@ -55,13 +55,13 @@ require("lazy").setup({
   { import = "plugins.ui.noice" }, --  System messages popup window
 
   -- Linting
-  --  { import = "plugins.conform" }, -- Formatting, linting
+  { import = "plugins.conform" }, -- Formatting, linting
 
   -- LSP / Auto completion language Plugins
   { import = "plugins.lsp.mason" }, -- LSP installer : NOTE THIS HAS TO BE THE FIRST LSP FILE TO LOAD!!!
   { import = "plugins.lsp.none-ls" }, -- null-ls replacement
   { import = "plugins.lsp.nvim-cmp" }, -- Auto Completion
-  { import = "plugins.lsp.debug" }, -- LSP Debug
+  -- { import = "plugins.lsp.debug" }, -- LSP Debug
   { import = "plugins.lsp.lsp_config" }, -- LSP configuration
 
   -- DAP Debugging code base

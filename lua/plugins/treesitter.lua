@@ -15,6 +15,7 @@ M = {
         "vim",
         "vimdoc",
         "xml",
+        "yaml",
       },
       auto_install = true,
       highlight = {

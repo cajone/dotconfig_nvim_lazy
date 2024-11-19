@@ -7,10 +7,10 @@ vim.api.nvim_set_keymap("n", "<C-k>", "<C-w>k", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-l>", "<C-w>l", { noremap = true })
 
 -- Cut & Paste to system buffer if clipboard is set
-vim.api.nvim_set_keymap("n", "<leader>y", '"+yy', { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "<leader>y", '"+yy', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>p", '"+p', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", "<leader>p", '"+p', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>y", '"+yy', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<leader>y", '"+yy', { noremap = true, silent = true })
 
 -- Telescope Keys (requires "ripgrep" installed via your system package manager)
 local builtin = require("telescope.builtin")
@@ -26,10 +26,14 @@ set("n", "<leader>km", builtin.keymaps, { desc = "Open keymaps" })
 
 
 -- GP AI
-vim.api.nvim_set_keymap("n", "<Leader>qiA", ":GpAgent<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>qin", ":GpTabnew<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>qia", ":GpAppend<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>qip", ":GpPrepend<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>ga", ":GpAgent", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>gb", ":GpRewrite<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>gd", ":GpChatDelete<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>gf", ":GpChatFinder<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>gA", ":GpAppend<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>gn", ":GpTabnew<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>gp", ":GpPrepend<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>gt", ":GpChatToggle<CR>", { noremap = true })
 
 
 -- Remote SSH connections
