@@ -1,5 +1,5 @@
 M = {
-  "robitx/gp.nvim",
+  "cajone/gp.nvim",
   lazy = false,
   config = function()
     require("gp").setup({
