@@ -20,7 +20,7 @@ g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
 
 -- [[ Context ]]
-opt.colorcolumn = "120" -- str: Show column for max line length
+-- opt.colorcolumn = "120" -- str: Show column for max line length
 opt.number = true -- bool: Show line numbers
 opt.relativenumber = true -- bool: Show relative line numbers
 opt.scrolloff = 4 -- int: Min num lines of context

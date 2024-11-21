@@ -27,6 +27,8 @@ set("n", "<leader>km", builtin.keymaps, { desc = "Open keymaps" })
 
 -- GP AI
 vim.api.nvim_set_keymap("n", "<Leader>ga", ":GpAgent", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>gaq", ":GpAgent qwen32<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>ga", ":GpAgent Llama3.2<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>gb", ":GpRewrite<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>gd", ":GpChatDelete<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>gf", ":GpChatFinder<CR>", { noremap = true })
@@ -34,6 +36,7 @@ vim.api.nvim_set_keymap("n", "<Leader>gA", ":GpAppend<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>gn", ":GpTabnew<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>gp", ":GpPrepend<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>gt", ":GpChatToggle<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>gz", ":GpPopup<CR>", { noremap = true })
 
 
 -- Remote SSH connections

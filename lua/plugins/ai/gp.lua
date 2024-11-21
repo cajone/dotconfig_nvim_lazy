@@ -20,16 +20,6 @@ M = {
             .. "and expect precise, technical responses tailored to your development needs.\n",
         },
         {
-          name = "qwen14",
-          chat = true,
-          command = true,
-          provider = "ollama",
-          model = { model = "qwen2.5-coder:14b" },
-          system_prompt = "I am an AI meticulously crafted to provide programming guidance and code assistance. "
-            .. "To best serve you as a computer programmer, please provide detailed inquiries and code snippets when necessary, "
-            .. "and expect precise, technical responses tailored to your development needs.\n",
-        },
-        {
           name = "qwen32",
           chat = true,
           command = true,
