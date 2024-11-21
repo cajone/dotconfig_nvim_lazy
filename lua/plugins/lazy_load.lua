@@ -32,14 +32,10 @@ require("lazy").setup({
   { import = "plugins.treesitter" },
   { import = "plugins.lint" }, -- Linter(s)
 
-  -- Plugins that have some localisation done to them
   { import = "plugins.git" }, -- git related plugins
-  --  { import = "plugins.markdown-preview" }, -- Instant Markdown for neovim
   { import = "plugins.render-markdown" }, -- Better Terminal display of markdown
   { import = "plugins.terminal" }, -- Toggle Terminal window
-
-  -- ssh remote
-  --  { import = "plugins.remote" }, -- remote ssh
+  --  { import = "plugins.markdown-preview" }, -- Instant Markdown for neovim
 
   -- UI based plugins
   { import = "plugins.ui.colorscheme" }, -- ColorScheme
@@ -50,13 +46,11 @@ require("lazy").setup({
   { import = "plugins.ui.telescope" }, -- Fuzzy file finder and many other things
   { import = "plugins.ui.todo" }, -- Todo notes etc
   { import = "plugins.ui.noice" }, --  System messages popup window
-
-  -- Linting
   { import = "plugins.ui.conform" }, -- Formatting, linting
 
   -- AI based plugins
-  -- { import = "plugins.ai.ai" }, -- Configure AI prompt
   { import = "plugins.ai.gp" }, -- Configure AI prompt
+  -- { import = "plugins.ai.ai" }, -- Configure AI prompt
   -- { import = "plugins.ai.copilot" }, -- Configure AI prompt
 
   -- LSP / Auto completion language Plugins
