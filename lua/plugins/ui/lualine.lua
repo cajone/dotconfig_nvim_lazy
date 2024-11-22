@@ -38,8 +38,6 @@ M = {
           },
         },
         lualine_y = {
-          "progress",
-          "|",
           "filetype",
         },
         lualine_z = {
