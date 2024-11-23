@@ -1,14 +1,14 @@
-
 M = {
   "folke/noice.nvim",
   event = "VeryLazy", -- Load plugin lazily when needed
   dependencies = {
     "MunifTanjim/nui.nvim",
+    "ibhagwan/fzf-lua",
     -- "rcarriga/nvim-notify", -- Use nvim-notify for notifications
   },
   opts = {
     presets = {
-      bottom_search = false, -- Use classic bottom cmdline for search
+      bottom_search = false, -- Use classic bottom cmdline for search/ibhagwan/fzf-lua
       command_palette = false, -- Position cmdline and popupmenu together (optional)
       long_message_to_split = true, -- Send long messages to a split
       inc_rename = true, -- Enable input dialog for inc-rename.nvim
@@ -61,4 +61,3 @@ M = {
 }
 
 return M
-
