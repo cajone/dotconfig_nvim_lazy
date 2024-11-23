@@ -37,6 +37,16 @@ vim.api.nvim_set_keymap("n", "<Leader>gp", ":GpPrepend<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>gt", ":GpChatToggle<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>gz", ":GpPopup<CR>", { noremap = true })
 
+-- Obsidian
+
+vim.api.nvim_set_keymap("n", "<Leader>op", ":ObsidianOpen<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>on", ":ObsidianNew", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>oS", ":ObsidianQuickSwitch<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>os", ":ObsidianSearch<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>of", ":ObsidianFollowLink vsplit<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>ol", ":ObsidianLinks<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>ot", ":ObsidianTOC<CR>", { noremap = true })
+
 -- Remote SSH connections
 vim.api.nvim_set_keymap("n", "<Leader>rs", ":RemoteStart<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>rS", ":RemoteStop<CR>", { noremap = true })

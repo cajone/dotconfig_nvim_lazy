@@ -21,16 +21,10 @@ M = {
     ui = { enable = false },
     workspaces = {
       {
-        name = "wiki",
-        path = "~/Documents/obs_wiki",
+        name = "vimwiki",
+        path = "~/vimwiki",
       },
-      --       {
-      --         name = "work",
-      --         path = "~/vaults/work",
-      --       },
     },
-
-    -- see below for full list of options 👇
   },
 }
 
