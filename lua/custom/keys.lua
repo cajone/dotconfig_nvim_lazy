@@ -25,17 +25,17 @@ set("n", "<leader>fr", builtin.oldfiles, { desc = "List recently opened files" }
 set("n", "<leader>km", builtin.keymaps, { desc = "Open keymaps" })
 
 -- GP AI
-vim.api.nvim_set_keymap("n", "<Leader>ga", ":GpAgent", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>gaq", ":GpAgent qwen32<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>gal", ":GpAgent Llama3.2<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>gb", ":GpRewrite<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>gd", ":GpChatDelete<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>gf", ":GpChatFinder<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>gA", ":GpAppend<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>gn", ":GpTabnew<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>gp", ":GpPrepend<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>gt", ":GpChatToggle<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>gz", ":GpPopup<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>ja", ":GpAgent", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>jaq", ":GpAgent qwen32<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>jal", ":GpAgent Llama3.2<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>jb", ":GpRewrite<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>jd", ":GpChatDelete<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>jf", ":GpChatFinder<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>jA", ":GpAppend<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>jn", ":GpTabnew<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>jp", ":GpPrepend<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>jt", ":GpChatToggle<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>jz", ":GpPopup<CR>", { noremap = true })
 
 -- Obsidian
 
@@ -75,7 +75,12 @@ vim.api.nvim_set_keymap("n", "<Leader>ec", "Extract_selected_code_blocks()<CR>",
 vim.api.nvim_set_keymap("n", "<Leader>nn", ":lua ToggleLineNumbers()<CR>", { noremap = true })
 
 -- Dismiss notices
-vim.api.nvim_set_keymap("n", "<leader>Nn", "<cmd>Noice dismiss<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>Nn", "<cmd>NoiceDismiss<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>Ne", "<cmd>NoiceEnable<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>Nd", "<cmd>NoiceDisable<CR>", { noremap = true, silent = true })
+
+--- FzfLua
+vim.api.nvim_set_keymap("n", "<leader>gb", "<cmd>FzfLua git_branches<CR>", { noremap = true, silent = true })
 
 -- Clear current search
 vim.api.nvim_set_keymap("n", "<Leader>z", ":nohlsearch<CR>", { desc = "Clear current search", noremap = true })
