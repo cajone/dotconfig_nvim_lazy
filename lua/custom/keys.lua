@@ -81,6 +81,7 @@ vim.api.nvim_set_keymap("n", "<leader>Nd", "<cmd>NoiceDisable<CR>", { noremap = 
 
 --- FzfLua
 vim.api.nvim_set_keymap("n", "<leader>gb", "<cmd>FzfLua git_branches<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>gh", "<cmd>FzfLua helptags<CR>", { noremap = true, silent = true })
 
 -- Clear current search
 vim.api.nvim_set_keymap("n", "<Leader>z", ":nohlsearch<CR>", { desc = "Clear current search", noremap = true })

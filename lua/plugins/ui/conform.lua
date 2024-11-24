@@ -30,7 +30,7 @@ M = {
     })
 
     -- Custom formatter configuration if needed
-    conform.formatters.stylua.args["--config-path"] = "~/.config/stylua.toml" -- Example custom Stylua config path
+    -- conform.formatters.stylua.args["--config-path"] = "~/.config/stylua.toml" -- Example custom Stylua config path
 
     vim.keymap.set({ "n", "v" }, "<leader>mp", function()
       local status, err = pcall(function()
