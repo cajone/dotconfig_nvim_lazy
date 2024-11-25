@@ -90,7 +90,7 @@ vim.api.nvim_set_keymap("n", "<Leader>z", ":nohlsearch<CR>", { desc = "Clear cur
 vim.api.nvim_set_keymap(
   "n",
   "<Leader>sf",
-  ":source %<CR>",
+  "<cmd>source %<CR>",
   { desc = "Reloads the configuration after a change", noremap = true }
 )
 
