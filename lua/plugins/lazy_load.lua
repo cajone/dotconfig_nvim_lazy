@@ -29,6 +29,7 @@ require("lazy").setup({
   { "instant-markdown/vim-instant-markdown" }, -- Instant Markdown
   { "vimwiki/vimwiki" }, -- Vimwiki
 
+  { import = "plugins.lazydev" },
   { import = "plugins.obsidian" }, -- obsidian note taker
   { import = "plugins.treesitter" },
   { import = "plugins.lint" }, -- Linter(s)
