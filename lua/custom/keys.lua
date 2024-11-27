@@ -28,14 +28,14 @@ set("n", "<leader>km", builtin.keymaps, { desc = "Open keymaps" })
 vim.api.nvim_set_keymap("n", "<Leader>ja", ":GpAgent", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>jaq", ":GpAgent qwen32<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>jal", ":GpAgent Llama3.2<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>jb", ":GpRewrite<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>jr", ":GpRewrite<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>jd", ":GpChatDelete<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>jf", ":GpChatFinder<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>jA", ":GpAppend<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>jn", ":GpTabnew<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>jp", ":GpPrepend<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>jt", ":GpChatToggle<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>jz", ":GpPopup<CR>", { noremap = true })
+-- vim.api.nvim_set_keymap("n", "<Leader>jz", ":GpPopup<CR>", { noremap = true })
 
 -- Obsidian
 

@@ -6,6 +6,7 @@ M = {
 
     conform.setup({
       formatters_by_ft = {
+        ansible = { "ansible" },
         bash = { "beautysh" },
         css = { "prettier" },
         graphql = { "prettier" },
