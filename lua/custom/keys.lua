@@ -25,9 +25,10 @@ set("n", "<leader>fr", builtin.oldfiles, { desc = "List recently opened files" }
 set("n", "<leader>km", builtin.keymaps, { desc = "Open keymaps" })
 
 -- GP AI
-vim.api.nvim_set_keymap("n", "<Leader>ja", ":GpAgent", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>jaq", ":GpAgent qwen32<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>jaw", ":GpAgent qwq<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>jal", ":GpAgent Llama3.2<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>ja", ":GpAgent", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>jr", ":GpRewrite<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>jd", ":GpChatDelete<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>jf", ":GpChatFinder<CR>", { noremap = true })
