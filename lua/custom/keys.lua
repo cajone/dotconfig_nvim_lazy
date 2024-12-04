@@ -53,21 +53,14 @@ vim.api.nvim_set_keymap("n", "<Leader>rs", ":RemoteStart<CR>", { noremap = true 
 vim.api.nvim_set_keymap("n", "<Leader>rS", ":RemoteStop<CR>", { noremap = true })
 
 -- :only
-vim.api.nvim_set_keymap(
-  "n",
-  "<Leader>0",
-  ":only<CR>",
-  { desc = "Close all buffers except current focus", noremap = true, silent = true }
-)
+vim.api.nvim_set_keymap("n", "<Leader>0", ":only<CR>", { desc = "Close all buffers except current focus", noremap = true, silent = true })
 
 -- Git
 vim.api.nvim_set_keymap("n", "<Leader>gf", ":FugitiveInside<CR>", { noremap = true })
 vim.api.nvim_set_keymap(
-  "n",
-  "<Leader>gls",
-  ':G log --pretty=format:"%h - %an, %ar : %s"<CR> ',
-  { desc = "Short formatted git log", noremap = true }
-)
+  "n", 
+  "<Leader>gls", 
+  ':G log --pretty=format:"%h - %an, %ar : %s"<CR> ', { desc = "Short formatted git log", noremap = true })
 
 -- Clean up code
 vim.api.nvim_set_keymap("n", "<Leader>ec", "Extract_selected_code_blocks()<CR>", { noremap = true })
@@ -88,11 +81,7 @@ vim.api.nvim_set_keymap("n", "<leader>gh", "<cmd>FzfLua helptags<CR>", { noremap
 vim.api.nvim_set_keymap("n", "<Leader>z", ":nohlsearch<CR>", { desc = "Clear current search", noremap = true })
 
 -- Refresh the nvim configuration after modification
-vim.api.nvim_set_keymap(
-  "n",
-  "<Leader>sf",
-  "<cmd>source %<CR>",
-  { desc = "Reloads the configuration after a change", noremap = true }
+vim.api.nvim_set_keymap("n", "<Leader>sf", "<cmd>source %<CR>", { desc = "Reloads the configuration after a change", noremap = true }
 )
 
 -- Toggle nvim-tree, load the DirectoryFiles
@@ -104,17 +93,9 @@ vim.api.nvim_set_keymap("n", "<Leader>NL", ":lua vim.lsp.buf.linting()<CR>", { n
 
 -- <F> Keys
 -- resize current focused vertical panel by 5 chars
-vim.api.nvim_set_keymap(
-  "n",
-  "<F3>",
-  ":vertical resize -5<CR>",
-  { desc = "Descrease current window size by 5 chars", noremap = true }
+vim.api.nvim_set_keymap("n", "<F3>", ":vertical resize -5<CR>", { desc = "Descrease current window size by 5 chars", noremap = true }
 )
-vim.api.nvim_set_keymap(
-  "n",
-  "<F4>",
-  ":vertical resize +5<CR>",
-  { desc = "Increase current window size by 5 chars", noremap = true }
+vim.api.nvim_set_keymap("n", "<F4>", ":vertical resize +5<CR>", { desc = "Increase current window size by 5 chars", noremap = true }
 )
 
 -- Spelling
@@ -128,98 +109,33 @@ vim.api.nvim_set_keymap("n", "<F6>", "z=", { desc = "Open Dictionary options for
 vim.api.nvim_set_keymap("n", "<F7>", "zg", { desc = "Save a word to a local dictionary", noremap = true })
 
 -- Toggle Vimwiki URL's
-vim.api.nvim_set_keymap(
-  "n",
-  "<F8>",
-  ":lua ToggleVimwikiConceallevel()<CR>",
-  { desc = "Show url paths in markdown files", noremap = true }
+vim.api.nvim_set_keymap("n", "<F8>", ":lua ToggleVimwikiConceallevel()<CR>", { desc = "Show url paths in markdown files", noremap = true }
 )
 
 -- Mapping for windo diffs
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>wd",
-  ":windo diffthis<CR>",
-  { desc = "Diff compare open split buffers", noremap = true }
-)
+vim.api.nvim_set_keymap("n", "<leader>wd", ":windo diffthis<CR>", { desc = "Diff compare open split buffers", noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>wD", ":windo diffoff<CR>", { desc = "Diff compare off", noremap = true })
 
 -- Mapping for cookstyle
 vim.api.nvim_set_keymap("n", "<leader>cs", ":!/opt/chefkdk/embedded/bin/cookstyle -a %<CR>", { noremap = true })
 
 -- Map a key combination to open Vimwiki and set LCD
-vim.api.nvim_set_keymap(
-  "n",
-  "<Leader>ww",
-  ":lua OpenVimwiki()<CR>",
-  { desc = "Open Wiki", noremap = true, silent = true }
+vim.api.nvim_set_keymap("n", "<Leader>ww", ":lua OpenVimwiki()<CR>", { desc = "Open Wiki", noremap = true, silent = true }
 )
 
 -- Set LCD
 vim.api.nvim_set_keymap(
-  "n",
+  "n", 
   "<Leader>lcd",
-  [[<Cmd>lua ChangeWorkingDirectoryToGitRoot()<CR>]],
+  [[:lua ChangeWorkingDirectoryToGitRoot()<CR>]], 
   { desc = "Set nvimtree to local working directory", noremap = true, silent = true }
 )
-
--- Add Frozen string literal to ruby files
--- vim.api.nvim_set_keymap('n', '<Leader>asl', ':lua AddFrozenStringLiteral()<CR>', { noremap = true, silent = true })
 
 -- Add a mapping to open plugin help
 vim.api.nvim_set_keymap("n", "<Leader>ph", [[:lua OpenPluginHelp()<CR>]], { silent = true })
 
--- MarkdownToc
-vim.api.nvim_set_keymap(
-  "n",
-  "<Leader>toc",
-  ":GenTocGFM<CR>",
-  { desc = "Generate TOC ( in situ )", noremap = true, silent = true }
-)
-
-vim.api.nvim_set_keymap("n", "<Leader>tou", ":UpdateToc<CR>", { desc = "Update TOC", noremap = true, silent = true })
-vim.api.nvim_set_keymap(
-  "n",
-  "<Leader>tor",
-  ":RemoveToc<CR>",
-  { desc = "Remove TOC ( in situ )", noremap = true, silent = true }
-)
-
--- Instant Markdown Preview on and off mappings
--- vim.api.nvim_set_keymap('n', '<leader>md', ':InstantMarkdownPreview<CR>', { desc = "Instant Markdown preview in browser", noremap = true, silent = true })
--- vim.api.nvim_set_keymap('n', '<leader>mo', ':InstantMarkdownStop<CR>', { desc = "Instant Markdown preview off", noremap = true, silent = true })
-
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>md",
-  ":MarkdownPreview<CR>",
-  { desc = "Instant Markdown preview in browser", noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>mo",
-  ":MarkdownPreviewStop<CR>",
-  { desc = "Instant Markdown preview off", noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>mt",
-  ":MarkdownPreviewToggle<CR>",
-  { desc = "Instant Markdown preview toggle", noremap = true, silent = true }
-)
-
 -- Tabs
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>tp",
-  ":tabprevious<cr>",
-  { desc = "Select Previous Tab", noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap("n", "<leader>tn", ":tabNext<cr>", { desc = "Select Next Tab", noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>tN", ":tabnew<cr>", { desc = "Open New Tab", noremap = true, silent = true })
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>tc",
-  ":tabclose<cr>",
-  { desc = "Close Current Tab", noremap = true, silent = true }
-)
+vim.api.nvim_set_keymap("n", "<leader>tp", ":tabprevious<CR>", { desc = "Select Previous Tab", noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>tn", ":tabNext<CR>", { desc = "Select Next Tab", noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>tN", ":tabnew<CR>", { desc = "Open New Tab", noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>tc", ":tabclose<CR>", { desc = "Close Current Tab", noremap = true, silent = true })
