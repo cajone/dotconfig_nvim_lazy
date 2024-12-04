@@ -32,7 +32,7 @@ end
 
 -- Open Vimwiki and set LCD
 function OpenVimwiki()
-  vim.cmd("VimwikiIndex") -- Open Vimwiki
+  vim.cmd("VimwikiIndex")  -- Open Vimwiki
   vim.cmd("lcd ~/vimwiki") -- Set the LCD to ~/vimwiki
 end
 
