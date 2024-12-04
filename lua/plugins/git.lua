@@ -1,12 +1,27 @@
 M = {
-  -- Fugitive
-  { "tpope/vim-fugitive" }, -- Fugitive ( Git)
-  { "tpope/vim-rhubarb" }, -- Git Support
-  { "cohama/agit.vim" }, -- Git history Tree
+  {
+    "NeogitOrg/neogit",
+    dependencies = {
+      { "sindrets/diffview.nvim" }, -- gitdiff view
+      { "nvim-lua/plenary.nvim" },
+    },
+    config = function()
+      local neogit = require("neogit")
+      neogit.setup {
+        disable_commit_confirmation = true,
+        intergrations = {
+          diffview = true
+        }
+      }
+    end
+  },
 
-  -- Git Diffview
-  { "sindrets/diffview.nvim" }, -- gitdiff view
-  { "nvim-lua/plenary.nvim" },
+
+  -- Fugitive
+  --  { "tpope/vim-fugitive" }, -- Fugitive ( Git)
+  -- { "tpope/vim-rhubarb" }, -- Git Support
+  -- { "cohama/agit.vim" }, -- Git history Tree
+
 
   -- GitSigns
   {
