@@ -39,7 +39,6 @@ vim.api.nvim_set_keymap("n", "<Leader>jt", ":GpChatToggle<CR>", { noremap = true
 -- vim.api.nvim_set_keymap("n", "<Leader>jz", ":GpPopup<CR>", { noremap = true })
 
 -- Obsidian
-
 vim.api.nvim_set_keymap("n", "<Leader>oS", ":ObsidianQuickSwitch<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>of", ":ObsidianFollowLink vsplit<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>ol", ":ObsidianLinks<CR>", { noremap = true })
@@ -57,14 +56,7 @@ vim.api.nvim_set_keymap("n", "<Leader>0", ":only<CR>",
   { desc = "Close all buffers except current focus", noremap = true, silent = true })
 
 -- Git
--- vim.api.nvim_set_keymap("n", "<Leader>gf", ":FugitiveInside<CR>", { noremap = true })
-
-vim.api.nvim_set_keymap("n", "<Leader>gd", ":DiffviewOpen<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>gg", ":Neogit<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>gl", ":Neogit log<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>gp", ":Neogit push<CR>", { noremap = true })
-
-
+vim.api.nvim_set_keymap("n", "<Leader>gf", ":FugitiveInside<CR>", { noremap = true })
 vim.api.nvim_set_keymap(
   "n",
   "<Leader>gls",
