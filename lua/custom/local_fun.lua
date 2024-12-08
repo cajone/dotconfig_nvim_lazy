@@ -16,7 +16,7 @@ function ToggleVimwikiConceallevel()
 end
 
 
-local function push_current_branch()
+function push_current_branch()
   -- Get the current branch name using Fugitive#Head() from Fugitive.vim plugin
   local branch_name = vim.fn['fugitive#Head']().name
 
