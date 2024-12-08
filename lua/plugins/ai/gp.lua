@@ -3,6 +3,13 @@ M = {
   lazy = false,
   config = function()
     require("gp").setup({
+      -- log file location
+      log_file = vim.fn.stdpath("log"):gsub("/$", "") .. "~/Documents/gp/gp.nvim.log",
+      -- directory for persisting state dynamically changed by user (like model or persona)
+      state_dir = vim.fn.stdpath("data"):gsub("/$", "") .. "~/Documents/gp/persisted",
+
+      default_chat_agent = 'qwen',
+
       providers = {
         ollama = {
           endpoint = "http://localhost:11434/v1/chat/completions",
