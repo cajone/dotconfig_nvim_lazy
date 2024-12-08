@@ -29,12 +29,6 @@ require("lazy").setup({
 	{ "instant-markdown/vim-instant-markdown" }, -- Instant Markdown
 	{ "vimwiki/vimwiki" },                -- Vimwiki
 
-	--  { import = "plugins.lazydev" },
-	--  { import = "plugins" },
-	--  { import = "plugins.ui" },
-	--  { import = "plugins.lsp" },
-	--  { import = "plugins.ai" },
-
 	{ import = "plugins.obsidian" },  -- obsidian note taker
 	{ import = "plugins.treesitter" },
 -- 	{ import = "plugins.lint" },      -- Linter(s)
@@ -48,7 +42,7 @@ require("lazy").setup({
 	{ import = "plugins.ui.colorscheme" }, -- ColorScheme
 	{ import = "plugins.ui.dressing" }, -- Allows prompts and selections
 	{ import = "plugins.ui.lualine" }, -- Status Line
- 	-- { import = "plugins.ui.mini" }, -- Collections on notes, todo's
+ 	{ import = "plugins.ui.mini" }, -- Collections on notes, todo's
 	{ import = "plugins.ui.nvimtree" }, -- NvimTree
 	{ import = "plugins.ui.telescope" }, -- Fuzzy file finder and many other things
 	{ import = "plugins.ui.todo" }, -- Todo notes etc
@@ -66,9 +60,9 @@ require("lazy").setup({
 	{ import = "plugins.lsp.nvim-cmp" }, -- Auto Completion
 	{ import = "plugins.lsp.debug" }, -- LSP Debug
 	{ import = "plugins.lsp.lsp_config" }, -- LSP configuration
+	{ import = "plugins.lsp.trouble" }, -- LSP configuration
 
 	-- DAP Debugging code base
 	-- { "mfussenegger/nvim-dap" },
 	-- { "jbyuki/one-small-step-for-vimkind" },
-
 })
