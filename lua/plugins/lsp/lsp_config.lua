@@ -16,7 +16,7 @@ M = {
 			},
 		},
 		config = function()
-			require("lspconfig").lus_ls.setup()
+			require("lspconfig").lua_ls.setup()
 		end
 	}
 }
