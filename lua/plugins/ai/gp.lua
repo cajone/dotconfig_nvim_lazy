@@ -8,7 +8,7 @@ M = {
       -- directory for persisting state dynamically changed by user (like model or persona)
       state_dir = vim.fn.stdpath("data"):gsub("/$", "") .. "~/Documents/gp/persisted",
 
-      default_chat_agent = 'qwen',
+      default_chat_agent = 'qwen32',
 
       providers = {
         ollama = {
@@ -41,7 +41,7 @@ M = {
           chat = true,
           command = true,
           provider = "ollama",
-          model = { model = "qwq:latest" },
+          model = { model = "qwq" },
           system_prompt = "I am an AI meticulously crafted to provide programming guidance and code assistance. "
             .. "To best serve you as a computer programmer, please provide detailed inquiries and code snippets when necessary, "
             .. "and expect precise, technical responses tailored to your development needs.\n",
