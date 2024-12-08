@@ -22,7 +22,6 @@ M = {
 
     mason_lspconfig.setup({
       ensure_installed = {
-        "ansible-lint",
         "ansiblels",
         "bashls",
         "groovyls",

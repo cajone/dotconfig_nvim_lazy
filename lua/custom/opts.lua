@@ -1,5 +1,16 @@
 -- opts.lua
 
+-- Override Filetype-Specific Indentation Settings
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'lua',
+  callback = function()
+    vim.bo.tabstop = 2        -- Set tabstop to 2 for Lua files
+    vim.bo.shiftwidth = 2     -- Set shiftwidth to 2 for Lua files
+    vim.bo.softtabstop = 2    -- Set softtabstop to 2 for Lua files, needed for consistent behavior
+    vim.bo.expandtab = true   -- Ensure that spaces are used instead of tabs for indentation in Lua files
+  end,
+})
+
 local opt = vim.opt
 local g = vim.g
 
