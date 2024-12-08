@@ -56,6 +56,7 @@ vim.api.nvim_set_keymap("n", "<Leader>0", ":only<CR>",
   { desc = "Close all buffers except current focus", noremap = true, silent = true })
 
 -- Git
+vim.api.nvim_set_keymap('n', '<leader>Gp', ':lua push_current_branch()<cr>', { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>gf", ":FugitiveInside<CR>", { noremap = true })
 vim.api.nvim_set_keymap(
   "n",

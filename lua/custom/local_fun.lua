@@ -15,6 +15,16 @@ function ToggleVimwikiConceallevel()
   end
 end
 
+
+local function push_current_branch()
+  -- Get the current branch name using Fugitive#Head() from Fugitive.vim plugin
+  local branch_name = vim.fn['fugitive#Head']().name
+
+  -- Execute the git push command with upstream option
+  vim.cmd('!git push -u origin ' .. branch_name)
+end
+
+
 -- Change the LCD to the current Git buffer root
 function ChangeWorkingDirectoryToGitRoot()
   local buffer_directory = vim.fn.expand("%:p:h")
