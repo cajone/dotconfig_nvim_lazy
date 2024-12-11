@@ -25,6 +25,7 @@ set("n", "<leader>fg", builtin.live_grep, { desc = "Find string in cwd" })
 set("n", "<leader>fh", builtin.help_tags, { desc = "Open help pages" })
 set("n", "<leader>fr", builtin.oldfiles, { desc = "Git branches" })
 set("n", "<leader>gb", builtin.git_branches, { desc = "List recently opened files" })
+set("n", "<leader>ht", builtin.help_tags, { desc = "Help Tags" })
 set("n", "<leader>km", builtin.keymaps, { desc = "Open keymaps" })
 
 -- Obsidian
@@ -54,10 +55,28 @@ keymap("n", "<Leader>ec", "Extract_selected_code_blocks()<CR>", { noremap = true
 -- Toggle Line Numbers
 keymap("n", "<Leader>nn", ":lua ToggleLineNumbers()<CR>", { noremap = true })
 
+<<<<<<< HEAD
 --- FzfLua
 -- keymap("n", "<leader>gb", "<cmd>FzfLua git_branches<CR>", { noremap = true, silent = true })
 keymap("n", "<leader>gh", "<cmd>FzfLua helptags<CR>", { noremap = true, silent = true })
 
+||||||| parent of 93a2353 (Removed fzf plugin key mappings)
+-- Dismiss notices
+keymap("n", "<leader>Nn", "<cmd>NoiceDismiss<CR>", { noremap = true, silent = true })
+keymap("n", "<leader>Ne", "<cmd>NoiceEnable<CR>", { noremap = true, silent = true })
+keymap("n", "<leader>Nd", "<cmd>NoiceDisable<CR>", { noremap = true, silent = true })
+
+--- FzfLua
+-- keymap("n", "<leader>gb", "<cmd>FzfLua git_branches<CR>", { noremap = true, silent = true })
+keymap("n", "<leader>gh", "<cmd>FzfLua helptags<CR>", { noremap = true, silent = true })
+
+=======
+-- Dismiss notices
+keymap("n", "<leader>Nn", "<cmd>NoiceDismiss<CR>", { noremap = true, silent = true })
+keymap("n", "<leader>Ne", "<cmd>NoiceEnable<CR>", { noremap = true, silent = true })
+keymap("n", "<leader>Nd", "<cmd>NoiceDisable<CR>", { noremap = true, silent = true })
+
+>>>>>>> 93a2353 (Removed fzf plugin key mappings)
 -- Clear current search
 keymap("n", "<Leader>z", ":nohlsearch<CR>", { desc = "Clear current search", noremap = true })
 
