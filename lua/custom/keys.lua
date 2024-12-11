@@ -55,9 +55,6 @@ keymap("n", "<Leader>ec", "Extract_selected_code_blocks()<CR>", { noremap = true
 -- Toggle Line Numbers
 keymap("n", "<Leader>nn", ":lua ToggleLineNumbers()<CR>", { noremap = true })
 
---- FzfLua
--- keymap("n", "<leader>gb", "<cmd>FzfLua git_branches<CR>", { noremap = true, silent = true })
-keymap("n", "<leader>gh", "<cmd>FzfLua helptags<CR>", { noremap = true, silent = true })
 
 -- Clear current search
 keymap("n", "<Leader>z", ":nohlsearch<CR>", { desc = "Clear current search", noremap = true })
