@@ -54,7 +54,7 @@ require("lazy").setup({
   --	{ import = "plugins.ui.todo" }, -- Todo notes etc
   -- 	-- { import = "plugins.ui.noice" }, --  System messages popup window
   --	{ import = "plugins.ui.conform" }, -- Formatting, linting
-  { import = "plugins.ui.fzf-lua" }, -- Formatting, linting
+  { import = "plugins.ui.fzf-lua" }, -- Fuzzy Finding
 
   -- AI based plugins
   --	{ import = "plugins.ai.gp" }, -- Configure AI prompt
