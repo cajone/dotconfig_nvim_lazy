@@ -23,7 +23,8 @@ set("n", "<leader>fc", builtin.grep_string, { desc = "Find string under cursor" 
 set("n", "<leader>ff", builtin.find_files, { desc = "Fuzzy find files in cwd" })
 set("n", "<leader>fg", builtin.live_grep, { desc = "Find string in cwd" })
 set("n", "<leader>fh", builtin.help_tags, { desc = "Open help pages" })
-set("n", "<leader>fr", builtin.oldfiles, { desc = "List recently opened files" })
+set("n", "<leader>fr", builtin.oldfiles, { desc = "Git branches" })
+set("n", "<leader>gb", builtin.git_branches, { desc = "List recently opened files" })
 set("n", "<leader>km", builtin.keymaps, { desc = "Open keymaps" })
 
 -- GP AI
@@ -77,7 +78,7 @@ keymap("n", "<leader>Ne", "<cmd>NoiceEnable<CR>", { noremap = true, silent = tru
 keymap("n", "<leader>Nd", "<cmd>NoiceDisable<CR>", { noremap = true, silent = true })
 
 --- FzfLua
-keymap("n", "<leader>gb", "<cmd>FzfLua git_branches<CR>", { noremap = true, silent = true })
+-- keymap("n", "<leader>gb", "<cmd>FzfLua git_branches<CR>", { noremap = true, silent = true })
 keymap("n", "<leader>gh", "<cmd>FzfLua helptags<CR>", { noremap = true, silent = true })
 
 -- Clear current search
