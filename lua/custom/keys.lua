@@ -55,28 +55,6 @@ keymap("n", "<Leader>ec", "Extract_selected_code_blocks()<CR>", { noremap = true
 -- Toggle Line Numbers
 keymap("n", "<Leader>nn", ":lua ToggleLineNumbers()<CR>", { noremap = true })
 
-<<<<<<< HEAD
---- FzfLua
--- keymap("n", "<leader>gb", "<cmd>FzfLua git_branches<CR>", { noremap = true, silent = true })
-keymap("n", "<leader>gh", "<cmd>FzfLua helptags<CR>", { noremap = true, silent = true })
-
-||||||| parent of 93a2353 (Removed fzf plugin key mappings)
--- Dismiss notices
-keymap("n", "<leader>Nn", "<cmd>NoiceDismiss<CR>", { noremap = true, silent = true })
-keymap("n", "<leader>Ne", "<cmd>NoiceEnable<CR>", { noremap = true, silent = true })
-keymap("n", "<leader>Nd", "<cmd>NoiceDisable<CR>", { noremap = true, silent = true })
-
---- FzfLua
--- keymap("n", "<leader>gb", "<cmd>FzfLua git_branches<CR>", { noremap = true, silent = true })
-keymap("n", "<leader>gh", "<cmd>FzfLua helptags<CR>", { noremap = true, silent = true })
-
-=======
--- Dismiss notices
-keymap("n", "<leader>Nn", "<cmd>NoiceDismiss<CR>", { noremap = true, silent = true })
-keymap("n", "<leader>Ne", "<cmd>NoiceEnable<CR>", { noremap = true, silent = true })
-keymap("n", "<leader>Nd", "<cmd>NoiceDisable<CR>", { noremap = true, silent = true })
-
->>>>>>> 93a2353 (Removed fzf plugin key mappings)
 -- Clear current search
 keymap("n", "<Leader>z", ":nohlsearch<CR>", { desc = "Clear current search", noremap = true })
 
