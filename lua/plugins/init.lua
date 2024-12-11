@@ -14,7 +14,3 @@ vim.g.vimwiki_list = {
 }
 
 require("plugins.lazy_load")
-require("render-markdown").setup({
-  file_types = { "markdown", "vimwiki" },
-})
-vim.treesitter.language.register("markdown", "vimwiki")
