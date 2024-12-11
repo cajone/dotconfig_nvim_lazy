@@ -24,23 +24,9 @@ set("n", "<leader>ff", builtin.find_files, { desc = "Fuzzy find files in cwd" })
 set("n", "<leader>fg", builtin.live_grep, { desc = "Find string in cwd" })
 set("n", "<leader>fh", builtin.help_tags, { desc = "Open help pages" })
 set("n", "<leader>fr", builtin.oldfiles, { desc = "Git branches" })
-set("n", "<leader>gb", builtin.git_branches, { desc = "List recently opened files" })
 set("n", "<leader>ht", builtin.help_tags, { desc = "Help Tags" })
+set("n", "<leader>gb", builtin.git_branches, { desc = "List recently opened files" })
 set("n", "<leader>km", builtin.keymaps, { desc = "Open keymaps" })
-
--- GP AI
-keymap("n", "<Leader>jaq", ":GpAgent qwen32<CR>", { noremap = true })
-keymap("n", "<Leader>jaw", ":GpAgent qwq:latest<CR>", { noremap = true })
-keymap("n", "<Leader>jal", ":GpAgent Llama3.2<CR>", { noremap = true })
-keymap("n", "<Leader>ja", ":GpAgent", { noremap = true })
-keymap("n", "<Leader>jr", ":GpRewrite<CR>", { noremap = true })
-keymap("n", "<Leader>jd", ":GpChatDelete<CR>", { noremap = true })
-keymap("n", "<Leader>jf", ":GpChatFinder<CR>", { noremap = true })
-keymap("n", "<Leader>jA", ":GpAppend<CR>", { noremap = true })
-keymap("n", "<Leader>jn", ":GpTabnew<CR>", { noremap = true })
-keymap("n", "<Leader>jp", ":GpPrepend<CR>", { noremap = true })
-keymap("n", "<Leader>jt", ":GpChatToggle<CR>", { noremap = true })
--- keym("n", "<Leader>jz", ":GpPopup<CR>", { noremap = true })
 
 -- Obsidian
 keymap("n", "<Leader>oS", ":ObsidianQuickSwitch<CR>", { noremap = true })
@@ -50,10 +36,6 @@ keymap("n", "<Leader>on", ":ObsidianNew", { noremap = true })
 keymap("n", "<Leader>op", ":ObsidianOpen<CR>", { noremap = true })
 keymap("n", "<Leader>os", ":ObsidianSearch<CR>", { noremap = true })
 keymap("n", "<Leader>ot", ":ObsidianTags", { noremap = true })
-
--- Remote SSH connections
-keymap("n", "<Leader>rs", ":RemoteStart<CR>", { noremap = true })
-keymap("n", "<Leader>rS", ":RemoteStop<CR>", { noremap = true })
 
 -- :only
 keymap("n", "<Leader>0", ":only<CR>",
@@ -73,10 +55,9 @@ keymap("n", "<Leader>ec", "Extract_selected_code_blocks()<CR>", { noremap = true
 -- Toggle Line Numbers
 keymap("n", "<Leader>nn", ":lua ToggleLineNumbers()<CR>", { noremap = true })
 
--- Dismiss notices
-keymap("n", "<leader>Nn", "<cmd>NoiceDismiss<CR>", { noremap = true, silent = true })
-keymap("n", "<leader>Ne", "<cmd>NoiceEnable<CR>", { noremap = true, silent = true })
-keymap("n", "<leader>Nd", "<cmd>NoiceDisable<CR>", { noremap = true, silent = true })
+--- FzfLua
+-- keymap("n", "<leader>gb", "<cmd>FzfLua git_branches<CR>", { noremap = true, silent = true })
+keymap("n", "<leader>gh", "<cmd>FzfLua helptags<CR>", { noremap = true, silent = true })
 
 -- Clear current search
 keymap("n", "<Leader>z", ":nohlsearch<CR>", { desc = "Clear current search", noremap = true })
