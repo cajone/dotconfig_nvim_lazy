@@ -6,7 +6,6 @@ M = {
   },
   config = function()
     local lualine = require("lualine")
-    local lazy_status = require("lazy.status")
     lualine.setup({
       options = {
         theme = 'nord',
@@ -27,16 +26,8 @@ M = {
           "diagnostics"
         },
         lualine_c = {},
-        lualine_x = {
-          {
-            lazy_status.updates,
-            cond = lazy_status.has_updates,
-            color = { fg = "#ff9e64" },
-          },
-        },
-        lualine_y = {
-          "filetype",
-        },
+        lualine_x = {},
+        lualine_y = { "filetype" },
         lualine_z = {
           function()
             return vim.fn.getcwd()
