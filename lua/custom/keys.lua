@@ -24,9 +24,24 @@ set("n", "<leader>ff", builtin.find_files, { desc = "Fuzzy find files in cwd" })
 set("n", "<leader>fg", builtin.live_grep, { desc = "Find string in cwd" })
 set("n", "<leader>fh", builtin.help_tags, { desc = "Open help pages" })
 set("n", "<leader>fr", builtin.oldfiles, { desc = "Git branches" })
-set("n", "<leader>ht", builtin.help_tags, { desc = "Help Tags" })
+-- set("n", "<leader>ht", builtin.help_tags, { desc = "Help Tags" })
 set("n", "<leader>gb", builtin.git_branches, { desc = "List recently opened files" })
 set("n", "<leader>km", builtin.keymaps, { desc = "Open keymaps" })
+
+-- NOTE this is an attempt to get help pages opened in a new tab
+-- Define the function to open help tags in a new tab and make it full-screen
+function Open_help_tags()
+  vim.cmd.tabnew()                         -- Open a new tab page
+  require('telescope.builtin').help_tags() -- Open Telescope's help tags picker
+  vim.cmd.only()                           -- Make the current tab the only one open
+end
+
+-- Set the keybinding for the function
+vim.api.nvim_set_keymap('n', '<leader>ht', ':lua Open_help_tags()<CR>',
+  { noremap = true, silent = true, desc = "Help Tags" })
+
+
+
 
 -- Obsidian
 keymap("n", "<Leader>oS", ":ObsidianQuickSwitch<CR>", { noremap = true })
