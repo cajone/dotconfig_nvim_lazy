@@ -1,5 +1,4 @@
 {
-    "workspace.library": [
-        "${3rd}/luassert/library"
-    ]
+  "workspace.library": ["${3rd}/luassert/library"]
 }
+

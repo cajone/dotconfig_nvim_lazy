@@ -6,28 +6,26 @@ M = {
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope-ui-select.nvim",
     "nvim-tree/nvim-web-devicons",
-    {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      build = "make",
-      -- `cond` is a condition used to determine whether this plugin should be
-      -- installed and loaded.
-      cond = function()
-        return vim.fn.executable("make") == 1
-      end,
-    },
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    { "nvim-telescope/telescope-ui-select.nvim" },
   },
   config = function()
     local telescope = require("telescope")
     local actions = require("telescope.actions")
 
     telescope.setup({
+      extensions = {
+        fzf = {
+          fuzzy = true,
+        },
+      },
       use_regex = true, -- Add this line to enable the "use_regex" option
       defaults = {
         path_display = { "smart" },
         mappings = {
           i = {
             ["<C-k>"] = actions.move_selection_previous, -- move to prev results
-            ["<C-j>"] = actions.move_selection_next, -- move to next result
+            ["<C-j>"] = actions.move_selection_next,     -- move to next result
             ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
           },
         },

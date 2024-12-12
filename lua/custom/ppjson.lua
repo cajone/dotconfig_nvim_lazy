@@ -11,4 +11,3 @@
 
 -- Replace the original text with pretty-printed version
 -- vim.api.nvim_buf_set_lines(0, line-1, line, false, {formatted})
-

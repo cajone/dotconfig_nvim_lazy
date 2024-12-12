@@ -4,28 +4,40 @@ M = {
   dependencies = {
     { "nvim-tree/nvim-web-devicons", lazy = true }
   },
-  lazy_status = require("lazy.status"),
-  opts = {
-    options = {
-      icon_enabled = true,
-      component_separators = { left = "|", right = "|" },
-      section_separators = { left = "|", right = "|" },
-    },
-    sections = {
-      lualine_a = { "filename"},
-      lualine_b = { "branch" },
-      lualine_c = { "diagnostics"},
-      lualine_x = { },
-      lualine_y = { "progress", "|", "filetype" },
-      lualine_z = {
-        function()
-          return vim.fn.getcwd()
-        end,
-        function()
-          return os.date("%H:%M")
-        end,
+  config = function()
+    local lualine = require("lualine")
+    lualine.setup({
+      options = {
+        theme = 'nord',
+        icon_enabled = true,
+        section_separators = { left = '', right = '' },
+        component_separators = { left = '', right = '' }
       },
-    },
-  }
+      sections = {
+        lualine_a = {
+          {
+            "filename",
+            path = 1,
+          },
+        },
+        lualine_b = {
+          "branch",
+          "diff",
+          "diagnostics"
+        },
+        lualine_c = {},
+        lualine_x = {},
+        lualine_y = { "filetype" },
+        lualine_z = {
+          function()
+            return vim.fn.getcwd()
+          end,
+          function()
+            return os.date("%H:%M")
+          end,
+        },
+      },
+    })
+  end,
 }
 return M

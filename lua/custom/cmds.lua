@@ -1,38 +1,62 @@
 -- Set syntax highlighting for Jenkins files with no extension
-vim.api.nvim_exec([[
-  autocmd BufNewFile,BufRead JenkinsFile,*/Jenkinsfile,Jenkinfile* set filetype=groovy
-  autocmd BufNewFile,BufRead *.json set filetype=json
-]], false)
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = { "JenkinsFile", "*jenkinsfile", "Jenkinfile*" },
+  command = "set filetype=groovy",
+})
 
-vim.cmd([[colorscheme tokyonight]])  -- ok now load the colorscheme
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = "*.json",
+  command = "set filetype=json",
+})
 
--- Auto run rubocop over ruby files
--- vim.api.nvim_exec([[
---   autocmd BufWritePost *.rb :silent !rubocop --auto-correct %
--- ]], false)
+-- Define custom filetypes
+vim.filetype.add({
+  extension = {
+    yml = "yaml.ansible",
+  },
+})
+
+-- Load the colorscheme
+vim.cmd("colorscheme tokyonight")
+
+-- Uncomment if you want to automatically run rubocop over Ruby files
+-- vim.api.nvim_create_autocmd("BufWritePost", {
+--   pattern = "*.rb",
+--   command = "silent !rubocop --auto-correct %"
+-- })
 
 -- Change the LCD path for Vimwiki
-vim.cmd([[autocmd BufEnter *.wiki lcd ~/vimwiki]])
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = "*.wiki",
+  command = "lcd ~/vimwiki",
+})
 
--- Open Terminal
-vim.cmd('autocmd! TermOpen term://* lua Set_terminal_keymaps()')
+-- Open Terminal and set keymaps
+vim.api.nvim_create_autocmd("TermOpen", {
+  pattern = "term://*",
+  callback = function()
+    vim.cmd("lua Set_terminal_keymaps()")
+  end,
+})
 
--- Auto Save session before exit
--- vim.cmd([[autocmd VimLeave * lua SaveSessionOnExit()]])
+-- Uncomment if you want to auto-save session before exit
+-- vim.api.nvim_create_autocmd("VimLeave", {
+--   callback = SaveSessionOnExit
+-- })
 
--- Create a custom Telescope command to list and load sessions
-vim.cmd([[command! LoadSessions lua LoadSession()]])
-vim.cmd([[command! SaveSessions lua SaveSession()]])
-vim.cmd([[command! ClearSessions lua ClearSession()]])
+-- Create custom Telescope commands to list and load sessions
+vim.api.nvim_create_user_command("LoadSessions", "lua LoadSession()", {})
+vim.api.nvim_create_user_command("SaveSessions", "lua SaveSession()", {})
+vim.api.nvim_create_user_command("ClearSessions", "lua ClearSession()", {})
 
--- Turn spelling on if editing either txt or md files
 -- Enable spell checking for specific filetypes
-vim.cmd[[
-  autocmd BufRead,BufNewFile *.txt,*.md setlocal spell
-]]
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = { "*.txt", "*.md" },
+  command = "setlocal spell",
+})
 
-
--- Fugitive
-vim.cmd([[command! -nargs=0 FugitiveInside execute "lcd %:h" | :G]])
-
-
+-- Fugitive command to change the directory and open git status
+vim.api.nvim_create_user_command("FugitiveInside", function()
+  vim.cmd("lcd %:h")
+  vim.cmd("G")
+end, {})
