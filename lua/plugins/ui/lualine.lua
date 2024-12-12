@@ -12,9 +12,9 @@ M = {
       section_separators = { left = "|", right = "|" },
     },
     sections = {
-      lualine_a = { "filename", path = 1 },
+      lualine_a = { "filename"},
       lualine_b = { "branch" },
-      lualine_c = { "diagnostics", sources = { "nvim_lsp" }, symbols = { error = "E", warn = "W", info = "I", hint = "H" }},
+      lualine_c = { "diagnostics"},
       lualine_x = { },
       lualine_y = { "progress", "|", "filetype" },
       lualine_z = {
