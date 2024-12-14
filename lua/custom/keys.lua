@@ -28,6 +28,11 @@ set("n", "<leader>ht", builtin.help_tags, { desc = "Help Tags" })
 set("n", "<leader>gb", builtin.git_branches, { desc = "List recently opened files" })
 set("n", "<leader>km", builtin.keymaps, { desc = "Open keymaps" })
 
+-- Quickfix
+
+keymap("n", "<M-n>", ":cnext<CR>", { desc = "Quickfix next", noremap = true })
+keymap("n", "<M-p>", ":cprev<CR>", { desc = "Quickfix previous", noremap = true })
+
 -- Obsidian
 keymap("n", "<Leader>oS", ":ObsidianQuickSwitch<CR>", { noremap = true })
 keymap("n", "<Leader>of", ":ObsidianFollowLink vsplit<CR>", { noremap = true })
@@ -68,8 +73,8 @@ keymap("n", "<Leader>sf", "<cmd>source %<CR>",
 keymap("n", "<Leader>df", ":NvimTreeToggle()<CR>", { desc = "Toggle Nvimtree", noremap = true })
 
 -- Format buffer
-keymap("n", "<Leader>NF", ":lua vim.lsp.buf.format()<CR>", { noremap = true })
-keymap("n", "<Leader>NL", ":lua vim.lsp.buf.linting()<CR>", { noremap = true })
+keymap("n", "<Leader>bf", ":lua vim.lsp.buf.format()<CR>", { noremap = true })
+keymap("n", "<Leader>bl", ":lua vim.lsp.buf.linting()<CR>", { noremap = true })
 
 -- <F> Keys
 -- resize current focused vertical panel by 5 chars
