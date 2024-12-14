@@ -6,7 +6,7 @@ M = {
       auto_restore_enabled = true,
       bypass_session_save_filetypes = { "gitcommit", "gitrebase" },
       session_lens = {
-        show_preview = false, -- or true if you like previews
+        show_preview = false,         -- or true if you like previews
         path_display = { "shorten" }, -- display paths in a shortened form (e.g., '~/project1')
       },
       on_session_restore = function()

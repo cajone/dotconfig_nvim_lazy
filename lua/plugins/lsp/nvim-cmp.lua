@@ -8,17 +8,17 @@ M = {
     version = "v2.*",
     build = "make install_jsregexp",
     dependencies = {
-      "kmarius/jsregexp", -- still an issue with this showing in :checkhealth
-      "saadparwaiz1/cmp_luasnip", -- for autocompletion
+      "kmarius/jsregexp",             -- still an issue with this showing in :checkhealth
+      "saadparwaiz1/cmp_luasnip",     -- for autocompletion
       "rafamadriz/friendly-snippets", -- useful snippets
     },
   },
 
   {
-    "hrsh7th/nvim-cmp", -- Code completion
+    "hrsh7th/nvim-cmp",     -- Code completion
     dependencies = {
       "hrsh7th/cmp-buffer", -- source for text in buffer
-      "hrsh7th/cmp-path", -- source for file system path
+      "hrsh7th/cmp-path",   -- source for file system path
     },
 
     event = "InsertEnter",
@@ -59,10 +59,10 @@ M = {
         }),
 
         sources = cmp.config.sources({ -- ORDER MATTERS HERE
-          { name = "nvim_lsp" }, -- lsp
-          { name = "luasnip" }, -- snippets
-          { name = "buffer" }, -- text within curent buffer
-          { name = "path" }, -- file system paths
+          { name = "nvim_lsp" },       -- lsp
+          { name = "luasnip" },        -- snippets
+          { name = "buffer" },         -- text within curent buffer
+          { name = "path" },           -- file system paths
         }),
       })
     end,

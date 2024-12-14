@@ -27,21 +27,21 @@ require("lazy").setup({
 
   -- Plugins used straight out the box
   { "instant-markdown/vim-instant-markdown" }, -- Instant Markdown
-  { "vimwiki/vimwiki" },                      -- Vimwiki
+  { "vimwiki/vimwiki" },                       -- Vimwiki
 
-  { import = "plugins.obsidian" }, -- obsidian note taker
+  { import = "plugins.obsidian" },             -- obsidian note taker
   { import = "plugins.treesitter" },
   -- 	{ import = "plugins.lint" },      -- Linter(s)
 
-  { import = "plugins.git" },     -- git related plugins
+  { import = "plugins.git" },      -- git related plugins
   { import = "plugins.terminal" }, -- Toggle Terminal window
 
   -- UI based plugins
   { import = "plugins.ui.colorscheme" }, -- ColorScheme
-  { import = "plugins.ui.dressing" }, -- Allows prompts and selections
-  { import = "plugins.ui.lualine" },    -- Status Line
-  { import = "plugins.ui.nvimtree" },   -- NvimTree
-  { import = "plugins.ui.telescope" },  -- Fuzzy file finder and many other things
-  { import = "plugins.ui.fzf-lua" }, -- Fuzzy Finding
+  { import = "plugins.ui.dressing" },    -- Allows prompts and selections
+  { import = "plugins.ui.lualine" },     -- Status Line
+  { import = "plugins.ui.nvimtree" },    -- NvimTree
+  { import = "plugins.ui.telescope" },   -- Fuzzy file finder and many other things
+  { import = "plugins.ui.fzf-lua" },     -- Fuzzy Finding
 
 })
