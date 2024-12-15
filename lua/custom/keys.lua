@@ -22,8 +22,9 @@ set("n", "<leader>fb", builtin.buffers, { desc = "Show currently opened buffers"
 set("n", "<leader>fc", builtin.grep_string, { desc = "Find string under cursor" })
 set("n", "<leader>ff", builtin.find_files, { desc = "Fuzzy find files in cwd" })
 set("n", "<leader>fg", builtin.live_grep, { desc = "Find string in cwd" })
-set("n", "<leader>fh", builtin.help_tags, { desc = "Open help pages" })
 set("n", "<leader>fr", builtin.oldfiles, { desc = "Git branches" })
+set("n", "<leader>pr", builtin.resume, { desc = "Telescope picker resume" })
+set("n", "<leader>pc", builtin.commands, { desc = "picker commands" })
 set("n", "<leader>ht", builtin.help_tags, { desc = "Help Tags" })
 set("n", "<leader>gb", builtin.git_branches, { desc = "List recently opened files" })
 set("n", "<leader>km", builtin.keymaps, { desc = "Open keymaps" })
@@ -47,7 +48,6 @@ keymap("n", "<Leader>0", ":only<CR>",
   { desc = "Close all buffers except current focus", noremap = true, silent = true })
 
 -- Git
-keymap('n', '<leader>Gp', ':lua push_current_branch()<cr>', { noremap = true })
 keymap("n", "<Leader>gf", ":FugitiveInside<CR>", { noremap = true })
 keymap(
   "n",
