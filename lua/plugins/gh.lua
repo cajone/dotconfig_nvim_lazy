@@ -1,7 +1,10 @@
 M = {
   "ldelossa/gh.nvim",
   dependencies = {
-    "ldelossa/litee.nvim",
+    {
+      "ldelossa/litee.nvim",
+      opts = {}
+    },
   },
   config = function()
     require("litee.lib").setup()

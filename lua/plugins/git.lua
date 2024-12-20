@@ -1,12 +1,27 @@
 M = {
   -- Fugitive
-  { "tpope/vim-fugitive" }, -- Fugitive ( Git)
-  { "tpope/vim-rhubarb" },  -- Git Support
-  { "cohama/agit.vim" },    -- Git history Tree
+  {
+    "tpope/vim-fugitive",
+    opts = {}
+  }, -- Fugitive ( Git)
+  {
+    "tpope/vim-rhubarb",
+    opts = {}
+  }, -- Git Support
+  {
+    "cohama/agit.vim",
+    opts = {}
+  }, -- Git history Tree
 
   -- Git Diffview
-  { "sindrets/diffview.nvim" }, -- gitdiff view
-  { "nvim-lua/plenary.nvim" },
+  {
+    "sindrets/diffview.nvim",
+    opts = {}
+  }, -- gitdiff view
+  {
+    "nvim-lua/plenary.nvim",
+    opts = {}
+  },
 
   -- GitSigns
   {
