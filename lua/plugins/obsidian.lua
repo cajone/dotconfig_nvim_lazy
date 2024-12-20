@@ -12,8 +12,10 @@ M = {
   --   "BufNewFile path/to/my-vault/*.md",
   -- },
   dependencies = {
-    -- Required.
-    "nvim-lua/plenary.nvim",
+    {
+      "nvim-lua/plenary.nvim",
+      opt = {}
+    }
 
     -- see below for full list of optional dependencies 👇
   },
