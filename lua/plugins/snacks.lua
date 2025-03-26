@@ -82,7 +82,7 @@ M = {
             { win = "preview", title = "{preview}", width = 0.6, border = "left" },
           },
         },
-      },
+      }
     },
     quickfile = { enabled = true },
     scope = { enabled = true },
