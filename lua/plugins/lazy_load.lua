@@ -29,6 +29,7 @@ require("lazy").setup({
   { "instant-markdown/vim-instant-markdown" }, -- Instant Markdown
   { "vimwiki/vimwiki" },                       -- Vimwiki
 
+  { import = "plugins.snacks" },        -- collection of plugins
   { import = "plugins.obsidian" },             -- obsidian note taker
   { import = "plugins.treesitter" },
   -- 	{ import = "plugins.lint" },      -- Linter(s)
@@ -40,7 +41,7 @@ require("lazy").setup({
   { import = "plugins.ui.colorscheme" }, -- ColorScheme
   { import = "plugins.ui.dressing" },    -- Allows prompts and selections
   { import = "plugins.ui.lualine" },     -- Status Line
-  { import = "plugins.ui.nvimtree" },    -- NvimTree
+  -- { import = "plugins.ui.nvimtree" },    -- NvimTree
   { import = "plugins.ui.telescope" },   -- Fuzzy file finder and many other things
   { import = "plugins.ui.fzf-lua" },     -- Fuzzy Finding
 
