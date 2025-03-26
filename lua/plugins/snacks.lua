@@ -5,7 +5,11 @@ M = {
   ---@type snacks.Config
   opts = {
     bigfile = { enabled = true },
-    dashboard = { enabled = false },
+    dashboard = { 
+      enabled = false,
+      example = "github",
+      header = [[]],
+    },
     explorer = { enabled = true },
     indent = { enabled = false },
     input = { enabled = true },
@@ -13,7 +17,73 @@ M = {
       enabled = true,
       timeout = 3000,
     },
-    picker = { enabled = true },
+    picker = { 
+      enabled = true ,
+      layout = {
+        preset = "telescope",
+        cycle = "false",
+      },
+      layouts = {
+        select = {
+          preview = false,
+          layout = {
+            backdrop = false,
+            width = 0.6,
+            height = 0.4,
+            min_height = 10,
+            box = "vertical",
+            border = "rounded",
+            title = "{title}",
+            title_pos = "center",
+            { win = "input", height = 1, border = "bottom" },
+            { win = "list", border = "none" },
+            { win = "preview", title = "{preview}", width = 0.6, height = 0.4, border = "top" },
+          },
+        },
+      },
+    },
+    telescope = {
+      reverse = true, -- set to false for search bar to be on top
+      layout = {
+        box = "horizontal",
+        backdrop = false,
+        width = 0.8,
+        height = 0.9,
+        border = "none",
+        {
+          box = "veritical",
+          { win = "list", title = " Results ", title_pos = "center", border = "rounded" },
+          { win = "input", height = 1, border = "rounded", title = "{title} {live} {flags}", title_pos = "center" },
+        },
+        {
+          win = "preview",
+          title = "{preview:Preview}",
+          width = 0.5,
+          border = "rounded",
+          title_pos = "center",
+        },
+      },
+    },
+    ivy = {
+      {
+        layout = {
+          box = "vertical",
+          backdrop = false,
+          row = -1,
+          width = 0,
+          height = 0.4,
+          border = "top",
+          title = " {title} {live} {flags}",
+          title_pos = "left",
+          { win = "input", height = 1, border = "bottom" },
+          {
+            box = "horizontal",
+            { win = "list", border = "none" },
+            { win = "preview", title = "{preview}", width = 0.6, border = "left" },
+          },
+        },
+      },
+    },
     quickfile = { enabled = true },
     scope = { enabled = true },
     scroll = { enabled = true },
