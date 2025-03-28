@@ -21,8 +21,8 @@ M = {
     ui = { enable = false },
     workspaces = {
       {
-        name = "vimwiki",
-        path = "~/vimwiki",
+        name = "notebook",
+        path = "~/Documents/notebook",
       },
     },
   },

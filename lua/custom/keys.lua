@@ -17,17 +17,6 @@ keymap("v", "<leader>p", '"+p', { noremap = true, silent = true })
 keymap("n", "<leader>y", '"+yy', { noremap = true, silent = true })
 keymap("v", "<leader>y", '"+yy', { noremap = true, silent = true })
 
--- Telescope Keys (requires "ripgrep" installed via your system package manager)
--- set("n", "<leader>fb", builtin.buffers, { desc = "Show currently opened buffers" })
-set("n", "<leader>fc", builtin.grep_string, { desc = "Find string under cursor" })
--- set("n", "<leader>ff", builtin.find_files, { desc = "Fuzzy find files in cwd" })
--- set("n", "<leader>fg", builtin.live_grep, { desc = "Find string in cwd" })
-set("n", "<leader>fh", builtin.help_tags, { desc = "Open help pages" })
--- set("n", "<leader>fr", builtin.oldfiles, { desc = "Git branches" })
--- set("n", "<leader>gb", builtin.git_branches, { desc = "List recently opened files" })
-set("n", "<leader>ht", builtin.help_tags, { desc = "Help Tags" })
--- set("n", "<leader>km", builtin.keymaps, { desc = "Open keymaps" })
-
 -- Quickfix
 
 keymap("n", "<M-n>", ":cnext<CR>", { desc = "Quickfix next", noremap = true })
@@ -58,7 +47,7 @@ keymap(
 keymap("n", "<Leader>ec", "Extract_selected_code_blocks()<CR>", { noremap = true })
 
 -- Toggle Line Numbers
-keymap("n", "<Leader>nn", ":lua ToggleLineNumbers()<CR>", { noremap = true })
+-- keymap("n", "<Leader>nn", ":lua ToggleLineNumbers()<CR>", { noremap = true })
 
 -- Clear current search
 keymap("n", "<Leader>z", ":nohlsearch<CR>", { desc = "Clear current search", noremap = true })
@@ -69,7 +58,7 @@ keymap("n", "<Leader>sf", "<cmd>source %<CR>",
 )
 
 -- Toggle nvim-tree, load the DirectoryFiles
-keymap("n", "<Leader>df", ":NvimTreeToggle()<CR>", { desc = "Toggle Nvimtree", noremap = true })
+-- keymap("n", "<Leader>df", ":NvimTreeToggle()<CR>", { desc = "Toggle Nvimtree", noremap = true })
 
 -- Format buffer
 keymap("n", "<Leader>bf", ":lua vim.lsp.buf.format()<CR>", { noremap = true })
@@ -104,8 +93,6 @@ keymap("n", "<leader>wd", ":windo diffthis<CR>",
   { desc = "Diff compare open split buffers", noremap = true })
 keymap("n", "<leader>wD", ":windo diffoff<CR>", { desc = "Diff compare off", noremap = true })
 
--- Mapping for cookstyle
-keymap("n", "<leader>cs", ":!/opt/chefkdk/embedded/bin/cookstyle -a %<CR>", { noremap = true })
 
 -- Map a key combination to open Vimwiki and set LCD
 keymap("n", "<Leader>ww", ":lua OpenVimwiki()<CR>",
@@ -124,8 +111,7 @@ keymap(
 keymap("n", "<Leader>ph", [[:lua OpenPluginHelp()<CR>]], { silent = true })
 
 -- Tabs
-keymap("n", "<leader>tp", ":tabprevious<CR>",
-  { desc = "Select Previous Tab", noremap = true, silent = true })
+keymap("n", "<leader>tp", ":tabprevious<CR>", { desc = "Select Previous Tab", noremap = true, silent = true })
 keymap("n", "<leader>tn", ":tabNext<CR>", { desc = "Select Next Tab", noremap = true, silent = true })
 keymap("n", "<leader>tN", ":tabnew<CR>", { desc = "Open New Tab", noremap = true, silent = true })
 keymap("n", "<leader>tc", ":tabclose<CR>", { desc = "Close Current Tab", noremap = true, silent = true })

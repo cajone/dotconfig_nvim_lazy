@@ -32,6 +32,7 @@ require("lazy").setup({
   { import = "plugins.snacks" },        -- collection of plugins
   { import = "plugins.obsidian" },             -- obsidian note taker
   { import = "plugins.treesitter" },
+  --  { import = "plugins.spell" }, -- telescope based spell checker
   -- 	{ import = "plugins.lint" },      -- Linter(s)
 
   { import = "plugins.git" },      -- git related plugins
