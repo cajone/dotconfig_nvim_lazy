@@ -32,6 +32,7 @@ require("lazy").setup({
   { import = "plugins.snacks" },        -- collection of plugins
   { import = "plugins.obsidian" },             -- obsidian note taker
   { import = "plugins.treesitter" },
+  { import = "plugins.arduino" },  -- Arduino front end
   --  { import = "plugins.spell" }, -- telescope based spell checker
   -- 	{ import = "plugins.lint" },      -- Linter(s)
 
