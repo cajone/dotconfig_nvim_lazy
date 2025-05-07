@@ -37,6 +37,7 @@ require("lazy").setup({
 
   { import = "plugins.obsidian" }, -- obsidian note taker
   { import = "plugins.treesitter" },
+  { import = "plugins.arduino" },  -- Arduino front end
   -- 	{ import = "plugins.lint" },      -- Linter(s)
 
   { import = "plugins.git" },             -- git related plugins
