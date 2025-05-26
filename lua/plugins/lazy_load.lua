@@ -37,7 +37,7 @@ require("lazy").setup({
 
   { import = "plugins.obsidian" }, -- obsidian note taker
   { import = "plugins.treesitter" },
-  { import = "plugins.arduino" },  -- Arduino front end
+  --  { import = "plugins.arduino" },  -- Arduino front end
   -- 	{ import = "plugins.lint" },      -- Linter(s)
 
   { import = "plugins.git" },             -- git related plugins
@@ -53,7 +53,7 @@ require("lazy").setup({
   { import = "plugins.ui.nvimtree" },    -- NvimTree
   { import = "plugins.ui.telescope" },   -- Fuzzy file finder and many other things
   { import = "plugins.ui.todo" },        -- Todo notes etc
-  { import = "plugins.ui.noice" },       --  System messages popup window
+  --  { import = "plugins.ui.noice" },       --  System messages popup window
   { import = "plugins.ui.conform" },     -- Formatting, linting
   --	{ import = "plugins.ui.fzf-lua" }, -- Formatting, linting
 
