@@ -50,7 +50,6 @@ require("lazy").setup({
   { import = "plugins.ui.dressing" },    -- Allows prompts and selections
   { import = "plugins.ui.lualine" },     -- Status Line
   { import = "plugins.ui.mini" },        -- Collections on notes, todo's
-  { import = "plugins.ui.nvimtree" },    -- NvimTree
   { import = "plugins.ui.telescope" },   -- Fuzzy file finder and many other things
   { import = "plugins.ui.todo" },        -- Todo notes etc
   --  { import = "plugins.ui.noice" },       --  System messages popup window

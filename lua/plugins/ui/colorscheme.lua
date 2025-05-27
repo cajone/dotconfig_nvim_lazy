@@ -12,7 +12,7 @@ M = {
         background = { "#000000" },
         floats = { "dark" },
       },
-      transparent = false, -- Enable this to disable setting the background color
+      transparent = false,    -- Enable this to disable setting the background color
       terminal_colors = true, -- Configure the colors used when opening a `:terminal` in [Neovim](https://github.com/neovim/neovim)
       opts = {},
       colors = {
@@ -2073,51 +2073,6 @@ M = {
         },
         NotifyWARNTitle = {
           fg = "#e0af68",
-        },
-        NvimTreeFolderIcon = {
-          bg = "NONE",
-          fg = "#7aa2f7",
-        },
-        NvimTreeGitDeleted = {
-          fg = "#914c54",
-        },
-        NvimTreeGitDirty = {
-          fg = "#6183bb",
-        },
-        NvimTreeGitNew = {
-          fg = "#449dab",
-        },
-        NvimTreeImageFile = {
-          fg = "#a9b1d6",
-        },
-        NvimTreeIndentMarker = {
-          fg = "#3b4261",
-        },
-        NvimTreeNormal = {
-          bg = "#16161e",
-          fg = "#a9b1d6",
-        },
-        NvimTreeNormalNC = {
-          bg = "#16161e",
-          fg = "#a9b1d6",
-        },
-        NvimTreeOpenedFile = {
-          bg = "#292e42",
-        },
-        NvimTreeRootFolder = {
-          bold = true,
-          fg = "#7aa2f7",
-        },
-        NvimTreeSpecialFile = {
-          fg = "#9d7cd8",
-          underline = true,
-        },
-        NvimTreeSymlink = {
-          fg = "#7aa2f7",
-        },
-        NvimTreeWinSeparator = {
-          bg = "#16161e",
-          fg = "#16161e",
         },
         Operator = {
           fg = "#89ddff",

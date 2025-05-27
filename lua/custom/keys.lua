@@ -4,8 +4,37 @@ local keymap = vim.api.nvim_set_keymap
 local set = vim.keymap.set
 local builtin = require("telescope.builtin")
 
+-- Map <leader>fe (File Edit) to type ':edit ' and put cursor there
+vim.keymap.set('n', '<leader>fe', ':edit ', {
+  noremap = true,
+  silent = false, -- We want to see ':edit ' appear on the command line
+  desc = 'Edit (open) file with wildmenu completion'
+})
 
--- Jumping between windows replacement for Ctrl-w[hjkl]
+-- Optional: Map <leader>fs (File SaveAs) if you often save files with a new name
+vim.keymap.set('n', '<leader>fs', ':saveas ', {
+  noremap = true,
+  silent = false,
+  desc = 'Save current file with a new name'
+})
+
+-- --- Wildmenu Configuration (ensure it's active) ---
+-- These are typical wildmenu settings, you might already have them or variations
+vim.opt.wildmenu = true       -- Enable wildmenu
+vim.opt.wildmode = 'full'     -- Complete longest common string, then list all matches
+vim.opt.wildignorecase = true -- Ignore case when completing
+vim.opt.wildignore = {        -- Files/directories to ignore during completion
+  '*.o', '*.obj',             -- Object files
+  '*.pyc', '*.class',         -- Compiled Python/Java
+  '*.swp', '*.swo',           -- Swap files
+  '*.DS_Store',               -- macOS specific
+  'node_modules',             -- Common JS dependency folder
+  'build',                    -- Common build folder
+  'vendor',                   -- Common dependency folder
+  '.git', '.svn'              -- Version control folders
+  -- Jumping between windows replacement for Ctrl-w[hjkl]
+}
+
 keymap("n", "<C-h>", "<C-w>h", { noremap = true })
 keymap("n", "<C-j>", "<C-w>j", { noremap = true })
 keymap("n", "<C-k>", "<C-w>k", { noremap = true })
@@ -79,8 +108,6 @@ keymap("n", "<Leader>sf", "<cmd>source %<CR>",
   { desc = "Reloads the configuration after a change", noremap = true }
 )
 
--- Toggle nvim-tree, load the DirectoryFiles
-keymap("n", "<Leader>df", ":NvimTreeToggle()<CR>", { desc = "Toggle Nvimtree", noremap = true })
 
 -- Format buffer
 keymap("n", "<Leader>NF", ":lua vim.lsp.buf.format()<CR>", { noremap = true })
@@ -121,14 +148,6 @@ keymap("n", "<leader>cs", ":!/opt/chefkdk/embedded/bin/cookstyle -a %<CR>", { no
 -- Map a key combination to open Vimwiki and set LCD
 keymap("n", "<Leader>ww", ":lua OpenVimwiki()<CR>",
   { desc = "Open Wiki", noremap = true, silent = true }
-)
-
--- Set LCD
-keymap(
-  "n",
-  "<Leader>lcd",
-  [[:lua ChangeWorkingDirectoryToGitRoot()<CR>]],
-  { desc = "Set nvimtree to local working directory", noremap = true, silent = true }
 )
 
 -- Add a mapping to open plugin help

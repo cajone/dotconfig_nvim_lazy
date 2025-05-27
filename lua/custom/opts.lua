@@ -28,9 +28,6 @@ g.python3_host_prog = "/usr/bin/python3"
 g.instant_markdown_slow = 2
 g.instant_markdown_autostart = 0
 
--- [[ NvimTree ]]
-g.loaded_netrw = 1
-g.loaded_netrwPlugin = 1
 
 -- [[ Context ]]
 -- opt.colorcolumn = "120" -- str: Show column for max line length
