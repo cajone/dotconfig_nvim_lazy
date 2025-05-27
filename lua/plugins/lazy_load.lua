@@ -29,13 +29,7 @@ require("lazy").setup({
   { "instant-markdown/vim-instant-markdown" }, -- Instant Markdown
   { "vimwiki/vimwiki" },                       -- Vimwiki
 
-  --  { import = "plugins.lazydev" },
-  --  { import = "plugins" },
-  --  { import = "plugins.ui" },
-  --  { import = "plugins.lsp" },
-  --  { import = "plugins.ai" },
-
-  { import = "plugins.obsidian" }, -- obsidian note taker
+  { import = "plugins.obsidian" },             -- obsidian note taker
   { import = "plugins.treesitter" },
   --  { import = "plugins.arduino" },  -- Arduino front end
   -- 	{ import = "plugins.lint" },      -- Linter(s)
@@ -52,7 +46,7 @@ require("lazy").setup({
   { import = "plugins.ui.mini" },        -- Collections on notes, todo's
   { import = "plugins.ui.telescope" },   -- Fuzzy file finder and many other things
   { import = "plugins.ui.todo" },        -- Todo notes etc
-  --  { import = "plugins.ui.noice" },       --  System messages popup window
+  --  { import = "plugins.ui.noice" },       -- system messages popup window
   { import = "plugins.ui.conform" },     -- Formatting, linting
   --	{ import = "plugins.ui.fzf-lua" }, -- Formatting, linting
 
