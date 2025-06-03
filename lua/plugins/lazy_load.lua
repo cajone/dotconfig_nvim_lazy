@@ -51,7 +51,9 @@ require("lazy").setup({
   --	{ import = "plugins.ui.fzf-lua" }, -- Formatting, linting
 
   -- AI based plugins
-  { import = "plugins.ai.gp" }, -- Configure AI prompt
+  { import = "plugins.ai.gp" },     -- Configure AI prompt
+  { import = "plugins.ai.mcphub" }, -- Configure AI prompt
+  { import = "plugins.ai.avante" }, -- AI frontend
   -- 	{ import = "plugins.ai.ai" }, -- Configure AI prompt
   -- 	{ import = "plugins.ai.copilot" }, -- Configure AI prompt
 
