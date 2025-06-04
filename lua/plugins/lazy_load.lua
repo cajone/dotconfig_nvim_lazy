@@ -1,4 +1,4 @@
--- OK first setup the plugin manager "Lazy"
+-- OK first setup the plugin manager "Lazy"load
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({

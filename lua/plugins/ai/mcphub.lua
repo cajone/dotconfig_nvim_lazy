@@ -1,28 +1,43 @@
--- In your plugins/mcphub.lua or similar setup file
-return {
+M = {
   "ravitemer/mcphub.nvim",
   dependencies = {
-    "nvim-lua/plenary.nvim", -- Required for Job and HTTP requests
+    "nvim-lua/plenary.nvim",
   },
-  -- The 'build' command ensures mcp-hub is installed when the plugin is installed/updated
-  build = "npm install -g mcp-hub@latest",
-  -- Or, if you want to use a bundled binary with the plugin (requires `use_bundled_binary = true` in setup)
-  -- build = "bundled_build.lua",
+  build = "bundled_build.lua",   -- Bundles `mcp-hub` binary along with the neovim plugin
   config = function()
     require("mcphub").setup({
-      -- You can specify a port if needed, default is 3000
-      port = 3010,
-      -- This is the path to the configuration file for the mcp-hub backend.
-      -- mcphub.nvim will manage this file.
-      config = vim.fn.expand("~/.config/mcphub/servers.json"),
-      -- If you used build = "bundled_build.lua" above, uncomment this:
-      -- use_bundled_binary = true,
-      on_ready = function(hub)
-        vim.notify(string.format("MCP Hub is ready on port %s", hub.port))
-      end,
+      use_bundled_binary = true,       -- Use local `mcp-hub` binary
     })
   end,
 }
+return M
+
+
+-- -- In your plugins/mcphub.lua or similar setup file
+-- return {
+--   "ravitemer/mcphub.nvim",
+--   dependencies = {
+--     "nvim-lua/plenary.nvim", -- Required for Job and HTTP requests
+--   },
+--   -- The 'build' command ensures mcp-hub is installed when the plugin is installed/updated
+--   build = "npm install -g mcp-hub@latest",
+--   -- Or, if you want to use a bundled binary with the plugin (requires `use_bundled_binary = true` in setup)
+--   -- build = "bundled_build.lua",
+--   config = function()
+--     require("mcphub").setup({
+--       -- You can specify a port if needed, default is 3000
+--       port = 3010,
+--       -- This is the path to the configuration file for the mcp-hub backend.
+--       -- mcphub.nvim will manage this file.
+--       config = vim.fn.expand("~/.config/mcphub/servers.json"),
+--       -- If you used build = "bundled_build.lua" above, uncomment this:
+--       -- use_bundled_binary = true,
+--       on_ready = function(hub)
+--         vim.notify(string.format("MCP Hub is ready on port %s", hub.port))
+--       end,
+--     })
+--   end,
+-- }
 
 --M = {
 --  "ravitemer/mcphub.nvim",

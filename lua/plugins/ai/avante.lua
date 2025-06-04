@@ -8,8 +8,8 @@ M = {
     provider = "ollama",
     providers = {
       ollama = {
-        endpoint = "https://localhost:11434",
-        model = "devstral:latest",      -- your desired model (or use gpt-4o, etc.)
+        endpoint = "http://localhost:11434",
+        model = "devstral:latest", -- your desired model (or use gpt-4o, etc.)
       },
     },
   },
