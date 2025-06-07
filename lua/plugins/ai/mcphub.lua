@@ -1,4 +1,7 @@
 -- Your Neovim config file (e.g., lua/plugins.lua)
+
+-- Make sure this entire block replaces your existing mcphub.nvim definition.
+
 M = {
   "ravitemer/mcphub.nvim",
   dependencies = {
@@ -11,14 +14,15 @@ M = {
         time = {
           command = "docker",
           args = { "run", "-p", "8001:8000", "-i", "--rm", "mcp/time" }
-          -- If you built your custom image named 'mcphub-mcp-time-server', use that:
-          -- args = {"run", "-p", "8001:8000", "-i", "--rm", "mcphub-mcp-time-server"}
         },
       },
       use_bundled_binary = true,
 
-      -- >>> REMOVE OR COMMENT OUT THIS LINE <<<
-      -- config = vim.fn.expand("~/.config/mcphub/servers.json"),
+      -- This line must be UNCOMMENTED to load your servers.json
+      config = vim.fn.expand("~/.config/mcphub/servers.json"),
+
+      -- This line must be present to tell mcphub to use 'ollama' as the LLM
+      default_llm_provider = "ollama",
 
       log = {
         level = vim.log.levels.DEBUG,
