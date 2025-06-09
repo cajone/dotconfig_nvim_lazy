@@ -1,27 +1,35 @@
--- Your Neovim config file (e.g., lua/plugins.lua)
+-- ~/.config/nvim/lua/plugins/mcphub.lua (or wherever your mcphub.nvim config lives)
 
--- Make sure this entire block replaces your existing mcphub.nvim definition.
-
-M = {
+local M = {
   "ravitemer/mcphub.nvim",
   dependencies = {
     "nvim-lua/plenary.nvim",
+    "nvim-telescope/telescope.nvim", -- Keep this if you use Telescope for plugin integration
   },
-  build = "bundled_build.lua",
+  -- Remove the 'build = "bundled_build.lua"' line. We installed mcp-hub globally via npm.
+
   config = function()
     require("mcphub").setup({
-      servers = {
-        time = {
-          command = "docker",
-          args = { "run", "-p", "8001:8000", "-i", "--rm", "mcp/time" }
-        },
-      },
-      use_bundled_binary = true,
+      -- REQUIRED: Tell mcphub.nvim which port to connect to your running mcp-hub backend
+      port = 4000,
+      host = "localhost", -- It's good practice to explicitly state the host
 
-      -- This line must be UNCOMMENTED to load your servers.json
+      -- This line correctly tells mcphub.nvim to load server definitions
+      -- from the specified JSON file. These servers will be managed by mcp-hub.
       config = vim.fn.expand("~/.config/mcphub/servers.json"),
 
-      -- This line must be present to tell mcphub to use 'ollama' as the LLM
+      -- Set to false because we're using a globally installed mcp-hub via npm,
+      -- not a binary bundled with the Neovim plugin.
+      use_bundled_binary = false,
+
+      -- You might need to explicitly define the command path for mcp-hub
+      -- if Neovim's PATH doesn't reliably pick it up.
+      -- If `:MCPHub` still doesn't find the servers, uncomment these lines and ensure path is correct:
+      -- cmd = vim.fn.expand("~/.npm-global/bin/mcp-hub"),
+      -- cmd_args = { "--port", "4000", "--config", vim.fn.expand("~/.config/mcphub/servers.json") },
+
+
+      -- Your LLM provider config. This is fine.
       default_llm_provider = "ollama",
 
       log = {
@@ -32,4 +40,5 @@ M = {
     })
   end,
 }
+
 return M
