@@ -2,7 +2,7 @@
 
 local keymap = vim.api.nvim_set_keymap
 local set = vim.keymap.set
--- local builtin = require("telescope.builtin")
+local builtin = require("telescope.builtin")
 
 -- Map <leader>fe (File Edit) to type ':edit ' and put cursor there
 vim.keymap.set('n', '<leader>fe', ':edit ', {
@@ -47,15 +47,15 @@ keymap("n", "<leader>y", '"+yy', { noremap = true, silent = true })
 keymap("v", "<leader>y", '"+yy', { noremap = true, silent = true })
 
 -- Telescope Keys (requires "ripgrep" installed via your system package manager)
--- set("n", "<leader>fb", builtin.buffers, { desc = "Show currently opened buffers" })
--- set("n", "<leader>fc", builtin.grep_string, { desc = "Find string under cursor" })
--- set("n", "<leader>ff", builtin.find_files, { desc = "Fuzzy find files in cwd" })
--- set("n", "<leader>fg", builtin.live_grep, { desc = "Find string in cwd" })
--- set("n", "<leader>fh", builtin.help_tags, { desc = "Open help pages" })
--- set("n", "<leader>fr", builtin.oldfiles, { desc = "Git branches" })
--- -- set("n", "<leader>ht", builtin.help_tags, { desc = "Help Tags" })
--- set("n", "<leader>gb", builtin.git_branches, { desc = "List recently opened files" })
--- set("n", "<leader>km", builtin.keymaps, { desc = "Open keymaps" })
+set("n", "<leader>fb", builtin.buffers, { desc = "Show currently opened buffers" })
+set("n", "<leader>fc", builtin.grep_string, { desc = "Find string under cursor" })
+set("n", "<leader>ff", builtin.find_files, { desc = "Fuzzy find files in cwd" })
+set("n", "<leader>fg", builtin.live_grep, { desc = "Find string in cwd" })
+set("n", "<leader>fh", builtin.help_tags, { desc = "Open help pages" })
+set("n", "<leader>fr", builtin.oldfiles, { desc = "Git branches" })
+-- set("n", "<leader>ht", builtin.help_tags, { desc = "Help Tags" })
+set("n", "<leader>gb", builtin.git_branches, { desc = "List recently opened files" })
+set("n", "<leader>km", builtin.keymaps, { desc = "Open keymaps" })
 
 -- NOTE this is an attempt to get help pages opened in a new tab
 -- Define the function to open help tags in a new tab and make it full-screen
