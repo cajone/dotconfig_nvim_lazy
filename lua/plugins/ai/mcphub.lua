@@ -7,9 +7,14 @@ local M = {
     "nvim-telescope/telescope.nvim", -- Keep this if you use Telescope for plugin integration
   },
   -- Remove the 'build = "bundled_build.lua"' line. We installed mcp-hub globally via npm.
-
   config = function()
     require("mcphub").setup({
+      native_servers = {},
+      extensions = {
+        avante = {
+          make_slash_commands = true,
+        },
+      },
       -- REQUIRED: Tell mcphub.nvim which port to connect to your running mcp-hub backend
       port = 4000,
       host = "localhost", -- It's good practice to explicitly state the host
