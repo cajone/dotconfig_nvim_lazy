@@ -24,11 +24,11 @@ M = {
     end,
     -- RAG Service configuration for Avante
     rag_service = {
-      enabled = false,                       -- Enables the RAG service
-      host_mount = os.getenv("HOME"),        -- Host mount path for the rag service (Docker will mount this path)
+      enabled = true,                        -- Enables the RAG service
+      host_mount = os.getenv("HOME"),        -- Host mount path for files to be indexed (Docker will mount this path)
       runner = "docker",                     -- Runner for the RAG service (can use docker or nix)
       llm = {                                -- Language Model (LLM) configuration for RAG service
-        provider = "ollama",                 -- Changed to Ollama provider
+        provider = "ollama",                 -- Ollama provider
         endpoint = "http://localhost:11434", -- Ollama API endpoint (assuming local)
         api_key = nil,                       -- API key is typically not used for local Ollama
         model = "llama2:latest",             -- Example Ollama LLM model, change if you use another
@@ -41,7 +41,10 @@ M = {
         model = "nomic-embed-text",          -- Example Ollama embedding model, change if you use another
         extra = nil,                         -- Additional configuration options for the embedding model
       },
-      docker_extra_args = "",                -- Extra arguments to pass to the docker command
+      -- *** IMPORTANT CHANGE FOR PERSISTENCE ***
+      -- This maps a directory on your host to the internal data directory of the Docker container.
+      -- The RAG service's index will be stored in this host directory.
+      docker_extra_args = "--volume " .. os.getenv("HOME") .. "/.local/share/avante-rag-index:/app/data",
     },
   },
 
@@ -82,5 +85,26 @@ M = {
       ft = { "markdown", "Avante" },
     },
   },
+  -- This is where the RAG launch and resource adding code should go
+  config = function(_, opts)
+    -- Explicitly call setup with the opts table to ensure Avante's internal config is ready
+    require("avante").setup(opts)
+
+    -- IMPORTANT: Even when using Ollama, Avante's RAG service might still check
+    -- for the OPENAI_API_KEY environment variable. If you encounter an error
+    -- like "OPENAI_API_KEY is not set", you might need to set a dummy value
+    -- in your shell environment before launching Neovim, e.g.:
+    -- export OPENAI_API_KEY="dummy_key_for_avante_rag"
+
+    local rag_service = require("avante.rag_service")
+    local vimwiki_path = vim.fn.expand("~/vimwiki/") -- Ensure this is your correct Vimwiki path
+
+    rag_service.launch_rag_service(function()
+      print("Avante RAG service is running!")
+      -- Add your Vimwiki directory for indexing once the service is ready
+      rag_service.add_resource("file://" .. vimwiki_path)
+      print("Vimwiki directory " .. vimwiki_path .. " sent for indexing.")
+    end)
+  end,
 }
 return M

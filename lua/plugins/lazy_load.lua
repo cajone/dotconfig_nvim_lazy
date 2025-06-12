@@ -37,9 +37,7 @@ require("lazy").setup({
   --  { import = "plugins.lint" },      -- Linter(s)
 
   { import = "plugins.git" },      -- git related plugins
-  -- { import = "plugins.render-markdown" }, -- REMOVED: Redundant import
   { import = "plugins.terminal" }, -- Toggle Terminal window
-  --  { import = "plugins.markdown-preview" }, -- Instant Markdown for neovim
 
   -- UI based plugins
   { import = "plugins.ui.colorscheme" }, -- ColorScheme
@@ -48,7 +46,6 @@ require("lazy").setup({
   { import = "plugins.ui.mini" },        -- Collections on notes, todo's
   { import = "plugins.ui.telescope" },   -- Fuzzy file finder and many other things
   { import = "plugins.ui.todo" },        -- Todo notes etc
-  --  { import = "plugins.ui.noice" },        -- system messages popup window
   { import = "plugins.ui.conform" },     -- Formatting, linting
   --  { import = "plugins.ui.fzf-lua" }, -- Formatting, linting
 

@@ -159,3 +159,30 @@ keymap("n", "<leader>tp", ":tabprevious<CR>",
 keymap("n", "<leader>tn", ":tabNext<CR>", { desc = "Select Next Tab", noremap = true, silent = true })
 keymap("n", "<leader>tN", ":tabnew<CR>", { desc = "Open New Tab", noremap = true, silent = true })
 keymap("n", "<leader>tc", ":tabclose<CR>", { desc = "Close Current Tab", noremap = true, silent = true })
+
+
+-- Rag keybinding
+-- Add this to your init.lua or a keymaps.lua file
+-- It's good practice to set your leader key explicitly if you haven't already,
+-- for example: vim.g.mapleader = ' ' (this would make your leader key Space)
+-- If your leader is '\' (the default), then \rc will work as requested.
+
+vim.keymap.set('n', '\\rc', function()
+  -- Ensure avante.rag_service is available before trying to require it
+  -- This function should ideally only be called after Avante is loaded,
+  -- which is handled by your plugin manager's lazy loading.
+  local rag_service_ok, rag_service = pcall(require, "avante.rag_service")
+
+  if not rag_service_ok then
+    print("Error: avante.rag_service not available. Is Avante loaded?")
+    return
+  end
+
+  local vimwiki_path = vim.fn.expand("~/vimwiki/") -- Ensure this path is correct for your setup
+  local resource_uri = "file://" .. vimwiki_path
+
+  local status = rag_service.indexing_status(resource_uri)
+
+  print("Vimwiki RAG Indexing Status for: " .. resource_uri)
+  print(vim.inspect(status))
+end, { desc = "Check Vimwiki Avante RAG Indexing Status" })
