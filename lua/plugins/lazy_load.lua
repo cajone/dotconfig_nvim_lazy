@@ -51,7 +51,8 @@ require("lazy").setup({
 
   -- AI based plugins
   --  { import = "plugins.ai.mcphub" }, -- Configure AI prompt
-  { import = "plugins.ai.avante" }, -- AI frontend
+  { import = "plugins.ai.avante" },                   -- AI frontend
+  { import = "plugins.ai.llm",        lazy = false }, -- ai litellm
 
   -- LSP / Autocompletion language Plugins
   { import = "plugins.lsp.mason" },      -- LSP installer : NOTE THIS HAS TO BE THE FIRST LSP FILE TO LOAD!!!
