@@ -17,7 +17,7 @@ return {
     require("model").setup({                                                     -- Change 'llm_nvim' to 'model'
       backend = "openai",
       openai = {
-        api_key = "sk-12345",
+        api_key = "my-custom-litellm-key",
         api_base = "http://localhost:9001/v1",
         model = "codegemma-local",
       },
