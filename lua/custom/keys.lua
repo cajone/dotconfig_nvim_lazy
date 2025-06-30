@@ -4,6 +4,9 @@ local keymap = vim.api.nvim_set_keymap
 local set = vim.keymap.set
 local builtin = require("telescope.builtin")
 
+
+keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true, silent = true })
+
 -- Map <leader>fe (File Edit) to type ':edit ' and put cursor there
 vim.keymap.set('n', '<leader>fe', ':edit ', {
   noremap = true,
@@ -35,6 +38,8 @@ vim.opt.wildignore = {        -- Files/directories to ignore during completion
   -- Jumping between windows replacement for Ctrl-w[hjkl]
 }
 
+-- This single mapping works for BOTH the physical <Esc> key
+-- AND your Ctrl-[ muscle memory automatically.
 keymap("n", "<C-h>", "<C-w>h", { noremap = true })
 keymap("n", "<C-j>", "<C-w>j", { noremap = true })
 keymap("n", "<C-k>", "<C-w>k", { noremap = true })

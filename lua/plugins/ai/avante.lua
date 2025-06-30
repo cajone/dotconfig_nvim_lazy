@@ -3,11 +3,12 @@ local M = {
   event = "VeryLazy",
   -- 'version = false' is a note, not a config item for lazy.nvim, so it's omitted
   opts = {
-    provider = "ollama",                     -- Define your primary provider here
-    providers = {                            -- Configure specific providers here
+    provider = "ollama",                      -- Define your primary provider here
+    providers = {                             -- Configure specific providers here
       ollama = {
-        endpoint = "http://localhost:11434", -- Local Ollama endpoint
-        model = "devstral:latest",           -- Your desired model
+        endpoint = "http://localhost:11434",  -- Local Ollama endpoint
+        model = "llama3:70b-instruct-q5_K_M", -- Your desired model
+        -- model = "devstral:latest",           -- Your desired model
       },
     },
     -- Removed system_prompt and custom_tools as they are not bare minimum and
