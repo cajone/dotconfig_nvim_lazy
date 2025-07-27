@@ -75,6 +75,10 @@ vim.api.nvim_set_keymap('n', '<leader>ht', ':lua Open_help_tags()<CR>',
   { noremap = true, silent = true, desc = "Help Tags" })
 
 
+-- *** NEW: Avante.nvim Keymaps ***
+set("n", "<leader>al", "<cmd>AvanteListShortcuts<CR>", { desc = "Avante: List all custom shortcuts" })
+set("n", "<leader>am", "<cmd>AvanteModels<CR>", { desc = "Avante: Select LLM model" })
+-- *** END Avante.nvim Keymaps ***
 
 
 -- Obsidian
@@ -164,3 +168,5 @@ keymap("n", "<leader>tp", ":tabprevious<CR>",
 keymap("n", "<leader>tn", ":tabNext<CR>", { desc = "Select Next Tab", noremap = true, silent = true })
 keymap("n", "<leader>tN", ":tabnew<CR>", { desc = "Open New Tab", noremap = true, silent = true })
 keymap("n", "<leader>tc", ":tabclose<CR>", { desc = "Close Current Tab", noremap = true, silent = true })
+
+return M

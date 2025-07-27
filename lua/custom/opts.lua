@@ -29,6 +29,9 @@ g.instant_markdown_slow = 2
 g.instant_markdown_autostart = 0
 
 
+-- popup borders
+opt.winborder = "rounded"
+
 -- [[ Context ]]
 -- opt.colorcolumn = "120" -- str: Show column for max line length
 opt.number = true         -- bool: Show line numbers
