@@ -4,46 +4,54 @@ local M = {
   opts = {
     provider = "qwen3:14b", -- Your desired default Ollama model for primary use
 
-    -- *** START: CONSTRUCTING THE 'providers' TABLE BEFORE SETUP ***
-    -- This table will be passed directly to avante.setup(opts)
-    -- It will ONLY contain the providers you want to be active.
     providers = {
-      -- 1. Simple, BASE Ollama provider (for general Ollama connection)
+      -- 1. Base 'ollama' provider: Essential for Avante's first-class Ollama integration.
       ollama = {
         endpoint = "http://localhost:11434",
-        model = "qwen3:14b", -- A generic default model for the base 'ollama' provider
+        model = "qwen3:14b",   -- A generic default model for the base 'ollama' provider
+        extra_request_body = { -- Ensure this block is present
+          options = {
+            temperature = 0.0, -- Set temperature to 0.0 for minimal hallucination
+            num_ctx = 20480,
+            keep_alive = "5m",
+          },
+        },
       },
 
-      -- 2. Simple, BASE OpenAI provider (required for inheriting, points to Ollama's OpenAI-compatible API)
+      -- 2. Base 'openai' provider: Crucial for your specific Ollama models to inherit from.
       openai = {
-        endpoint = "http://localhost:11434/v1", -- *** Point to Ollama's OpenAI-compatible endpoint ***
+        endpoint = "http://localhost:11434/v1", -- Point to Ollama's OpenAI-compatible endpoint
         model = "llama3",                       -- A dummy model for the base 'openai' definition, not meant for direct selection
+        extra_request_body = {                  -- Ensure this block is present
+          temperature = 0.0,                    -- Set temperature to 0.0 for minimal hallucination
+        },
       },
 
-      -- 3. Specific Ollama models as top-level providers (inheriting from 'openai')
-      -- These are the models that will appear in your :AvanteModels popup.
-      ["qwen3:14b"] = {
-        __inherited_from = "openai",            -- Inherit parsing from the 'openai' provider (which points to Ollama)
-        endpoint = "http://localhost:11434/v1", -- Explicitly point to Ollama's OpenAI-compatible endpoint
-        model = "qwen3:14b",
-        display_name = "Ollama - Qwen3 14B",
-      },
-      ["qwen3:8b"] = {
+      -- 3. Specific Ollama models as top-level providers: These are the ones you want to select.
+      ["cogito:32b"] = {
         __inherited_from = "openai",
         endpoint = "http://localhost:11434/v1",
-        model = "qwen3:8b",
-        display_name = "Ollama - Deepseek Coder V2 16B",
+        model = "cogito:32b",
+        display_name = "Ollama - Cogito 32b",
+        extra_request_body = {
+          options = {
+            temperature = 0.0,
+          },
+        },
       },
-      ["deepseek-r1:8b"] = {
+      ["command-r7b:latest"] = {
         __inherited_from = "openai",
         endpoint = "http://localhost:11434/v1",
-        model = "deepseek-r1:8b",
-        display_name = "Ollama - Deepseek R1 8B",
+        model = "command-r7b:latest",
+        display_name = "Ollama - command-r7b",
+        extra_request_body = {
+          options = {
+            temperature = 0.0,
+          },
+        },
       },
-      -- All other unwanted default providers are *implicitly excluded* because they are not listed here.
+      -- All other default providers are *implicitly excluded* because they are not listed here.
     },
-    -- *** END: CONSTRUCTING THE 'providers' TABLE BEFORE SETUP ***
-
     shortcuts = {
       project_cleanup = {
         question = "@codebase\n" ..
@@ -76,6 +84,20 @@ local M = {
         "I encountered the following error. Please explain what it means and suggest possible causes and solutions, considering the surrounding code if provided:\n\n{{selection}}",
         description = "Explains an error and suggests solutions.",
       },
+      -- *** START: Re-added debug_introspection shortcut ***
+      debug_introspection = {
+        question = "@codebase\n" ..
+            "I am encountering a runtime bug in my project. I have a shell script named `introspection.sh` in the project root that is designed to help diagnose issues, and it is expected to throw an error when the bug is present.\n\n" ..
+            "Here is the plan:\n" ..
+            "1.  **Run the `introspection.sh` script.** You can do this by executing a shell command.\n" ..
+            "2.  **Analyze the output, particularly any error messages or stack traces.**\n" ..
+            "3.  **Based on the error, identify potential root causes within the codebase.**\n" ..
+            "4.  **If the root cause is not immediately clear, suggest a modification to `introspection.sh` or a specific file to inspect, then re-run `introspection.sh` to gather more information.**\n" ..
+            "5.  **Repeat steps 2-4** until you have a clear picture of the root cause and can propose a concrete solution.\n\n" ..
+            "My goal is for you to identify the root cause of the bug and propose a fix.",
+        description = "Debugs a runtime bug using iterative introspection.sh runs.",
+      },
+      -- *** END: Re-added debug_introspection shortcut ***
     },
     layout = {
       position = "right",
@@ -92,10 +114,6 @@ local M = {
   config = function(_, opts)
     require("avante").setup(opts)
 
-    -- The post-setup filtering loop is now removed, as the providers are pre-filtered.
-    -- (Lines 93-108 from previous version are removed).
-
-    -- Custom command: AvanteListShortcuts (remains the same)
     vim.api.nvim_create_user_command(
       "AvanteListShortcuts",
       function()

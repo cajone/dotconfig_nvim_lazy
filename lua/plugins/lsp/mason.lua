@@ -53,6 +53,7 @@ local M = {
         "lua_ls",
         "pyright",
         "ruff",
+        "html",
       },
       automatic_installation = true,
       handlers = {
