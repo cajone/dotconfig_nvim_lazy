@@ -2,13 +2,13 @@ local M = {
   "yetone/avante.nvim",
   event = "VeryLazy",
   opts = {
-    provider = "qwen3:14b", -- Your desired default Ollama model for primary use
+    provider = "qwen3:32b", -- Your desired default Ollama model for primary use
 
     providers = {
       -- 1. Base 'ollama' provider: Essential for Avante's first-class Ollama integration.
       ollama = {
         endpoint = "http://localhost:11434",
-        model = "qwen3:14b",   -- A generic default model for the base 'ollama' provider
+        model = "qwen3:32b",   -- A generic default model for the base 'ollama' provider
         extra_request_body = { -- Ensure this block is present
           options = {
             temperature = 0.0, -- Set temperature to 0.0 for minimal hallucination
@@ -28,22 +28,11 @@ local M = {
       },
 
       -- 3. Specific Ollama models as top-level providers: These are the ones you want to select.
-      ["cogito:32b"] = {
+      ["llama4:latest"] = {
         __inherited_from = "openai",
         endpoint = "http://localhost:11434/v1",
-        model = "cogito:32b",
-        display_name = "Ollama - Cogito 32b",
-        extra_request_body = {
-          options = {
-            temperature = 0.0,
-          },
-        },
-      },
-      ["command-r7b:latest"] = {
-        __inherited_from = "openai",
-        endpoint = "http://localhost:11434/v1",
-        model = "command-r7b:latest",
-        display_name = "Ollama - command-r7b",
+        model = "llama4:latest",
+        display_name = "Ollama - Llama4:latest",
         extra_request_body = {
           options = {
             temperature = 0.0,
