@@ -1,6 +1,14 @@
 local M = {
   "yetone/avante.nvim",
   event = "VeryLazy",
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter",
+    "nvim-lua/plenary.nvim",
+    "MunifTanjim/nui.nvim",
+  },
+  config = function()
+    require("plugins.ai.avante") -- This line is crucial
+  end,
   opts = {
     provider = "ollama", -- Your desired default Ollama model for primary use
 
@@ -9,13 +17,20 @@ local M = {
       ollama = {
         endpoint = "http://localhost:11434",
         model = "gpt-oss:20b", -- A generic default model for the base 'ollama' provider
-        extra_request_body = { -- Ensure this block is present
+        extra_request_body = {
           options = {
-            temperature = 0.0, -- Set temperature to 0.0 for minimal hallucination
-            num_ctx = 20480,
+            temperature = 0.0,
+            num_tokens = 20480,
             keep_alive = "5m",
           },
         },
+      },
+
+      -- 2. This is the new entry that allows Avante to see 'gpt-oss:20b'
+      -- as a selectable model in the AvanteModels command.
+      gpt_oss_20b = {
+        __inherited_from = "ollama",
+        model = "gpt-oss:20b",
       },
 
       -- All other default providers are *implicitly excluded* because they are not listed here.
