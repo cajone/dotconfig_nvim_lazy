@@ -26,12 +26,12 @@ require("lazy").setup({
   change_detection = { notify = false }, -- Stop reporting auto changes
 
   -- Plugins used straight out the box
-  { "instant-markdown/vim-instant-markdown" }, -- Instant Markdown
-  { "vimwiki/vimwiki" },                       -- Vimwiki
-  "MeanderingProgrammer/render-markdown.nvim", -- ADDED/MOVED HERE: Ensure render-markdown is a top-level plugin
-  "nvim-telescope/telescope.nvim",             -- ADDED HERE: Ensure Telescope is loaded early as a top-level plugin
+  { "instant-markdown/vim-instant-markdown" },     -- Instant Markdown
+  { "vimwiki/vimwiki" },                           -- Vimwiki
+  { "MeanderingProgrammer/render-markdown.nvim" }, -- ADDED/MOVED HERE: Ensure render-markdown is a top-level plugin
+  { "nvim-telescope/telescope.nvim" },             -- ADDED HERE: Ensure Telescope is loaded early as a top-level plugin
 
-  { import = "plugins.obsidian" },             -- obsidian note taker
+  -- { import = "plugins.obsidian" },                 -- obsidian note taker
   { import = "plugins.treesitter" },
   --  { import = "plugins.arduino" },  -- Arduino front end
   --  { import = "plugins.lint" },      -- Linter(s)
@@ -43,16 +43,16 @@ require("lazy").setup({
   { import = "plugins.ui.colorscheme" }, -- ColorScheme
   { import = "plugins.ui.dressing" },    -- Allows prompts and selections
   { import = "plugins.ui.lualine" },     -- Status Line
-  { import = "plugins.ui.mini" },        -- Collections on notes, todo's
+  -- { import = "plugins.ui.mini" },        -- Collections on notes, todo's
   { import = "plugins.ui.telescope" },   -- Fuzzy file finder and many other things
-  { import = "plugins.ui.todo" },        -- Todo notes etc
+  -- { import = "plugins.ui.todo" },        -- Todo notes etc
   { import = "plugins.ui.conform" },     -- Formatting, linting
   --  { import = "plugins.ui.fzf-lua" }, -- Formatting, linting
 
   -- AI based plugins
   --  { import = "plugins.ai.mcphub" }, -- Configure AI prompt
-  { import = "plugins.ai.avante" },                   -- AI frontend
-  { import = "plugins.ai.llm",        lazy = false }, -- ai litellm
+  -- { import = "plugins.ai.avante" },                   -- AI frontend
+  -- { import = "plugins.ai.llm",        lazy = false }, -- ai litellm
 
   -- LSP / Autocompletion language Plugins
   { import = "plugins.lsp.mason" },      -- LSP installer : NOTE THIS HAS TO BE THE FIRST LSP FILE TO LOAD!!!
