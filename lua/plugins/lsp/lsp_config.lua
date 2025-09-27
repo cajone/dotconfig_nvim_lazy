@@ -16,7 +16,7 @@ M = {
       },
     },
     config = function()
-      require("lspconfig").lua_ls.setup({
+      vim.lsp.enable({
         diagnostics = {
           disable = { "missing-fields" },
           -- NOTE Fix this Undefined global vim issue
