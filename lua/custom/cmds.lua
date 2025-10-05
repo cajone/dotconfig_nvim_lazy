@@ -1,3 +1,6 @@
+-- Load the colorscheme
+vim.cmd("colorscheme tokyonight")
+
 -- Set syntax highlighting for Jenkins files with no extension
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   pattern = { "JenkinsFile", "*jenkinsfile", "Jenkinfile*" },
@@ -9,21 +12,11 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   command = "set filetype=json",
 })
 
--- Define custom filetypes
-vim.filetype.add({
-  extension = {
-    yml = "yaml.ansible",
-  },
+-- Enable spell checking for specific filetypes
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = { "*.txt", "*.md" },
+  command = "setlocal spell",
 })
-
--- Load the colorscheme
-vim.cmd("colorscheme tokyonight")
-
--- Uncomment if you want to automatically run rubocop over Ruby files
--- vim.api.nvim_create_autocmd("BufWritePost", {
---   pattern = "*.rb",
---   command = "silent !rubocop --auto-correct %"
--- })
 
 -- Change the LCD path for Vimwiki
 vim.api.nvim_create_autocmd("BufEnter", {
@@ -39,21 +32,29 @@ vim.api.nvim_create_autocmd("TermOpen", {
   end,
 })
 
+-- Uncomment if you want to automatically run rubocop over Ruby files
+-- vim.api.nvim_create_autocmd("BufWritePost", {
+--   pattern = "*.rb",
+--   command = "silent !rubocop --auto-correct %"
+-- })
+
 -- Uncomment if you want to auto-save session before exit
 -- vim.api.nvim_create_autocmd("VimLeave", {
 --   callback = SaveSessionOnExit
 -- })
 
+
+-- Define custom filetypes
+vim.filetype.add({
+  extension = {
+    yml = "yaml.ansible",
+  },
+})
+
 -- Create custom Telescope commands to list and load sessions
 vim.api.nvim_create_user_command("LoadSessions", "lua LoadSession()", {})
 vim.api.nvim_create_user_command("SaveSessions", "lua SaveSession()", {})
 vim.api.nvim_create_user_command("ClearSessions", "lua ClearSession()", {})
-
--- Enable spell checking for specific filetypes
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  pattern = { "*.txt", "*.md" },
-  command = "setlocal spell",
-})
 
 -- Fugitive command to change the directory and open git status
 vim.api.nvim_create_user_command("FugitiveInside", function()
