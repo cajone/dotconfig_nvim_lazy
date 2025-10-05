@@ -7,6 +7,7 @@ M = {
   ---@type render.md.UserConfig
   opts = {
     { latex = { enabled = false } },
+    { html = { enabled = false } },
   },
 }
 return M

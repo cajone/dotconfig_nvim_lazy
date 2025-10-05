@@ -43,7 +43,6 @@ vim.api.nvim_create_autocmd("TermOpen", {
 --   callback = SaveSessionOnExit
 -- })
 
-
 -- Define custom filetypes
 vim.filetype.add({
   extension = {

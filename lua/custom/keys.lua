@@ -4,37 +4,41 @@ local keymap = vim.api.nvim_set_keymap
 local set = vim.keymap.set
 local builtin = require("telescope.builtin")
 
-
-keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true, silent = true })
+-- Terminal keybinding
+keymap("t", "<Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
 
 -- Map <leader>fe (File Edit) to type ':edit ' and put cursor there
-vim.keymap.set('n', '<leader>fe', ':edit ', {
+vim.keymap.set("n", "<leader>fe", ":edit ", {
   noremap = true,
   silent = false, -- We want to see ':edit ' appear on the command line
-  desc = 'Edit (open) file with wildmenu completion'
+  desc = "Edit (open) file with wildmenu completion",
 })
 
 -- Optional: Map <leader>fs (File SaveAs) if you often save files with a new name
-vim.keymap.set('n', '<leader>fs', ':saveas ', {
+vim.keymap.set("n", "<leader>fs", ":saveas ", {
   noremap = true,
   silent = false,
-  desc = 'Save current file with a new name'
+  desc = "Save current file with a new name",
 })
 
 -- --- Wildmenu Configuration (ensure it's active) ---
 -- These are typical wildmenu settings, you might already have them or variations
 vim.opt.wildmenu = true       -- Enable wildmenu
-vim.opt.wildmode = 'full'     -- Complete longest common string, then list all matches
+vim.opt.wildmode = "full"     -- Complete longest common string, then list all matches
 vim.opt.wildignorecase = true -- Ignore case when completing
 vim.opt.wildignore = {        -- Files/directories to ignore during completion
-  '*.o', '*.obj',             -- Object files
-  '*.pyc', '*.class',         -- Compiled Python/Java
-  '*.swp', '*.swo',           -- Swap files
-  '*.DS_Store',               -- macOS specific
-  'node_modules',             -- Common JS dependency folder
-  'build',                    -- Common build folder
-  'vendor',                   -- Common dependency folder
-  '.git', '.svn'              -- Version control folders
+  "*.o",
+  "*.obj",                    -- Object files
+  "*.pyc",
+  "*.class",                  -- Compiled Python/Java
+  "*.swp",
+  "*.swo",                    -- Swap files
+  "*.DS_Store",               -- macOS specific
+  "node_modules",             -- Common JS dependency folder
+  "build",                    -- Common build folder
+  "vendor",                   -- Common dependency folder
+  ".git",
+  ".svn",                     -- Version control folders
   -- Jumping between windows replacement for Ctrl-w[hjkl]
 }
 
@@ -57,50 +61,57 @@ set("n", "<leader>fc", builtin.grep_string, { desc = "Find string under cursor" 
 set("n", "<leader>ff", builtin.find_files, { desc = "Fuzzy find files in cwd" })
 set("n", "<leader>fg", builtin.live_grep, { desc = "Find string in cwd" })
 set("n", "<leader>fh", builtin.help_tags, { desc = "Open help pages" })
-set("n", "<leader>fr", builtin.oldfiles, { desc = "Git branches" })
--- set("n", "<leader>ht", builtin.help_tags, { desc = "Help Tags" })
-set("n", "<leader>gb", builtin.git_branches, { desc = "List recently opened files" })
+set("n", "<leader>fr", builtin.oldfiles, { desc = "List recently opened files" })
+set("n", "<leader>gb", builtin.git_branches, { desc = "Git branches" })
 set("n", "<leader>km", builtin.keymaps, { desc = "Open keymaps" })
 
 -- NOTE this is an attempt to get help pages opened in a new tab
 -- Define the function to open help tags in a new tab and make it full-screen
 function Open_help_tags()
   vim.cmd.tabnew()                         -- Open a new tab page
-  require('telescope.builtin').help_tags() -- Open Telescope's help tags picker
+  require("telescope.builtin").help_tags() -- Open Telescope's help tags picker
   vim.cmd.only()                           -- Make the current tab the only one open
 end
 
 -- Set the keybinding for the function
-vim.api.nvim_set_keymap('n', '<leader>ht', ':lua Open_help_tags()<CR>',
-  { noremap = true, silent = true, desc = "Help Tags" })
-
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>ht",
+  ":lua Open_help_tags()<CR>",
+  { noremap = true, silent = true, desc = "Help Tags" }
+)
 
 -- *** NEW: Avante.nvim Keymaps ***
-set("n", "<leader>al", "<cmd>AvanteListShortcuts<CR>", { desc = "Avante: List all custom shortcuts" })
-set("n", "<leader>am", "<cmd>AvanteModels<CR>", { desc = "Avante: Select LLM model" })
+-- set("n", "<leader>al", "<cmd>AvanteListShortcuts<CR>", { desc = "Avante: List all custom shortcuts" })
+-- set("n", "<leader>am", "<cmd>AvanteModels<CR>", { desc = "Avante: Select LLM model" })
 -- *** END Avante.nvim Keymaps ***
 
-
 -- Obsidian
-keymap("n", "<Leader>oS", ":ObsidianQuickSwitch<CR>", { noremap = true })
-keymap("n", "<Leader>of", ":ObsidianFollowLink vsplit<CR>", { noremap = true })
-keymap("n", "<Leader>ol", ":ObsidianLinks<CR>", { noremap = true })
-keymap("n", "<Leader>on", ":ObsidianNew", { noremap = true })
-keymap("n", "<Leader>op", ":ObsidianOpen<CR>", { noremap = true })
-keymap("n", "<Leader>os", ":ObsidianSearch<CR>", { noremap = true })
-keymap("n", "<Leader>ot", ":ObsidianTags", { noremap = true })
+-- keymap("n", "<Leader>oS", ":ObsidianQuickSwitch<CR>", { noremap = true })
+-- keymap("n", "<Leader>of", ":ObsidianFollowLink vsplit<CR>", { noremap = true })
+-- keymap("n", "<Leader>ol", ":ObsidianLinks<CR>", { noremap = true })
+-- keymap("n", "<Leader>on", ":ObsidianNew", { noremap = true })
+-- keymap("n", "<Leader>op", ":ObsidianOpen<CR>", { noremap = true })
+-- keymap("n", "<Leader>os", ":ObsidianSearch<CR>", { noremap = true })
+-- keymap("n", "<Leader>ot", ":ObsidianTags", { noremap = true })
 
 -- :only
-keymap("n", "<Leader>0", ":only<CR>",
-  { desc = "Close all buffers except current focus", noremap = true, silent = true })
+keymap(
+  "n",
+  "<Leader>0",
+  ":only<CR>",
+  { desc = "Close all buffers except current focus", noremap = true, silent = true }
+)
 
 -- Git
-keymap('n', '<leader>Gp', ':lua push_current_branch()<cr>', { noremap = true })
+keymap("n", "<leader>Gp", ":lua push_current_branch()<cr>", { noremap = true })
 keymap("n", "<Leader>gf", ":FugitiveInside<CR>", { noremap = true })
 keymap(
   "n",
   "<Leader>gls",
-  ':G log --pretty=format:"%h - %an, %ar : %s"<CR> ', { desc = "Short formatted git log", noremap = true })
+  ':G log --pretty=format:"%h - %an, %ar : %s"<CR> ',
+  { desc = "Short formatted git log", noremap = true }
+)
 
 -- Clean up code
 keymap("n", "<Leader>ec", "Extract_selected_code_blocks()<CR>", { noremap = true })
@@ -108,15 +119,11 @@ keymap("n", "<Leader>ec", "Extract_selected_code_blocks()<CR>", { noremap = true
 -- Toggle Line Numbers
 keymap("n", "<Leader>nn", ":lua ToggleLineNumbers()<CR>", { noremap = true })
 
-
 -- Clear current search
 keymap("n", "<Leader>z", ":nohlsearch<CR>", { desc = "Clear current search", noremap = true })
 
 -- Refresh the nvim configuration after modification
-keymap("n", "<Leader>sf", "<cmd>source %<CR>",
-  { desc = "Reloads the configuration after a change", noremap = true }
-)
-
+keymap("n", "<Leader>sf", "<cmd>source %<CR>", { desc = "Reloads the configuration after a change", noremap = true })
 
 -- Format buffer
 keymap("n", "<Leader>NF", ":lua vim.lsp.buf.format()<CR>", { noremap = true })
@@ -124,12 +131,8 @@ keymap("n", "<Leader>NL", ":lua vim.lsp.buf.linting()<CR>", { noremap = true })
 
 -- <F> Keys
 -- resize current focused vertical panel by 5 chars
-keymap("n", "<F3>", ":vertical resize -5<CR>",
-  { desc = "Descrease current window size by 5 chars", noremap = true }
-)
-keymap("n", "<F4>", ":vertical resize +5<CR>",
-  { desc = "Increase current window size by 5 chars", noremap = true }
-)
+keymap("n", "<F3>", ":vertical resize -5<CR>", { desc = "Descrease current window size by 5 chars", noremap = true })
+keymap("n", "<F4>", ":vertical resize +5<CR>", { desc = "Increase current window size by 5 chars", noremap = true })
 
 -- Spelling
 -- F5 will find next word in doc,
@@ -142,29 +145,28 @@ keymap("n", "<F6>", "z=", { desc = "Open Dictionary options for word under curso
 keymap("n", "<F7>", "zg", { desc = "Save a word to a local dictionary", noremap = true })
 
 -- Toggle Vimwiki URL's
-keymap("n", "<F8>", ":lua ToggleVimwikiConceallevel()<CR>",
+keymap(
+  "n",
+  "<F8>",
+  ":lua ToggleVimwikiConceallevel()<CR>",
   { desc = "Show url paths in markdown files", noremap = true }
 )
 
 -- Mapping for windo diffs
-keymap("n", "<leader>wd", ":windo diffthis<CR>",
-  { desc = "Diff compare open split buffers", noremap = true })
+keymap("n", "<leader>wd", ":windo diffthis<CR>", { desc = "Diff compare open split buffers", noremap = true })
 keymap("n", "<leader>wD", ":windo diffoff<CR>", { desc = "Diff compare off", noremap = true })
 
 -- Mapping for cookstyle
 keymap("n", "<leader>cs", ":!/opt/chefkdk/embedded/bin/cookstyle -a %<CR>", { noremap = true })
 
 -- Map a key combination to open Vimwiki and set LCD
-keymap("n", "<Leader>ww", ":lua OpenVimwiki()<CR>",
-  { desc = "Open Wiki", noremap = true, silent = true }
-)
+keymap("n", "<Leader>ww", ":lua OpenVimwiki()<CR>", { desc = "Open Wiki", noremap = true, silent = true })
 
 -- Add a mapping to open plugin help
 keymap("n", "<Leader>ph", [[:lua OpenPluginHelp()<CR>]], { silent = true })
 
 -- Tabs
-keymap("n", "<leader>tp", ":tabprevious<CR>",
-  { desc = "Select Previous Tab", noremap = true, silent = true })
+keymap("n", "<leader>tp", ":tabprevious<CR>", { desc = "Select Previous Tab", noremap = true, silent = true })
 keymap("n", "<leader>tn", ":tabNext<CR>", { desc = "Select Next Tab", noremap = true, silent = true })
 keymap("n", "<leader>tN", ":tabnew<CR>", { desc = "Open New Tab", noremap = true, silent = true })
 keymap("n", "<leader>tc", ":tabclose<CR>", { desc = "Close Current Tab", noremap = true, silent = true })
