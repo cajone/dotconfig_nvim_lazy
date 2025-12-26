@@ -1,7 +1,11 @@
 M = {
   "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
   config = function()
-    require("nvim-treesitter.configs").setup({
+    local configs = require("nvim-treesitter")
+
+    -- New version setup
+    configs.setup({
       ensure_installed = {
         "bash",
         "c",
@@ -17,20 +21,14 @@ M = {
         "xml",
         "yaml",
       },
-      auto_install = true,
-      highlight = {
-        enable = true,
-      },
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          init_selection = "tis",
-          node_incremental = "tni",
-          scope_incremental = "tsi",
-          node_decremental = "tnd",
-        },
-      },
+      -- 'auto_install' and 'highlight' are handled differently in the rewrite,
+      -- but many setups still use this table for compatibility layers.
+      highlight = { enable = true },
     })
+
+    -- For Incremental Selection in the new branch:
+    -- The rewrite actually deprecated the old internal module.
+    -- Most users now use 'mini.ai' or 'nvim-treesitter-textobjects'.
   end,
 }
 return M
