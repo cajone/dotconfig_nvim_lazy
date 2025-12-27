@@ -26,10 +26,12 @@ require("lazy").setup({
   change_detection = { notify = false }, -- Stop reporting auto changes
 
   -- Plugins used straight out the box
-  { "instant-markdown/vim-instant-markdown" },     -- Instant Markdown
-  { "vimwiki/vimwiki" },                           -- Vimwiki
-  { "MeanderingProgrammer/render-markdown.nvim" }, -- ADDED/MOVED HERE: Ensure render-markdown is a top-level plugin
-  { "nvim-telescope/telescope.nvim" },             -- ADDED HERE: Ensure Telescope is loaded early as a top-level plugin
+  --  { "instant-markdown/vim-instant-markdown" },     -- Instant Markdown
+  --  { "vimwiki/vimwiki" },                           -- Vimwiki
+  --  { "MeanderingProgrammer/render-markdown.nvim" }, -- ADDED/MOVED HERE: Ensure render-markdown is a top-level plugin
+  -- { import = "plugins.kiwi" },         --# vimwiki alternative
+  { import = "plugins.neowiki" },      --# vimwiki alternative
+  { "nvim-telescope/telescope.nvim" }, -- ADDED HERE: Ensure Telescope is loaded early as a top-level plugin
 
   -- { import = "plugins.obsidian" },                 -- obsidian note taker
   { import = "plugins.treesitter" },

@@ -160,7 +160,7 @@ keymap("n", "<leader>wD", ":windo diffoff<CR>", { desc = "Diff compare off", nor
 keymap("n", "<leader>cs", ":!/opt/chefkdk/embedded/bin/cookstyle -a %<CR>", { noremap = true })
 
 -- Map a key combination to open Vimwiki and set LCD
-keymap("n", "<Leader>ww", ":lua OpenVimwiki()<CR>", { desc = "Open Wiki", noremap = true, silent = true })
+-- keymap("n", "<Leader>ww", ":lua OpenVimwiki()<CR>", { desc = "Open Wiki", noremap = true, silent = true })
 
 -- Add a mapping to open plugin help
 keymap("n", "<Leader>ph", [[:lua OpenPluginHelp()<CR>]], { silent = true })

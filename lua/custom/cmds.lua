@@ -24,6 +24,18 @@ vim.api.nvim_create_autocmd("BufEnter", {
   command = "lcd ~/vimwiki",
 })
 
+-- Terminal keymaps
+vim.api.nvim_create_augroup("TerminalKeymaps", { clear = true })
+vim.api.nvim_create_autocmd("TermOpen", {
+  group = "TerminalKeymaps",
+  pattern = "term://*",
+  callback = function()
+    if type(Set_terminal_keymaps) == "function" then
+      Set_terminal_keymaps()
+    end
+  end,
+})
+
 -- Open Terminal and set keymaps
 vim.api.nvim_create_autocmd("TermOpen", {
   pattern = "term://*",
