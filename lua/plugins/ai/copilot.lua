@@ -8,9 +8,12 @@ local M = {
         enabled = true,
         auto_trigger = true,
         keymap = {
-          accept = "<M-l>",
-          next = "<M-]>",
-          prev = "<M-[>",
+          accept = "<Tab>",      -- This is what you're looking for!
+          accept_word = "<M-w>", -- Accept only the next word (Alt + W)
+          accept_line = "<M-l>", -- Accept only the next line (Alt + L)
+          next = "<M-]>",        -- Cycle to next suggestion
+          prev = "<M-[>",        -- Cycle to previous suggestion
+          dismiss = "<C-]>",     -- Hide the suggestion
         },
       },
     },
