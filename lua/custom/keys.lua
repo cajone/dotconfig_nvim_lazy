@@ -62,7 +62,6 @@ set("n", "<leader>ff", builtin.find_files, { desc = "Fuzzy find files in cwd" })
 set("n", "<leader>fg", builtin.live_grep, { desc = "Find string in cwd" })
 set("n", "<leader>fh", builtin.help_tags, { desc = "Open help pages" })
 set("n", "<leader>fr", builtin.oldfiles, { desc = "List recently opened files" })
-set("n", "<leader>gb", builtin.git_branches, { desc = "Git branches" })
 set("n", "<leader>km", builtin.keymaps, { desc = "Open keymaps" })
 
 -- NOTE this is an attempt to get help pages opened in a new tab
@@ -170,5 +169,32 @@ keymap("n", "<leader>tp", ":tabprevious<CR>", { desc = "Select Previous Tab", no
 keymap("n", "<leader>tn", ":tabNext<CR>", { desc = "Select Next Tab", noremap = true, silent = true })
 keymap("n", "<leader>tN", ":tabnew<CR>", { desc = "Open New Tab", noremap = true, silent = true })
 keymap("n", "<leader>tc", ":tabclose<CR>", { desc = "Close Current Tab", noremap = true, silent = true })
+
+function CheckDuplicateMappings()
+  local mappings = vim.api.nvim_get_keymap("n") -- Check Normal mode
+  local count = {}
+  local duplicates = {}
+
+  for _, map in ipairs(mappings) do
+    local lhs = map.lhs:gsub(" ", "<Space>")
+    if count[lhs] then
+      table.insert(duplicates, lhs .. " (Last defined in: " .. (map.desc or "Unknown") .. ")")
+    else
+      count[lhs] = true
+    end
+  end
+
+  if #duplicates > 0 then
+    print("⚠️ Duplicate Mappings Found:")
+    for _, msg in ipairs(duplicates) do
+      print(msg)
+    end
+  else
+    print("✅ No duplicate normal-mode mappings found.")
+  end
+end
+
+-- Map it so you can run it anytime
+vim.keymap.set("n", "<leader>ck", ":lua CheckDuplicateMappings()<CR>", { desc = "Check for duplicate keymaps" })
 
 return M
