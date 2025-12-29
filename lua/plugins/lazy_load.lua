@@ -32,7 +32,6 @@ require("lazy").setup({
   -- { import = "plugins.kiwi" },         --# vimwiki alternative
   { import = "plugins.neowiki" },      --# vimwiki alternative
   { "nvim-telescope/telescope.nvim" }, -- ADDED HERE: Ensure Telescope is loaded early as a top-level plugin
-
   -- { import = "plugins.obsidian" },                 -- obsidian note taker
   { import = "plugins.treesitter" },
   --  { import = "plugins.arduino" },  -- Arduino front end
