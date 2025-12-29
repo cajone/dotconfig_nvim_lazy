@@ -1,5 +1,4 @@
 -- keys.lua: Person keymaps, leader key is '\' by default
-
 local keymap = vim.api.nvim_set_keymap
 local set = vim.keymap.set
 local builtin = require("telescope.builtin")
@@ -22,7 +21,6 @@ vim.keymap.set("n", "<leader>fs", ":saveas ", {
 })
 
 -- --- Wildmenu Configuration (ensure it's active) ---
--- These are typical wildmenu settings, you might already have them or variations
 vim.opt.wildmenu = true       -- Enable wildmenu
 vim.opt.wildmode = "full"     -- Complete longest common string, then list all matches
 vim.opt.wildignorecase = true -- Ignore case when completing
@@ -39,11 +37,9 @@ vim.opt.wildignore = {        -- Files/directories to ignore during completion
   "vendor",                   -- Common dependency folder
   ".git",
   ".svn",                     -- Version control folders
-  -- Jumping between windows replacement for Ctrl-w[hjkl]
 }
 
--- This single mapping works for BOTH the physical <Esc> key
--- AND your Ctrl-[ muscle memory automatically.
+-- Jumping between windows replacement for Ctrl-w[hjkl]
 keymap("n", "<C-h>", "<C-w>h", { noremap = true })
 keymap("n", "<C-j>", "<C-w>j", { noremap = true })
 keymap("n", "<C-k>", "<C-w>k", { noremap = true })
@@ -64,35 +60,15 @@ set("n", "<leader>fh", builtin.help_tags, { desc = "Open help pages" })
 set("n", "<leader>fr", builtin.oldfiles, { desc = "List recently opened files" })
 set("n", "<leader>km", builtin.keymaps, { desc = "Open keymaps" })
 
--- NOTE this is an attempt to get help pages opened in a new tab
 -- Define the function to open help tags in a new tab and make it full-screen
 function Open_help_tags()
-  vim.cmd.tabnew()                         -- Open a new tab page
-  require("telescope.builtin").help_tags() -- Open Telescope's help tags picker
-  vim.cmd.only()                           -- Make the current tab the only one open
+  vim.cmd.tabnew() -- Open a new tab page
+  vim.cmd.only()   -- Make the current tab the only one open
+  require("telescope.builtin").help_tags()
 end
 
 -- Set the keybinding for the function
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>ht",
-  ":lua Open_help_tags()<CR>",
-  { noremap = true, silent = true, desc = "Help Tags" }
-)
-
--- *** NEW: Avante.nvim Keymaps ***
--- set("n", "<leader>al", "<cmd>AvanteListShortcuts<CR>", { desc = "Avante: List all custom shortcuts" })
--- set("n", "<leader>am", "<cmd>AvanteModels<CR>", { desc = "Avante: Select LLM model" })
--- *** END Avante.nvim Keymaps ***
-
--- Obsidian
--- keymap("n", "<Leader>oS", ":ObsidianQuickSwitch<CR>", { noremap = true })
--- keymap("n", "<Leader>of", ":ObsidianFollowLink vsplit<CR>", { noremap = true })
--- keymap("n", "<Leader>ol", ":ObsidianLinks<CR>", { noremap = true })
--- keymap("n", "<Leader>on", ":ObsidianNew", { noremap = true })
--- keymap("n", "<Leader>op", ":ObsidianOpen<CR>", { noremap = true })
--- keymap("n", "<Leader>os", ":ObsidianSearch<CR>", { noremap = true })
--- keymap("n", "<Leader>ot", ":ObsidianTags", { noremap = true })
+keymap("n", "<leader>ht", ":lua Open_help_tags()<CR>", { noremap = true, silent = true, desc = "Help Tags" })
 
 -- :only
 keymap(
@@ -101,19 +77,6 @@ keymap(
   ":only<CR>",
   { desc = "Close all buffers except current focus", noremap = true, silent = true }
 )
-
--- Git
-keymap("n", "<leader>Gp", ":lua push_current_branch()<cr>", { noremap = true })
-keymap("n", "<Leader>gf", ":FugitiveInside<CR>", { noremap = true })
-keymap(
-  "n",
-  "<Leader>gls",
-  ':G log --pretty=format:"%h - %an, %ar : %s"<CR> ',
-  { desc = "Short formatted git log", noremap = true }
-)
-
--- Clean up code
-keymap("n", "<Leader>ec", "Extract_selected_code_blocks()<CR>", { noremap = true })
 
 -- Toggle Line Numbers
 keymap("n", "<Leader>nn", ":lua ToggleLineNumbers()<CR>", { noremap = true })
@@ -134,14 +97,9 @@ keymap("n", "<F3>", ":vertical resize -5<CR>", { desc = "Descrease current windo
 keymap("n", "<F4>", ":vertical resize +5<CR>", { desc = "Increase current window size by 5 chars", noremap = true })
 
 -- Spelling
--- F5 will find next word in doc,
-keymap("n", "<F5>", "]s", { desc = "Spell check txt/md files", noremap = true })
-
--- F6 will prompt to select from a dictionary
-keymap("n", "<F6>", "z=", { desc = "Open Dictionary options for word under cursor", noremap = true })
-
--- F7 will add word to local dictionary
-keymap("n", "<F7>", "zg", { desc = "Save a word to a local dictionary", noremap = true })
+keymap("n", "<F5>", "]s", { desc = "Spell check txt/md files", noremap = true })                      -- F5 will find next word in doc,
+keymap("n", "<F6>", "z=", { desc = "Open Dictionary options for word under cursor", noremap = true }) -- F6 will open spelling suggestions
+keymap("n", "<F7>", "zg", { desc = "Save a word to a local dictionary", noremap = true })             -- F7 will add word under cursor to local dictionary
 
 -- Toggle Vimwiki URL's
 keymap(
@@ -162,7 +120,7 @@ keymap("n", "<leader>cs", ":!/opt/chefkdk/embedded/bin/cookstyle -a %<CR>", { no
 -- keymap("n", "<Leader>ww", ":lua OpenVimwiki()<CR>", { desc = "Open Wiki", noremap = true, silent = true })
 
 -- Add a mapping to open plugin help
-keymap("n", "<Leader>ph", [[:lua OpenPluginHelp()<CR>]], { silent = true })
+keymap("n", "<leader>ph", [[:lua OpenPluginHelp()<CR>]], { silent = true })
 
 -- Tabs
 keymap("n", "<leader>tp", ":tabprevious<CR>", { desc = "Select Previous Tab", noremap = true, silent = true })
@@ -170,31 +128,17 @@ keymap("n", "<leader>tn", ":tabNext<CR>", { desc = "Select Next Tab", noremap = 
 keymap("n", "<leader>tN", ":tabnew<CR>", { desc = "Open New Tab", noremap = true, silent = true })
 keymap("n", "<leader>tc", ":tabclose<CR>", { desc = "Close Current Tab", noremap = true, silent = true })
 
-function CheckDuplicateMappings()
-  local mappings = vim.api.nvim_get_keymap("n") -- Check Normal mode
-  local count = {}
-  local duplicates = {}
+-- UNUSED KEYMAPS FOR NOW
+-- *** NEW: Avante.nvim Keymaps ***
+-- set("n", "<leader>al", "<cmd>AvanteListShortcuts<CR>", { desc = "Avante: List all custom shortcuts" })
+-- set("n", "<leader>am", "<cmd>AvanteModels<CR>", { desc = "Avante: Select LLM model" })
+-- *** END Avante.nvim Keymaps ***
 
-  for _, map in ipairs(mappings) do
-    local lhs = map.lhs:gsub(" ", "<Space>")
-    if count[lhs] then
-      table.insert(duplicates, lhs .. " (Last defined in: " .. (map.desc or "Unknown") .. ")")
-    else
-      count[lhs] = true
-    end
-  end
-
-  if #duplicates > 0 then
-    print("⚠️ Duplicate Mappings Found:")
-    for _, msg in ipairs(duplicates) do
-      print(msg)
-    end
-  else
-    print("✅ No duplicate normal-mode mappings found.")
-  end
-end
-
--- Map it so you can run it anytime
-vim.keymap.set("n", "<leader>ck", ":lua CheckDuplicateMappings()<CR>", { desc = "Check for duplicate keymaps" })
-
-return M
+-- Obsidian
+-- keymap("n", "<Leader>oS", ":ObsidianQuickSwitch<CR>", { noremap = true })
+-- keymap("n", "<Leader>of", ":ObsidianFollowLink vsplit<CR>", { noremap = true })
+-- keymap("n", "<Leader>ol", ":ObsidianLinks<CR>", { noremap = true })
+-- keymap("n", "<Leader>on", ":ObsidianNew", { noremap = true })
+-- keymap("n", "<Leader>op", ":ObsidianOpen<CR>", { noremap = true })
+-- keymap("n", "<Leader>os", ":ObsidianSearch<CR>", { noremap = true })
+-- keymap("n", "<Leader>ot", ":ObsidianTags", { noremap = true })

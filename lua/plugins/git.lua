@@ -5,32 +5,22 @@ local M = {
     keys = {
       { "<leader>gs",  ":Git<CR>",                                        desc = "Git Status" },
       { "<leader>gp",  ":Git push<CR>",                                   desc = "Git Push" },
+      { "<leader>ga",  ":Git add .<CR>",                                  desc = "Git Stage All (Add .)" },
       { "<leader>gm",  ":Git blame<CR>",                                  desc = "Git Blame" },
-      { "<leader>gls", ':G log --pretty=format:"%h - %an, %ar : %s"<CR>', desc = "Short Git Log" },
+      { "<leader>gls", ":G log --pretty=format:'%h - %an, %ar : %s'<CR>", desc = "Short Git Log" },
+      { "<leader>gc",  ":Git commit<CR>",                                 desc = "Git Commit" },
     },
-  },
-  { "tpope/vim-rhubarb" },
-
-  -- Telescope Git: The "Picker" tools
-  {
-    "nvim-telescope/telescope.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    keys = {
-      {
-        "<leader>gb",
-        function()
-          require("telescope.builtin").git_branches()
+    config = function()
+      -- This ensures that when you open a Git status window,
+      -- it takes up the full screen or a large area.
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "fugitive",
+        callback = function()
+          -- Use 'q' to close the status window easily
+          vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = true, silent = true })
         end,
-        desc = "Git Branches",
-      },
-      {
-        "<leader>gc",
-        function()
-          require("telescope.builtin").git_commits()
-        end,
-        desc = "Git Commits",
-      },
-    },
+      })
+    end,
   },
 
   -- Agit: The "History Explorer"

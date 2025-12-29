@@ -58,3 +58,30 @@ end
 
 -- Map <leader>tt to run the Trip function
 vim.keymap.set("n", "<leader>tt", ":lua Trip()<CR>", { noremap = true, silent = true })
+
+function CheckDuplicateMappings()
+  local mappings = vim.api.nvim_get_keymap("n") -- Check Normal mode
+  local count = {}
+  local duplicates = {}
+
+  for _, map in ipairs(mappings) do
+    local lhs = map.lhs:gsub(" ", "<Space>")
+    if count[lhs] then
+      table.insert(duplicates, lhs .. " (Last defined in: " .. (map.desc or "Unknown") .. ")")
+    else
+      count[lhs] = true
+    end
+  end
+
+  if #duplicates > 0 then
+    print("⚠️ Duplicate Mappings Found:")
+    for _, msg in ipairs(duplicates) do
+      print(msg)
+    end
+  else
+    print("✅ No duplicate normal-mode mappings found.")
+  end
+end
+
+-- Map it so you can run it anytime
+vim.keymap.set("n", "<leader>ck", ":lua CheckDuplicateMappings()<CR>", { desc = "Check for duplicate keymaps" })
