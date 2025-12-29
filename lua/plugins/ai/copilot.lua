@@ -3,23 +3,34 @@ local M = {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     event = "InsertEnter",
-    opts = {
-      suggestion = {
-        enabled = true,
-        auto_trigger = true,
-        keymap = {
-          -- Ghost Text Mappings (Standard Suggestions)
-          accept = "<Tab>",      -- desc: "Accept suggestion"
-          accept_word = "<M-w>", -- desc: "Accept next word (Alt + W)"
-          accept_line = "<M-l>", -- desc: "Accept next line (Alt + L)"
-          next = "<M-]>",        -- desc: "Cycle to next suggestion"
-          prev = "<M-[>",        -- desc: "Cycle to previous suggestion"
-          dismiss = "<C-]>",     -- desc: "Hide the suggestion"
+    config = function()
+      require("copilot").setup({
+        suggestion = {
+          enabled = true,
+          auto_trigger = true,
+          keymap = {
+            accept = false,
+            accept_word = "<M-w>",
+            accept_line = "<M-l>",
+            next = "<M-]>",
+            prev = "<M-[>",
+            dismiss = "<C-]>",
+          },
         },
-      },
-    },
+      })
+
+      -- SMART TAB: Accept suggestion if visible, else insert tab
+      vim.keymap.set("i", "<Tab>", function()
+        if require("copilot.suggestion").is_visible() then
+          require("copilot.suggestion").accept()
+        else
+          vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Tab>", true, false, true), "n", false)
+        end
+      end, { desc = "Copilot: Accept or Tab", silent = true })
+    end,
   },
 
+  -- Copilot Chat Integration
   {
     "CopilotC-Nvim/CopilotChat.nvim",
     branch = "main",
@@ -29,17 +40,16 @@ local M = {
     },
     build = "make tiktoken",
     opts = {
-      -- CHAT INTERNAL MAPPINGS (Extrapolated from README)
       mappings = {
-        complete = { insert = "<Tab>", desc = "Token completion menu" },
-        close = { normal = "q", insert = "<C-c>", desc = "Close chat window" },
-        reset = { normal = "<C-l>", insert = "<C-l>", desc = "Reset/Clear chat window" },
-        submit_prompt = { normal = "<CR>", insert = "<C-s>", desc = "Submit the current prompt" },
-        accept_diff = { normal = "<C-y>", insert = "<C-y>", desc = "Accept nearest diff" },
-        show_diff = { normal = "gd", desc = "Show diff with source" },
-        yank_diff = { normal = "gy", desc = "Yank diff to register" },
-        goto_diff = { normal = "gj", desc = "Jump to diff section" },
-        show_help = { normal = "gh", desc = "Show help message" },
+        complete = { insert = "<Tab>" },
+        close = { normal = "q", insert = "<C-c>" },
+        reset = { normal = "<C-l>", insert = "<C-l>" },
+        submit_prompt = { normal = "<CR>", insert = "<C-s>" },
+        accept_diff = { normal = "<C-y>", insert = "<C-y>" },
+        show_diff = { normal = "gd" },
+        yank_diff = { normal = "gy" },
+        goto_diff = { normal = "gj" },
+        show_help = { normal = "gh" },
       },
       window = {
         layout = "float",
@@ -47,7 +57,6 @@ local M = {
         height = 0.7,
         border = "rounded",
       },
-      -- Predefined Custom Prompts
       prompts = {
         LuaConfig = {
           prompt = "You are a Lua expert. Help me refactor this Neovim configuration: #selection",
@@ -60,31 +69,17 @@ local M = {
       },
     },
     keys = {
-      -- EXTERNAL TRIGGER KEYS (Leader-based shortcuts)
       { "<leader>cc", "<cmd>CopilotChatToggle<cr>", mode = { "n", "x" }, desc = "CopilotChat - Toggle" },
       { "<leader>cr", "<cmd>CopilotChatReset<cr>",  mode = { "n", "x" }, desc = "CopilotChat - Reset Chat" },
       { "<leader>cf", "<cmd>CopilotChatFix<cr>",    mode = { "n", "x" }, desc = "CopilotChat - Fix Selection" },
       {
-        "<leader>cy",
-        function()
-          local actions = require("CopilotChat.actions")
-          require("CopilotChat.integrations.telescope").pick(actions.help_actions())
-        end,
-        mode = { "n", "x" },
-        desc = "CopilotChat - Action Picker",
-      },
-      {
         "<leader>ca",
         function()
-          local chat = require("CopilotChat")
-          -- Forcefully apply the nearest code block from the chat to the active file
-          chat.apply_diff()
+          require("CopilotChat").apply_diff()
         end,
         mode = { "n", "x" },
         desc = "CopilotChat - Automate Apply Diff",
       },
-
-      -- Jump to Diff (Bypasses the gj error)
       {
         "<leader>cj",
         function()
