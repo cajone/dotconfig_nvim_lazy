@@ -101,23 +101,12 @@ keymap("n", "<F5>", "]s", { desc = "Spell check txt/md files", noremap = true })
 keymap("n", "<F6>", "z=", { desc = "Open Dictionary options for word under cursor", noremap = true }) -- F6 will open spelling suggestions
 keymap("n", "<F7>", "zg", { desc = "Save a word to a local dictionary", noremap = true })             -- F7 will add word under cursor to local dictionary
 
--- Toggle Vimwiki URL's
-keymap(
-  "n",
-  "<F8>",
-  ":lua ToggleVimwikiConceallevel()<CR>",
-  { desc = "Show url paths in markdown files", noremap = true }
-)
-
 -- Mapping for windo diffs
 keymap("n", "<leader>wd", ":windo diffthis<CR>", { desc = "Diff compare open split buffers", noremap = true })
 keymap("n", "<leader>wD", ":windo diffoff<CR>", { desc = "Diff compare off", noremap = true })
 
 -- Mapping for cookstyle
 keymap("n", "<leader>cs", ":!/opt/chefkdk/embedded/bin/cookstyle -a %<CR>", { noremap = true })
-
--- Map a key combination to open Vimwiki and set LCD
--- keymap("n", "<Leader>ww", ":lua OpenVimwiki()<CR>", { desc = "Open Wiki", noremap = true, silent = true })
 
 -- Add a mapping to open plugin help
 keymap("n", "<leader>ph", [[:lua OpenPluginHelp()<CR>]], { silent = true })

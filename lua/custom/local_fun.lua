@@ -6,21 +6,6 @@ function ToggleLineNumbers()
   vim.wo.relativenumber = not vim.wo.relativenumber
 end
 
--- Toggle the ability to see URL links in VimWiki
-function ToggleVimwikiConceallevel()
-  if vim.opt.conceallevel:get() == 0 then
-    vim.opt.conceallevel:set(2)
-  else
-    vim.opt.conceallevel:set(0)
-  end
-end
-
--- Open Vimwiki and set LCD
-function OpenVimwiki()
-  vim.cmd("VimwikiIndex")  -- Open Vimwiki
-  vim.cmd("lcd ~/vimwiki") -- Set the LCD to ~/vimwiki
-end
-
 -- Terminal Key Mappings
 function Set_terminal_keymaps()
   local opts = { noremap = true, silent = true }
@@ -50,14 +35,6 @@ function OpenPluginHelp()
     print("No double-quoted substring found in the line under the cursor: " .. line)
   end
 end
-
--- Define the macro as 'Trip'
-function Trip()
-  vim.cmd("read ~/.config/nvim/lua/templates/trip.md")
-end
-
--- Map <leader>tt to run the Trip function
-vim.keymap.set("n", "<leader>tt", ":lua Trip()<CR>", { noremap = true, silent = true })
 
 function CheckDuplicateMappings()
   local mappings = vim.api.nvim_get_keymap("n") -- Check Normal mode
