@@ -46,7 +46,7 @@ require("lazy").setup({
   -- AI based plugins
   --  { import = "plugins.ai.mcphub" }, -- Configure AI prompt
   { import = "plugins.ai.copilot" }, -- Configure AI prompt
-  -- { import = "plugins.ai.avante" },  -- AI frontend
+  { import = "plugins.ai.avante" },  -- AI frontend
   -- { import = "plugins.ai.opencode" }, -- AI frontend
   -- { import = "plugins.ai.llm",        lazy = false }, -- ai litellm
 
