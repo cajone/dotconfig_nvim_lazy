@@ -2,6 +2,10 @@ local M = {
   -- Fugitive: The "Action" tool
   {
     "tpope/vim-fugitive",
+    lazy = false,
+    dependencies = {
+      "tpope/vim-rhubarb",
+    },
     keys = {
       { "<leader>gs",  ":Git<CR>",                                        desc = "Git Status" },
       { "<leader>gp",  ":Git push<CR>",                                   desc = "Git Push" },

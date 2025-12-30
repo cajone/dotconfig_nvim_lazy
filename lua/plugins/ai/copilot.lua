@@ -1,10 +1,15 @@
 local M = {
+  -- Copilot core plugin
   {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     event = "InsertEnter",
     config = function()
-      require("copilot").setup({
+      local vim = vim
+      local copilot = require("copilot")
+      local suggestion = require("copilot.suggestion")
+
+      copilot.setup({
         suggestion = {
           enabled = true,
           auto_trigger = true,
@@ -21,8 +26,8 @@ local M = {
 
       -- SMART TAB: Accept suggestion if visible, else insert tab
       vim.keymap.set("i", "<Tab>", function()
-        if require("copilot.suggestion").is_visible() then
-          require("copilot.suggestion").accept()
+        if suggestion.is_visible() then
+          suggestion.accept()
         else
           vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Tab>", true, false, true), "n", false)
         end
@@ -69,9 +74,10 @@ local M = {
       },
     },
     keys = {
-      { "<leader>cc", "<cmd>CopilotChatToggle<cr>", mode = { "n", "x" }, desc = "CopilotChat - Toggle" },
-      { "<leader>cr", "<cmd>CopilotChatReset<cr>",  mode = { "n", "x" }, desc = "CopilotChat - Reset Chat" },
-      { "<leader>cf", "<cmd>CopilotChatFix<cr>",    mode = { "n", "x" }, desc = "CopilotChat - Fix Selection" },
+      { "<leader>cc", "<cmd>CopilotChatToggle<cr>",  mode = { "n", "x" }, desc = "CopilotChat - Toggle" },
+      { "<leader>cr", "<cmd>CopilotChatReset<cr>",   mode = { "n", "x" }, desc = "CopilotChat - Reset Chat" },
+      { "<leader>cf", "<cmd>CopilotChatFix<cr>",     mode = { "n", "x" }, desc = "CopilotChat - Fix Selection" },
+      { "<leader>cp", "<cmd>CopilotChatPrompts<cr>", mode = { "n", "x" }, desc = "CopilotChat - Select Prompt" },
       {
         "<leader>ca",
         function()
