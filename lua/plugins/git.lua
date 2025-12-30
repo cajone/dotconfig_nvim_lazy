@@ -3,16 +3,12 @@ local M = {
   {
     "tpope/vim-fugitive",
     lazy = false,
-    dependencies = {
-      "tpope/vim-rhubarb",
-    },
     keys = {
       { "<leader>gs",  ":Git<CR>",                                        desc = "Git Status" },
       { "<leader>gp",  ":Git push<CR>",                                   desc = "Git Push" },
       { "<leader>ga",  ":Git add .<CR>",                                  desc = "Git Stage All (Add .)" },
       { "<leader>gm",  ":Git blame<CR>",                                  desc = "Git Blame" },
       { "<leader>gls", ":G log --pretty=format:'%h - %an, %ar : %s'<CR>", desc = "Short Git Log" },
-      { "<leader>gc",  ":Git commit<CR>",                                 desc = "Git Commit" },
     },
     config = function()
       -- This ensures that when you open a Git status window,
@@ -25,6 +21,30 @@ local M = {
         end,
       })
     end,
+  },
+
+  { "tpope/vim-rhubarb" },
+
+  -- Telescope Git: The "Picker" tools
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    keys = {
+      {
+        "<leader>gb",
+        function()
+          require("telescope.builtin").git_branches()
+        end,
+        desc = "Git Branches",
+      },
+      {
+        "<leader>gc",
+        function()
+          require("telescope.builtin").git_commits()
+        end,
+        desc = "Git Commits",
+      },
+    },
   },
 
   -- Agit: The "History Explorer"
