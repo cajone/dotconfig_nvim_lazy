@@ -18,7 +18,7 @@ local M = {
       -- This is the base Ollama provider, required for the inherited model
       ollama = {
         endpoint = "http://localhost:11434",
-        model = "qwen2.5-coder:14b",
+        model = "qwen2.5-coder:7b",
         extra_request_body = {
           options = {
             num_tokens = 20480, -- This is the default from the plugin
