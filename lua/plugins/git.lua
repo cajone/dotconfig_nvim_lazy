@@ -36,7 +36,7 @@ local M = {
     },
     init = function()
       vim.g.agit_reuse_tab = 1
-      vim.g.agit_max_log_lines = 1000
+      vim.g.agit_max_log_lines = 10000
     end,
   },
 
