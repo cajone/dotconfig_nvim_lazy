@@ -23,6 +23,10 @@ require("lazy").setup({
     version = false,
   },
 
+  rocks = {
+    enabled = false, -- disable luarocks/hererocks
+  },
+
   change_detection = { notify = false }, -- Stop reporting auto changes
 
   { "nvim-telescope/telescope.nvim" },   -- ADDED HERE: Ensure Telescope is loaded early as a top-level plugin
@@ -45,8 +49,8 @@ require("lazy").setup({
 
   -- AI based plugins
   --  { import = "plugins.ai.mcphub" }, -- Configure AI prompt
-  { import = "plugins.ai.copilot" }, -- Configure AI prompt
-  { import = "plugins.ai.avante" },  -- AI frontend
+  --  { import = "plugins.ai.copilot" }, -- Configure AI prompt
+  --  { import = "plugins.ai.avante" },  -- AI frontend
   -- { import = "plugins.ai.opencode" }, -- AI frontend
   -- { import = "plugins.ai.llm",        lazy = false }, -- ai litellm
 

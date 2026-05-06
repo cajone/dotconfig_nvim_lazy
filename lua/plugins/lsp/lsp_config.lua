@@ -16,13 +16,18 @@ M = {
       },
     },
     config = function()
-      vim.lsp.enable({
-        diagnostics = {
-          disable = { "missing-fields" },
-          -- NOTE Fix this Undefined global vim issue
-          globals = { 'vim' },
+      vim.lsp.config.lua_ls = {
+        cmd = { "lua-language-server" },
+        settings = {
+          Lua = {
+            diagnostics = {
+              disable = { "missing-fields" },
+              globals = { "vim" },
+            },
+          },
         },
-      })
+      }
+      vim.lsp.enable("lua_ls")
     end
   }
 }

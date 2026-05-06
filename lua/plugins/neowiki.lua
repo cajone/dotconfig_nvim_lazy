@@ -64,12 +64,6 @@ M.keys = {
   { "<leader>ww", "<cmd>lua require('neowiki').open_wiki()<cr>",          desc = "Open Wiki" },
   { "<leader>wW", "<cmd>lua require('neowiki').open_wiki_floating()<cr>", desc = "Open Wiki (Float)" },
   { "<leader>wT", "<cmd>lua require('neowiki').open_wiki_new_tab()<cr>",  desc = "Open Wiki (Tab)" },
-
-  -- Tab Management (Moved from keys.lua for consolidation)
-  { "<leader>tp", "<cmd>tabprevious<cr>",                                 desc = "Tab: Previous" },
-  { "<leader>tn", "<cmd>tabnext<cr>",                                     desc = "Tab: Next" },
-  { "<leader>tN", "<cmd>tabnew<cr>",                                      desc = "Tab: New" },
-  { "<leader>tC", "<cmd>tabclose<cr>",                                    desc = "Tab: Close" },
 }
 
 M.opts = {

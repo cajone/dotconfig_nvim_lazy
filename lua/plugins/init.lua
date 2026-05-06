@@ -1,7 +1,8 @@
 -- Init the plugins
 
--- Disable perl requirements
+-- Disable perl and ruby requirements
 vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
 
 -- Setup for vimwiki, if I dont put this here it does not load the markdown, must find a way to fix this
 vim.g.vimwiki_list = {

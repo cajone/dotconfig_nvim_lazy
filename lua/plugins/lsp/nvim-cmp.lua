@@ -32,11 +32,10 @@ M = {
 
       cmp.setup({
 
-        snippet = { -- config how nvim-cmp interacts with snippet engine
+        snippet = {
           expand = function(args)
             luasnip.lsp_expand(args.body)
           end,
-          extensions = { "jenkinsfile", "groovy" }, -- files that have a suffix of jenkinsfile are actually groovy
         },
 
         window = {

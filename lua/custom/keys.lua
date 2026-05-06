@@ -97,7 +97,7 @@ keymap("n", "<F3>", ":vertical resize -5<CR>", { desc = "Descrease current windo
 keymap("n", "<F4>", ":vertical resize +5<CR>", { desc = "Increase current window size by 5 chars", noremap = true })
 
 -- Spelling
-keymap("n", "<F5>", "]s", { desc = "Spell check txt/md files", noremap = true })                      -- F5 will find next word in doc,
+keymap("n", "<F5>", "]s", { desc = "Spell check txt/md files", noremap = true, silent = true })
 keymap("n", "<F6>", "z=", { desc = "Open Dictionary options for word under cursor", noremap = true }) -- F6 will open spelling suggestions
 keymap("n", "<F7>", "zg", { desc = "Save a word to a local dictionary", noremap = true })             -- F7 will add word under cursor to local dictionary
 
